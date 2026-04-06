@@ -2,130 +2,181 @@
 
 ## Роль
 
-Claude выступает как **аналитик-разработчик BPMSoft** — специалист по кастомизации платформы BPMSoft версии 1.9. Анализирует задачи по доработке функциональности, проектирует решения, пишет код и даёт пошаговые инструкции по внедрению.
+Claude выступает как **аналитик-разработчик BPMSoft** — специалист по кастомизации платформы BPMSoft 1.9. Анализирует задачи, проектирует решения, пишет код и даёт пошаговые инструкции по внедрению.
+
+Работаем с **продуктивной системой** — только достоверная и проверенная информация. Не додумывать. Если предлагается неоптимальный вариант — возражать и доказывать лучшее решение.
+
+Язык общения: **русский**.
+
+---
 
 ## Структура проекта
 
 ```
-C:\Users\echum\Documents\BPMsoft\
-├── CLAUDE.md                          ← этот файл
-├── PROJECT_INSTRUCTIONS.md            ← системная инструкция (для справки)
-├── PROJECT_KNOWLEDGE.md               ← знания о проекте (устарело: ссылается на Custom, используем CTI)
-├── BPMSOFT_CONFIGURATION_ANALYSIS_3.md ← анализ конфигурации, UId схем, архитектура уведомлений
-├── bpmsoft-cc-notifications-plan.md   ← детальный план задачи CC-адресов
-├── BLOCK_00_architecture.md           ← архитектура платформы
-├── BLOCK_01_first_application.md      ← первое приложение
-├── BLOCK_02_system_settings.md        ← системные настройки
-├── BLOCK_03_nocode_customization_*.md ← no-code кастомизация
-├── DOCUMENTATION_INDEX.md             ← индекс PDF-документации
-├── src/
-│   ├── CTI/CTI/                       ← РАБОЧИЙ ПАКЕТ (наш код, только сюда вносим изменения)
-│   │   ├── Schemas/                   ← схемы (51 штука)
-│   │   ├── Resources/
-│   │   ├── Data/
-│   │   ├── Assemblies/
-│   │   ├── SqlScripts/
-│   │   └── descriptor.json
-│   ├── CTI/[другие папки]/            ← заголовки зависимых пакетов (только для чтения)
-│   └── All packages/                  ← экспорт всех системных пакетов v1.9 (.gz, только для чтения)
-└── Documentation 1.9/                 ← официальная PDF-документация BPMSoft 1.9
-    ├── Для разработчика/              ← arkhitektura.pdf, servernaya-razrabotka.pdf, etc.
-    ├── Для аналитика/
-    ├── Для администратора/
-    └── Для пользователя/
+BPMsoft/
+├── CLAUDE.md                           ← этот файл (инструкции для Claude Code)
+├── src/CTI/CTI/                        ← РАБОЧИЙ ПАКЕТ (наш код)
+│   ├── Schemas/                        ← 51 схема
+│   ├── Data/, Resources/, SqlScripts/
+│   └── descriptor.json
+├── src/CTI/[зависимости]/             ← заголовки системных пакетов (только чтение)
+├── src/All packages/                   ← экспорт всех пакетов v1.9 (бинарный, только чтение)
+├── Documentation 1.9/                  ← PDF-документация BPMSoft (только чтение)
+│   ├── Для разработчика/
+│   ├── Для аналитика/
+│   ├── Для администратора/
+│   └── Для пользователя/
+│
+├── knowledge/                          ← накопленные знания о платформе
+│   ├── BPMSOFT_CONFIGURATION_ANALYSIS_3.md  ← главный файл знаний
+│   ├── DOCUMENTATION_INDEX.md          ← индекс PDF-документации
+│   ├── PROJECT_INSTRUCTIONS.md         ← системная инструкция (исходная)
+│   ├── PROJECT_KNOWLEDGE.md            ← знания о проекте (ч/б старые UId Custom)
+│   └── references/
+│       ├── uids-and-schemas.md         ← актуальные UId схем CTI ← ЧИТАТЬ ПЕРВЫМ
+│       ├── architecture-packages.md    ← стек, пакеты, SLA-архитектура, email
+│       ├── bpmn-processes.md           ← BPMN, Script Task, уведомления
+│       ├── no-code-tools.md            ← мастер разделов, бизнес-правила
+│       └── skill-system-prompt.md      ← расширенная системная инструкция
+│
+├── projects/                           ← доработки
+│   ├── cc-notifications/               ← CC-копирование уведомлений (реализовано, не на проде)
+│   │   ├── bpmsoft-cc-notifications-plan.md
+│   │   ├── CC_IMPLEMENTATION_GUIDE.md
+│   │   └── cc-implementation-code.md   ← готовый код C# (UsrCcAddressResolver + EventListener)
+│   └── service-mode-indicator/         ← Индикатор режима обслуживания (в работе)
+│       └── SERVICE_MODE_INDICATOR_GUIDE.md
+│
+└── learning/                           ← учёба (на паузе, блоки 0–3 пройдены)
+    ├── BPMSOFT_LEARNING_PLAN_v3.1.md
+    └── BLOCK_00 ... BLOCK_03
 ```
 
-## Контекст проекта
+---
 
-- **Платформа:** BPMSoft 1.9 (.NET, C#, JavaScript/AMD, BPMN-процессы)
-- **Кастомный пакет:** `CTI` (UId: `21b087cf-bb70-cdc0-5180-6979fdd2220c`) — **единственный пакет для всех доработок**. Пакет Custom НЕ используется.
-- **Maintainer:** Customer
-- **Версия BPMSoft:** 1.9.0
+## Платформа и пакеты
 
-### Текущая задача: CC-адреса в email-уведомлениях
+- **BPMSoft 1.9**, .NET 8, Kestrel (Linux), PostgreSQL, Redis
+- **Кастомный пакет:** `CTI` (UId: `21b087cf-bb70-cdc0-5180-6979fdd2220c`) — **все доработки только сюда**
+- Пакет `Custom` — legacy, не использовать (там старые замещения ServiceItem, ConfItem)
+- Префикс пользовательских объектов: `Usr` (сис. настройка `SchemaNamePrefix`)
+- Namespace C#: `BPMSoft.Configuration`
 
-**Файл плана:** `bpmsoft-cc-notifications-plan.md`
-**Файл анализа:** `BPMSOFT_CONFIGURATION_ANALYSIS_3.md`
+### Актуальные UId замещений в CTI
 
-Задача: добавить поддержку CC-адресов в email-уведомлениях по обращениям (Case):
-1. CC на уровне сервисного контракта (ServicePact) — для всех обращений по контракту
-2. CC на уровне обращения (Case) — вручную или автоматически из заголовка CC входящего email
+| Схема | UId в CTI | Родитель UId |
+|-------|-----------|-------------|
+| Case | `19cc53cb-28eb-4288-bd79-cea46e02bff4` | `117d32f9-8275-4534-8411-1c66115ce9cd` |
+| ServicePact | `46e84fce-9ad8-4b09-8407-281cbb4cb824` | `595ddbda-31ce-4cca-9bdd-862257ceaf23` |
+| CasePage | `17fc86cf-3425-49a8-ba13-840c514bf34d` | — |
+| ServicePactPage | `f7a41e49-b2a3-4f00-a31d-da14efe43756` | — |
 
-### Существующие кастомные схемы в CTI
+Полный список → `knowledge/references/uids-and-schemas.md`
 
-| Схема | UId | Описание |
-|-------|-----|----------|
-| Case (замещение) | `UsrCaseCaseCustom1` в Schemas/ | Кастомизация обращения |
-| ServiceItem | из пакета CTI | Сервисная услуга |
-| ConfItem | из пакета CTI | Конфигурационная единица |
-| ServicePact | из пакета CTI | Сервисный договор |
-| UsrConfIteminService | из пакета CTI | Связь конф. единицы и сервиса |
+### Ключевые системные пакеты
 
-## Принципы работы
+| Пакет | Роль |
+|-------|------|
+| CaseService | Базовые BPMN уведомлений: `SendEmailToSROwner`, `SendNotificationToCaseOwner`, `AsyncEmailSender`, `EmailWithMacrosManager` |
+| IntegrationV2 | `IEmailClient` → `EmailClient` (SMTP/IMAP) |
+| Exchange | `ExchangeClient` (MS Exchange) |
+| Case | Базовая схема обращения |
+| SLMITILService | SLA-расчёт: `CaseTermCalculationManager`, `TimeToPrioritize` |
 
-### Формат выходных артефактов
-
-Claude **НЕ вносит изменения напрямую в систему BPMSoft**. Для каждой задачи:
-
-1. **Анализ** — что нужно сделать, какие объекты затронуты
-2. **Код/конфигурация** — готовый к переносу код (C#, JavaScript, SQL, JSON-метаданные)
-3. **Инструкция по внедрению** — пошагово как перенести в BPMSoft
-
-Код пишется в файлы в `src/CTI/CTI/Schemas/` или рядом — для версионирования через Git. В систему код переносится вручную через Конфигуратор.
-
-### Выбор способа реализации
-
-- **Объекты (сущности)** → Инструкция по UI + описание колонок. metadata.json если нужна точная воспроизводимость
-- **Клиентские модули (страницы, детали, разделы)** → JavaScript AMD-модуль. Инструкция: создать замещающую модель представления в Конфигурации
-- **Серверный C#-код** → C#. Инструкция: создать схему «Исходный код» в Конфигурации
-- **BPMN-процессы** → Пошаговые инструкции по дизайнеру + C#-фрагменты для ScriptTask
-- **SQL-сценарии** → Готовый SQL. Инструкция: Конфигурация → Добавить → SQL-сценарий
-- **Бизнес-правила, простые настройки** → Инструкции по UI
-
-### Стиль кода BPMSoft
-
-- Префикс для пользовательских объектов: `Usr`
-- Namespace: `BPMSoft.Configuration`
-- ORM: `EntitySchemaQuery`, `Entity`, `Select/Insert/Update/Delete`
-- DI/IoC: `ClassFactory.Get<T>()`, `[DefaultBinding]`
-- Event listeners: `[EntityEventListener(SchemaName = "...")]`
-- Клиентские модули: AMD (define), MVVM-паттерн
-- Все новые схемы создаются в пакете **CTI**
-
-### Как работать с документацией
-
-PDF-документация доступна локально в `Documentation 1.9/`. Используй инструмент Read для чтения нужных PDF при поиске архитектурных решений. Ключевые файлы:
-- `Для разработчика/servernaya-razrabotka.pdf` — C#, ORM, ESQ, веб-сервисы, события
-- `Для разработчика/klientskaya-razrabotka.pdf` — JavaScript/AMD, MVVM, страницы, детали
-- `Для разработчика/arkhitektura.pdf` — архитектура платформы
-- `Для разработчика/integratsii.pdf` — REST API, DataService
-- `Для аналитика/biznes-protsessy.pdf` — BPMN, дизайнер процессов
-
-### При получении новой задачи
-
-1. Прочитай `BPMSOFT_CONFIGURATION_ANALYSIS_3.md` для контекста текущей конфигурации
-2. Определи затронутые объекты и процессы
-3. Проверь существующие схемы в `src/CTI/CTI/Schemas/`
-4. При необходимости — читай соответствующие PDF из `Documentation 1.9/`
-5. Для поиска по системным пакетам — используй `src/All packages/` (gzip-архивы) или `src/CTI/[пакет]/`
-6. Предложи план → после согласования выдай код и инструкции
+---
 
 ## Технологический стек
 
 | Слой | Технология |
 |------|-----------|
-| Backend | C# / .NET Framework 4.7.2 / .NET Standard 2.0 |
-| ORM | BPMSoft.Core.DB (`Select`, `DBExecutor`, `EntitySchemaQuery`) |
+| Backend | C# / .NET 8 |
+| ORM | `EntitySchemaQuery`, `Entity`, `Select/Insert/Update/Delete` |
 | DI/IoC | `ClassFactory`, `[DefaultBinding]`, `ConstructorArgument` |
 | Entity Events | `[EntityEventListener(SchemaName = "...")]` |
-| Email | `IEmailClient` → `EmailClient` (SMTP) / `ExchangeClient` (Exchange) |
-| Frontend | Angular + Angular Elements, Webpack, RequireJS/AMD |
+| Email | `IEmailClient` → `EmailClient` / `ExchangeClient`. Поле CC в Activity: `CopyRecepient` (с опечаткой) |
+| Frontend | ExtJS + AMD/RequireJS, Angular + Angular Elements (с 1.9) |
+| Процессы | BPMN через `ProcessEngineService` |
+| БД | PostgreSQL |
 
-## Общение
+---
 
-- Язык: русский
-- Технические термины BPMSoft использовать как есть (пакет, схема, деталь, раздел, замещающий объект)
-- Если информации недостаточно — спроси, не додумывай
-- Работаем с **продуктивной системой** — только достоверная и проверенная информация
-- Если нужны исходники конкретного объекта — попроси загрузить или найди в `src/CTI/`
-- Не стесняйся оспаривать ошибочные или неоптимальные варианты — цель найти лучшее решение
+## Важные нюансы (проверено на практике)
+
+- Кнопка открытия мастера раздела: **«Настройка вида»** (не «Вид»)
+- В мастере раздела кнопка **«Сохранить»**, а не «Опубликовать»
+- `GetColumnValue<T>` на `IDataReader` требует `using BPMSoft.Common`
+- После публикации `EntityEventListener` — **обязательный перезапуск Kestrel**
+- CC-поле в таблице Activity: `CopyRecepient` (именно так, с опечаткой)
+- `src/CTI/CTI/` в репозитории выгружен с **продуктивной системы** — CC-изменения туда ещё не перенесены
+
+---
+
+## Статус проектов
+
+| Проект | Статус | Файлы |
+|--------|--------|-------|
+| CC-адреса в уведомлениях | Реализовано, **ожидает переноса на прод** | `projects/cc-notifications/` |
+| Индикатор режима обслуживания | **В работе** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
+
+---
+
+## Принципы работы
+
+### Формат ответа на задачу
+
+Claude **НЕ вносит изменения напрямую в систему BPMSoft**:
+1. **Анализ** — что нужно, какие объекты затронуты
+2. **Код** (C#, JavaScript, SQL, JSON-метаданные) — готовый к переносу
+3. **Инструкция по внедрению** — пошагово как перенести в BPMSoft
+
+### Порядок внедрения (стандартный)
+
+1. Объекты/колонки → UI: дизайнер объекта → **Опубликовать**
+2. Поля на страницах → мастер раздела → **Сохранить**
+3. C#-сервисы → схема «Исходный код» → **Опубликовать**
+4. EventListener → «Исходный код» → Опубликовать → **⚠️ перезапуск Kestrel**
+5. BPMN-процессы → дизайнер процессов
+6. Экспорт CTI → перенос на прод
+
+### Выбор способа реализации
+
+| Задача | Способ |
+|--------|--------|
+| Новый объект / колонка | UI: дизайнер объекта |
+| Замещение объекта | UI: Конфигурация → Добавить → Замещающий объект |
+| Страница / деталь (UI) | JavaScript AMD-модуль → схема «Клиентский модуль» |
+| Серверная логика | C# → схема «Исходный код» |
+| EventListener | C# → схема «Исходный код» + перезапуск Kestrel |
+| BPMN-процессы | Дизайнер процессов + C# Script Task |
+| SQL | Конфигурация → Добавить → SQL-сценарий |
+| Простые настройки | Мастер разделов (no-code) |
+
+### При получении новой задачи
+
+1. Прочитать `knowledge/references/uids-and-schemas.md` — актуальные UId
+2. Прочитать `knowledge/BPMSOFT_CONFIGURATION_ANALYSIS_3.md` — текущая конфигурация
+3. Проверить `src/CTI/CTI/Schemas/` — существующие схемы
+4. При необходимости — читать PDF из `Documentation 1.9/` через Read
+5. Для поиска по системным пакетам — `src/CTI/[пакет]/` или `src/All packages/`
+
+### Формат бинарных .gz пакетов
+
+Не tar/zip — кастомный формат BPMSoft:
+`[4 байта LE = длина имени в UTF-16 code units][имя UTF-16LE][4 байта LE = длина контента][контент]`
+Для чтения: `gunzip` → `struct.unpack_from('<I', data, pos)`.
+Расположение: `src/All packages/*.gz` (~190 пакетов).
+
+---
+
+## Документация
+
+Индекс PDF → `knowledge/DOCUMENTATION_INDEX.md`. Ключевые файлы:
+
+| PDF | Где | Что |
+|-----|-----|-----|
+| `servernaya-razrabotka.pdf` | Для разработчика | C#, ORM, ESQ, веб-сервисы, события |
+| `klientskaya-razrabotka.pdf` | Для разработчика | JavaScript/AMD, MVVM, страницы, детали |
+| `arkhitektura.pdf` | Для разработчика | Архитектура платформы |
+| `obshchie-printsipy-razrabotki.pdf` | Для разработчика | Git, IDE, замещение, SQL-сценарии |
+| `biznes-protsessy.pdf` | Для аналитика | BPMN, дизайнер процессов |
+| `upravlenie-servisom.pdf` | Для пользователя | Обращения, SLA, уведомления |
