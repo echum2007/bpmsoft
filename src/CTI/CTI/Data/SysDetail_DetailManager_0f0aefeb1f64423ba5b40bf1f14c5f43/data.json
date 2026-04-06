@@ -1,0 +1,24 @@
+﻿{
+  "PackageData": [
+    {
+      "Row": [
+        {
+          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
+          "Value": "0f0aefeb-1f64-423b-a5b4-0bf1f14c5f43"
+        },
+        {
+          "SchemaColumnUId": "49ad8ee2-65a6-4cdd-b8f6-85c2f10a54dc",
+          "Value": "Файл и ссылка объекта Конфигурационная единица в сервисной договоре"
+        },
+        {
+          "SchemaColumnUId": "631e7238-2751-4a21-b6d6-9f1ac0c84f95",
+          "Value": "e05ec0b1-80c3-4086-ae80-f40d4cd455e4"
+        },
+        {
+          "SchemaColumnUId": "8585929c-62ae-4673-ae8d-bb37f87e5144",
+          "Value": "0c43958a-a409-47bc-a3cb-9bc32451a45a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "832b9ee7-839e-4e25-9550-a922c43cb67b",
+    "Name": "ServiceInServicePactDetail",
+    "ModifiedOnUtc": "\/Date(1747316731000)\/",
+    "Parent": {
+      "UId": "8e9e8077-4265-4871-9f9b-d2fbfabf9df9",
+      "Name": "ServiceInServicePactDetail"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Сервисы (по колонке Сервисный договор)\"",
+    "DependsOn": []
+  }
+}

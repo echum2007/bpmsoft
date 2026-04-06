@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="es-ES">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Posponer hasta" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Más de un elemento de cola conectado con el proceso. Id del proceso: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Devolver a la cola" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="No se puede devolver a la cola el elemento. Mensaje de error: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="La página no está conectada con el elemento de cola del escritorio de agente. Acción cancelada." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="No se puede devolver a la cola el elemento" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Devuelto a la cola con éxito" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="No tiene servicios disponibles.  Por favor, póngase en contacto con el equipo de soporte." />
+		</Items>
+	</Group>
+</Resources>

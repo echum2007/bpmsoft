@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "73c7cca4-0c13-4655-9629-8c4badb8b1e1",
+    "Name": "UsrProcess_0c71a12CTI1",
+    "ModifiedOnUtc": "\/Date(1758182073000)\/",
+    "Parent": {
+      "UId": "b042cadb-3678-48ba-b050-fbc7260aa0e2",
+      "Name": "UsrProcess_0c71a12"
+    },
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Отправка уведомлений ответственному о Смене статуса обращения",
+    "DependsOn": []
+  }
+}

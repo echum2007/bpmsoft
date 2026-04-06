@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="de-DE">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Verschieben bis" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Mehr als ein mit Prozess verbundenes Queue--Element gefunden. Prozess-ID: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Re-queue" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Item kann nicht wieder gequeued werden. Fehlernachricht: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Seite ist nicht zum Agentendesktop-Queueelement verbunden. Aktion abgebrochen." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Item kann nicht wieder gequeued werden" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Erfolgreich Re-Queued" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="SiKeine Services verfügbar. Kontaktieren Sie das Supportteam." />
+		</Items>
+	</Group>
+</Resources>

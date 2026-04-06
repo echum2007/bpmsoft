@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "8a6974c0-0c91-4ce4-9f5d-188c086a177e",
+    "Name": "ConfItemSection",
+    "ModifiedOnUtc": "\/Date(1743004555000)\/",
+    "Parent": {
+      "UId": "9a39d75f-e346-44c1-8485-307f03f4ef6d",
+      "Name": "ConfItemSection"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Конфигурации\"",
+    "DependsOn": []
+  }
+}

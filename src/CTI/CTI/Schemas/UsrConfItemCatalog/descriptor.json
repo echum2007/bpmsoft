@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "7ca17cbe-084e-4ef7-b640-e0cdc36767f7",
+    "Name": "UsrConfItemCatalog",
+    "ModifiedOnUtc": "\/Date(1744975200000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Конфигурационная единица в сервисной договоре",
+    "DependsOn": []
+  }
+}

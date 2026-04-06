@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pl-PL">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Case page" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Odłóż do" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Caption" Value="Odpowiedź na zgłoszenie" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Value" Value="Odpowiedź na zgłoszenie {0} {1}" />
+			<Item Name="LocalizableStrings.EscalationTitle.Caption" Value="EscalationTitle" />
+			<Item Name="LocalizableStrings.EscalationTitle.Value" Value="Zwiększać" />
+			<Item Name="LocalizableStrings.FoundSimilarCaseTextTemplate.Value" Value="Similar cases found: {0}" />
+			<Item Name="LocalizableStrings.GeneralInfoTabCaption.Value" Value="Szczegóły" />
+			<Item Name="LocalizableStrings.GroupCaption.Value" Value="Grupa przypisanych" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Caption" Value="Ukryj komunikaty systemowe" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Value" Value="Ukryj komunikaty systemowe" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Caption" Value="Historia" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Value" Value="Historia" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Więcej niż jeden element kolejki podłączony do procesu. Identyfikator procesu: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelByServiceModuleCaption.Value" Value="Display service dependencies" />
+			<Item Name="LocalizableStrings.OwnerCaption.Value" Value="OwnerCaption" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Caption" Value="Profil zgłoszenia" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Value" Value="Profil zgłoszenia" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Ponowna kolejka" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Nie można ponownie umieścić elementu w kolejce. Komunikat o błędzie: {0}" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Caption" Value="Procesowanie" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Value" Value="Procesowanie" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Strona nie jest połączona z elementem kolejki pulpitu konsultanta. Akcja anulowana." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Nie można ponownie umieścić elementu w kolejce" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Pomyślnie ponownie zakolejkowne" />
+			<Item Name="LocalizableStrings.ReclassificationTitle.Value" Value="Reclassify" />
+			<Item Name="LocalizableStrings.SchemaLocalizableString1.Caption" Value="Wiadomość do użytkownika 1" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Caption" Value="Szukaj podobnych projektów" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Value" Value="Szukaj podobnych projektów" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessageByLic.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and  &quot;Service agreements&quot; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Caption" Value="ServiceItemTipMessage" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and   &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Caption" Value="ServicePactTipMessage" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Value" Value="&lt;p&gt;Service level agreements (SLA) determine the scope of services provided to different types of customers, as well as conditions for rendering subcontracted and internal services. Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; section to create and modify service agreements &lt;/p&gt;" />
+			<Item Name="LocalizableStrings.SetCaseContactMessage.Value" Value="Określić {0} jako kontakt w zgłoszeniu?" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Caption" Value="Pokaż komunikaty systemowe" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Value" Value="Pokaż komunikaty systemowe" />
+			<Item Name="LocalizableStrings.SolutionFieldPlaceholder.Value" Value="Resolution description" />
+			<Item Name="LocalizableStrings.SolvedOnSupportLevelCaption.Value" Value="Poziom wsparcia" />
+			<Item Name="LocalizableStrings.SupportLevelCaption.Value" Value="Poziom wsparcia" />
+			<Item Name="LocalizableStrings.SymptomsCaption.Value" Value="Symptoms" />
+			<Item Name="LocalizableStrings.UsrSchema1fd268acDetail39459c03DetailCaptionOnPage.Value" Value="Czas na nadanie priorytetu" />
+		</Items>
+	</Group>
+</Resources>

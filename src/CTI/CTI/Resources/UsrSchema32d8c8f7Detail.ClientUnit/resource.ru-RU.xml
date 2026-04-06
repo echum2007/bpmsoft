@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Схема детали: &quot;Сроки с приоритетами&quot;" />
+			<Item Name="LocalizableStrings.Caption.Value" Value="Сроки с приоритетами" />
+		</Items>
+	</Group>
+</Resources>

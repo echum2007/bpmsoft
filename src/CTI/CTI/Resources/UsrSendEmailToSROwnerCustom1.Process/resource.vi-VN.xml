@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="vi-VN">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Gửi email tới người được ủy nhiệm trường hợp" />
+		</Items>
+	</Group>
+</Resources>

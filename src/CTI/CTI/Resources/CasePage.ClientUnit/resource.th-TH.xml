@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="th-TH">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="หน้าเคส" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="เลื่อนไปจนถึง" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Caption" Value="การตอบสนองเคส" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Value" Value="การตอบสนองเคส {0} {1}" />
+			<Item Name="LocalizableStrings.EscalationTitle.Caption" Value="EscalationTitle" />
+			<Item Name="LocalizableStrings.EscalationTitle.Value" Value="บานปลาย" />
+			<Item Name="LocalizableStrings.FoundSimilarCaseTextTemplate.Value" Value="Similar cases found: {0}" />
+			<Item Name="LocalizableStrings.GeneralInfoTabCaption.Value" Value="รายละเอียด" />
+			<Item Name="LocalizableStrings.GroupCaption.Value" Value="กลุ่มผู้ได้รับมอบหมาย" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Caption" Value="ซ่อนข้อความระบบ" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Value" Value="ซ่อนข้อความระบบ" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Caption" Value="ประวัติ" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Value" Value="ประวัติ" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="มีองค์ประกอบคิวมากกว่าหนึ่งที่เชื่อมต่อกับกระบวนการ  ไอดีของกระบวนการ: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelByServiceModuleCaption.Value" Value="แสดงความสัมพันธ์ของการบริการ" />
+			<Item Name="LocalizableStrings.OwnerCaption.Value" Value="OwnerCaption" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Caption" Value="โปรไฟล์ของเคส" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Value" Value="โปรไฟล์ของเคส" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="จัดคิวใหม่" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="ไม่สามารถจัดคิวรายการใหม่  ข้อความผิดพลาด: {0}" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Caption" Value="กำลังประมวลผล" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Value" Value="กำลังประมวลผล" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="หน้าไม่ได้เชื่อมต่อกับองค์ประกอบคิวในเดสท้อปของตัวแทน การทำงานถูกยกเลิก." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="ไม่สามารถจัดคิวรายการใหม่" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="จัดคิวใหม่ได้สำเร็จ" />
+			<Item Name="LocalizableStrings.ReclassificationTitle.Value" Value="จัดประเภทใหม่" />
+			<Item Name="LocalizableStrings.SchemaLocalizableString1.Caption" Value="ข้อความถึงผู้ใช้ 1" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Caption" Value="ค้นหาเคสที่คล้ายกัน" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Value" Value="ค้นหาเคสที่คล้ายกัน" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessageByLic.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and  &quot;Service agreements&quot; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Caption" Value="ServiceItemTipMessage" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and   &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Caption" Value="ServicePactTipMessage" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Value" Value="&lt;p&gt;Service level agreements (SLA) determine the scope of services provided to different types of customers, as well as conditions for rendering subcontracted and internal services. Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; section to create and modify service agreements &lt;/p&gt;" />
+			<Item Name="LocalizableStrings.SetCaseContactMessage.Value" Value="ระบุ {0}เป็นผู้ติดต่อในเคสหรือไม่?" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Caption" Value="แสดงข้อความระบบ" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Value" Value="แสดงข้อความระบบ" />
+			<Item Name="LocalizableStrings.SolutionFieldPlaceholder.Value" Value="คำอธิบายการแก้ปัญหา" />
+			<Item Name="LocalizableStrings.SolvedOnSupportLevelCaption.Value" Value="ระดับการสนับสนุน" />
+			<Item Name="LocalizableStrings.SupportLevelCaption.Value" Value="ระดับการสนับสนุน" />
+			<Item Name="LocalizableStrings.SymptomsCaption.Value" Value="อาการ" />
+			<Item Name="LocalizableStrings.UsrSchema1fd268acDetail39459c03DetailCaptionOnPage.Value" Value="เวลาในการจัดลำดับความสำคัญ" />
+		</Items>
+	</Group>
+</Resources>

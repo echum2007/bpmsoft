@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "468d438e-9537-48fe-8574-746bf5f89516",
+    "Name": "UsrProcess_a5f980e",
+    "ModifiedOnUtc": "\/Date(1750339059000)\/",
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Изменение даты регистрации Обращения",
+    "DependsOn": []
+  }
+}

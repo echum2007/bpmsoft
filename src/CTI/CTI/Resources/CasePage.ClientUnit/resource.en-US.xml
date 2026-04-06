@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Case page" />
+			<Item Name="Images.511759df-206c-3585-28cb-1efff9d80027.Image" Type="Image" ContentType="Data" FileExtension=".svg" Value="PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzEwXzYxNTQpIj4KPGNpcmNsZSBjeD0iNy4zMzMzMyIgY3k9IjcuMzMzMzMiIHI9IjUuMzMzMzMiIHN0cm9rZT0iIzY3NzQ4RSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xMy45OTk3IDE0LjAwMDJMMTEuMzMzIDExLjMzMzUiIHN0cm9rZT0iIzY3NzQ4RSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8xMF82MTU0Ij4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=" />
+			<Item Name="Images.7d05b517-55cd-446c-a552-89b4a3b7408c.Image" Type="Image" ContentType="Data" FileExtension=".svg" Value="PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNicgaGVpZ2h0PScxNicgZmlsbD0nbm9uZSc+PGcgY2xpcC1wYXRoPSd1cmwoI2EpJz48Y2lyY2xlIGN4PSc4JyBjeT0nOCcgcj0nNi44MzMnIHN0cm9rZT0nI0JBQkFCQScvPjxwYXRoIGZpbGw9JyNCQUJBQkEnIGQ9J003LjIzNSA4Ljg4NGMwLS4yOC4wNzctLjUzLjIzMi0uNzUxLjE1NC0uMjI5LjQwNS0uNDgzLjc1My0uNzYzLjI3OS0uMjI4LjQ5NS0uNDI3LjY1LS41OTdhLjgzNS44MzUgMCAwIDAgLjI0My0uNTk2Ljg1Mi44NTIgMCAwIDAtLjI5LS42NzRjLS4xODUtLjE3Ny0uNDYtLjI2NS0uODIzLS4yNjUtLjMzMiAwLS42MDMuMDg4LS44MTIuMjY1LS4yLjE3LS4zMDEuNDEyLS4zMDEuNzI5SDUuMzMzYzAtLjMwMi4wNjYtLjU4Ni4xOTctLjg1LjE0LS4yNzMuMzI1LS41MTMuNTU3LS43MTlhMi42OSAyLjY5IDAgMCAxIC44NDYtLjQ4NkM3LjI1OCA0LjA1OSA3LjYxMyA0IDggNGMuNDE3IDAgLjc4OC4wNTUgMS4xMTMuMTY2LjMzMi4xMDMuNjE1LjI1Ljg0Ni40NDIuMjMyLjE5MS40MDYuNDE2LjUyMi42NzQuMTI0LjI1OC4xODYuNTM4LjE4Ni44NCAwIC4xOTgtLjAyLjM3OS0uMDU4LjU0MWExLjUzMyAxLjUzMyAwIDAgMS0uMTk3LjQ2NGMtLjA4NS4xNDctLjIwMS4yOTgtLjM0OC40NTMtLjE0Ny4xNDctLjMyNS4zMS0uNTM0LjQ4NmE1LjUwNCA1LjUwNCAwIDAgMC0uNDE3LjM3NmMtLjEuMDk2LS4xNzguMTg0LS4yMzIuMjY1YS42OTYuNjk2IDAgMCAwLS4xMTYuMzk4di4yMjFoLTEuNTN2LS40NDJaTTggMTJhLjk3My45NzMgMCAwIDEtLjY5Ni0uMjc2Ljg4NC44ODQgMCAwIDEtLjI5LS42NjNjMC0uMjczLjA5Ny0uNDk4LjI5LS42NzRBLjk5NS45OTUgMCAwIDEgOCAxMC4xMmMuMjcgMCAuNTAyLjA4OS42OTYuMjY2LjE5My4xNzYuMjkuNDAxLjI5LjY3NGEuODg0Ljg4NCAwIDAgMS0uMjkuNjYzQS45NzMuOTczIDAgMCAxIDggMTJaJy8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0nYSc+PHBhdGggZmlsbD0nI2ZmZicgZD0nTTAgMGgxNnYxNkgweicvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==" />
+			<Item Name="Images.edc42f1a-6218-18ef-9a20-b95a4cdb407b.Image" Type="Image" ContentType="Data" FileExtension=".svg" Value="PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjIwNzExIDUuMjkyODlDNi44MTY1OCA0LjkwMjM3IDYuMTgzNDIgNC45MDIzNyA1Ljc5Mjg5IDUuMjkyODlDNS40MDIzNyA1LjY4MzQyIDUuNDAyMzcgNi4zMTY1OCA1Ljc5Mjg5IDYuNzA3MTFMMTEuMDg1OCAxMkw1Ljc5Mjg5IDE3LjI5MjlDNS40MDIzNyAxNy42ODM0IDUuNDAyMzcgMTguMzE2NiA1Ljc5Mjg5IDE4LjcwNzFDNi4xODM0MiAxOS4wOTc2IDYuODE2NTggMTkuMDk3NiA3LjIwNzExIDE4LjcwNzFMMTIuNSAxMy40MTQyTDE3Ljc5MjkgMTguNzA3MUMxOC4xODM0IDE5LjA5NzYgMTguODE2NiAxOS4wOTc2IDE5LjIwNzEgMTguNzA3MUMxOS41OTc2IDE4LjMxNjYgMTkuNTk3NiAxNy42ODM0IDE5LjIwNzEgMTcuMjkyOUwxMy45MTQyIDEyTDE5LjIwNzEgNi43MDcxMUMxOS41OTc2IDYuMzE2NTggMTkuNTk3NiA1LjY4MzQyIDE5LjIwNzEgNS4yOTI4OUMxOC44MTY2IDQuOTAyMzcgMTguMTgzNCA0LjkwMjM3IDE3Ljc5MjkgNS4yOTI4OUwxMi41IDEwLjU4NThMNy4yMDcxMSA1LjI5Mjg5WiIgZmlsbD0iIzY3NzQ4RSIvPgo8L3N2Zz4K" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Postpone till" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Caption" Value="Case response" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Value" Value="Case response {0} {1}" />
+			<Item Name="LocalizableStrings.EscalationTitle.Caption" Value="EscalationTitle" />
+			<Item Name="LocalizableStrings.EscalationTitle.Value" Value="Escalate" />
+			<Item Name="LocalizableStrings.FieldValidationMessage.Value" Value="Fields:" />
+			<Item Name="LocalizableStrings.FoundSimilarCaseTextTemplate.Value" Value="Similar cases found: {0}" />
+			<Item Name="LocalizableStrings.GeneralInfoTabCaption.Value" Value="Details" />
+			<Item Name="LocalizableStrings.GroupCaption.Value" Value="Assignees group" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Caption" Value="Hide system messages" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Value" Value="Hide system messages" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Caption" Value="History" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Value" Value="History" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="More than one queue element connected to the process. Process Id: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelByServiceModuleCaption.Value" Value="Display service dependencies" />
+			<Item Name="LocalizableStrings.OwnerCaption.Value" Value="OwnerCaption" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Caption" Value="Case profile" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Value" Value="Case profile" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Re-queue" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Unable to re-queue item. Error message: {0}" />
+			<Item Name="LocalizableStrings.PrioritizationTitle.Value" Value="Prioritize" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Caption" Value="Processing" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Value" Value="Processing" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Page is not connected to the agent desktop queue element. Action cancelled." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Unable to re-queue item" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Successfully re-queued" />
+			<Item Name="LocalizableStrings.ReclassificationTitle.Value" Value="Reclassify" />
+			<Item Name="LocalizableStrings.RegistrationProblemCaption.Value" Value="Registration problem" />
+			<Item Name="LocalizableStrings.SchemaLocalizableString1.Caption" Value="Message to user 1" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Caption" Value="Search for similar cases" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Value" Value="Search for similar cases" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessageByLic.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and  &quot;Service agreements&quot; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Caption" Value="ServiceItemTipMessage" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and   &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Caption" Value="ServicePactTipMessage" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Value" Value="&lt;p&gt;Service level agreements (SLA) determine the scope of services provided to different types of customers, as well as conditions for rendering subcontracted and internal services. Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; section to create and modify service agreements &lt;/p&gt;" />
+			<Item Name="LocalizableStrings.SetCaseContactMessage.Value" Value="Specify {0} as contact in case?" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Caption" Value="Show system messages" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Value" Value="Show system messages" />
+			<Item Name="LocalizableStrings.SolutionFieldPlaceholder.Value" Value="Resolution description" />
+			<Item Name="LocalizableStrings.SolvedOnSupportLevelCaption.Value" Value="Support level" />
+			<Item Name="LocalizableStrings.StandardErrorCaption.Value" Value="Error filling column. See input rule settings." />
+			<Item Name="LocalizableStrings.SupportLevelCaption.Value" Value="Support level" />
+			<Item Name="LocalizableStrings.SymptomsCaption.Value" Value="Symptoms" />
+			<Item Name="LocalizableStrings.UsrSchema1fd268acDetail39459c03DetailCaptionOnPage.Value" Value="Time to prioritize" />
+			<Item Name="LocalizableStrings.UsrSchema1fd268acDetaila97a005cDetailCaptionOnPage.Value" Value="Time to prioritize" />
+			<Item Name="LocalizableStrings.UsrSchema1fd268acDetailb6099896DetailCaptionOnPage.Value" Value="Time to prioritize" />
+			<Item Name="LocalizableStrings.ValidationMessage.Value" Value="filled in violation of the established validation conditions." />
+		</Items>
+	</Group>
+</Resources>

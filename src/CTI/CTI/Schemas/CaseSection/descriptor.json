@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "9029d19a-101a-4c3f-bc9b-eeffc245d30e",
+    "Name": "CaseSection",
+    "ModifiedOnUtc": "\/Date(1742993028000)\/",
+    "Parent": {
+      "UId": "23827614-0f6f-490b-a75b-33c1015ca8a4",
+      "Name": "CaseSection"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Обращения\"",
+    "DependsOn": []
+  }
+}

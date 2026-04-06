@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="de-DE">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="ServiceItemPage" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Verschieben bis" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Mehr als ein mit Prozess verbundenes Queue--Element gefunden. Prozess-ID: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelModuleCaption.Value" Value="Abhängigkeiten anzeigen" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Re-queue" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Item kann nicht wieder gequeued werden. Fehlernachricht: {0}" />
+			<Item Name="LocalizableStrings.Problems.Value" Value="Probleme" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Seite ist nicht zum Agentendesktop-Queueelement verbunden. Aktion abgebrochen." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Item kann nicht wieder gequeued werden" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Erfolgreich Re-Queued" />
+			<Item Name="LocalizableStrings.RelationshipTabCaption.Caption" Value="Verbunden zu" />
+			<Item Name="LocalizableStrings.RelationshipTabCaption.Value" Value="Verbunden zu" />
+			<Item Name="LocalizableStrings.UsersTabCaption.Value" Value="Benutzer" />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "523dc8dd-9b0e-4bef-984a-9819a4de2444",
+    "Name": "UsrConfItemCatalogf32db843Section",
+    "ModifiedOnUtc": "\/Date(1744975192000)\/",
+    "Parent": {
+      "UId": "7912fb69-4fee-429f-8b23-93943c35d66d",
+      "Name": "BaseSectionV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Конфигурационная единица в сервисной договоре\"",
+    "DependsOn": []
+  }
+}

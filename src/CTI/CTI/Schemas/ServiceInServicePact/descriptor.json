@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "009eface-fcbd-458e-b5c8-03bc04a75260",
+    "Name": "ServiceInServicePact",
+    "ModifiedOnUtc": "\/Date(1774344920000)\/",
+    "Parent": {
+      "UId": "d01c9dd6-2cb2-41d6-8fcd-29b86ed70b1b",
+      "Name": "ServiceInServicePact"
+    },
+    "ExtendParent": true,
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Сервис в сервисном договоре",
+    "DependsOn": []
+  }
+}

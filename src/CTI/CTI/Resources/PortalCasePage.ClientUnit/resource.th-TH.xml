@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="th-TH">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="เลื่อนไปจนถึง" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="มีองค์ประกอบคิวมากกว่าหนึ่งที่เชื่อมต่อกับกระบวนการ  ไอดีของกระบวนการ: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="จัดคิวใหม่" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="ไม่สามารถจัดคิวรายการใหม่  ข้อความผิดพลาด: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="หน้าไม่ได้เชื่อมต่อกับองค์ประกอบคิวในเดสท้อปของตัวแทน การทำงานถูกยกเลิก." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="ไม่สามารถจัดคิวรายการใหม่" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="จัดคิวใหม่ได้สำเร็จ" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="คุณไม่มีบริการใดๆให้ใช้ โปรดติดต่อทีมงานสนับสนุน." />
+		</Items>
+	</Group>
+</Resources>

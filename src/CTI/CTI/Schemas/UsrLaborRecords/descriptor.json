@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "d4459d30-e952-43c9-81a2-5c9441fefd16",
+    "Name": "UsrLaborRecords",
+    "ModifiedOnUtc": "\/Date(1745319371000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Записи трудозатрат",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "0a42574b-3972-4b89-bee6-90615a875082",
+    "Name": "CaseInFolder",
+    "ModifiedOnUtc": "\/Date(1743146450000)\/",
+    "Parent": {
+      "UId": "3b621e1f-8573-4eb6-898c-dbc2929c9dd0",
+      "Name": "CaseInFolder"
+    },
+    "ExtendParent": true,
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Объект \"Обращения\" в группе",
+    "DependsOn": []
+  }
+}

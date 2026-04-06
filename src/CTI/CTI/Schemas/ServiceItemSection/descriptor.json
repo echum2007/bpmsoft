@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "54b016be-7668-413c-b3fa-87e9b58b2a80",
+    "Name": "ServiceItemSection",
+    "ModifiedOnUtc": "\/Date(1743073198000)\/",
+    "Parent": {
+      "UId": "46be842d-ad07-493e-9e0d-47741bf05901",
+      "Name": "ServiceItemSection"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема раздела: \"Сервисы\"",
+    "DependsOn": []
+  }
+}

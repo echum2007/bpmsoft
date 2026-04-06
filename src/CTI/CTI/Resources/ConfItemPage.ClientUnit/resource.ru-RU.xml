@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="ConfItemPage" />
+			<Item Name="Images.a3ad2cc6-6314-426f-ade2-c793b31a8986.Image" Type="Image" ContentType="Data" FileExtension=".svg" Value="PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzEwNTNfMTY3ODMwKSI+CjxwYXRoIGQ9Ik0yMC43NDIgNy41MzI4OUMyMC45MTU1IDUuMTAzNzMgMTguODk2NCAzLjA4NDU2IDE2LjQ2NzIgMy4yNTgwN0wxMS44OTgyIDMuNTg0NDNDMTAuOTM4MyAzLjY1MyAxMC4wMzUyIDQuMDY1MzQgOS4zNTQ3NSA0Ljc0NTg0TDQuODA3MzkgOS4yOTMyQzMuMjQ1MjkgMTAuODU1MyAzLjI0NTI5IDEzLjM4OCA0LjgwNzM4IDE0Ljk1MDFMNS4wMjQ5NiAxNS4xNjc2TDYuOTI4NzEgMTcuMDcxNEw4LjgzMjQ1IDE4Ljk3NTFMOS4wNTAwMyAxOS4xOTI3QzEwLjYxMjEgMjAuNzU0OCAxMy4xNDQ4IDIwLjc1NDggMTQuNzA2OSAxOS4xOTI3TDE5LjI1NDIgMTQuNjQ1M0MxOS45MzQ3IDEzLjk2NDggMjAuMzQ3MSAxMy4wNjE4IDIwLjQxNTcgMTIuMTAxOUwyMC43NDIgNy41MzI4OVoiIHN0cm9rZT0iIzY3NzQ4RSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0xMy45OTk4IDkuOTk5OTdDMTQuNzgwOSAxMC43ODEgMTYuMDQ3MiAxMC43ODEgMTYuODI4MyA5Ljk5OTk2QzE3LjYwOTMgOS4yMTg5MiAxNy42MDkzIDcuOTUyNTkgMTYuODI4MyA3LjE3MTU0QzE2LjA0NzIgNi4zOTA0OSAxNC43ODA5IDYuMzkwNDkgMTMuOTk5OCA3LjE3MTU0QzEzLjIxODggNy45NTI1OSAxMy4yMTg4IDkuMjE4OTIgMTMuOTk5OCA5Ljk5OTk3WiIgc3Ryb2tlPSIjNjc3NDhFIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfMTA1M18xNjc4MzAiPgo8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Запланировать на дату" />
+			<Item Name="LocalizableStrings.ConfItemUserDetail6fac1fccDetailCaptionOnPage.Value" Value="Пользователи" />
+			<Item Name="LocalizableStrings.FieldValidationMessage.Value" Value="Поля:" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Найдено более одного элементов очереди связанных с процессом. Идентификатор процесса: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelModuleCaption.Value" Value="Отобразить зависимости" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Вернуть в очередь" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Ошибка возвращения элемента в очередь. Сообщение об ошибке: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Страница не связана с элементом очереди единого окна. Действие отменено." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Ошибка при возвращении элемента в очередь" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Элемент успешно возвращен в очередь" />
+			<Item Name="LocalizableStrings.RelationshipTabCaption.Caption" Value="Взаимосвязи" />
+			<Item Name="LocalizableStrings.RelationshipTabCaption.Value" Value="Взаимосвязи" />
+			<Item Name="LocalizableStrings.StandardErrorCaption.Value" Value="Ошибка в заполнении колонки. См. настройки правил ввода." />
+			<Item Name="LocalizableStrings.ValidationMessage.Value" Value="заполнены с нарушением установленных условий валидации." />
+		</Items>
+	</Group>
+</Resources>

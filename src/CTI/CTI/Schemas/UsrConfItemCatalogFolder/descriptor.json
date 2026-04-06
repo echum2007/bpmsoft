@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "3042db48-48e7-46c4-b72c-6529f17c167d",
+    "Name": "UsrConfItemCatalogFolder",
+    "ModifiedOnUtc": "\/Date(1744975207000)\/",
+    "Parent": {
+      "UId": "d602bf96-d029-4b07-9755-63c8f5cb5ed5",
+      "Name": "BaseFolder"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Группа Конфигурационная единица в сервисной договоре",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ru-RU">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.AddDataUserTask1.Caption" Value="Добавить данные e-mail уведомления" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.ConsiderTimeInFilter.DisplayValue" Value="false" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Фильтры источника данных" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.EntitySchemaId.Caption" Value="Объект" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.FilterEntitySchemaId.Caption" Value="Объект выборки" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordAddMode.Caption" Value="Режим добавления записей" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordDefValues.Caption" Value="Значения полей" />
+			<Item Name="BaseElements.AddDataUserTask1.Parameters.RecordId.Caption" Value="Id созданной записи" />
+			<Item Name="BaseElements.ConditionalFlow1.Caption" Value="E-mail ответственного указан" />
+			<Item Name="BaseElements.ConditionalFlow2.Caption" Value="Ответственный = Изменил" />
+			<Item Name="BaseElements.ConditionalSequenceFlow1.Caption" Value="Происхождение по Email" />
+			<Item Name="BaseElements.ExclusiveGateway1.Caption" Value="Происхождение по email?" />
+			<Item Name="BaseElements.FillEmailUserTask.Caption" Value="Обработать шаблон письма с макросами" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.Body.Caption" Value="Тело" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.RecordId.Caption" Value="Id записи" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.RecordId.DisplayValue" Value="[#Читать данные обращения.Первый элемент результирующей коллекции.Id#]" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.Subject.Caption" Value="Тема" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.SysEntitySchemaId.Caption" Value="SysEntitySchemaId" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.SysEntitySchemaId.DisplayValue" Value="[#Читать данные схемы Обращение.Первый элемент результирующей коллекции.UId#]" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.TemplateId.Caption" Value="Код шаблона" />
+			<Item Name="BaseElements.FillEmailUserTask.Parameters.TemplateId.DisplayValue" Value="[#Справочник.Шаблон email сообщения.Назначение ответственного в обращении#]" />
+			<Item Name="BaseElements.FormulaTask1.Caption" Value="Изменить тему письма" />
+			<Item Name="BaseElements.ReadDataUserTask1.Caption" Value="Читать данные обращения" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Имя колонки для агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Выполнять &quot;грязное чтение&quot;" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Источник данных фильтров" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Перечень колонок для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Тип агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Не читать отображаемые значения колонок Справочников" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Количество записей для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Порядок сортировки колонок" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Читать первые" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Коллекция записей" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Количество записей" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="Первый элемент результирующей коллекции" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Результирующая коллекция" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Количество прочитанных записей" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Тип результата" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ReadDataUserTask2.Caption" Value="Читать данные ответственного" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="Имя колонки для агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="Выполнять &quot;грязное чтение&quot;" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Источник данных фильтров" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="Перечень колонок для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="Тип агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="Не читать отображаемые значения колонок Справочников" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="Количество записей для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="Порядок сортировки колонок" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="Читать первые" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="Коллекция записей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="Количество записей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="Первый элемент результирующей коллекции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="Результирующая коллекция" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Количество прочитанных записей" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Тип результата" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ReadDataUserTask3.Caption" Value="Читать данные схемы Обращение" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.AggregationColumnName.Caption" Value="Имя колонки для агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.CanReadUncommitedData.Caption" Value="Выполнять &quot;грязное чтение&quot;" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.DataSourceFilters.Caption" Value="Источник данных фильтров" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.EntityColumnMetaPathes.Caption" Value="Перечень колонок для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.Caption" Value="Тип агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.FunctionType.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.IgnoreDisplayValues.Caption" Value="Не читать отображаемые значения колонок Справочников" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.NumberOfRecords.Caption" Value="Количество записей для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.OrderInfo.Caption" Value="Порядок сортировки колонок" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ReadSomeTopRecords.Caption" Value="Читать первые" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCompositeObjectList.Caption" Value="Коллекция записей" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultCount.Caption" Value="Количество записей" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultDateTimeFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntity.Caption" Value="Первый элемент результирующей коллекции" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultEntityCollection.Caption" Value="Результирующая коллекция" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultFloatFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultIntegerFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultRowsCount.Caption" Value="Количество прочитанных записей" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.Caption" Value="Тип результата" />
+			<Item Name="BaseElements.ReadDataUserTask3.Parameters.ResultType.DisplayValue" Value="0" />
+			<Item Name="BaseElements.ReadDataUserTask4.Caption" Value="Первая активность" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.AggregationColumnName.Caption" Value="Имя колонки для агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.CanReadUncommitedData.Caption" Value="Выполнять &quot;грязное чтение&quot;" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ConsiderTimeInFilter.Caption" Value="Учитывать время в фильтре" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.DataSourceFilters.Caption" Value="Источник данных фильтров" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.EntityColumnMetaPathes.Caption" Value="Перечень колонок для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.FunctionType.Caption" Value="Тип агрегирующей функции" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.IgnoreDisplayValues.Caption" Value="Не читать отображаемые значения колонок Справочников" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.NumberOfRecords.Caption" Value="Количество записей для чтения" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.OrderInfo.Caption" Value="Порядок сортировки колонок" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ReadSomeTopRecords.Caption" Value="Читать первые" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCompositeObjectList.Caption" Value="Коллекция записей" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultCount.Caption" Value="Количество записей" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultDateTimeFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntity.Caption" Value="Первый элемент результирующей коллекции" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultEntityCollection.Caption" Value="Результирующая коллекция" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultFloatFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultIntegerFunction.Caption" Value="Результат функции" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultRowsCount.Caption" Value="Количество прочитанных записей" />
+			<Item Name="BaseElements.ReadDataUserTask4.Parameters.ResultType.Caption" Value="Тип результата" />
+			<Item Name="BaseElements.ScriptTask1.Caption" Value="Отправить письмо" />
+			<Item Name="BaseElements.StartSignal1.Caption" Value="Обращение назначено на ответственного" />
+			<Item Name="BaseElements.StartSignal1.EntityFilters.Value" Value="{_isFilter:false,uId:&quot;f60c7f3b-6dbf-4b13-911c-17bea600ba65&quot;,name:&quot;FilterEdit&quot;,items:[{_isFilter:true,_filterSchemaUId:&quot;117d32f9-8275-4534-8411-1c66115ce9cd&quot;,uId:&quot;79dd2fee-2958-4ed2-924e-92ffe4c95776&quot;,leftExpression:{expressionType:&quot;SchemaColumn&quot;,metaPath:&quot;70620d00-e4ea-48d1-9fdc-4572fcd8d41b&quot;,caption:&quot;Ответственный&quot;,referenceSchemaUId:&quot;16be3651-8fe2-4159-8dd0-a803d4683dd3&quot;,dataValueType:{id:&quot;b295071f-7ea9-4e62-8d1a-919bf3732ff2&quot;,name:&quot;Lookup&quot;,isNumeric:false,editor:{controlTypeName:&quot;LookupEdit&quot;,controlXType:&quot;lookupedit&quot;},useClientEncoding:true}},comparisonType:&quot;IsNotNull&quot;}]}" />
+			<Item Name="BaseElements.StartSignal2.Caption" Value="Создано обращение с ответственным" />
+			<Item Name="BaseElements.StartSignal2.EntityFilters.Value" Value="{_isFilter:false,uId:&quot;84d81574-e083-4432-9e08-4593cf01c7fd&quot;,name:&quot;FilterEdit&quot;,items:[{_isFilter:true,_filterSchemaUId:&quot;117d32f9-8275-4534-8411-1c66115ce9cd&quot;,uId:&quot;424a8cff-ef5c-43b8-aaac-0f3739fa6f8a&quot;,leftExpression:{expressionType:&quot;SchemaColumn&quot;,metaPath:&quot;70620d00-e4ea-48d1-9fdc-4572fcd8d41b&quot;,caption:&quot;Ответственный&quot;,referenceSchemaUId:&quot;16be3651-8fe2-4159-8dd0-a803d4683dd3&quot;,dataValueType:{id:&quot;b295071f-7ea9-4e62-8d1a-919bf3732ff2&quot;,name:&quot;Lookup&quot;,isNumeric:false,editor:{controlTypeName:&quot;LookupEdit&quot;,controlXType:&quot;lookupedit&quot;},useClientEncoding:true}},comparisonType:&quot;IsNotNull&quot;}]}" />
+			<Item Name="Caption" Value="Отправка email сообщения ответственному о назначении обращения" />
+			<Item Name="LaneSets.LaneSet1.Caption" Value="Пул 1" />
+			<Item Name="LaneSets.LaneSet1.Lanes.Lane1.Caption" Value="Дорожка 1" />
+			<Item Name="NotificationCaption.DisplayValue" Value="[#[PropertyValue:Caption]#]" />
+			<Item Name="Parameters.CaseRecordId.Caption" Value="Case record Id" />
+			<Item Name="Parameters.CaseRecordId.DisplayValue" Value="[#Читать данные обращения.Первый элемент результирующей коллекции.Id#]" />
+			<Item Name="Parameters.IsCloseAndExit.Caption" Value="IsCloseAndExit" />
+			<Item Name="Parameters.SenderEmail.Caption" Value="Почта отправителя" />
+			<Item Name="Parameters.SenderEmail.DisplayValue" Value="[#Системная настройка.E-mail службы поддержки#]" />
+			<Item Name="Parameters.Subject.Caption" Value="Subject" />
+			<Item Name="Parameters.Subject.DisplayValue" Value="[#Обработать шаблон письма с макросами.Тема#]" />
+			<Item Name="Parameters.TemplateId.Caption" Value="Код шаблона" />
+			<Item Name="Parameters.TemplateId.DisplayValue" Value="[#Справочник.Шаблон сообщения.Назначение ответственного в обращении.b47e41c6-94d0-4d02-8531-4054c157c2ac#]" />
+		</Items>
+	</Group>
+</Resources>

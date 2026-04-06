@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "2769a020-a622-498f-a15d-a9449e30dd16",
+    "Name": "UsrSendNotificationToCaseOwnerCustom1",
+    "ModifiedOnUtc": "\/Date(1747056223000)\/",
+    "Parent": {
+      "UId": "53d09a3b-5a42-48cd-bd0c-f36c9a389625",
+      "Name": "SendNotificationToCaseOwner"
+    },
+    "ManagerName": "ProcessSchemaManager",
+    "Caption": "Переоткрытие обращения и отправка email сообщения ответственному о новом комментарии",
+    "DependsOn": []
+  }
+}

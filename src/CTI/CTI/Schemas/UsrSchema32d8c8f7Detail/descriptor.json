@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "8bf2a5e7-b4c0-47b9-8bc0-04bb6cc5137b",
+    "Name": "UsrSchema32d8c8f7Detail",
+    "ModifiedOnUtc": "\/Date(1774346256000)\/",
+    "Parent": {
+      "UId": "01eb38ee-668a-42f0-999d-c2534f979089",
+      "Name": "BaseGridDetailV2"
+    },
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема детали: \"Сроки с приоритетами\"",
+    "DependsOn": []
+  }
+}

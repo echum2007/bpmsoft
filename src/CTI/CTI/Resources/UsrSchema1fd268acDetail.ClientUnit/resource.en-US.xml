@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Time to prioritize" />
+			<Item Name="Images.1f275373-2b4b-4abd-9613-83e96d068ec7.Image" Type="Image" ContentType="Data" FileExtension=".svg" Value="PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjI5IDE0LjcxTDYuNjk5OTcgMTAuMTJDNi4zMDk5NyA5LjczIDYuMzA5OTcgOS4xIDYuNjk5OTcgOC43MUM3LjA4OTk3IDguMzIgNy43MTk5NyA4LjMyIDguMTA5OTcgOC43MUwxMiAxMi41OUwxNS44OCA4LjcxQzE2LjI3IDguMzIgMTYuOSA4LjMyIDE3LjI5IDguNzFDMTcuNjggOS4xIDE3LjY4IDkuNzMgMTcuMjkgMTAuMTJMMTIuNyAxNC43MUMxMi4zMiAxNS4xIDExLjY4IDE1LjEgMTEuMjkgMTQuNzFaIiBmaWxsPSIjRjk3NjNEIi8+Cjwvc3ZnPgo=" />
+			<Item Name="LocalizableStrings.Caption.Value" Value="Time to prioritize" />
+		</Items>
+	</Group>
+</Resources>

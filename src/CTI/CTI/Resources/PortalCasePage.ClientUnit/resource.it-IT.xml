@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="it-IT">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Rinvia fino a" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Più di un elemento della coda è collegato al processo. Id processo: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Riaccoda" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Impossibile riaccodare l'elemento. Messaggio d'errore: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="La pagina non è collegata all'elemento della coda del desktop agente. Azione annullata." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Impossibile riaccodare l'elemento" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Riaccodato con successo" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Non hai servizi disponibili. Si prega di contattare il team di supporto." />
+		</Items>
+	</Group>
+</Resources>

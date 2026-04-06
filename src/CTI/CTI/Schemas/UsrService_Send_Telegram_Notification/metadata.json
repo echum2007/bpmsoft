@@ -1,0 +1,127 @@
+﻿{
+  "MetaData": {
+    "Schema": {
+      "ManagerName": "ServiceSchemaManager",
+      "UId": "be4fc0b9-10e3-4371-a09d-979d7513f94a",
+      "A2": "UsrService_Send_Telegram_Notification",
+      "A5": "14785d45-53f7-441d-8d5e-191868817668",
+      "B1": [],
+      "B2": [],
+      "B3": [],
+      "B6": "21b087cf-bb70-cdc0-5180-6979fdd2220c",
+      "B8": "1.6.0.200",
+      "IQ1": "https://api.telegram.org/",
+      "IQ2": 1,
+      "IQ3": 3,
+      "IQ7": [],
+      "IQ4": [
+        {
+          "UId": "be068364-d493-4665-a5e6-44cd48abd822",
+          "A2": "UsrMethod_Send_Telegram",
+          "A3": "be4fc0b9-10e3-4371-a09d-979d7513f94a",
+          "A4": "be4fc0b9-10e3-4371-a09d-979d7513f94a",
+          "IR3": 5000,
+          "IR5": "null",
+          "IR1": {
+            "IW2": 1,
+            "IW1": [
+              {
+                "UId": "0b324ce4-f224-4f9f-bfbd-d5afac87b3e9",
+                "A2": "UsrReqIdTg",
+                "IU1": "$.request_id",
+                "IU2": "Text",
+                "IU9": "null",
+                "IU7": true,
+                "IU8": "item",
+                "IU4": 1,
+                "IU5": {
+                  "IV1": "null",
+                  "IV2": 1
+                },
+                "IU6": []
+              },
+              {
+                "UId": "8a6b2417-65da-422b-ac68-7f5bfe909bdb",
+                "A2": "UsrChatIdTg",
+                "IU1": "$.chat_id",
+                "IU2": "Text",
+                "IU9": "null",
+                "IU8": "item",
+                "IU4": 1,
+                "IU5": {
+                  "IV1": "-863332224",
+                  "IV2": 1
+                },
+                "IU6": []
+              },
+              {
+                "UId": "9faa4449-a24b-4e32-8a7d-22cd99e3a0b7",
+                "A2": "UsrTextIdTg",
+                "IU1": "$.text",
+                "IU2": "Text",
+                "IU9": "null",
+                "IU7": true,
+                "IU8": "item",
+                "IU4": 1,
+                "IU5": {
+                  "IV1": "null",
+                  "IV2": 1
+                },
+                "IU6": []
+              },
+              {
+                "UId": "e45ea8ac-7b76-48f9-b67c-dc5b6e1f1843",
+                "A2": "UsrParameter1",
+                "IU1": "$.parse_mode",
+                "IU2": "Text",
+                "IU9": "null",
+                "IU8": "item",
+                "IU4": 1,
+                "IU5": {
+                  "IV1": "Markdown",
+                  "IV2": 1
+                },
+                "IU6": []
+              },
+              {
+                "UId": "85d1c62f-7bae-4922-867e-6716f508f559",
+                "A2": "UsrStatusIdTg",
+                "IU1": "$.status",
+                "IU2": "Text",
+                "IU9": "null",
+                "IU7": true,
+                "IU8": "item",
+                "IU4": 1,
+                "IU5": {
+                  "IV1": "null",
+                  "IV2": 1
+                },
+                "IU6": []
+              },
+              {
+                "UId": "4648d10b-58d2-4170-9241-c20101e30c33",
+                "A2": "UsrOwnerNameIdTg",
+                "IU1": "$.owner_name",
+                "IU2": "Text",
+                "IU9": "null",
+                "IU8": "item",
+                "IU4": 1,
+                "IU5": {
+                  "IV1": "null",
+                  "IV2": 1
+                },
+                "IU6": []
+              }
+            ],
+            "IT2": 2,
+            "IT1": "/bot8548373761:AAEsFNsa53KPGKSOTVaR9jyzVkfrRhVWo7I/sendMessage"
+          },
+          "IR2": {
+            "IW2": 1,
+            "IW1": []
+          }
+        }
+      ]
+    }
+  }
+}

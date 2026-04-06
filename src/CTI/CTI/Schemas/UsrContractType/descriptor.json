@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "3ca4d5ae-35f3-457e-9073-f6b11d746261",
+    "Name": "UsrContractType",
+    "ModifiedOnUtc": "\/Date(1750418525000)\/",
+    "Parent": {
+      "UId": "11ab4bcb-9b23-4b6d-9c86-520fae925d75",
+      "Name": "BaseLookup"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Вид сервисного договора",
+    "DependsOn": []
+  }
+}

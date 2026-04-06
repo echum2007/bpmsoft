@@ -1,0 +1,46 @@
+# Системные пакеты BPMSoft — бинарные gzip-архивы (112MB), не наш код
+src/All packages/
+
+# Заголовки зависимых пакетов — системный код BPMSoft, не наш
+# Храним только src/CTI/CTI/ — наш рабочий пакет
+src/CTI/AnalyticsDashboard/
+src/CTI/Base/
+src/CTI/CampaignDesigner/
+src/CTI/CaseService/
+src/CTI/ContentBuilder/
+src/CTI/CoreForecast/
+src/CTI/Custom/
+src/CTI/Deduplication/
+src/CTI/DesignerTools/
+src/CTI/Exchange/
+src/CTI/HomePage/
+src/CTI/IntegrationV2/
+src/CTI/MarketingCampaign/
+src/CTI/MobileWebView/
+src/CTI/NUI/
+src/CTI/OmnichannelMessaging/
+src/CTI/OpenIdAuth/
+src/CTI/PivotTable/
+src/CTI/Platform/
+src/CTI/RelationshipDesigner/
+src/CTI/ServiceDesigner/
+src/CTI/ServiceModel/
+src/CTI/SspWorkplace/
+src/CTI/Tracking/
+src/CTI/UIv2/
+src/CTI/Workplace/
+src/CTI/ubsgate/
+
+# Официальная PDF-документация BPMSoft (156MB) — не наш контент
+Documentation 1.9/
+
+# Артефакты — старые папки
+vs code/
+
+# Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# VS Code
+.vscode/

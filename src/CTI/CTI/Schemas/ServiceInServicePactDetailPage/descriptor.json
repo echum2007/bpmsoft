@@ -1,0 +1,15 @@
+﻿{
+  "Descriptor": {
+    "UId": "687e0b02-309b-4705-955d-d8ad4cdeb125",
+    "Name": "ServiceInServicePactDetailPage",
+    "ModifiedOnUtc": "\/Date(1774348019000)\/",
+    "Parent": {
+      "UId": "f263118b-ff17-4fe9-9cfb-bb5aba92007a",
+      "Name": "ServiceInServicePactDetailPage"
+    },
+    "ExtendParent": true,
+    "ManagerName": "ClientUnitSchemaManager",
+    "Caption": "Схема страницы редактирования детали \"Сервис в сервисном договоре\"",
+    "DependsOn": []
+  }
+}

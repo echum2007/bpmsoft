@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pl-PL">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Odłóż do" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Więcej niż jeden element kolejki podłączony do procesu. Identyfikator procesu: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Ponowna kolejka" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Nie można ponownie umieścić elementu w kolejce. Komunikat o błędzie: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Strona nie jest połączona z elementem kolejki pulpitu konsultanta. Akcja anulowana." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Nie można ponownie umieścić elementu w kolejce" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Pomyślnie ponownie zakolejkowne" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="You have no services available.  Please contact support team." />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="en-US">
+	<Group Type="String">
+		<Items>
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Account.Caption" Value="Account" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityCategory.Caption" Value="Category" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityCategory.DisplayValue" Value="[#Lookup.961e2086-a12b-4d27-b095-40b1e64d6cc0.8038a396-7825-e011-8165-00155d043204#]" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityId.Caption" Value="Task Id" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ActivityResult.Caption" Value="Result of activity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Body.Caption" Value="Body" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyConfig.Caption" Value="Body config for content builder" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.BodyTemplateType.Caption" Value="What kind of email to send?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Case.Caption" Value="Case" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Change.Caption" Value="Change" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ConfItem.Caption" Value="Configuration item" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contact.Caption" Value="Contact" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Contract.Caption" Value="Contract" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CreateActivity.Caption" Value="Create activity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.CreateActivity.DisplayValue" Value="false" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Document.Caption" Value="Document" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Duration.Caption" Value="Duration" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Duration.DisplayValue" Value="5" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.DurationPeriod.Caption" Value="Duration (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.DurationPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateEntityId.Caption" Value="Record for macros" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.EmailTemplateId.Caption" Value="Template message" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ExecutionContext.Caption" Value="Execution context" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IgnoreErrors.Caption" Value="Ignore email errors" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IgnoreErrors.DisplayValue" Value="True" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Importance.Caption" Value="Importance" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Importance.DisplayValue" Value="1" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Incident.Caption" Value="Incident" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.InformationOnStep.Caption" Value="Information on step" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Invoice.Caption" Value="Invoice" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.IsActivityCompleted.Caption" Value="Activity completed" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Lead.Caption" Value="Lead" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Listing.Caption" Value="Listing" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Opportunity.Caption" Value="Opportunity" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Order.Caption" Value="Order" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.OwnerId.Caption" Value="Owner" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Problem.Caption" Value="Problem" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Project.Caption" Value="Project" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Property.Caption" Value="Property" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.QueueItem.Caption" Value="Queue item" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Recommendation.Caption" Value="Recommendation" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Release.Caption" Value="Release" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBefore.Caption" Value="Remind owner in advance" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBefore.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBeforePeriod.Caption" Value="Remind owner in advance (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.RemindBeforePeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Requests.Caption" Value="Request" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.SendEmailType.Caption" Value="How is the message sent?" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Sender.Caption" Value="From" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowExecutionPage.Caption" Value="Show execution page automatically" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowExecutionPage.DisplayValue" Value="True" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowInScheduler.Caption" Value="Show in calendar" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.ShowInScheduler.DisplayValue" Value="False" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartIn.Caption" Value="Start executing in" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartIn.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartInPeriod.Caption" Value="Start executing in (period)" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.StartInPeriod.DisplayValue" Value="0" />
+			<Item Name="BaseElements.EmailTemplateUserTask2.Parameters.Subject.Caption" Value="Subject" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultDateTimeFunction.Caption" Value="Function result" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultFloatFunction.Caption" Value="Function result" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultIntegerFunction.Caption" Value="Function result" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask1.Parameters.ResultType.Caption" Value="Type of result" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.AggregationColumnName.Caption" Value="Name of aggregate function column" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.CanReadUncommitedData.Caption" Value="Read uncommitted data" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ConsiderTimeInFilter.Caption" Value="Consider time in the filter" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.DataSourceFilters.Caption" Value="Data source of filters" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.EntityColumnMetaPathes.Caption" Value="Columns to read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.FunctionType.Caption" Value="Aggregate function type" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.IgnoreDisplayValues.Caption" Value="Do not read displayed values of lookup columns" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.NumberOfRecords.Caption" Value="Number of records to read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.OrderInfo.Caption" Value="Columns order" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ReadSomeTopRecords.Caption" Value="Read first" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCompositeObjectList.Caption" Value="Collection of records" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultCount.Caption" Value="Number of records" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultDateTimeFunction.Caption" Value="Function result" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntity.Caption" Value="First item of resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultEntityCollection.Caption" Value="Resulting collection" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultFloatFunction.Caption" Value="Function result" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultIntegerFunction.Caption" Value="Function result" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultRowsCount.Caption" Value="Number of records read" />
+			<Item Name="BaseElements.ReadDataUserTask2.Parameters.ResultType.Caption" Value="Type of result" />
+		</Items>
+	</Group>
+</Resources>

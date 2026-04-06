@@ -1,0 +1,10 @@
+﻿{
+  "Descriptor": {
+    "UId": "be4fc0b9-10e3-4371-a09d-979d7513f94a",
+    "Name": "UsrService_Send_Telegram_Notification",
+    "ModifiedOnUtc": "\/Date(1764575344000)\/",
+    "ManagerName": "ServiceSchemaManager",
+    "Caption": "Send Telegram Notification",
+    "DependsOn": []
+  }
+}
