@@ -1,0 +1,470 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e5]:
+        - generic [ref=e9]:
+          - link [ref=e12] [cursor=pointer]:
+            - /url: https://bpmsoft.ru
+          - generic [ref=e13]:
+            - button "Развернуть поиск" [ref=e15] [cursor=pointer]:
+              - img [ref=e17]
+            - generic [ref=e19]:
+              - button "Заявка" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: Заявка
+              - button "Демоверсия" [ref=e22] [cursor=pointer]:
+                - generic [ref=e23]: Демоверсия
+              - button [ref=e26] [cursor=pointer]
+              - button [ref=e28] [cursor=pointer]:
+                - img [ref=e30]
+    - main [ref=e32]:
+      - navigation [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Школа" [ref=e38] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e39]:
+            - link "База знаний" [ref=e40] [cursor=pointer]:
+              - /url: /baza-znaniy/
+          - listitem [ref=e41]:
+            - link "Онлайн-курсы" [ref=e42] [cursor=pointer]:
+              - /url: /online-kursy/
+          - listitem [ref=e43]:
+            - link "Сертификация" [ref=e44] [cursor=pointer]:
+              - /url: /sertifikaciya-i-testirovanie/
+          - listitem [ref=e45]:
+            - link "Обновления и релизы" [ref=e46] [cursor=pointer]:
+              - /url: /obnovleniya-i-relizi/
+          - listitem [ref=e47]:
+            - link "Обучение" [ref=e48] [cursor=pointer]:
+              - /url: /treningi/
+      - navigation [ref=e49]:
+        - generic [ref=e51]:
+          - link "Главная" [ref=e52] [cursor=pointer]:
+            - /url: https://bpmsoft.ru
+          - link "/Школа low-code" [ref=e53] [cursor=pointer]:
+            - /url: /
+          - link "/База знаний" [ref=e54] [cursor=pointer]:
+            - /url: /baza-znaniy/
+          - link "/Для разработчика" [ref=e55] [cursor=pointer]:
+            - /url: /baza-znaniy/dlya-razrabotchika/
+          - link "/Клиентская разработка" [ref=e56] [cursor=pointer]:
+            - /url: /baza-znaniy/klientskaya-razrabotka/
+          - link "/Данные" [ref=e57] [cursor=pointer]:
+            - /url: /baza-znaniy/dannye/
+          - generic [ref=e58]: /Операции с данными (front-end)
+      - generic [ref=e65]:
+        - img [ref=e67] [cursor=pointer]
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - heading "Операции с данными (front-end)" [level=1] [ref=e71]:
+              - text: Операции с данными
+              - generic [ref=e72]:
+                - text: (front-end)
+                - img [ref=e74] [cursor=pointer]
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - img [ref=e78]
+                - text: Средний
+              - generic [ref=e80]:
+                - link "Скачать" [ref=e81] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/docs/export?iblock=189&type=article&id=32134
+                  - generic [ref=e82]: Скачать
+                  - img [ref=e83]
+                - generic [ref=e85]:
+                  - generic [ref=e86] [cursor=pointer]:
+                    - text: Версия 1.9
+                    - img [ref=e87]
+                  - list [ref=e88]:
+                    - listitem [ref=e89]:
+                      - link "Версия 1.9" [ref=e90] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e91]:
+                      - link "Версия 1.8" [ref=e92] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e93]:
+                      - link "Версия 1.7" [ref=e94] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e95]:
+                      - link "Версия 1.6" [ref=e96] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem
+                    - listitem [ref=e97]:
+                      - link "Архив" [ref=e98] [cursor=pointer]:
+                        - /url: /baza-znaniy/archive/
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Для работы с данными в front-end части BPMSoft используется высокоуровневый класс EntitySchemaQuery. Он необходим для получения информации из таблиц базы данных путем создания запросов, с указанием различного перечня колонок, связей, фильтров и сортировки.
+            - paragraph [ref=e106]: "У класса есть две важные особенности:"
+            - list [ref=e107]:
+              - listitem [ref=e108]: • При выполнении запроса учитываются права пользователя, под которым он осуществляется, что предотвращает возможность получения недоступной ему информации;
+              - listitem [ref=e109]: • Класс позволяет кэшировать часто выполняемые запросы. Благодаря данной возможности можно увеличить производительность, исключая необходимость обращаться к базе данных каждый раз, когда вызывается регулярный запрос.
+            - paragraph [ref=e110]: "Получение данных через класс осуществляется посредством следующих действий:"
+            - list [ref=e111]:
+              - listitem [ref=e112]: Инициализация экземпляра класса с указанием корневой схемы.
+              - listitem [ref=e113]: Добавление в экземпляр необходимых колонок.
+              - listitem [ref=e114]: Инициализация экземпляров фильтров.
+              - listitem [ref=e115]: Добавление фильтров в экземпляр класса.
+              - listitem [ref=e116]: Получение данных.
+            - heading "Формирование путей к колонкам" [level=2] [ref=e117]:
+              - text: Формирование путей к колонкам
+              - img [ref=e119] [cursor=pointer]
+            - paragraph [ref=e121]: Самой важной частью работы запросов класса EntitySchemaQuery является корневая схема. Она представляет собой таблицу базы данных. На ее основе добавляются колонки в запрос, включая колонки присоединяемых таблицы. Без правильного указания пути до колонки она не будет отражаться в результате выполнения запроса. Например, для получения данных колонки «ФИО» из базового раздела «Контакты» (Contact), необходимо добавить в экземпляр класса колонку с ее кодом «Name». В результирующем SQL-запросе корневая схема указывается после FROM как источник данных.
+            - generic [ref=e122]:
+              - generic [ref=e123]:
+                - generic [ref=e125]: Пример добавления колонок в запрос
+                - list [ref=e128]:
+                  - listitem [ref=e129]: // Создаем экземпляр EntitySchemaQuery.
+                  - listitem [ref=e130]: // Создание экземпляра EntitySchemaQuery с корневой схемой "Contact".
+                  - listitem [ref=e131]: "var esqQuery = this.Ext.create(\"BPMSoft.EntitySchemaQuery\", { rootSchemaName: \"Contact\" });"
+                  - listitem [ref=e132]: // Добавление колонок в запрос
+                  - listitem [ref=e133]: esqQuery.addColumn("Name");
+                  - listitem [ref=e134]: esqQuery.addColumn("Phone");
+              - generic "Копировать код" [ref=e136] [cursor=pointer]
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - generic [ref=e140]: Итоговый SQL-запрос
+                - list [ref=e143]:
+                  - listitem [ref=e144]: SELECT [Contact].[Name],[Contact].[Phone]
+                  - listitem [ref=e145]: FROM [Contact]
+              - generic "Копировать код" [ref=e147] [cursor=pointer]
+            - generic [ref=e148]: В случае, когда в запросе нет колонок, результат запроса вернет только уникальный идентификатор полученных записей.
+            - paragraph [ref=e149]: В качестве корневой схемы можно указать любую объектную схему (EntitySchema), то есть любой объект из конфигурации. Это может быть объект, связанный с текущей страницей (например, Contact или Account), объект детали для получения данных из детали или любой пользовательский объект.
+            - heading "Формирование путей к колонкам по прямым связям" [level=2] [ref=e150]:
+              - text: Формирование путей к колонкам по прямым связям
+              - img [ref=e152] [cursor=pointer]
+            - paragraph [ref=e154]: Получение данных из колонок схем по прямым связям осуществляется посредством создания колонки в запросе. В ней указывается код справочной колонки корневой схемы и код колонки из схемы, на которую ссылается справочная колонка. Между ними находится разделитель в виде точки. Также необходимо указать псевдоним создаваемой колонки запроса.
+            - paragraph [ref=e155]: "Шаблон: КодСправочнойКолонки.КодКолонкиСхемыИзСправочнойКолонки."
+            - paragraph [ref=e156]: Например, необходимо получить информацию о типе контакта в запросе к таблице раздела «Контакты». В таком случае кодом корневой схемы будет «Contact», код справочной колонки «Тип контакта» — «Type», для колонок, содержащих уникальный идентификатор, в BPMSoft используется код «Id», для названия — «Name».
+            - paragraph [ref=e157]: "Таким образом для получения названия типа контакта путь будет: Type.Name, для уникального идентификатора: Type.Id, в качестве псевдонима можно указывать любое значение, главное, чтобы оно не совпадало с кодами других колонок и псевдонимов."
+            - paragraph [ref=e158]: Рисунок 1 — Схема с прямой связью
+            - paragraph [ref=e159]:
+              - img "Рисунок 1 — Схема с прямой связью" [ref=e160]
+            - generic [ref=e161]: Если необходимо получить название или уникальный идентификатор записи, которым заполнена справочная колонка, не нужно присоединять к запросу схему, на которую она ссылается, так как это может значительно увеличить время выполнения запроса. Получить эти данные можно просто создав колонку с указанием кода в запросе.
+            - heading "Формирование путей к колонкам по обратным связям" [level=2] [ref=e162]:
+              - text: Формирование путей к колонкам по обратным связям
+              - img [ref=e164] [cursor=pointer]
+            - paragraph [ref=e166]: Получение данных из колонок по обратным связям осуществляется посредством создания колонок в запросе. В них указывается код присоединяемой схемы, код ее колонки для связи и код колонки связи из корневой схемы в квадратных скобках, через разделитель в виде двоеточия. После квадратных скобок через точку необходимо указать код колонки присоединяемой схемы. Также, как и при прямой связи, необходимо указать псевдоним колонки.
+            - paragraph [ref=e167]:
+              - text: "Шаблон:"
+              - generic [ref=e168]:
+                - text: "[КодПрисоединяемойСхемы:КодКолонкиСвязиПрисоединяемойСхемы:"
+                - text: КодКолонкиСвязиКорневойСхемы].КодКолонкиПрисоединяемойСхемы
+            - paragraph [ref=e169]: Например, для получения данных колонки «ФИО» контакта, создавшего «Контрагента» (Account), при выполнении запроса к «Контрагентам», необходимо указать в фигурных скобках код схемы раздела «Контакты» — «Contact», через двоеточие код его колонки для связи с «Контрагентом» — «Id» и также, через двоеточие, код колонки «Контакта» — «CreatedBy». После чего, через точку, указать код колонки «ФИО» — «Name».
+            - paragraph [ref=e170]: "В результате для получения данных, путь к колонке будет следующим: [Contact:Id:CreatedBy].Name. Также, как и с прямой связью, псевдоним колонки может быть любым."
+            - paragraph [ref=e171]: Рисунок 2 — Схема с обратной связью
+            - paragraph [ref=e172]:
+              - img "Рисунок 2 — Схема с обратной связью" [ref=e173]
+            - generic [ref=e174]: Если не указывать псевдоним для колонки присоединяемой схемы, то в результате запроса не будет данных по нему, несмотря на то что оно будет находиться в перечне колонок. Данное правило работает для обоих видов связей.
+            - heading "Добавление колонок в запрос" [level=2] [ref=e175]:
+              - text: Добавление колонок в запрос
+              - img [ref=e177] [cursor=pointer]
+            - paragraph [ref=e179]: "Все колонки, добавляемые в экземпляр запроса EntitySchemaQuery представляют собой экземпляры класса BPMSoft.EntityQueryColumn. У этого класса есть четыре основные характеристики:"
+            - list [ref=e180]:
+              - listitem [ref=e181]: • Заголовок;
+              - listitem [ref=e182]: • Псевдоним;
+              - listitem [ref=e183]: • Признаки использования;
+              - listitem [ref=e184]: • Порядок и позиция сортировки.
+            - paragraph [ref=e185]: Добавление колонок в запрос в основном осуществляется через метод addColumn(column, columnAlias) класса EntitySchemaQuery. Первый аргумент метода служит для указания пути к колонке, второй для указания псевдонима колонки и не всегда является обязательным. Данный метод возвращает экземпляр класса EntityQueryColumn и добавляет его в список колонок запроса.
+            - paragraph [ref=e186]:
+              - text: "Помимо метода addColumn(column, columnAlias) в классе EntitySchemaQuery есть и другие методы, создающие и добавляющие различные колонки в его экземпляр, подробнее про описанный здесь и другие методы, можно прочитать в статье:"
+              - link "Класс EntitySchemaQuery" [ref=e187] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/klass-entityschemaquery/
+            - heading "Создание фильтров запроса" [level=2] [ref=e188]:
+              - text: Создание фильтров запроса
+              - img [ref=e190] [cursor=pointer]
+            - paragraph [ref=e192]: Фильтры — перечень условий, по которым формируется результат запроса, в терминах SQL фильтр представляет собой отдельный предикат (условие) оператора WHERE. При создании запросов рекомендуется использовать фильтры, чтобы не извлекать ненужные данные и не грузить этим приложение.
+            - paragraph [ref=e193]:
+              - text: "Создать простой фильтр можно при помощи метода createFilter(comparisonType, leftColumnPath, rightColumnPath), где comparisonType — тип операции сравнения, leftColumnPath — путь к проверяемой колонке относительно корневой схемы и rightColumnPath — путь к колонке-фильтру относительно корневой схемы. Метод возвращает объект фильтр класса CompareFilter. Помимо этого метода в классе EntitySchemaQuery присутствуют и другие методы, создающие различные фильтры, ознакомиться с которыми можно в статье:"
+              - link "Класс EntitySchemaQuery" [ref=e194] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/klass-entityschemaquery/
+            - paragraph [ref=e195]: У класса EntitySchemaQuery есть свойство filters, необходимое для хранения коллекции класса BPMSoft.FilterGroup фильтров запроса.
+            - paragraph [ref=e196]: "Добавление фильтра в запрос осуществляется в два действия:"
+            - list [ref=e197]:
+              - listitem [ref=e198]: • Создайте фильтры запроса в соответствии с необходимыми требованиями используя методы класса EntitySchemaQuery;
+              - listitem [ref=e199]: • Используя метод add(filterName, filter) либо метод addItem(filter) добавьте все созданные фильтры в коллекцию фильтров.
+            - paragraph [ref=e200]: По умолчанию все фильтры, добавленные в свойство filters, объединяются логическим оператором «И» (AND), однако это можно изменить, поменяв свойство logicalOperation коллекции filters класса BPMSoft.FilterGroup значением «ИЛИ» (OR) перечисления значений логических операций BPMSoft.core.enums.LogicalOperatorType.
+            - paragraph [ref=e201]: Также в свойство filters можно добавлять другие экземпляры класса BPMSoft.FilterGroup и менять в них логические операции, что позволяет создавать многоуровневые сложные фильтры.
+            - paragraph [ref=e202]: Во всех фильтрах и коллекциях фильтров есть свойство isEnabled принимающее значение true (участвует) или false (не участвует), которое позволяет устанавливать необходимо ли учитывать значения фильтра при поиске записей для построения результата выполнения запроса.
+            - paragraph [ref=e203]: Формирование путей к колонкам в фильтрах EntitySchemaQuery осуществляется в соответствии с общими правилами формирования путей к колонкам относительно корневой схемы.
+            - heading "Получить результат запроса" [level=2] [ref=e204]:
+              - text: Получить результат запроса
+              - img [ref=e206] [cursor=pointer]
+            - paragraph [ref=e208]: "Чтобы получить результат запроса, необходимо вызвать один из нескольких его методов, передав в них метод обработчик для работы с результатом в качестве аргумента. Все из них получают одну или набор строк с данными колонок, указанных в запросе, представляющие собой сущности BPMSoft. Список методов, выполняющих запрос:"
+            - list [ref=e209]:
+              - listitem [ref=e210]: • getEntity(entityId, callback, scope). Данный метод получает одну единственную строку по первичному ключу, указанному в аргументе entityId;
+              - listitem [ref=e211]: • getEntityCollection(callback, scope). Данный метод по указанным фильтрам получает одну или набор строк в виде коллекции;
+              - listitem [ref=e212]: • execute(callback, scope). Данный метод выполняет запрос в соответствии с его параметрами.
+            - paragraph [ref=e213]: "Каждый из методов имеет два ключевых аргумента: callback и scope, первый нужен для последующей обработки данных, второй необходим для привязки к методу обработчику контекста доступного через ключевое слово «this», при котором были вызваны методы, осуществляющие запрос. Все методы ничего не возвращают, а передают результат выполнения запроса в аргумент метода — функцию callback."
+            - paragraph [ref=e214]:
+              - text: "Ознакомиться с каждым методом детальнее можно в статье:"
+              - link "Класс EntitySchemaQuery" [ref=e215] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/klass-entityschemaquery/
+            - heading "Рекомендуем изучить" [level=2] [ref=e216]:
+              - text: Рекомендуем изучить
+              - img [ref=e218] [cursor=pointer]
+            - paragraph [ref=e220]:
+              - link "Класс EntitySchemaQuery" [ref=e221] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/klass-entityschemaquery/
+          - generic [ref=e222]:
+            - generic [ref=e223]: Материал был полезен для вас?
+            - generic [ref=e226]:
+              - generic:
+                - img
+              - generic:
+                - img
+    - contentinfo [ref=e227]:
+      - generic [ref=e229]:
+        - navigation [ref=e232]:
+          - list [ref=e233]:
+            - listitem [ref=e234]:
+              - link "Компания" [ref=e236] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/kompaniya/
+              - list [ref=e237]:
+                - listitem [ref=e238]:
+                  - link "Пресс-центр" [ref=e239] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/presscenter/
+                - listitem [ref=e240]:
+                  - link "Документы" [ref=e241] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/documents/
+                - listitem [ref=e242]:
+                  - link "Контакты" [ref=e243] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/contacts/
+                - listitem [ref=e244]:
+                  - link "Карта сайта" [ref=e245] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/sitemap/
+                - listitem [ref=e246]:
+                  - link "Кейсы" [ref=e247] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/cases/
+                - listitem [ref=e248]:
+                  - link "Карьера" [ref=e249] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/career/
+                - listitem [ref=e250]:
+                  - link "Стажировка" [ref=e251] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/internship/
+                - listitem [ref=e252]:
+                  - link "Центр экспертизы" [ref=e253] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/centr/
+            - listitem [ref=e254]:
+              - link "Продукты" [ref=e256] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/uslugi-avtomatizacii/
+              - list [ref=e257]:
+                - listitem [ref=e258]:
+                  - link "Управление продажами" [ref=e259] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/prodazhi/
+                - listitem [ref=e260]:
+                  - link "Управление маркетингом" [ref=e261] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/marketing/
+                - listitem [ref=e262]:
+                  - link "Управление сервисом" [ref=e263] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/servis/
+                - listitem [ref=e264]:
+                  - link "Портальные решения" [ref=e265] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/portal/
+                - listitem [ref=e266]:
+                  - link "Омниканальные коммуникации" [ref=e267] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/omnikanalnye-kommunikacii/
+                - listitem [ref=e268]:
+                  - link "Конструктор" [ref=e269] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/konstruktor/
+                - listitem [ref=e270]:
+                  - link "Финансы" [ref=e271] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/finansy/
+                - listitem [ref=e272]:
+                  - link "Фарма" [ref=e273] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/farma/
+                - listitem [ref=e274]:
+                  - link "Управление ИТ-услугами" [ref=e275] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/upravlenie-it-uslugami/
+                - listitem [ref=e276]:
+                  - link "Управление закупками" [ref=e277] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/upravlenie-zakupkami/
+                - listitem [ref=e278]:
+                  - link "BPMSoft Старт" [ref=e279] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/bpmsoft-start/
+                - listitem [ref=e280]:
+                  - link "AI и ML инструменты" [ref=e281] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/ai-i-ml-instrumenty/
+                - listitem [ref=e282]:
+                  - link "Управление ИТ-проектами" [ref=e283] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/sistema-upravleniya-proektami-i-resursami-bpmsoft/
+            - listitem [ref=e284]:
+              - link "Отрасли" [ref=e286] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/otrasli/
+              - list [ref=e287]:
+                - listitem [ref=e288]:
+                  - link "Финансы" [ref=e289] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/banki-i-financy/
+                - listitem [ref=e290]:
+                  - link "Ритейл" [ref=e291] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/roznichnaya-torgovlya/
+                - listitem [ref=e292]:
+                  - link "Недвижимость" [ref=e293] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/nedvizhimost/
+                - listitem [ref=e294]:
+                  - link "Фармацевтика" [ref=e295] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/farmacevtika/
+                - listitem [ref=e296]:
+                  - link "Транспорт" [ref=e297] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/transport-i-logistika/
+                - listitem [ref=e298]:
+                  - link "Телеком" [ref=e299] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/telekommunikacii/
+                - listitem [ref=e300]:
+                  - link "FMCG" [ref=e301] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/fmcg/
+                - listitem [ref=e302]:
+                  - link "Энергетика" [ref=e303] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/energetika/
+                - listitem [ref=e304]:
+                  - link "Нефть и газ" [ref=e305] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/neft-i-gaz/
+                - listitem [ref=e306]:
+                  - link "Производство" [ref=e307] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/proizvodstvo/
+                - listitem [ref=e308]:
+                  - link "ИТ" [ref=e309] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/it/
+                - listitem [ref=e310]:
+                  - link "Страхование" [ref=e311] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/crm-strakhovanie/
+            - listitem [ref=e312]:
+              - link "Партнеры" [ref=e314] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/partners/
+              - list [ref=e315]:
+                - listitem [ref=e316]:
+                  - link "Партнерская программа" [ref=e317] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/partner-community/
+                - listitem [ref=e318]:
+                  - link "BPMSoft Образование" [ref=e319] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/bpmsoft-education/
+                - listitem [ref=e320]:
+                  - link "Тренинги по продажам" [ref=e321] [cursor=pointer]:
+                    - /url: //partneracademy.bpmsoft.ru/
+            - listitem [ref=e322]:
+              - link "Школа" [ref=e324] [cursor=pointer]:
+                - /url: //edu.bpmsoft.ru/
+              - list [ref=e325]:
+                - listitem [ref=e326]:
+                  - link "База знаний" [ref=e327] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/baza-znaniy/
+                - listitem [ref=e328]:
+                  - link "Онлайн-курсы" [ref=e329] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/online-kursy/
+                - listitem [ref=e330]:
+                  - link "Сертификация" [ref=e331] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/sertifikaciya-i-testirovanie/
+                - listitem [ref=e332]:
+                  - link "Обновления и релизы" [ref=e333] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/obnovleniya-i-relizi/
+                - listitem [ref=e334]:
+                  - link "Обучение" [ref=e335] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/treningi/opisanie-treningov/obshchaya-informatsiya-po-treningam/
+                - listitem [ref=e336]:
+                  - link "Карта разделов Школы" [ref=e337] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/sitemap/
+            - listitem [ref=e338]:
+              - link "Магазин приложений" [ref=e340] [cursor=pointer]:
+                - /url: //market.bpmsoft.ru
+              - list [ref=e341]:
+                - listitem [ref=e342]:
+                  - link "Каталог приложений" [ref=e343] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/catalog-prilozheniy/
+                - listitem [ref=e344]:
+                  - link "Стать партнером-разработчиком" [ref=e345] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/stat-partnerom-razrabotchikom/
+            - listitem [ref=e346]:
+              - link "Сообщество" [ref=e348] [cursor=pointer]:
+                - /url: //forum.bpmsoft.ru
+              - list [ref=e349]:
+                - listitem [ref=e350]:
+                  - link "Правила Сообщества" [ref=e351] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/pravila_soobshchestva/
+                - listitem [ref=e352]:
+                  - link "Спросить Сообщество" [ref=e353] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/create/
+                - listitem [ref=e354]:
+                  - link "Как устроен сайт Сообщества" [ref=e355] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/kak_ustroen_sayt_soobshchestva
+                - listitem [ref=e356]:
+                  - link "Клубные подарки" [ref=e357] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/klubnye_podarki_soobshchestva_bpmsoft_2026
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e363]:
+              - button "Заказать консультацию" [ref=e364] [cursor=pointer]
+              - generic [ref=e365]:
+                - generic [ref=e366]:
+                  - generic [ref=e367]:
+                    - link "7 495 070 09 97" [ref=e368] [cursor=pointer]:
+                      - /url: tel:+74950700997
+                      - img [ref=e370]
+                      - text: 7 495 070 09 97
+                    - link "info@bpmsoft.ru" [ref=e372] [cursor=pointer]:
+                      - /url: mailto:info@bpmsoft.ru
+                      - img [ref=e374]
+                      - text: info@bpmsoft.ru
+                  - generic [ref=e376]:
+                    - link [ref=e378] [cursor=pointer]:
+                      - /url: https://vk.com/bpmsoft
+                      - img [ref=e380]
+                    - link [ref=e383] [cursor=pointer]:
+                      - /url: https://t.me/bpmsoft_ru
+                      - img [ref=e385]
+                    - link [ref=e388] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@bpmsoft
+                      - img [ref=e390]
+                    - link [ref=e393] [cursor=pointer]:
+                      - /url: https://rutube.ru/channel/42194439/
+                      - img [ref=e395]
+                - paragraph [ref=e397]:
+                  - text: 127015, Москва,
+                  - text: ул. Бутырская, 76с1
+            - generic [ref=e400]:
+              - paragraph [ref=e401]: Следите за обновлениями и новостями
+              - generic [ref=e403]:
+                - textbox "Введите ваш Email" [ref=e405]
+                - button "Подписаться" [disabled] [ref=e406]:
+                  - text: Подписаться
+                  - img [ref=e408]
+              - paragraph [ref=e410]: Подписываясь на рассылку, Вы соглашаетесь c условиями политики конфиденциальности и политики обработки персональных данных
+          - generic [ref=e411]:
+            - generic [ref=e413]:
+              - link [ref=e414] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=ru.bpmsoft.mobileapp
+              - link [ref=e415] [cursor=pointer]:
+                - /url: https://apps.apple.com/ru/app/bpmsoft/id1641881866
+              - link [ref=e416] [cursor=pointer]:
+                - /url: https://appgallery.huawei.com/app/C109231317
+            - generic [ref=e417]:
+              - paragraph [ref=e418]: © 2026 BPMSoft
+              - generic [ref=e419]:
+                - link "Политика обработки персональных данных" [ref=e420] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+                - link "Информированное согласие пользователя сайта" [ref=e421] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/info-soglasie-polzovatelia/
+  - generic [ref=e423]:
+    - link "Telegram Подписаться" [ref=e424] [cursor=pointer]:
+      - /url: https://t.me/bpmsoft_ru
+      - img [ref=e426]
+      - generic [ref=e428]:
+        - generic [ref=e429]: Telegram
+        - generic [ref=e430]: Подписаться
+      - button [ref=e431]:
+        - img [ref=e433]
+    - link [ref=e435] [cursor=pointer]:
+      - /url: https://lansoft.com
+      - img [ref=e436]
+      - img [ref=e439]
+  - generic [ref=e441]:
+    - generic [ref=e442]:
+      - generic [ref=e443]: Уважаемые клиенты! Предупреждаем о случаях недобросовестной конкуренции и мошенничестве в сети Интернет.
+      - link "Подробнее" [ref=e444] [cursor=pointer]:
+        - /url: https://bpmsoft.ru/preduprezhdenie-o-nekorrektnykh-saytakh/
+      - button [ref=e445] [cursor=pointer]:
+        - img [ref=e447]
+    - generic [ref=e449]:
+      - generic [ref=e450]:
+        - text: Сайт использует файлы cookie. Подробная информация
+        - link "в правилах по обработке персональных данных." [ref=e451] [cursor=pointer]:
+          - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+        - text: Вы можете запретить сохранение cookie в настройках своего браузера.
+      - button "Принять" [ref=e452] [cursor=pointer]

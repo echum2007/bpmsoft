@@ -1,0 +1,858 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e5]:
+        - generic [ref=e9]:
+          - link [ref=e12] [cursor=pointer]:
+            - /url: https://bpmsoft.ru
+          - generic [ref=e13]:
+            - button "Развернуть поиск" [ref=e15] [cursor=pointer]:
+              - img [ref=e17]
+            - generic [ref=e19]:
+              - button "Заявка" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: Заявка
+              - button "Демоверсия" [ref=e22] [cursor=pointer]:
+                - generic [ref=e23]: Демоверсия
+              - button [ref=e26] [cursor=pointer]
+              - button [ref=e28] [cursor=pointer]:
+                - img [ref=e30]
+    - main [ref=e32]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - heading "Единая low-code платформа для автоматизации бизнес‑процессов" [level=1] [ref=e39]
+          - generic [ref=e40]: Масштабируйте бизнес с AI‑решениями CRM‑линейки
+        - generic [ref=e41]:
+          - link "Оставить заявку" [ref=e42] [cursor=pointer]:
+            - /url: javascript:void(0);
+          - link "Подробнее" [ref=e43] [cursor=pointer]:
+            - /url: /uslugi-avtomatizacii/prodazhi/
+            - text: Подробнее
+            - img [ref=e45]
+      - generic [ref=e52]:
+        - heading "Факты о BPMSoft" [level=2] [ref=e54]
+        - generic [ref=e55]:
+          - generic [ref=e57]:
+            - img [ref=e60]
+            - generic [ref=e63]: В реестре отечественного ПО. Реестровая запись №17372
+          - generic [ref=e65]:
+            - img [ref=e68]
+            - generic [ref=e71]: Входит в продуктовый портфель крупного ИТ‑холдинга LANSOFT
+          - generic [ref=e73]:
+            - img [ref=e76]
+            - generic [ref=e78]: Относится к сфере искусственного интеллекта в Реестре Отечественного ПО
+          - generic [ref=e80]:
+            - img [ref=e83]
+            - generic [ref=e86]: Относится к классу высоконагруженных отказоустойчивых систем
+          - generic [ref=e88]:
+            - img [ref=e91]
+            - generic [ref=e96]: 1 место в рейтинге российских поставщиков BPM‑систем 2025 от TAdviser и CNews
+          - generic [ref=e98]:
+            - img [ref=e101]
+            - generic [ref=e104]: ТОП-2 в рейтинге поставщиков ИИ‑ассистентов 2026 от CNews
+          - generic [ref=e106]:
+            - img [ref=e109]
+            - generic [ref=e116]: 1 место в рейтинге российских CRM‑систем 2025 от CNews
+          - generic [ref=e118]:
+            - img [ref=e121]
+            - generic [ref=e125]: 1 место в рейтинге российских low‑code платформ 2026 от Компьютерра
+      - generic [ref=e127]:
+        - heading "Продукты" [level=2] [ref=e128]
+        - generic [ref=e129]:
+          - generic [ref=e132]:
+            - generic [ref=e134] [cursor=pointer]:
+              - img [ref=e136]
+              - generic [ref=e140]: Управление продажами
+            - generic [ref=e142] [cursor=pointer]:
+              - img [ref=e144]
+              - generic [ref=e147]: Управление маркетингом
+            - generic [ref=e149] [cursor=pointer]:
+              - img [ref=e151]
+              - generic [ref=e157]: Управление сервисом
+            - generic [ref=e159] [cursor=pointer]:
+              - img [ref=e161]
+              - generic [ref=e168]: Портальные решения
+            - generic [ref=e170] [cursor=pointer]:
+              - img [ref=e172]
+              - generic [ref=e178]: Омниканальные коммуникации
+            - generic [ref=e180] [cursor=pointer]:
+              - img [ref=e182]
+              - generic [ref=e186]: Конструктор
+            - generic [ref=e188] [cursor=pointer]:
+              - img [ref=e190]
+              - generic [ref=e194]: Финансы
+            - generic [ref=e196] [cursor=pointer]:
+              - img [ref=e198]
+              - generic [ref=e201]: Фарма
+            - generic [ref=e203] [cursor=pointer]:
+              - img [ref=e205]
+              - generic [ref=e211]: Управление ИТ-услугами
+            - generic [ref=e213] [cursor=pointer]:
+              - img [ref=e215]
+              - generic [ref=e221]: Управление закупками
+            - generic [ref=e223] [cursor=pointer]:
+              - img [ref=e225]
+              - generic [ref=e228]: BPMSoft Старт
+            - generic [ref=e230] [cursor=pointer]:
+              - img [ref=e232]
+              - generic [ref=e234]: AI и ML инструменты
+            - generic [ref=e236] [cursor=pointer]:
+              - img [ref=e238]
+              - generic [ref=e242]: Управление ИТ-проектами
+          - separator [ref=e243]
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - heading "Управление продажами" [level=3] [ref=e248]
+            - generic [ref=e249]: Оптимизируйте и ускоряйте процессы продаж на всех этапах, от привлечения лида до повторных заказов.
+            - link "Подробнее" [ref=e251] [cursor=pointer]:
+              - /url: /uslugi-avtomatizacii/prodazhi/
+              - img [ref=e253]
+              - text: Подробнее
+          - img "Управление продажами" [ref=e256]
+      - generic [ref=e259]:
+        - heading "Работая с нами, вы получите" [level=2] [ref=e262]
+        - generic [ref=e266]:
+          - generic [ref=e269]:
+            - generic [ref=e270]: "01"
+            - generic [ref=e271]: Готовые CRM-процессы, основанные на лучших практиках, «из коробки»
+          - generic [ref=e274]:
+            - generic [ref=e275]: "02"
+            - generic [ref=e276]: Возможность работы на любом типе устройств
+          - generic [ref=e279]:
+            - generic [ref=e280]: "03"
+            - generic [ref=e281]: Простоту интеграции с другими платформами и системами
+          - generic [ref=e284]:
+            - generic [ref=e285]: "04"
+            - generic [ref=e286]: Полностью конфигурируемое решение без необходимости привлекать разработчиков
+          - generic [ref=e289]:
+            - generic [ref=e290]: "05"
+            - generic [ref=e291]: Возможность выбора партнера в рамках широкой партнерской сети
+      - generic [ref=e294]:
+        - generic [ref=e296]:
+          - generic [ref=e297]:
+            - heading "Как крупный бизнес выбирает CRM" [level=2] [ref=e298]
+            - generic [ref=e299]: ИИ-агенты, low-code, кибербезопасность, удобный интерфейс — лидеры рынка выбирают CRM по этим критериям. BPMSoft и SIZE MARKETING изучили подходы Enterprise-компаний и выделили главное. Узнайте подробнее в нашем исследовании.
+          - button "Заказать презентацию" [ref=e301] [cursor=pointer]
+        - img "Форма блока с заказом презентации" [ref=e304]
+      - generic [ref=e305]:
+        - generic [ref=e307]:
+          - heading "Кейсы" [level=2] [ref=e308]
+          - generic [ref=e309]: "Опыт внедрения BPMSoft в крупных компаниях: автоматизация типовых и кастомных процессов в маркетинге, продажах, клиентском сервисе, контакт-центре, партнерском и внутреннем центрах обслуживания."
+        - generic [ref=e313]:
+          - generic [ref=e316]:
+            - link "«Технологии доверия» (ТеДо) перешла на CRM BPMSoft" [ref=e318] [cursor=pointer]:
+              - /url: /cases/tekhnologii-doveriya-tedo-pereshla-na-crm-bpmsoft/
+            - generic [ref=e319]: Компания завершила миграцию с Salesforce на российскую low-code платформу со встроенными ИИ-инструментами BPMSoft.
+            - generic [ref=e321]:
+              - link "Подробнее" [ref=e322] [cursor=pointer]:
+                - /url: /cases/tekhnologii-doveriya-tedo-pereshla-na-crm-bpmsoft/
+              - link "Все кейсы" [ref=e323] [cursor=pointer]:
+                - /url: /cases/
+                - text: Все кейсы
+                - img [ref=e325]
+          - generic [ref=e331]:
+            - link "«Валта Пет Продактс» на 17% увеличила конверсию в продажи" [ref=e333] [cursor=pointer]:
+              - /url: /cases/valta-pet-prodakts-na-17-uvelichila-konversiyu-v-prodazhi-/
+            - generic [ref=e334]: Компания перешла на CRM-систему на базе BPMSoft и увеличила конверсию лидов, выстроила системную работу с клиентами и повысила эффективность маркетинга.
+            - generic [ref=e336]:
+              - link "Подробнее" [ref=e337] [cursor=pointer]:
+                - /url: /cases/valta-pet-prodakts-na-17-uvelichila-konversiyu-v-prodazhi-/
+              - link "Все кейсы" [ref=e338] [cursor=pointer]:
+                - /url: /cases/
+                - text: Все кейсы
+                - img [ref=e340]
+          - generic [ref=e346]:
+            - link "Cosmos Hotel Group увеличила частоту бронирований на 7%" [ref=e348] [cursor=pointer]:
+              - /url: /cases/cosmos-hotel-group-uvelichila-chastotu-bronirovaniy-na-7/
+            - generic [ref=e349]: Компания внедрила омниканальную систему лояльности RightWay на базе BPMSoft, объединив более 40 отелей сети в 27 городах страны.
+            - generic [ref=e351]:
+              - link "Подробнее" [ref=e352] [cursor=pointer]:
+                - /url: /cases/cosmos-hotel-group-uvelichila-chastotu-bronirovaniy-na-7/
+              - link "Все кейсы" [ref=e353] [cursor=pointer]:
+                - /url: /cases/
+                - text: Все кейсы
+                - img [ref=e355]
+          - generic [ref=e361]:
+            - link "«МБ РУС» внедрила систему для гарантийного обслуживания автомобилей" [ref=e363] [cursor=pointer]:
+              - /url: /cases/mb-rus-vnedrila-sistemu-dlya-garantiynogo-obsluzhivaniya-avtomobiley/
+            - generic [ref=e364]: Компания разработала ИТ-решение на базе BPMSoft, которое заменило глобальную систему и автоматизировало гарантийные процессы для новых брендов.
+            - generic [ref=e366]:
+              - link "Подробнее" [ref=e367] [cursor=pointer]:
+                - /url: /cases/mb-rus-vnedrila-sistemu-dlya-garantiynogo-obsluzhivaniya-avtomobiley/
+              - link "Все кейсы" [ref=e368] [cursor=pointer]:
+                - /url: /cases/
+                - text: Все кейсы
+                - img [ref=e370]
+          - generic [ref=e376]:
+            - link "Туту на 20% сократил время обработки звонков благодаря CRM-системе BPMSoft" [ref=e378] [cursor=pointer]:
+              - /url: /cases/tutu-na-20-sokratil-vremya-obrabotki-zvonkov-blagodarya-crm-sisteme-bpmsoft/
+            - generic [ref=e379]: Все коммуникации поступают в единую CRM, интегрированную с базой данных и основными каналами связи
+            - generic [ref=e381]:
+              - link "Подробнее" [ref=e382] [cursor=pointer]:
+                - /url: /cases/tutu-na-20-sokratil-vremya-obrabotki-zvonkov-blagodarya-crm-sisteme-bpmsoft/
+              - link "Все кейсы" [ref=e383] [cursor=pointer]:
+                - /url: /cases/
+                - text: Все кейсы
+                - img [ref=e385]
+          - generic [ref=e391]:
+            - link "«Перемена Трейд» мигрировала на российскую CRM-систему BPMSoft" [ref=e393] [cursor=pointer]:
+              - /url: /cases/peremena-treyd-migrirovala-na-rossiyskuyu-crm-sistemu-bpmsoft/
+            - generic [ref=e394]: Системный интегратор «Перемена Трейд» (входит в ГК «Перемена») завершил переход на российскую CRM-систему на базе low-code платформы BPMSoft. Новое решение значительно улучшило процессы управления продажами и маркетингом
+            - generic [ref=e396]:
+              - link "Подробнее" [ref=e397] [cursor=pointer]:
+                - /url: /cases/peremena-treyd-migrirovala-na-rossiyskuyu-crm-sistemu-bpmsoft/
+              - link "Все кейсы" [ref=e398] [cursor=pointer]:
+                - /url: /cases/
+                - text: Все кейсы
+                - img [ref=e400]
+      - generic [ref=e406]:
+        - generic [ref=e407]:
+          - heading "Мероприятия" [level=2] [ref=e410]
+          - generic [ref=e413]:
+            - generic [ref=e416] [cursor=pointer]:
+              - generic [ref=e417]:
+                - link "Онлайн" [ref=e419]:
+                  - /url: /events/?EVENTS_TYPE=Online
+                - generic [ref=e420]: Мероприятие завершено
+              - generic [ref=e421]:
+                - generic [ref=e422]: CRM 2026 – ядро цифровой трансформации бизнеса
+                - generic [ref=e423]: Поговорим как современные CRM-системы помогают поднять управление бизнесом на новый уровень эффективности
+                - link "Подробнее" [ref=e427]:
+                  - /url: /events/crm-2026-yadro-tsifrovoy-transformatsii-biznesa/
+                  - text: Подробнее
+                  - img [ref=e429]
+            - generic [ref=e433] [cursor=pointer]:
+              - generic [ref=e434]:
+                - link "Онлайн" [ref=e436]:
+                  - /url: /events/?EVENTS_TYPE=Online
+                - generic [ref=e437]: Мероприятие завершено
+              - generic [ref=e438]:
+                - generic [ref=e439]: Лучшие ИТ-проекты 2025 года!
+                - generic [ref=e440]: Онлайн-встреча с участниками Конкурса профессионального сообщества Global CIO «Проект Года»
+                - link "Подробнее" [ref=e444]:
+                  - /url: /events/luchshie-it-proekty-2025-goda-/
+                  - text: Подробнее
+                  - img [ref=e446]
+            - generic [ref=e450] [cursor=pointer]:
+              - generic [ref=e451]:
+                - link "Онлайн" [ref=e453]:
+                  - /url: /events/?EVENTS_TYPE=Online
+                - generic [ref=e454]: Мероприятие завершено
+              - generic [ref=e455]:
+                - generic [ref=e456]: Клиентские коммуникации 2.0 для роста доверия и лояльности. Совместный вебинар BPMSoft и MANGO OFFICE
+                - generic [ref=e457]: "Совместный вебинар BPMSoft и MANGO OFFICE: как коммуникации «со смыслом» способствуют развития бизнеса"
+                - link "Подробнее" [ref=e461]:
+                  - /url: /events/klientskie-kommunikatsii-2-0-dlya-rosta-doveriya-i-loyalnosti-sovmestnyy-vebinar-bpmsoft-i-mango-off/
+                  - text: Подробнее
+                  - img [ref=e463]
+            - generic [ref=e467] [cursor=pointer]:
+              - generic [ref=e468]:
+                - link "Онлайн" [ref=e470]:
+                  - /url: /events/?EVENTS_TYPE=Online
+                - generic [ref=e471]: Мероприятие завершено
+              - generic [ref=e472]:
+                - generic [ref=e473]: На пути к идеальному сервису! Поговорим про клиентский сервис, опыт и искусственный интеллект
+                - generic [ref=e474]: Мы разберём реальные примеры автоматизации работы сервисных служб и взаимодействия с поставщиками, а также покажем, как ИИ-инструменты помогают повышать качество обслуживания, улучшать процессы, повышать эффективность сотрудников и сокращать расходы.
+                - link "Подробнее" [ref=e478]:
+                  - /url: /events/na-puti-k-idealnomu-servisu-pogovorim-pro-klientskiy-servis-opyt-i-iskusstvennyy-intellekt/
+                  - text: Подробнее
+                  - img [ref=e480]
+            - generic [ref=e484] [cursor=pointer]:
+              - generic [ref=e485]:
+                - link "Онлайн" [ref=e487]:
+                  - /url: /events/?EVENTS_TYPE=Online
+                - generic [ref=e488]: Мероприятие завершено
+              - generic [ref=e489]:
+                - generic [ref=e490]: "ИИ в бизнесе: что работает уже сейчас"
+                - generic [ref=e491]: Мы разберём реальные сценарии применения искусственного интеллекта, которые помогают компаниям повышать эффективность маркетинга, увеличивать продажи и улучшать клиентский сервис. А также обсудим ключевые тренды и перспективы развития ИИ-технологий.
+                - link "Подробнее" [ref=e495]:
+                  - /url: /events/ii-v-biznese-chto-rabotaet-uzhe-seychas/
+                  - text: Подробнее
+                  - img [ref=e497]
+            - generic [ref=e501] [cursor=pointer]:
+              - generic [ref=e502]:
+                - link "Онлайн" [ref=e504]:
+                  - /url: /events/?EVENTS_TYPE=Online
+                - generic [ref=e505]: Мероприятие завершено
+              - generic [ref=e506]:
+                - generic [ref=e507]: "BPMSoft и EDNA: как мы повысили конверсию в продажу и уровень лояльности клиентов"
+                - generic [ref=e508]: Лиды, клиенты и клиентский сервис в современном мире. Как b2b и b2c повышают конверсию и совершают повторные продажи. Об этом поговорим на совместном вебинаре BPMSoft и Edna.
+                - link "Подробнее" [ref=e512]:
+                  - /url: /events/bpmsoft-i-edna-kak-my-povysili-konversiyu-v-prodazhu-i-uroven-loyalnosti-klientov/
+                  - text: Подробнее
+                  - img [ref=e514]
+        - link "Все вебинары и мероприятия" [ref=e517] [cursor=pointer]:
+          - /url: /events/
+      - generic [ref=e520]:
+        - heading "Отраслевые решения" [level=2] [ref=e522]
+        - generic [ref=e523]:
+          - generic [ref=e524]:
+            - generic [ref=e526] [cursor=pointer]:
+              - img [ref=e530]
+              - generic [ref=e534]:
+                - generic [ref=e536]: Финансы
+                - link "Подробнее" [ref=e540]:
+                  - /url: /otrasli/banki-i-financy/
+                  - text: Подробнее
+                  - img [ref=e542]
+            - generic [ref=e545] [cursor=pointer]:
+              - img [ref=e549]
+              - generic [ref=e555]:
+                - generic [ref=e557]: Ритейл
+                - link "Подробнее" [ref=e561]:
+                  - /url: /otrasli/roznichnaya-torgovlya/
+                  - text: Подробнее
+                  - img [ref=e563]
+            - generic [ref=e566] [cursor=pointer]:
+              - img [ref=e570]
+              - generic [ref=e578]:
+                - generic [ref=e580]: Недвижимость
+                - link "Подробнее" [ref=e584]:
+                  - /url: /otrasli/nedvizhimost/
+                  - text: Подробнее
+                  - img [ref=e586]
+            - generic [ref=e589] [cursor=pointer]:
+              - img [ref=e593]
+              - generic [ref=e596]:
+                - generic [ref=e598]: Фармацевтика
+                - link "Подробнее" [ref=e602]:
+                  - /url: /otrasli/farmacevtika/
+                  - text: Подробнее
+                  - img [ref=e604]
+            - generic [ref=e607] [cursor=pointer]:
+              - img [ref=e611]
+              - generic [ref=e613]:
+                - generic [ref=e615]: Транспорт
+                - link "Подробнее" [ref=e619]:
+                  - /url: /otrasli/transport-i-logistika/
+                  - text: Подробнее
+                  - img [ref=e621]
+            - generic [ref=e624] [cursor=pointer]:
+              - img [ref=e628]
+              - generic [ref=e632]:
+                - generic [ref=e634]: Телеком
+                - link "Подробнее" [ref=e638]:
+                  - /url: /otrasli/telekommunikacii/
+                  - text: Подробнее
+                  - img [ref=e640]
+            - generic [ref=e643] [cursor=pointer]:
+              - img [ref=e647]
+              - generic [ref=e650]:
+                - generic [ref=e652]: FMCG
+                - link "Подробнее" [ref=e656]:
+                  - /url: /otrasli/fmcg/
+                  - text: Подробнее
+                  - img [ref=e658]
+            - generic [ref=e661] [cursor=pointer]:
+              - img [ref=e665]
+              - generic [ref=e670]:
+                - generic [ref=e672]: Энергетика
+                - link "Подробнее" [ref=e676]:
+                  - /url: /otrasli/energetika/
+                  - text: Подробнее
+                  - img [ref=e678]
+            - generic [ref=e681] [cursor=pointer]:
+              - img [ref=e685]
+              - generic [ref=e687]:
+                - generic [ref=e689]: Нефть и газ
+                - link "Подробнее" [ref=e693]:
+                  - /url: /otrasli/neft-i-gaz/
+                  - text: Подробнее
+                  - img [ref=e695]
+            - generic [ref=e698] [cursor=pointer]:
+              - img [ref=e702]
+              - generic [ref=e706]:
+                - generic [ref=e708]: Производство
+                - link "Подробнее" [ref=e712]:
+                  - /url: /otrasli/proizvodstvo/
+                  - text: Подробнее
+                  - img [ref=e714]
+            - generic [ref=e717] [cursor=pointer]:
+              - img [ref=e721]
+              - generic [ref=e724]:
+                - generic [ref=e726]: ИТ
+                - link "Подробнее" [ref=e730]:
+                  - /url: /otrasli/it/
+                  - text: Подробнее
+                  - img [ref=e732]
+            - generic [ref=e735] [cursor=pointer]:
+              - img [ref=e739]
+              - generic [ref=e743]:
+                - generic [ref=e745]: Страхование
+                - link "Подробнее" [ref=e749]:
+                  - /url: /otrasli/crm-strakhovanie/
+                  - text: Подробнее
+                  - img [ref=e751]
+          - button "Показать больше" [ref=e753] [cursor=pointer]:
+            - text: Показать больше
+            - img [ref=e755]
+      - generic [ref=e757]:
+        - heading "Нашу платформу выбирают" [level=2] [ref=e759]
+        - list [ref=e762]:
+          - listitem [ref=e763]:
+            - img "Soft" [ref=e765]
+          - listitem [ref=e766]:
+            - img "MR Group" [ref=e768]
+          - listitem [ref=e769]:
+            - img "Б1" [ref=e771]
+          - listitem [ref=e772]:
+            - img "Ситилинк" [ref=e774]
+          - listitem [ref=e775]:
+            - img "Т+ Энергосбыт" [ref=e777]
+          - listitem [ref=e778]:
+            - img "Группа Лента" [ref=e780]
+          - listitem [ref=e781]:
+            - img "Билайн" [ref=e783]
+          - listitem [ref=e784]:
+            - img "Технологии Доверия" [ref=e786]
+          - listitem [ref=e787]:
+            - img "Валта Пет Продактс" [ref=e789]
+          - listitem [ref=e790]:
+            - img "Cosmos Hotel Group" [ref=e792]
+          - listitem [ref=e793]:
+            - img "АО «МБ РУС»" [ref=e795]
+          - listitem [ref=e796]:
+            - img "ГардаТранс" [ref=e798]
+          - listitem [ref=e799]:
+            - img "ЦУМ" [ref=e801]
+          - listitem [ref=e802]:
+            - img "МТС Беларусь" [ref=e804]
+          - listitem [ref=e805]:
+            - img "ГК «ВОЛМА»" [ref=e807]
+          - listitem [ref=e808]:
+            - img "RDI" [ref=e810]
+          - listitem [ref=e811]:
+            - img "Абсолют Банк" [ref=e813]
+          - listitem [ref=e814]:
+            - img "E1 CARD" [ref=e816]
+          - listitem [ref=e817]:
+            - img "сдм" [ref=e819]
+          - listitem [ref=e820]:
+            - img "черног" [ref=e822]
+          - listitem [ref=e823]:
+            - img "octa" [ref=e825]
+          - listitem [ref=e826]:
+            - img "арена" [ref=e828]
+          - listitem [ref=e829]:
+            - img "сбнр" [ref=e831]
+          - listitem [ref=e832]:
+            - img "тмк" [ref=e834]
+          - listitem [ref=e835]:
+            - img "дкс" [ref=e837]
+          - listitem [ref=e838]:
+            - img "крок" [ref=e840]
+          - listitem [ref=e841]:
+            - img "райф" [ref=e843]
+          - listitem [ref=e844]:
+            - img "gl" [ref=e846]
+          - listitem [ref=e847]:
+            - img "sever" [ref=e849]
+          - listitem [ref=e850]:
+            - img "info" [ref=e852]
+          - listitem [ref=e853]:
+            - img "sber" [ref=e855]
+          - listitem [ref=e856]:
+            - img "skol" [ref=e858]
+          - listitem [ref=e859]:
+            - img "gaz" [ref=e861]
+          - listitem [ref=e862]:
+            - img "softclub" [ref=e864]
+          - listitem [ref=e865]:
+            - img "камаз" [ref=e867]
+          - listitem [ref=e868]:
+            - img "Комос Групп" [ref=e870]
+          - listitem [ref=e871]:
+            - img "Гедеон Рихтер - Gedeon Richter (Россия)" [ref=e873]
+          - listitem [ref=e874]:
+            - img "Ренессанс Жизнь (Москва) (Группа «Ренессанс Страхование»)" [ref=e876]
+          - listitem [ref=e877]:
+            - img "Лабораторная Служба Хеликс" [ref=e879]
+          - listitem [ref=e880]:
+            - img "АШАН" [ref=e882]
+          - listitem [ref=e883]:
+            - img "Страховой Дом ВСК" [ref=e885]
+          - listitem [ref=e886]:
+            - img "Синема Парк и Киностар Де Люкс (Объединенная сеть кинотеатров «Синема Парк» и «Формула Кино»)" [ref=e888]
+          - listitem [ref=e889]:
+            - img "SBI Банк" [ref=e891]
+          - listitem [ref=e892]:
+            - img "Ювелирная сеть Золотой / Gold 585 ТОСП ООО \"РЕГЕНТ ГОЛД\" (Г. МОСКВА, ШИРОКАЯ УЛ.)" [ref=e894]
+          - listitem [ref=e895]:
+            - img "LEDSi (Завод светодиодн. продукции)" [ref=e897]
+          - listitem [ref=e898]:
+            - img "TEKTA Group" [ref=e900]
+          - listitem [ref=e901]:
+            - img "Ренессанс Кредит Банк" [ref=e903]
+          - listitem [ref=e904]:
+            - img "Пулково Аэропорт «(\"ВВСС\")" [ref=e906]
+          - listitem [ref=e907]:
+            - img "Тикетленд - Ticketland" [ref=e909]
+          - listitem [ref=e910]:
+            - img "Четыре лапы Сеть зоомагазинов - ООО \"ЗУМ+\"" [ref=e912]
+          - listitem [ref=e913]:
+            - img "Кар Прайс | CarPrice, ООО \"СЕЛАНИКАР\"" [ref=e915]
+          - listitem [ref=e916]:
+            - img "ИДС Боржоми (IDS Borjomi Russia)" [ref=e918]
+          - listitem [ref=e919]:
+            - img "Туту.ру / Tutu.ru" [ref=e921]
+          - listitem [ref=e922]:
+            - img "ГК ЭТАЛОН" [ref=e924]
+          - listitem [ref=e925]:
+            - img "MERZ" [ref=e927]
+          - listitem [ref=e928]:
+            - img "Аскона" [ref=e930]
+          - listitem [ref=e931]:
+            - img "Вертекс" [ref=e933]
+          - listitem [ref=e934]:
+            - img "simple" [ref=e936]
+          - listitem [ref=e937]:
+            - img "Петровский Автоцентр" [ref=e939]
+          - listitem [ref=e940]:
+            - img "Robokassa" [ref=e942]
+      - generic [ref=e944]:
+        - generic [ref=e945]:
+          - heading "Новости" [level=2] [ref=e948]
+          - generic [ref=e951]:
+            - generic [ref=e956] [cursor=pointer]:
+              - generic [ref=e957]:
+                - generic [ref=e958]: Клиенты
+                - generic [ref=e959]: 02.04.2026
+              - generic [ref=e960]:
+                - generic [ref=e961]: Ситилинк автоматизирует продажи на отечественной платформе BPMSoft
+                - generic [ref=e962]: Компании MerlionTech (входит в группу Merlion) и «Ситилинк» автоматизируют B2B- и B2C-продажи с помощью CRM-системы на базе low-code платформы BPMSoft со встроенными инструментами искусственного интеллекта.
+                - link "Подробнее" [ref=e966]:
+                  - /url: /presscenter/sitilink-avtomatiziruet-prodazhi-na-otechestvennoy-platforme-bpmsoft/
+                  - text: Подробнее
+                  - img [ref=e968]
+            - generic [ref=e974] [cursor=pointer]:
+              - generic [ref=e975]:
+                - generic [ref=e976]: Вузы
+                - generic [ref=e977]: 02.04.2026
+              - generic [ref=e978]:
+                - generic [ref=e979]: BPMSoft и A4F team провели лекции для студентов МТУСИ и Финансового университета
+                - generic [ref=e980]: ИТ-компании BPMSoft и A4F team провели серию образовательных встреч для студентов Московского технического университета связи и информатики (МТУСИ) и Финансового университета при Правительстве РФ.
+                - link "Подробнее" [ref=e984]:
+                  - /url: /presscenter/bpmsoft-i-a4f-team-proveli-lektsii-dlya-studentov-mtusi-i-finansovogo-universiteta/
+                  - text: Подробнее
+                  - img [ref=e986]
+            - generic [ref=e992] [cursor=pointer]:
+              - generic [ref=e993]:
+                - generic [ref=e994]: Вузы
+                - generic [ref=e995]: 24.03.2026
+              - generic [ref=e996]:
+                - generic [ref=e997]: BPMSoft и «Гуд Программ» провели лекцию для студентов Самарского университета
+                - generic [ref=e998]: ИТ-компании BPMSoft и «Гуд Программ» провели гостевую лекцию для студентов Самарского национального исследовательского университета имени академика С.П. Королева.
+                - link "Подробнее" [ref=e1002]:
+                  - /url: /presscenter/bpmsoft-i-gud-programm-proveli-lektsiyu-dlya-studentov-samarskogo-universiteta/
+                  - text: Подробнее
+                  - img [ref=e1004]
+            - generic [ref=e1010] [cursor=pointer]:
+              - generic [ref=e1011]:
+                - generic [ref=e1012]: Вузы
+                - generic [ref=e1013]: 23.03.2026
+              - generic [ref=e1014]:
+                - generic [ref=e1015]: BPMSoft и Центральный университет запустили образовательные проекты в сфере ИИ и low-code
+                - generic [ref=e1016]: Разработчик BPMSoft и Центральный университет заключили соглашение о совместной подготовке ИТ-специалистов.
+                - link "Подробнее" [ref=e1020]:
+                  - /url: /presscenter/bpmsoft-i-tsentralnyy-universitet-zapustili-obrazovatelnye-proekty-v-sfere-ii-i-low-code/
+                  - text: Подробнее
+                  - img [ref=e1022]
+            - generic [ref=e1028] [cursor=pointer]:
+              - generic [ref=e1029]:
+                - generic [ref=e1030]: Клиенты
+                - generic [ref=e1031]: 19.03.2026
+              - generic [ref=e1032]:
+                - generic [ref=e1033]: Производитель гигиенической продукции ООО «ЭвоКом» оптимизировал CRM на базе BPMSoft
+                - generic [ref=e1034]: Компания «ЭвоКом» модернизировала CRM на базе low-code платформы со встроенными ИИ-инструментами BPMSoft. В течение трех месяцев производитель стандартизировал работу с данными и внешними сервисами без остановки операционной деятельности. Проект реализовал системный интегратор Nobilis.Team.
+                - link "Подробнее" [ref=e1039]:
+                  - /url: /presscenter/proizvoditel-gigienicheskoy-produktsii-ooo-evokom-optimiziroval-crm-na-baze-bpmsoft/
+                  - text: Подробнее
+                  - img [ref=e1041]
+            - generic [ref=e1047] [cursor=pointer]:
+              - generic [ref=e1048]:
+                - generic [ref=e1049]: Вузы
+                - generic [ref=e1050]: 10.03.2026
+              - generic [ref=e1051]:
+                - generic [ref=e1052]: Омский институт водного транспорта и BPMSoft заключили соглашение о сотрудничестве
+                - generic [ref=e1053]: Компания BPMSoft (ИТ-холдинг LANSOFT) и Омский институт водного транспорта (ОИВТ) подписали соглашение о сотрудничестве в образовательной и научно-исследовательской областях.
+                - link "Подробнее" [ref=e1057]:
+                  - /url: /presscenter/omskiy-institut-vodnogo-transporta-i-bpmsoft-zaklyuchili-soglashenie-o-sotrudnichestve/
+                  - text: Подробнее
+                  - img [ref=e1059]
+        - link "Все новости" [ref=e1062] [cursor=pointer]:
+          - /url: /presscenter/
+      - generic [ref=e1066]:
+        - generic [ref=e1067]: Помощь в выборе решения
+        - generic [ref=e1068]: Оставьте свои контакты и наш менеджер свяжется с Вами в ближайшее время.
+        - generic [ref=e1069]:
+          - group [ref=e1070]:
+            - generic [ref=e1071]:
+              - generic [ref=e1073]:
+                - generic [ref=e1074]: ФИО*
+                - textbox "ФИО*" [ref=e1076]:
+                  - /placeholder: Введите ваше ФИО
+              - generic [ref=e1078]:
+                - generic [ref=e1079]: Email*
+                - textbox "Email*" [ref=e1081]:
+                  - /placeholder: Введите ваш корпоративный Email
+            - generic [ref=e1082]:
+              - generic [ref=e1084]:
+                - generic [ref=e1085]: Телефон*
+                - textbox "Телефон*" [ref=e1087]:
+                  - /placeholder: ___ ___-__-__
+              - generic [ref=e1089]:
+                - generic [ref=e1090]: Название компании*
+                - textbox "Название компании*" [ref=e1092]:
+                  - /placeholder: Введите название
+            - generic [ref=e1095]:
+              - generic [ref=e1096]: Поле для ввода вопроса
+              - textbox "Поле для ввода вопроса" [ref=e1098]:
+                - /placeholder: Напишите ваш вопрос
+          - group [ref=e1099]:
+            - generic [ref=e1101] [cursor=pointer]:
+              - checkbox "Я даю согласие на обработку моих персональных данных и ознакомлен(а) с Политикой обработки персональных данных"
+              - generic [ref=e1103]:
+                - text: Я даю согласие на
+                - link "обработку моих персональных данных" [ref=e1104]:
+                  - /url: https://bpmsoft.ru/info-soglasie-polzovatelia/
+                - text: и ознакомлен(а) с
+                - link "Политикой обработки персональных данных" [ref=e1105]:
+                  - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+            - generic [ref=e1107] [cursor=pointer]:
+              - checkbox "Я даю согласие на получение рекламных рассылок от BPMSoft"
+              - generic [ref=e1109]: Я даю согласие на получение рекламных рассылок от BPMSoft
+          - button "Отправить заявку" [disabled] [ref=e1110]
+    - contentinfo [ref=e1111]:
+      - generic [ref=e1113]:
+        - navigation [ref=e1116]:
+          - list [ref=e1117]:
+            - listitem [ref=e1118]:
+              - link "Компания" [ref=e1120] [cursor=pointer]:
+                - /url: /kompaniya/
+              - list [ref=e1121]:
+                - listitem [ref=e1122]:
+                  - link "Пресс-центр" [ref=e1123] [cursor=pointer]:
+                    - /url: /presscenter/
+                - listitem [ref=e1124]:
+                  - link "Документы" [ref=e1125] [cursor=pointer]:
+                    - /url: /documents/
+                - listitem [ref=e1126]:
+                  - link "Контакты" [ref=e1127] [cursor=pointer]:
+                    - /url: /contacts/
+                - listitem [ref=e1128]:
+                  - link "Карта сайта" [ref=e1129] [cursor=pointer]:
+                    - /url: /sitemap/
+                - listitem [ref=e1130]:
+                  - link "Кейсы" [ref=e1131] [cursor=pointer]:
+                    - /url: /cases/
+                - listitem [ref=e1132]:
+                  - link "Карьера" [ref=e1133] [cursor=pointer]:
+                    - /url: /career/
+                - listitem [ref=e1134]:
+                  - link "Стажировка" [ref=e1135] [cursor=pointer]:
+                    - /url: /internship/
+                - listitem [ref=e1136]:
+                  - link "Центр экспертизы" [ref=e1137] [cursor=pointer]:
+                    - /url: /centr/
+            - listitem [ref=e1138]:
+              - link "Продукты" [ref=e1140] [cursor=pointer]:
+                - /url: /uslugi-avtomatizacii/
+              - list [ref=e1141]:
+                - listitem [ref=e1142]:
+                  - link "Управление продажами" [ref=e1143] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/prodazhi/
+                - listitem [ref=e1144]:
+                  - link "Управление маркетингом" [ref=e1145] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/marketing/
+                - listitem [ref=e1146]:
+                  - link "Управление сервисом" [ref=e1147] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/servis/
+                - listitem [ref=e1148]:
+                  - link "Портальные решения" [ref=e1149] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/portal/
+                - listitem [ref=e1150]:
+                  - link "Омниканальные коммуникации" [ref=e1151] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/omnikanalnye-kommunikacii/
+                - listitem [ref=e1152]:
+                  - link "Конструктор" [ref=e1153] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/konstruktor/
+                - listitem [ref=e1154]:
+                  - link "Финансы" [ref=e1155] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/finansy/
+                - listitem [ref=e1156]:
+                  - link "Фарма" [ref=e1157] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/farma/
+                - listitem [ref=e1158]:
+                  - link "Управление ИТ-услугами" [ref=e1159] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/upravlenie-it-uslugami/
+                - listitem [ref=e1160]:
+                  - link "Управление закупками" [ref=e1161] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/upravlenie-zakupkami/
+                - listitem [ref=e1162]:
+                  - link "BPMSoft Старт" [ref=e1163] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/bpmsoft-start/
+                - listitem [ref=e1164]:
+                  - link "AI и ML инструменты" [ref=e1165] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/ai-i-ml-instrumenty/
+                - listitem [ref=e1166]:
+                  - link "Управление ИТ-проектами" [ref=e1167] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/sistema-upravleniya-proektami-i-resursami-bpmsoft/
+            - listitem [ref=e1168]:
+              - link "Отрасли" [ref=e1170] [cursor=pointer]:
+                - /url: /otrasli/
+              - list [ref=e1171]:
+                - listitem [ref=e1172]:
+                  - link "Финансы" [ref=e1173] [cursor=pointer]:
+                    - /url: /otrasli/banki-i-financy/
+                - listitem [ref=e1174]:
+                  - link "Ритейл" [ref=e1175] [cursor=pointer]:
+                    - /url: /otrasli/roznichnaya-torgovlya/
+                - listitem [ref=e1176]:
+                  - link "Недвижимость" [ref=e1177] [cursor=pointer]:
+                    - /url: /otrasli/nedvizhimost/
+                - listitem [ref=e1178]:
+                  - link "Фармацевтика" [ref=e1179] [cursor=pointer]:
+                    - /url: /otrasli/farmacevtika/
+                - listitem [ref=e1180]:
+                  - link "Транспорт" [ref=e1181] [cursor=pointer]:
+                    - /url: /otrasli/transport-i-logistika/
+                - listitem [ref=e1182]:
+                  - link "Телеком" [ref=e1183] [cursor=pointer]:
+                    - /url: /otrasli/telekommunikacii/
+                - listitem [ref=e1184]:
+                  - link "FMCG" [ref=e1185] [cursor=pointer]:
+                    - /url: /otrasli/fmcg/
+                - listitem [ref=e1186]:
+                  - link "Энергетика" [ref=e1187] [cursor=pointer]:
+                    - /url: /otrasli/energetika/
+                - listitem [ref=e1188]:
+                  - link "Нефть и газ" [ref=e1189] [cursor=pointer]:
+                    - /url: /otrasli/neft-i-gaz/
+                - listitem [ref=e1190]:
+                  - link "Производство" [ref=e1191] [cursor=pointer]:
+                    - /url: /otrasli/proizvodstvo/
+                - listitem [ref=e1192]:
+                  - link "ИТ" [ref=e1193] [cursor=pointer]:
+                    - /url: /otrasli/it/
+                - listitem [ref=e1194]:
+                  - link "Страхование" [ref=e1195] [cursor=pointer]:
+                    - /url: /otrasli/crm-strakhovanie/
+            - listitem [ref=e1196]:
+              - link "Партнеры" [ref=e1198] [cursor=pointer]:
+                - /url: /partners/
+              - list [ref=e1199]:
+                - listitem [ref=e1200]:
+                  - link "Партнерская программа" [ref=e1201] [cursor=pointer]:
+                    - /url: /partner-community/
+                - listitem [ref=e1202]:
+                  - link "BPMSoft Образование" [ref=e1203] [cursor=pointer]:
+                    - /url: /bpmsoft-education/
+                - listitem [ref=e1204]:
+                  - link "Тренинги по продажам" [ref=e1205] [cursor=pointer]:
+                    - /url: //partneracademy.bpmsoft.ru/
+            - listitem [ref=e1206]:
+              - link "Школа" [ref=e1208] [cursor=pointer]:
+                - /url: //edu.bpmsoft.ru/
+              - list [ref=e1209]:
+                - listitem [ref=e1210]:
+                  - link "База знаний" [ref=e1211] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/baza-znaniy/
+                - listitem [ref=e1212]:
+                  - link "Онлайн-курсы" [ref=e1213] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/online-kursy/
+                - listitem [ref=e1214]:
+                  - link "Сертификация" [ref=e1215] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/sertifikaciya-i-testirovanie/
+                - listitem [ref=e1216]:
+                  - link "Обновления и релизы" [ref=e1217] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/obnovleniya-i-relizi/
+                - listitem [ref=e1218]:
+                  - link "Обучение" [ref=e1219] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/treningi/opisanie-treningov/obshchaya-informatsiya-po-treningam/
+            - listitem [ref=e1220]:
+              - link "Магазин приложений" [ref=e1222] [cursor=pointer]:
+                - /url: //market.bpmsoft.ru
+              - list [ref=e1223]:
+                - listitem [ref=e1224]:
+                  - link "Каталог приложений" [ref=e1225] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/catalog-prilozheniy/
+                - listitem [ref=e1226]:
+                  - link "Стать партнером-разработчиком" [ref=e1227] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/stat-partnerom-razrabotchikom/
+            - listitem [ref=e1228]:
+              - link "Сообщество" [ref=e1230] [cursor=pointer]:
+                - /url: //forum.bpmsoft.ru
+              - list [ref=e1231]:
+                - listitem [ref=e1232]:
+                  - link "Правила Сообщества" [ref=e1233] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/pravila_soobshchestva/
+                - listitem [ref=e1234]:
+                  - link "Спросить Сообщество" [ref=e1235] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/create/
+                - listitem [ref=e1236]:
+                  - link "Как устроен сайт Сообщества" [ref=e1237] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/kak_ustroen_sayt_soobshchestva
+                - listitem [ref=e1238]:
+                  - link "Клубные подарки" [ref=e1239] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/klubnye_podarki_soobshchestva_bpmsoft_2026
+        - generic [ref=e1242]:
+          - generic [ref=e1243]:
+            - generic [ref=e1245]:
+              - button "Заказать консультацию" [ref=e1246] [cursor=pointer]
+              - generic [ref=e1247]:
+                - generic [ref=e1248]:
+                  - generic [ref=e1249]:
+                    - link "7 495 070 09 97" [ref=e1250] [cursor=pointer]:
+                      - /url: tel:+74950700997
+                      - img [ref=e1252]
+                      - text: 7 495 070 09 97
+                    - link "info@bpmsoft.ru" [ref=e1254] [cursor=pointer]:
+                      - /url: mailto:info@bpmsoft.ru
+                      - img [ref=e1256]
+                      - text: info@bpmsoft.ru
+                  - generic [ref=e1258]:
+                    - link [ref=e1260] [cursor=pointer]:
+                      - /url: https://vk.com/bpmsoft
+                      - img [ref=e1262]
+                    - link [ref=e1265] [cursor=pointer]:
+                      - /url: https://t.me/bpmsoft_ru
+                      - img [ref=e1267]
+                    - link [ref=e1270] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@bpmsoft
+                      - img [ref=e1272]
+                    - link [ref=e1275] [cursor=pointer]:
+                      - /url: https://rutube.ru/channel/42194439/
+                      - img [ref=e1277]
+                - paragraph [ref=e1279]:
+                  - text: 127015, Москва,
+                  - text: ул. Бутырская, 76с1
+            - generic [ref=e1282]:
+              - paragraph [ref=e1283]: Следите за обновлениями и новостями
+              - generic [ref=e1285]:
+                - textbox "Введите ваш Email" [ref=e1287]
+                - button "Подписаться" [disabled] [ref=e1288]:
+                  - text: Подписаться
+                  - img [ref=e1290]
+              - paragraph [ref=e1292]: Подписываясь на рассылку, Вы соглашаетесь c условиями политики конфиденциальности и политики обработки персональных данных
+          - generic [ref=e1293]:
+            - generic [ref=e1295]:
+              - link [ref=e1296] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=ru.bpmsoft.mobileapp
+              - link [ref=e1297] [cursor=pointer]:
+                - /url: https://apps.apple.com/ru/app/bpmsoft/id1641881866
+              - link [ref=e1298] [cursor=pointer]:
+                - /url: https://appgallery.huawei.com/app/C109231317
+            - generic [ref=e1299]:
+              - paragraph [ref=e1300]: © 2026 BPMSoft
+              - generic [ref=e1301]:
+                - link "Политика обработки персональных данных" [ref=e1302] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+                - link "Информированное согласие пользователя сайта" [ref=e1303] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/info-soglasie-polzovatelia/
+  - link "Telegram Подписаться" [ref=e1306] [cursor=pointer]:
+    - /url: https://t.me/bpmsoft_ru
+    - img [ref=e1308]
+    - generic [ref=e1310]:
+      - generic [ref=e1311]: Telegram
+      - generic [ref=e1312]: Подписаться
+    - button [ref=e1313]:
+      - img [ref=e1315]

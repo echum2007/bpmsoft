@@ -1,0 +1,854 @@
+[     569ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/ui/alerts/src/ui.alert.css?17005383178996:0
+[     580ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/ui/switcher/dist/ui.switcher.bundle.css?17549752917550:0
+[     598ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/ui/icon-set/outline/style.css?175497529291990:0
+[     910ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/main/core/core_ls.js?17425333324201:0
+[    1100ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/ui/viewer/ui.viewer.js?175497528153296:0
+[    1271ms] TypeError: Class extends value #<Object> is not a constructor or null
+    at https://edu.bpmsoft.ru/bitrix/js/ui/viewer/dist/viewer.bundle.js?174253335732753:712:41
+    at https://edu.bpmsoft.ru/bitrix/js/ui/viewer/dist/viewer.bundle.js?174253335732753:957:2
+[    1307ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1314ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1316ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/ui/vue3/vuex/dist/vuex.bundle.js?175497529277364:0
+[    1337ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1340ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1343ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1346ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1403ms] TypeError: Cannot read properties of undefined (reading 'BuilderModel')
+    at https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/model/dist/registry.bundle.js?170053833469602:8:46
+    at https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/model/dist/registry.bundle.js?170053833469602:1995:2
+[    1462ms] TypeError: Cannot read properties of undefined (reading 'BuilderDatabaseType')
+    at CoreApplication.initVuexBuilder (https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/application/core/dist/core.bundle.js?170053833411294:135:35)
+    at CoreApplication.prepareParams (https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/application/core/dist/core.bundle.js?170053833411294:51:11)
+    at new CoreApplication (https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/application/core/dist/core.bundle.js?170053833411294:21:11)
+    at https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/application/core/dist/core.bundle.js?170053833411294:333:15
+    at https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/application/core/dist/core.bundle.js?170053833411294:338:2
+[    1568ms] TypeError: Cannot read properties of undefined (reading 'mapState')
+    at https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/component/recent-list/dist/recent-list.bundle.js?172607090936920:386:22
+    at https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/component/recent-list/dist/recent-list.bundle.js?172607090936920:1094:2
+[    1728ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1871ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1872ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1872ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1874ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1875ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1877ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1878ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1878ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1879ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1879ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1880ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1880ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1881ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1881ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1882ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1882ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1883ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1883ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1884ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1884ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1885ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1885ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1886ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1886ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1887ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1887ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1887ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1888ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1889ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1889ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1889ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1890ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1891ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1892ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1893ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1894ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1895ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1896ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1896ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1897ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1897ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1898ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1899ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1900ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1901ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1901ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1902ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1903ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1904ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1905ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1906ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1907ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1908ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1909ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1912ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1913ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1914ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1914ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1915ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1915ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1916ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1916ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1916ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1917ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1917ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1918ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1918ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1918ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1919ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1919ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1920ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1920ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1920ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1921ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1921ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1921ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1922ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1922ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1923ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1923ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1924ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1924ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1925ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1926ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1928ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1928ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1929ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1930ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1930ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1931ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1931ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1931ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1932ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1932ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1932ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1933ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1933ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1934ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1934ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1934ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1935ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1935ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1935ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1936ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1936ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1937ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1937ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1937ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1938ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1938ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1938ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1939ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1939ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1939ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1940ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1940ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1940ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1941ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1942ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1943ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1944ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1944ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1945ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1945ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1945ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1945ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1946ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1946ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1946ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1947ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1947ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1947ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1948ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1948ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1948ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1949ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1949ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1949ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1949ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1950ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1950ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1950ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1951ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1951ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1951ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1951ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1952ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1952ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1952ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1953ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1953ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1953ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1954ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1954ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1954ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1955ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1955ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1955ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1955ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    1956ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    2049ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    2050ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    2050ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    2051ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[    2101ms] TypeError: Cannot read properties of undefined (reading 'getRestClient')
+    at new SmileManager (https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/lib/smile-manager/dist/smile-manager.bundle.js?175497528710035:78:122)
+    at SmileManager.getInstance (https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/lib/smile-manager/dist/smile-manager.bundle.js?175497528710035:26:220)
+    at SmileManager.init (https://edu.bpmsoft.ru/bitrix/js/im/old-chat-embedding/lib/smile-manager/dist/smile-manager.bundle.js?175497528710035:30:19)
+    at new BX.IM (https://edu.bpmsoft.ru/bitrix/cache/js/s3/bpmsoft/kernel_im/kernel_im_v1.js?17748948191284718:15488:16)
+    at https://edu.bpmsoft.ru/baza-znaniy/:8679:12
+    at https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:8100:6
+    at Array.forEach (<anonymous>)
+    at https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:8099:10
+    at HTMLDocument.once (https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:6345:6)
+[    2322ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[    2322ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[    2322ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[    2322ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[    2322ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[    2322ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[   62653ms] [LOG] 2026-03-07 11:57: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  123295ms] [LOG] 2026-03-07 11:58: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  183941ms] [LOG] 2026-03-07 11:59: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  244654ms] [LOG] 2026-03-07 12:01: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  305305ms] [LOG] 2026-03-07 12:02: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  365923ms] [LOG] 2026-03-07 12:03: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  426600ms] [LOG] 2026-03-07 12:04: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  487240ms] [LOG] 2026-03-07 12:05: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  547843ms] [LOG] 2026-03-07 12:06: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  608533ms] [LOG] 2026-03-07 12:07: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  669159ms] [LOG] 2026-03-07 12:08: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  729870ms] [LOG] 2026-03-07 12:09: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  790574ms] [LOG] 2026-03-07 12:10: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  851212ms] [LOG] 2026-03-07 12:11: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  911831ms] [LOG] 2026-03-07 12:12: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  972504ms] [LOG] 2026-03-07 12:13: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1033181ms] [LOG] 2026-03-07 12:14: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1093847ms] [LOG] 2026-03-07 12:15: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1154657ms] [LOG] 2026-03-07 12:16: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1215306ms] [LOG] 2026-03-07 12:17: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1276916ms] [LOG] 2026-03-07 12:18: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1337585ms] [LOG] 2026-03-07 12:19: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1398285ms] [LOG] 2026-03-07 12:20: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1458946ms] [LOG] 2026-03-07 12:21: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1519619ms] [LOG] 2026-03-07 12:22: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1580253ms] [LOG] 2026-03-07 12:23: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1640918ms] [LOG] 2026-03-07 12:24: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1701583ms] [LOG] 2026-03-07 12:25: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1762181ms] [LOG] 2026-03-07 12:26: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1822861ms] [LOG] 2026-03-07 12:27: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1883479ms] [LOG] 2026-03-07 12:28: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 1944133ms] [LOG] 2026-03-07 12:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2004742ms] [LOG] 2026-03-07 12:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2065360ms] [LOG] 2026-03-07 12:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2126031ms] [LOG] 2026-03-07 12:32: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2186625ms] [LOG] 2026-03-07 12:33: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2247500ms] [LOG] 2026-03-07 12:34: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2308138ms] [LOG] 2026-03-07 12:35: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2368741ms] [LOG] 2026-03-07 12:36: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2429395ms] [LOG] 2026-03-07 12:37: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2489993ms] [LOG] 2026-03-07 12:38: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2550623ms] [LOG] 2026-03-07 12:39: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2611248ms] [LOG] 2026-03-07 12:40: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2671910ms] [LOG] 2026-03-07 12:41: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2732574ms] [LOG] 2026-03-07 12:42: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2793213ms] [LOG] 2026-03-07 12:43: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2853838ms] [LOG] 2026-03-07 12:44: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2914519ms] [LOG] 2026-03-07 12:45: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2975130ms] [LOG] 2026-03-07 12:46: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3035807ms] [LOG] 2026-03-07 12:47: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3096486ms] [LOG] 2026-03-07 12:48: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3157169ms] [LOG] 2026-03-07 12:49: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3217882ms] [LOG] 2026-03-07 12:50: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3278499ms] [LOG] 2026-03-07 12:51: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3339108ms] [LOG] 2026-03-07 12:52: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3399824ms] [LOG] 2026-03-07 12:53: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3460471ms] [LOG] 2026-03-07 12:54: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3521076ms] [LOG] 2026-03-07 12:55: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3582706ms] [LOG] 2026-03-07 12:56: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3643335ms] [LOG] 2026-03-07 12:57: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3703994ms] [LOG] 2026-03-07 12:58: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3764646ms] [LOG] 2026-03-07 12:59: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3825331ms] [LOG] 2026-03-07 13:00: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3885936ms] [LOG] 2026-03-07 13:01: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3946570ms] [LOG] 2026-03-07 13:02: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4007204ms] [LOG] 2026-03-07 13:03: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4067815ms] [LOG] 2026-03-07 13:04: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4128396ms] [LOG] 2026-03-07 13:05: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4189089ms] [LOG] 2026-03-07 13:06: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4249676ms] [LOG] 2026-03-07 13:07: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4310272ms] [LOG] 2026-03-07 13:08: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4371068ms] [LOG] 2026-03-07 13:09: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4431672ms] [LOG] 2026-03-07 13:10: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4492268ms] [LOG] 2026-03-07 13:11: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4552913ms] [LOG] 2026-03-07 13:12: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4613574ms] [LOG] 2026-03-07 13:13: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4674171ms] [LOG] 2026-03-07 13:14: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4734825ms] [LOG] 2026-03-07 13:15: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4795485ms] [LOG] 2026-03-07 13:16: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4856136ms] [LOG] 2026-03-07 13:17: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4916768ms] [LOG] 2026-03-07 13:18: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4977365ms] [LOG] 2026-03-07 13:19: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5038002ms] [LOG] 2026-03-07 13:20: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5098652ms] [LOG] 2026-03-07 13:21: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5160499ms] [LOG] 2026-03-07 13:22: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5221257ms] [LOG] 2026-03-07 13:23: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5281960ms] [LOG] 2026-03-07 13:24: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5342887ms] [LOG] 2026-03-07 13:25: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5358731ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5362332ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5367892ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/js/ui/switcher/dist/ui.switcher.bundle.css?17549752917550:0
+[ 5368227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5368238ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5368310ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5368327ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5368331ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5368331ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5368779ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:0
+[ 5368779ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:0
+[ 5368779ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:0
+[ 5368779ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:0
+[ 5368779ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:0
+[ 5368779ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:0
+[ 5368968ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369132ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369132ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369133ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369134ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369134ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369135ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369136ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369136ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369137ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369137ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369138ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369138ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369139ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369140ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369141ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369142ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369142ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369143ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369143ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369144ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369144ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369145ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369145ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369146ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369146ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369147ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369147ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369148ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369148ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369149ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369150ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369150ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369151ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369151ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369152ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369153ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369153ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369154ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369154ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369155ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369157ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369158ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369159ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369159ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369160ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369160ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369161ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369161ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369162ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369162ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369163ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369164ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369164ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369165ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369166ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369166ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369167ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369167ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369167ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369170ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369171ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369171ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369171ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369173ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369174ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369175ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369176ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369176ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369177ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369177ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369178ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369179ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369179ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369180ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369180ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369181ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369182ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369182ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369183ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369183ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369184ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369184ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369185ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369186ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369187ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369187ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369188ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369189ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369190ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369191ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369192ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369193ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369193ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369194ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369194ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369195ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369195ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369195ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369196ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369196ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369197ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369197ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369198ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369198ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369199ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369199ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369199ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369200ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369200ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369200ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369201ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369202ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369202ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369203ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369203ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369203ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369204ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369204ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369204ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369205ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369205ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369206ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369207ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369208ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369209ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369210ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369210ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369211ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369211ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369212ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369212ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369212ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369213ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369213ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369214ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369214ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369214ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369215ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369215ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369215ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369216ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369216ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369217ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369217ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369217ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369218ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369218ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369218ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369219ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369219ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369219ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369220ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369220ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369220ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369221ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369221ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369221ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369222ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369222ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369223ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369224ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369225ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369225ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369226ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369226ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369228ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5369228ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5387628ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/calculator-sistemnych-trebovanii/:99
+[ 5399916ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5399917ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5399945ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5399949ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5399951ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5399952ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[ 5400201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[ 5400201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[ 5400201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[ 5400201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[ 5400201ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/:0
+[ 5400385ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400386ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400387ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400388ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400389ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400390ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400391ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400392ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400397ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400398ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400398ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400399ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400399ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400400ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400401ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400401ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400402ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400402ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400402ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400402ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400403ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400404ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400405ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400406ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400406ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400407ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400407ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400408ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400408ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400409ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400409ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400410ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400410ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400411ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400411ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400412ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400412ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400413ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400413ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400414ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400414ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400414ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400415ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400415ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400416ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400416ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400417ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400417ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400417ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400418ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400418ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400419ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400419ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400419ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400420ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400421ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400422ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400423ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400424ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400424ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400425ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400425ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400425ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400426ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400426ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400427ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400427ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400427ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400428ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400428ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400429ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400429ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400429ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400430ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400430ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400431ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400431ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400431ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400432ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400432ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400432ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400433ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400433ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400434ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400435ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400435ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400435ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400436ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400437ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400438ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400439ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400440ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400440ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400441ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400441ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400442ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400442ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400442ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400443ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400443ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400444ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400444ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400444ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400445ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400445ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400445ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400446ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400446ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400446ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400447ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400447ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400447ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400448ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400448ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400448ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400449ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400449ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400450ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400450ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400451ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400451ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400451ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400452ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400452ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400452ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400453ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400453ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400454ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400454ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400455ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400456ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400456ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400457ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400457ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400458ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400458ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400459ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400459ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400459ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400460ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400460ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400460ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400461ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400461ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400461ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400462ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400462ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400462ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400463ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400463ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400463ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400464ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400464ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400464ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400465ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400465ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400465ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400465ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400466ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400466ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5400467ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/:101
+[ 5460717ms] [LOG] 2026-03-07 13:27: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5578867ms] [LOG] 2026-03-07 13:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5639526ms] [LOG] 2026-03-07 13:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5700156ms] [LOG] 2026-03-07 13:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5727327ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5727328ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5727377ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5727386ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5727390ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5727391ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5727643ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:0
+[ 5727643ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:0
+[ 5727643ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:0
+[ 5727643ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:0
+[ 5727643ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:0
+[ 5727643ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:0
+[ 5728197ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728198ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728199ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728201ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728201ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728201ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728202ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728202ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728203ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728203ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728204ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728204ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728205ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728205ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728205ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728206ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728206ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728207ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728207ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728208ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728208ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728208ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728209ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728209ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728210ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728210ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728210ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728211ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728211ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728212ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728212ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728212ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728213ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728213ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728214ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728215ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728217ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728217ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728218ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728218ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728219ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728219ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728219ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728220ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728220ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728221ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728221ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728221ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728222ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728223ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728223ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728223ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728224ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728224ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728224ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728225ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728225ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728226ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728226ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728226ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728227ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728228ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728228ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728229ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728229ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728230ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728231ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728233ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728234ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728234ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728235ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728235ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728236ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728236ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728236ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728237ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728237ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728237ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728238ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728238ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728238ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728239ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728239ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728240ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728240ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728240ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728241ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728241ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728241ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728242ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728242ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728242ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728243ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728243ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728243ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728244ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728244ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728244ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728245ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728246ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728246ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728246ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728247ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728249ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728249ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728250ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728250ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728250ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728251ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728252ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728253ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728254ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728255ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728256ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728257ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728258ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728259ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728260ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728263ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728267ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728268ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728268ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728269ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728269ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728270ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728270ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728271ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728272ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728272ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728273ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728273ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728274ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728275ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728276ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728276ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728278ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728278ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728279ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728280ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728283ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728284ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728285ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728286ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728286ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728287ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728287ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728288ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728288ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728289ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728290ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728290ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728291ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728291ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728291ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728292ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728292ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728293ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728293ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5728294ms] [LOG] error SyntaxError: Unexpected token '_', "__ym__prom"... is not valid JSON @ https://edu.bpmsoft.ru/baza-znaniy/magazin-prilozheniy/:101
+[ 5787874ms] [LOG] 2026-03-07 13:33: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5848479ms] [LOG] 2026-03-07 13:34: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5909072ms] [LOG] 2026-03-07 13:35: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5969696ms] [LOG] 2026-03-07 13:36: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6030347ms] [LOG] 2026-03-07 13:37: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6127730ms] [LOG] 2026-03-07 13:39: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6188382ms] [LOG] 2026-03-07 13:40: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6249051ms] [LOG] 2026-03-07 13:41: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6309774ms] [LOG] 2026-03-07 13:42: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6370437ms] [LOG] 2026-03-07 13:43: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6431091ms] [LOG] 2026-03-07 13:44: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6491745ms] [LOG] 2026-03-07 13:45: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6552424ms] [LOG] 2026-03-07 13:46: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6613089ms] [LOG] 2026-03-07 13:47: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6673693ms] [LOG] 2026-03-07 13:48: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6734296ms] [LOG] 2026-03-07 13:49: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6794938ms] [LOG] 2026-03-07 13:50: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6855577ms] [LOG] 2026-03-07 13:51: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6916171ms] [LOG] 2026-03-07 13:52: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6976835ms] [LOG] 2026-03-07 13:53: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7037499ms] [LOG] 2026-03-07 13:54: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805

@@ -1,0 +1,283 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e5]:
+        - generic [ref=e9]:
+          - link [ref=e12] [cursor=pointer]:
+            - /url: https://bpmsoft.ru
+          - generic [ref=e13]:
+            - button "Развернуть поиск" [ref=e15] [cursor=pointer]:
+              - img [ref=e17]
+            - generic [ref=e19]:
+              - button "Заявка" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: Заявка
+              - button "Демоверсия" [ref=e22] [cursor=pointer]:
+                - generic [ref=e23]: Демоверсия
+              - link "Войти" [ref=e25] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/avtorizatsiya/
+                - generic [ref=e26]: Войти
+              - button [ref=e27] [cursor=pointer]:
+                - img [ref=e29]
+    - main [ref=e31]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - paragraph [ref=e38]: "404"
+          - generic [ref=e39]:
+            - paragraph [ref=e40]: Такой страницы нет
+            - paragraph [ref=e41]: Но есть много других полезных страниц
+        - link "На главную" [ref=e43] [cursor=pointer]:
+          - /url: /
+    - contentinfo [ref=e44]:
+      - generic [ref=e46]:
+        - navigation [ref=e49]:
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "Компания" [ref=e53] [cursor=pointer]:
+                - /url: /kompaniya/
+              - list [ref=e54]:
+                - listitem [ref=e55]:
+                  - link "Пресс-центр" [ref=e56] [cursor=pointer]:
+                    - /url: /presscenter/
+                - listitem [ref=e57]:
+                  - link "Документы" [ref=e58] [cursor=pointer]:
+                    - /url: /documents/
+                - listitem [ref=e59]:
+                  - link "Контакты" [ref=e60] [cursor=pointer]:
+                    - /url: /contacts/
+                - listitem [ref=e61]:
+                  - link "Карта сайта" [ref=e62] [cursor=pointer]:
+                    - /url: /sitemap/
+                - listitem [ref=e63]:
+                  - link "Кейсы" [ref=e64] [cursor=pointer]:
+                    - /url: /cases/
+                - listitem [ref=e65]:
+                  - link "Карьера" [ref=e66] [cursor=pointer]:
+                    - /url: /career/
+                - listitem [ref=e67]:
+                  - link "Стажировка" [ref=e68] [cursor=pointer]:
+                    - /url: /internship/
+                - listitem [ref=e69]:
+                  - link "Центр экспертизы" [ref=e70] [cursor=pointer]:
+                    - /url: /centr/
+            - listitem [ref=e71]:
+              - link "Продукты" [ref=e73] [cursor=pointer]:
+                - /url: /uslugi-avtomatizacii/
+              - list [ref=e74]:
+                - listitem [ref=e75]:
+                  - link "Управление продажами" [ref=e76] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/prodazhi/
+                - listitem [ref=e77]:
+                  - link "Управление маркетингом" [ref=e78] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/marketing/
+                - listitem [ref=e79]:
+                  - link "Управление сервисом" [ref=e80] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/servis/
+                - listitem [ref=e81]:
+                  - link "Портальные решения" [ref=e82] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/portal/
+                - listitem [ref=e83]:
+                  - link "Омниканальные коммуникации" [ref=e84] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/omnikanalnye-kommunikacii/
+                - listitem [ref=e85]:
+                  - link "Конструктор" [ref=e86] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/konstruktor/
+                - listitem [ref=e87]:
+                  - link "Финансы" [ref=e88] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/finansy/
+                - listitem [ref=e89]:
+                  - link "Фарма" [ref=e90] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/farma/
+                - listitem [ref=e91]:
+                  - link "Управление ИТ-услугами" [ref=e92] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/upravlenie-it-uslugami/
+                - listitem [ref=e93]:
+                  - link "Управление закупками" [ref=e94] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/upravlenie-zakupkami/
+                - listitem [ref=e95]:
+                  - link "BPMSoft Старт" [ref=e96] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/bpmsoft-start/
+                - listitem [ref=e97]:
+                  - link "AI и ML инструменты" [ref=e98] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/ai-i-ml-instrumenty/
+                - listitem [ref=e99]:
+                  - link "Управление ИТ-проектами" [ref=e100] [cursor=pointer]:
+                    - /url: /uslugi-avtomatizacii/sistema-upravleniya-proektami-i-resursami-bpmsoft/
+            - listitem [ref=e101]:
+              - link "Отрасли" [ref=e103] [cursor=pointer]:
+                - /url: /otrasli/
+              - list [ref=e104]:
+                - listitem [ref=e105]:
+                  - link "Финансы" [ref=e106] [cursor=pointer]:
+                    - /url: /otrasli/banki-i-financy/
+                - listitem [ref=e107]:
+                  - link "Ритейл" [ref=e108] [cursor=pointer]:
+                    - /url: /otrasli/roznichnaya-torgovlya/
+                - listitem [ref=e109]:
+                  - link "Недвижимость" [ref=e110] [cursor=pointer]:
+                    - /url: /otrasli/nedvizhimost/
+                - listitem [ref=e111]:
+                  - link "Фармацевтика" [ref=e112] [cursor=pointer]:
+                    - /url: /otrasli/farmacevtika/
+                - listitem [ref=e113]:
+                  - link "Транспорт" [ref=e114] [cursor=pointer]:
+                    - /url: /otrasli/transport-i-logistika/
+                - listitem [ref=e115]:
+                  - link "Телеком" [ref=e116] [cursor=pointer]:
+                    - /url: /otrasli/telekommunikacii/
+                - listitem [ref=e117]:
+                  - link "FMCG" [ref=e118] [cursor=pointer]:
+                    - /url: /otrasli/fmcg/
+                - listitem [ref=e119]:
+                  - link "Энергетика" [ref=e120] [cursor=pointer]:
+                    - /url: /otrasli/energetika/
+                - listitem [ref=e121]:
+                  - link "Нефть и газ" [ref=e122] [cursor=pointer]:
+                    - /url: /otrasli/neft-i-gaz/
+                - listitem [ref=e123]:
+                  - link "Производство" [ref=e124] [cursor=pointer]:
+                    - /url: /otrasli/proizvodstvo/
+                - listitem [ref=e125]:
+                  - link "ИТ" [ref=e126] [cursor=pointer]:
+                    - /url: /otrasli/it/
+                - listitem [ref=e127]:
+                  - link "Страхование" [ref=e128] [cursor=pointer]:
+                    - /url: /otrasli/crm-strakhovanie/
+            - listitem [ref=e129]:
+              - link "Партнеры" [ref=e131] [cursor=pointer]:
+                - /url: /partners/
+              - list [ref=e132]:
+                - listitem [ref=e133]:
+                  - link "Партнерская программа" [ref=e134] [cursor=pointer]:
+                    - /url: /partner-community/
+                - listitem [ref=e135]:
+                  - link "BPMSoft Образование" [ref=e136] [cursor=pointer]:
+                    - /url: /bpmsoft-education/
+                - listitem [ref=e137]:
+                  - link "Тренинги по продажам" [ref=e138] [cursor=pointer]:
+                    - /url: //partneracademy.bpmsoft.ru/
+            - listitem [ref=e139]:
+              - link "Школа" [ref=e141] [cursor=pointer]:
+                - /url: //edu.bpmsoft.ru/
+              - list [ref=e142]:
+                - listitem [ref=e143]:
+                  - link "База знаний" [ref=e144] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/baza-znaniy/
+                - listitem [ref=e145]:
+                  - link "Онлайн-курсы" [ref=e146] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/online-kursy/
+                - listitem [ref=e147]:
+                  - link "Сертификация" [ref=e148] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/sertifikaciya-i-testirovanie/
+                - listitem [ref=e149]:
+                  - link "Обновления и релизы" [ref=e150] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/obnovleniya-i-relizi/
+                - listitem [ref=e151]:
+                  - link "Обучение" [ref=e152] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/treningi/opisanie-treningov/obshchaya-informatsiya-po-treningam/
+            - listitem [ref=e153]:
+              - link "Магазин приложений" [ref=e155] [cursor=pointer]:
+                - /url: //market.bpmsoft.ru
+              - list [ref=e156]:
+                - listitem [ref=e157]:
+                  - link "Каталог приложений" [ref=e158] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/catalog-prilozheniy/
+                - listitem [ref=e159]:
+                  - link "Стать партнером-разработчиком" [ref=e160] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/stat-partnerom-razrabotchikom/
+            - listitem [ref=e161]:
+              - link "Сообщество" [ref=e163] [cursor=pointer]:
+                - /url: //forum.bpmsoft.ru
+              - list [ref=e164]:
+                - listitem [ref=e165]:
+                  - link "Правила Сообщества" [ref=e166] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/pravila_soobshchestva/
+                - listitem [ref=e167]:
+                  - link "Спросить Сообщество" [ref=e168] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/create/
+                - listitem [ref=e169]:
+                  - link "Как устроен сайт Сообщества" [ref=e170] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/kak_ustroen_sayt_soobshchestva
+                - listitem [ref=e171]:
+                  - link "Клубные подарки" [ref=e172] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/klubnye_podarki_soobshchestva_bpmsoft_2026
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - generic [ref=e178]:
+              - button "Заказать консультацию" [ref=e179] [cursor=pointer]
+              - generic [ref=e180]:
+                - generic [ref=e181]:
+                  - generic [ref=e182]:
+                    - link "7 495 070 09 97" [ref=e183] [cursor=pointer]:
+                      - /url: tel:+74950700997
+                      - img [ref=e185]
+                      - text: 7 495 070 09 97
+                    - link "info@bpmsoft.ru" [ref=e187] [cursor=pointer]:
+                      - /url: mailto:info@bpmsoft.ru
+                      - img [ref=e189]
+                      - text: info@bpmsoft.ru
+                  - generic [ref=e191]:
+                    - link [ref=e193] [cursor=pointer]:
+                      - /url: https://vk.com/bpmsoft
+                      - img [ref=e195]
+                    - link [ref=e198] [cursor=pointer]:
+                      - /url: https://t.me/bpmsoft_ru
+                      - img [ref=e200]
+                    - link [ref=e203] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@bpmsoft
+                      - img [ref=e205]
+                    - link [ref=e208] [cursor=pointer]:
+                      - /url: https://rutube.ru/channel/42194439/
+                      - img [ref=e210]
+                - paragraph [ref=e212]:
+                  - text: 127015, Москва,
+                  - text: ул. Бутырская, 76с1
+            - generic [ref=e215]:
+              - paragraph [ref=e216]: Следите за обновлениями и новостями
+              - generic [ref=e218]:
+                - textbox "Введите ваш Email" [ref=e220]
+                - button "Подписаться" [disabled] [ref=e221]:
+                  - text: Подписаться
+                  - img [ref=e223]
+              - paragraph [ref=e225]: Подписываясь на рассылку, Вы соглашаетесь c условиями политики конфиденциальности и политики обработки персональных данных
+          - generic [ref=e226]:
+            - generic [ref=e228]:
+              - link [ref=e229] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=ru.bpmsoft.mobileapp
+              - link [ref=e230] [cursor=pointer]:
+                - /url: https://apps.apple.com/ru/app/bpmsoft/id1641881866
+              - link [ref=e231] [cursor=pointer]:
+                - /url: https://appgallery.huawei.com/app/C109231317
+            - generic [ref=e232]:
+              - paragraph [ref=e233]: © 2026 BPMSoft
+              - generic [ref=e234]:
+                - link "Политика обработки персональных данных" [ref=e235] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+                - link "Информированное согласие пользователя сайта" [ref=e236] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/info-soglasie-polzovatelia/
+  - generic [ref=e238]:
+    - link "Telegram Подписаться" [ref=e239] [cursor=pointer]:
+      - /url: https://t.me/bpmsoft_ru
+      - img [ref=e241]
+      - generic [ref=e243]:
+        - generic [ref=e244]: Telegram
+        - generic [ref=e245]: Подписаться
+      - button [ref=e246]:
+        - img [ref=e248]
+    - link [ref=e250] [cursor=pointer]:
+      - /url: https://lansoft.com
+      - img [ref=e251]
+      - img [ref=e254]
+  - generic [ref=e256]:
+    - generic [ref=e257]:
+      - generic [ref=e258]: Уважаемые клиенты! Предупреждаем о случаях недобросовестной конкуренции и мошенничестве в сети Интернет.
+      - link "Подробнее" [ref=e259] [cursor=pointer]:
+        - /url: https://bpmsoft.ru/preduprezhdenie-o-nekorrektnykh-saytakh/
+      - button [ref=e260] [cursor=pointer]:
+        - img [ref=e262]
+    - generic [ref=e264]:
+      - generic [ref=e265]:
+        - text: Сайт использует файлы cookie. Подробная информация
+        - link "в правилах по обработке персональных данных." [ref=e266] [cursor=pointer]:
+          - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+        - text: Вы можете запретить сохранение cookie в настройках своего браузера.
+      - button "Принять" [ref=e267] [cursor=pointer]

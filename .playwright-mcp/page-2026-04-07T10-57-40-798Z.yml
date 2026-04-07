@@ -1,0 +1,579 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e5]:
+        - generic [ref=e9]:
+          - link [ref=e12] [cursor=pointer]:
+            - /url: https://bpmsoft.ru
+          - generic [ref=e13]:
+            - button "Развернуть поиск" [ref=e15] [cursor=pointer]:
+              - img [ref=e17]
+            - generic [ref=e19]:
+              - button "Заявка" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: Заявка
+              - button "Демоверсия" [ref=e22] [cursor=pointer]:
+                - generic [ref=e23]: Демоверсия
+              - button [ref=e26] [cursor=pointer]
+              - button [ref=e28] [cursor=pointer]:
+                - img [ref=e30]
+    - main [ref=e32]:
+      - navigation [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Школа" [ref=e38] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e39]:
+            - link "База знаний" [ref=e40] [cursor=pointer]:
+              - /url: /baza-znaniy/
+          - listitem [ref=e41]:
+            - link "Онлайн-курсы" [ref=e42] [cursor=pointer]:
+              - /url: /online-kursy/
+          - listitem [ref=e43]:
+            - link "Сертификация" [ref=e44] [cursor=pointer]:
+              - /url: /sertifikaciya-i-testirovanie/
+          - listitem [ref=e45]:
+            - link "Обновления и релизы" [ref=e46] [cursor=pointer]:
+              - /url: /obnovleniya-i-relizi/
+          - listitem [ref=e47]:
+            - link "Обучение" [ref=e48] [cursor=pointer]:
+              - /url: /treningi/
+      - navigation [ref=e49]:
+        - generic [ref=e51]:
+          - link "Главная" [ref=e52] [cursor=pointer]:
+            - /url: https://bpmsoft.ru
+          - link "/Школа low-code" [ref=e53] [cursor=pointer]:
+            - /url: /
+          - link "/База знаний" [ref=e54] [cursor=pointer]:
+            - /url: /baza-znaniy/
+          - link "/Для разработчика" [ref=e55] [cursor=pointer]:
+            - /url: /baza-znaniy/dlya-razrabotchika/
+          - link "/Клиентская разработка" [ref=e56] [cursor=pointer]:
+            - /url: /baza-znaniy/klientskaya-razrabotka/
+          - link "/Данные" [ref=e57] [cursor=pointer]:
+            - /url: /baza-znaniy/dannye/
+          - generic [ref=e58]: /Класс EntitySchemaQuery
+      - generic [ref=e65]:
+        - img [ref=e67] [cursor=pointer]
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - heading "Класс EntitySchemaQuery" [level=1] [ref=e71]:
+              - text: Класс
+              - generic [ref=e72]:
+                - text: EntitySchemaQuery
+                - img [ref=e74] [cursor=pointer]
+            - generic [ref=e76]:
+              - generic [ref=e77]:
+                - img [ref=e78]
+                - text: Простой
+              - generic [ref=e80]:
+                - link "Скачать" [ref=e81] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/docs/export?iblock=189&type=article&id=32132
+                  - generic [ref=e82]: Скачать
+                  - img [ref=e83]
+                - generic [ref=e85]:
+                  - generic [ref=e86] [cursor=pointer]:
+                    - text: Версия 1.9
+                    - img [ref=e87]
+                  - list [ref=e88]:
+                    - listitem [ref=e89]:
+                      - link "Версия 1.9" [ref=e90] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e91]:
+                      - link "Версия 1.8" [ref=e92] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e93]:
+                      - link "Версия 1.7" [ref=e94] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem [ref=e95]:
+                      - link "Версия 1.6" [ref=e96] [cursor=pointer]:
+                        - /url: "#"
+                    - listitem
+                    - listitem [ref=e97]:
+                      - link "Архив" [ref=e98] [cursor=pointer]:
+                        - /url: /baza-znaniy/archive/
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Данный класс позволяет создавать и выполнять запросы для получения данных из таблиц базы данных BPMSoft.
+            - heading "Методы" [level=2] [ref=e106]:
+              - text: Методы
+              - img [ref=e108] [cursor=pointer]
+            - list [ref=e110]:
+              - listitem [ref=e111]:
+                - text: • abortQuery();
+                - text: Останавливает выполнение запроса.
+            - list [ref=e112]:
+              - listitem [ref=e113]:
+                - text: • addAggregationSchemaColumn(columnPath, aggregationType, [columnAlias], aggregationEvalType);
+                - text: Создает новую колонку-функцию, экземпляр класса «BPMSoft.FunctionQueryColumn» с типом AGGREGATION. После чего добавляет ее в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e114] [cursor=pointer]: Таблица 1 — Описание параметров метода «addAggregationSchemaColumn»
+            - text: • • • • • • • • •
+            - list [ref=e115]:
+              - listitem [ref=e116]:
+                - text: • addColumn(column, [columnAlias], [config]);
+                - text: Создаёт новую колонку, экземпляр «BPMSoft.EntityQueryColumn», после чего добавляет ее в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e117] [cursor=pointer]: Таблица 2 — Описание параметров метода «addColumn»
+            - list [ref=e118]:
+              - listitem [ref=e119]:
+                - text: • addDatePartFunctionColumn(columnPath, datePartType, [columnAlias]);
+                - text: Создает новую колонку-функцию, экземпляр класса «BPMSoft.FunctionQueryColumn» с типом DATE_PART. После чего добавляет ее в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e120] [cursor=pointer]: Таблица 3 — Описание параметров метода «addDatePartFunctionColumn»
+            - text: • • • • • • • •
+            - list [ref=e121]:
+              - listitem [ref=e122]:
+                - text: • addDatePeriodMacrosColumn(macrosType, [macrosValue], [columnAlias]);
+                - text: Создает новую колонку-функцию, экземпляр класса «BPMSoft.FunctionQueryColumn» с типом MACROS, для типов макроса (даты), требующих параметризации. После чего добавляет ее в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e123] [cursor=pointer]: Таблица 4 — Описание параметров метода «addDatePeriodMacrosColumn»
+            - text: • • • • • • •
+            - list [ref=e124]:
+              - listitem [ref=e125]:
+                - text: • addFunctionColumn(columnPath, functionType, [columnAlias]);
+                - text: Создаёт колонку-функцию экземпляр класса «BPMSoft.FunctionQueryColumn», после чего добавляет еe в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e126] [cursor=pointer]: Таблица 5 — Описание параметров метода «addFunctionColumn»
+            - text: • • • • • • • •
+            - list [ref=e127]:
+              - listitem [ref=e128]:
+                - text: • addMacrosColumn(macrosType, [columnAlias]);
+                - text: Создает новую колонку-функцию, экземпляр класса «BPMSoft.FunctionQueryColumn» с типом MACROS. Не требует параметризации. После чего добавляет ее в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e129] [cursor=pointer]: Таблица 6 — Описание параметров метода «addMacrosColumn»
+            - text: • • • • • • • • • • • • • • • • • • • • • • • • • • • •
+            - list [ref=e130]:
+              - listitem [ref=e131]:
+                - text: • addParameterColumn(paramValue, paramDataType, [columnAlias]);
+                - text: Создает новую колонку-параметр, экземпляр класса «BPMSoft.ParameterQueryColumn». После чего добавляет ее в экземпляр запроса, из которого был вызван метод.
+            - paragraph [ref=e132] [cursor=pointer]: Таблица 7 — Описание параметров метода «addParameterColumn»
+            - list [ref=e133]:
+              - listitem [ref=e134]:
+                - text: • createBetweenFilter(leftExpression, rightLessExpression, rightGreaterExpression);
+                - text: Создает новый BETWEEN фильтр, экземпляр класса «BPMSoft.BetweenFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e135] [cursor=pointer]: Таблица 8 — Описание параметров метода «createBetweenFilter»
+            - list [ref=e136]:
+              - listitem [ref=e137]:
+                - text: • createColumnBetweenFilterWithParameters(columnPath, lessParamValue, greaterParamValue, paramDataType)
+                - text: Создает новый BETWEEN фильтр для проверки вхождения значения колонки в диапазон фильтра, экземпляр класса «BPMSoft.BetweenFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph
+            - paragraph [ref=e138] [cursor=pointer]: Таблица 9 — Описание параметров метода «createColumnBetweenFilterWithParameters»
+            - list [ref=e139]:
+              - listitem [ref=e140]:
+                - text: • createColumnFilterWithParameter(comparisonType, columnPath, paramValue, paramDataType);
+                - text: Создает новый COMPARE фильтр для проверки совпадения значения колонки со значением фильтра, экземпляр класса «BPMSoft.CompareFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e141] [cursor=pointer]: Таблица 10 — Описание параметров метода «createColumnFilterWithParameter»
+            - text: • • • • • • • • • • • • • • • •
+            - list [ref=e142]:
+              - listitem [ref=e143]:
+                - text: • createColumnInFilterWithParameters(columnPath, paramValue, paramDataType);
+                - text: Создает новый In фильтр для проверки вхождения значения колонки в параметры фильтра. Экземпляр класса «BPMSoft.InFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e144] [cursor=pointer]: Таблица 11 — Описание параметров метода «createColumnInFilterWithParameters»
+            - list [ref=e145]:
+              - listitem [ref=e146]:
+                - text: • createColumnIsNotNullFilter(columnPath);
+                - text: Создает новый IsNotNull фильтр для проверки значения колонки на заполненность. Экземпляр класса «BPMSoft.IsNullFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph
+            - paragraph [ref=e147] [cursor=pointer]: Таблица 12 — Описание параметров метода «createColumnIsNotNullFilter»
+            - list [ref=e148]:
+              - listitem [ref=e149]:
+                - text: • createColumnIsNullFilter(columnPath);
+                - text: Создает новый IsNull фильтр для проверки значения колонки на пустоту. Экземпляр класса «BPMSoft.IsNullFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e150] [cursor=pointer]: Таблица 13 — Описание параметров метода «createColumnIsNullFilter»
+            - list [ref=e151]:
+              - listitem [ref=e152]:
+                - text: • createCompareFilter(comparisonType, leftExpression, rightExpression);
+                - text: Создает новый COMPARE фильтр для сравнения значений. Экземпляр класса «BPMSoft.CompareFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e153] [cursor=pointer]: Таблица 14 — Описание параметров метода «createCompareFilter»
+            - text: • • • • • • • • • • • • • • • •
+            - list [ref=e154]:
+              - listitem [ref=e155]:
+                - text: • createExistsFilter(columnPath);
+                - text: Создает новый Exists фильтр, в качества выражения берет значение колонки и проверяет его существование. Экземпляр класса «BPMSoft.IsNullFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e156] [cursor=pointer]: Таблица 15 — Описание параметров метода «createExistsFilter»
+            - list [ref=e157]:
+              - listitem [ref=e158]:
+                - text: • createNotExistsFilter(columnPath);
+                - text: Создает новый Exists фильтр, в качества выражения берет значение колонки и проверяет его отсутствие. Экземпляр класса «BPMSoft.ExistsFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e159] [cursor=pointer]: Таблица 16 — Описание параметров метода «createNotExistsFilter»
+            - list [ref=e160]:
+              - listitem [ref=e161]:
+                - text: • createFilter(comparisonType, leftColumnPath, rightColumnPath);
+                - text: Создает новый COMPARE фильтр для сравнения значений двух колонок. Экземпляр класса «BPMSoft.CompareFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e162] [cursor=pointer]: Таблица 17 — Описание параметров метода «createFilter»
+            - text: • • • • • • • • • • • • • • • •
+            - list [ref=e163]:
+              - listitem [ref=e164]:
+                - text: • createFilterGroup();
+                - text: Создает экземпляр группы фильтров. Класс «BPMSoft.FilterGroup».
+                - text: Возвращает созданную группу фильтров.
+            - list [ref=e165]:
+              - listitem [ref=e166]:
+                - text: • createInFilter(leftExpression, rightExpressions);
+                - text: Создает новый In фильтр для проверки вхождения значения в параметры фильтра. Экземпляр класса «BPMSoft.InFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e167] [cursor=pointer]: Таблица 18 — Описание параметров метода «createInFilter»
+            - list [ref=e168]:
+              - listitem [ref=e169]:
+                - text: • createIsNotNullFilter(leftExpression);
+                - text: Создает новый IsNotNull фильтр для проверки выражения на заполненность. Экземпляр класса «BPMSoft.IsNullFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e170] [cursor=pointer]: Таблица 19 — Описание параметров метода «createIsNotNullFilter»
+            - list [ref=e171]:
+              - listitem [ref=e172]:
+                - text: • createIsNullFilter(leftExpression);
+                - text: Создает новый IsNull фильтр для проверки значения на пустоту. Экземпляр класса «BPMSoft.IsNullFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e173] [cursor=pointer]: Таблица 20 — Описание параметров метода «createIsNullFilter»
+            - list [ref=e174]:
+              - listitem [ref=e175]:
+                - text: • createPrimaryDisplayColumnFilterWithParameter(comparisonType, paramValue, paramDataType);
+                - text: Создает новый фильтр для сравнения первичной колонки для отображения со значением параметра. Экземпляр класса «BPMSoft.CompareFilter».
+                - text: Возвращает созданный фильтр.
+            - paragraph [ref=e176] [cursor=pointer]: Таблица 21 — Описание параметров метода «createPrimaryDisplayColumnFilterWithParameter»
+            - list [ref=e177]:
+              - listitem [ref=e178]:
+                - text: • destroy();
+                - text: Удаляет экземпляр объекта. Если экземпляр уже удален, запишет в консоль сообщение об ошибке. Вызывает виртуальный метод onDestroy для переопределения в подклассах.
+            - list [ref=e179]:
+              - listitem [ref=e180]:
+                - text: • enablePrimaryColumnFilter(primaryColumnValue);
+                - text: Включает фильтрацию по первичному ключу.
+            - paragraph [ref=e181] [cursor=pointer]: Таблица 22 — Описание параметров метода «enablePrimaryColumnFilter»
+            - list [ref=e182]:
+              - listitem [ref=e183]:
+                - text: • error(message);
+                - text: Записывает сообщение об ошибке в журнал сообщений.
+            - paragraph [ref=e184] [cursor=pointer]: Таблица 23 — Описание параметров метода «error»
+            - list [ref=e185]:
+              - listitem [ref=e186]:
+                - text: • execute(callback, scope);
+                - text: Запрос на выполнение запроса на сервере. После выполнения передает результат в обратный вызов с указанным контекстом.
+            - paragraph [ref=e187] [cursor=pointer]: Таблица 24 — Описание параметров метода «execute»
+            - list [ref=e188]:
+              - listitem [ref=e189]:
+                - text: • getDefSerializationInfo();
+                - text: Возвращает объект с дополнительной информацией для сериализации.
+            - list [ref=e190]:
+              - listitem [ref=e191]:
+                - text: • getEntity(primaryColumnValue, callback, scope);
+                - text: Вызывает выполнение запроса на получение сущности по первичному ключу. После чего передает результат в обратный вызов с указанным контекстом.
+            - paragraph [ref=e192]: Таблица 25 — Описание параметров метода «getEntity»
+            - list [ref=e193]:
+              - listitem [ref=e194]:
+                - text: • getEntityCollection(callback, scope);
+                - text: Вызывает выполнение запроса на получение коллекции сущностей по указанным в запросе фильтрам, с перечнем указанных в запросе колонок. После чего передает результат в обратный вызов с указанным контекстом.
+            - paragraph [ref=e195] [cursor=pointer]: Таблица 26 — Описание параметров метода «getEntityCollection»
+            - list [ref=e196]:
+              - listitem [ref=e197]:
+                - text: • getTypeInfo();
+                - text: Возвращает информацию о типе элемента.
+            - list [ref=e198]:
+              - listitem [ref=e199]:
+                - text: • log(message, [type]);
+                - text: Записывает сообщение в журнал сообщений.
+            - paragraph [ref=e200] [cursor=pointer]: Таблица 27 — Описаниепараметров метода «log»
+            - text: • • •
+            - list [ref=e201]:
+              - listitem [ref=e202]:
+                - text: • onDestroy();
+                - text: Удаляет все подписки на события и уничтожает объект.
+            - list [ref=e203]:
+              - listitem [ref=e204]:
+                - text: • serialize(serializationInfo);
+                - text: Сериализует объект в «json».
+            - paragraph [ref=e205] [cursor=pointer]: Таблица 28 — Описание параметров метода «serialize»
+            - list [ref=e206]:
+              - listitem [ref=e207]:
+                - text: • setSerializableProperty(serializableObject, propertyName);
+                - text: Задает имя свойства объекту, если он не пустой или не является функцией.
+            - paragraph [ref=e208] [cursor=pointer]: Таблица 29 — Описание параметров метода «setSerializableProperty»
+            - list [ref=e209]:
+              - listitem [ref=e210]:
+                - text: • warning(message);
+                - text: Записывает предупреждающее сообщение в журнал сообщений.
+            - paragraph [ref=e211]: Записывает предупреждающее сообщение в журнал сообщений.
+            - paragraph [ref=e212] [cursor=pointer]: Таблица 30 — Описание параметров метода «warning»
+            - heading "Рекомендуем изучить" [level=2] [ref=e213]:
+              - text: Рекомендуем изучить
+              - img [ref=e215] [cursor=pointer]
+            - paragraph [ref=e217]:
+              - link "Операции с данными (front-end)" [ref=e218] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/operatsii-s-dannymi-front-end/
+              - link "Примеры формирования путей к колонкам" [ref=e219] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/primery-formirovaniya-putey-k-kolonkam/
+              - link "Примеры добавления колонок в запрос" [ref=e220] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/primery-dobavleniya-kolonok-v-zapros/
+              - link "Примеры получения результатов запроса" [ref=e221] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/primery-polucheniya-rezultatov-zaprosa/
+              - link "Примеры управления фильтрами в запросе" [ref=e222] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/primery-upravleniya-filtrami-v-zaprose/
+              - link "Класс DataManager" [ref=e223] [cursor=pointer]:
+                - /url: /baza-znaniy/dannye/klass-datamanager/
+          - generic [ref=e224]:
+            - generic [ref=e225]: Материал был полезен для вас?
+            - generic [ref=e228]:
+              - generic:
+                - img
+              - generic:
+                - img
+    - contentinfo [ref=e229]:
+      - generic [ref=e231]:
+        - navigation [ref=e234]:
+          - list [ref=e235]:
+            - listitem [ref=e236]:
+              - link "Компания" [ref=e238] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/kompaniya/
+              - list [ref=e239]:
+                - listitem [ref=e240]:
+                  - link "Пресс-центр" [ref=e241] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/presscenter/
+                - listitem [ref=e242]:
+                  - link "Документы" [ref=e243] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/documents/
+                - listitem [ref=e244]:
+                  - link "Контакты" [ref=e245] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/contacts/
+                - listitem [ref=e246]:
+                  - link "Карта сайта" [ref=e247] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/sitemap/
+                - listitem [ref=e248]:
+                  - link "Кейсы" [ref=e249] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/cases/
+                - listitem [ref=e250]:
+                  - link "Карьера" [ref=e251] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/career/
+                - listitem [ref=e252]:
+                  - link "Стажировка" [ref=e253] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/internship/
+                - listitem [ref=e254]:
+                  - link "Центр экспертизы" [ref=e255] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/centr/
+            - listitem [ref=e256]:
+              - link "Продукты" [ref=e258] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/uslugi-avtomatizacii/
+              - list [ref=e259]:
+                - listitem [ref=e260]:
+                  - link "Управление продажами" [ref=e261] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/prodazhi/
+                - listitem [ref=e262]:
+                  - link "Управление маркетингом" [ref=e263] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/marketing/
+                - listitem [ref=e264]:
+                  - link "Управление сервисом" [ref=e265] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/servis/
+                - listitem [ref=e266]:
+                  - link "Портальные решения" [ref=e267] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/portal/
+                - listitem [ref=e268]:
+                  - link "Омниканальные коммуникации" [ref=e269] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/omnikanalnye-kommunikacii/
+                - listitem [ref=e270]:
+                  - link "Конструктор" [ref=e271] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/konstruktor/
+                - listitem [ref=e272]:
+                  - link "Финансы" [ref=e273] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/finansy/
+                - listitem [ref=e274]:
+                  - link "Фарма" [ref=e275] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/farma/
+                - listitem [ref=e276]:
+                  - link "Управление ИТ-услугами" [ref=e277] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/upravlenie-it-uslugami/
+                - listitem [ref=e278]:
+                  - link "Управление закупками" [ref=e279] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/upravlenie-zakupkami/
+                - listitem [ref=e280]:
+                  - link "BPMSoft Старт" [ref=e281] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/bpmsoft-start/
+                - listitem [ref=e282]:
+                  - link "AI и ML инструменты" [ref=e283] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/ai-i-ml-instrumenty/
+                - listitem [ref=e284]:
+                  - link "Управление ИТ-проектами" [ref=e285] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/uslugi-avtomatizacii/sistema-upravleniya-proektami-i-resursami-bpmsoft/
+            - listitem [ref=e286]:
+              - link "Отрасли" [ref=e288] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/otrasli/
+              - list [ref=e289]:
+                - listitem [ref=e290]:
+                  - link "Финансы" [ref=e291] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/banki-i-financy/
+                - listitem [ref=e292]:
+                  - link "Ритейл" [ref=e293] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/roznichnaya-torgovlya/
+                - listitem [ref=e294]:
+                  - link "Недвижимость" [ref=e295] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/nedvizhimost/
+                - listitem [ref=e296]:
+                  - link "Фармацевтика" [ref=e297] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/farmacevtika/
+                - listitem [ref=e298]:
+                  - link "Транспорт" [ref=e299] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/transport-i-logistika/
+                - listitem [ref=e300]:
+                  - link "Телеком" [ref=e301] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/telekommunikacii/
+                - listitem [ref=e302]:
+                  - link "FMCG" [ref=e303] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/fmcg/
+                - listitem [ref=e304]:
+                  - link "Энергетика" [ref=e305] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/energetika/
+                - listitem [ref=e306]:
+                  - link "Нефть и газ" [ref=e307] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/neft-i-gaz/
+                - listitem [ref=e308]:
+                  - link "Производство" [ref=e309] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/proizvodstvo/
+                - listitem [ref=e310]:
+                  - link "ИТ" [ref=e311] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/it/
+                - listitem [ref=e312]:
+                  - link "Страхование" [ref=e313] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/otrasli/crm-strakhovanie/
+            - listitem [ref=e314]:
+              - link "Партнеры" [ref=e316] [cursor=pointer]:
+                - /url: https://bpmsoft.ru/partners/
+              - list [ref=e317]:
+                - listitem [ref=e318]:
+                  - link "Партнерская программа" [ref=e319] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/partner-community/
+                - listitem [ref=e320]:
+                  - link "BPMSoft Образование" [ref=e321] [cursor=pointer]:
+                    - /url: https://bpmsoft.ru/bpmsoft-education/
+                - listitem [ref=e322]:
+                  - link "Тренинги по продажам" [ref=e323] [cursor=pointer]:
+                    - /url: //partneracademy.bpmsoft.ru/
+            - listitem [ref=e324]:
+              - link "Школа" [ref=e326] [cursor=pointer]:
+                - /url: //edu.bpmsoft.ru/
+              - list [ref=e327]:
+                - listitem [ref=e328]:
+                  - link "База знаний" [ref=e329] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/baza-znaniy/
+                - listitem [ref=e330]:
+                  - link "Онлайн-курсы" [ref=e331] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/online-kursy/
+                - listitem [ref=e332]:
+                  - link "Сертификация" [ref=e333] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/sertifikaciya-i-testirovanie/
+                - listitem [ref=e334]:
+                  - link "Обновления и релизы" [ref=e335] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/obnovleniya-i-relizi/
+                - listitem [ref=e336]:
+                  - link "Обучение" [ref=e337] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/treningi/opisanie-treningov/obshchaya-informatsiya-po-treningam/
+                - listitem [ref=e338]:
+                  - link "Карта разделов Школы" [ref=e339] [cursor=pointer]:
+                    - /url: //edu.bpmsoft.ru/sitemap/
+            - listitem [ref=e340]:
+              - link "Магазин приложений" [ref=e342] [cursor=pointer]:
+                - /url: //market.bpmsoft.ru
+              - list [ref=e343]:
+                - listitem [ref=e344]:
+                  - link "Каталог приложений" [ref=e345] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/catalog-prilozheniy/
+                - listitem [ref=e346]:
+                  - link "Стать партнером-разработчиком" [ref=e347] [cursor=pointer]:
+                    - /url: //market.bpmsoft.ru/stat-partnerom-razrabotchikom/
+            - listitem [ref=e348]:
+              - link "Сообщество" [ref=e350] [cursor=pointer]:
+                - /url: //forum.bpmsoft.ru
+              - list [ref=e351]:
+                - listitem [ref=e352]:
+                  - link "Правила Сообщества" [ref=e353] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/pravila_soobshchestva/
+                - listitem [ref=e354]:
+                  - link "Спросить Сообщество" [ref=e355] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/create/
+                - listitem [ref=e356]:
+                  - link "Как устроен сайт Сообщества" [ref=e357] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/kak_ustroen_sayt_soobshchestva
+                - listitem [ref=e358]:
+                  - link "Клубные подарки" [ref=e359] [cursor=pointer]:
+                    - /url: //forum.bpmsoft.ru/posts/klubnye_podarki_soobshchestva_bpmsoft_2026
+        - generic [ref=e362]:
+          - generic [ref=e363]:
+            - generic [ref=e365]:
+              - button "Заказать консультацию" [ref=e366] [cursor=pointer]
+              - generic [ref=e367]:
+                - generic [ref=e368]:
+                  - generic [ref=e369]:
+                    - link "7 495 070 09 97" [ref=e370] [cursor=pointer]:
+                      - /url: tel:+74950700997
+                      - img [ref=e372]
+                      - text: 7 495 070 09 97
+                    - link "info@bpmsoft.ru" [ref=e374] [cursor=pointer]:
+                      - /url: mailto:info@bpmsoft.ru
+                      - img [ref=e376]
+                      - text: info@bpmsoft.ru
+                  - generic [ref=e378]:
+                    - link [ref=e380] [cursor=pointer]:
+                      - /url: https://vk.com/bpmsoft
+                      - img [ref=e382]
+                    - link [ref=e385] [cursor=pointer]:
+                      - /url: https://t.me/bpmsoft_ru
+                      - img [ref=e387]
+                    - link [ref=e390] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@bpmsoft
+                      - img [ref=e392]
+                    - link [ref=e395] [cursor=pointer]:
+                      - /url: https://rutube.ru/channel/42194439/
+                      - img [ref=e397]
+                - paragraph [ref=e399]:
+                  - text: 127015, Москва,
+                  - text: ул. Бутырская, 76с1
+            - generic [ref=e402]:
+              - paragraph [ref=e403]: Следите за обновлениями и новостями
+              - generic [ref=e405]:
+                - textbox "Введите ваш Email" [ref=e407]
+                - button "Подписаться" [disabled] [ref=e408]:
+                  - text: Подписаться
+                  - img [ref=e410]
+              - paragraph [ref=e412]: Подписываясь на рассылку, Вы соглашаетесь c условиями политики конфиденциальности и политики обработки персональных данных
+          - generic [ref=e413]:
+            - generic [ref=e415]:
+              - link [ref=e416] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=ru.bpmsoft.mobileapp
+              - link [ref=e417] [cursor=pointer]:
+                - /url: https://apps.apple.com/ru/app/bpmsoft/id1641881866
+              - link [ref=e418] [cursor=pointer]:
+                - /url: https://appgallery.huawei.com/app/C109231317
+            - generic [ref=e419]:
+              - paragraph [ref=e420]: © 2026 BPMSoft
+              - generic [ref=e421]:
+                - link "Политика обработки персональных данных" [ref=e422] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+                - link "Информированное согласие пользователя сайта" [ref=e423] [cursor=pointer]:
+                  - /url: https://bpmsoft.ru/info-soglasie-polzovatelia/
+  - generic [ref=e425]:
+    - link "Telegram Подписаться" [ref=e426] [cursor=pointer]:
+      - /url: https://t.me/bpmsoft_ru
+      - img [ref=e428]
+      - generic [ref=e430]:
+        - generic [ref=e431]: Telegram
+        - generic [ref=e432]: Подписаться
+      - button [ref=e433]:
+        - img [ref=e435]
+    - link [ref=e437] [cursor=pointer]:
+      - /url: https://lansoft.com
+      - img [ref=e438]
+      - img [ref=e441]
+  - generic [ref=e443]:
+    - generic [ref=e444]:
+      - generic [ref=e445]: Уважаемые клиенты! Предупреждаем о случаях недобросовестной конкуренции и мошенничестве в сети Интернет.
+      - link "Подробнее" [ref=e446] [cursor=pointer]:
+        - /url: https://bpmsoft.ru/preduprezhdenie-o-nekorrektnykh-saytakh/
+      - button [ref=e447] [cursor=pointer]:
+        - img [ref=e449]
+    - generic [ref=e451]:
+      - generic [ref=e452]:
+        - text: Сайт использует файлы cookie. Подробная информация
+        - link "в правилах по обработке персональных данных." [ref=e453] [cursor=pointer]:
+          - /url: https://bpmsoft.ru/politika-obrabotki-pers-dannikh/
+        - text: Вы можете запретить сохранение cookie в настройках своего браузера.
+      - button "Принять" [ref=e454] [cursor=pointer]
