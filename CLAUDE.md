@@ -116,7 +116,7 @@ BPMsoft/
 | Проект | Статус | Файлы |
 |--------|--------|-------|
 | CC-адреса в уведомлениях | Реализовано, **ожидает переноса на прод** | `projects/cc-notifications/` |
-| Индикатор режима обслуживания | **Внедрено** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
+| Индикатор режима обслуживания | Реализовано, **ожидает переноса на прод** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
 
 ---
 
