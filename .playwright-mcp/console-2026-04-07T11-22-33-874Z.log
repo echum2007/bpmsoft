@@ -578,3 +578,289 @@
 [ 2156199ms] [LOG] 2026-03-07 14:58: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
 [ 2216876ms] [LOG] 2026-03-07 14:59: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
 [ 2277506ms] [LOG] 2026-03-07 15:00: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2338200ms] [LOG] 2026-03-07 15:01: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2398889ms] [LOG] 2026-03-07 15:02: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2459527ms] [LOG] 2026-03-07 15:03: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2520166ms] [LOG] 2026-03-07 15:04: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2580797ms] [LOG] 2026-03-07 15:05: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2641457ms] [LOG] 2026-03-07 15:06: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2702070ms] [LOG] 2026-03-07 15:07: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2762675ms] [LOG] 2026-03-07 15:08: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2823377ms] [LOG] 2026-03-07 15:09: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2884053ms] [LOG] 2026-03-07 15:10: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 2944705ms] [LOG] 2026-03-07 15:11: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3005386ms] [LOG] 2026-03-07 15:12: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3065990ms] [LOG] 2026-03-07 15:13: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3126601ms] [LOG] 2026-03-07 15:14: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3187197ms] [LOG] 2026-03-07 15:15: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3247883ms] [LOG] 2026-03-07 15:16: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3308501ms] [LOG] 2026-03-07 15:17: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3369155ms] [LOG] 2026-03-07 15:18: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3429799ms] [LOG] 2026-03-07 15:19: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3490423ms] [LOG] 2026-03-07 15:20: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3551084ms] [LOG] 2026-03-07 15:21: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3611747ms] [LOG] 2026-03-07 15:22: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3672434ms] [LOG] 2026-03-07 15:23: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3733108ms] [LOG] 2026-03-07 15:24: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3793782ms] [LOG] 2026-03-07 15:25: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3854400ms] [LOG] 2026-03-07 15:26: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3915054ms] [LOG] 2026-03-07 15:27: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 3975688ms] [LOG] 2026-03-07 15:28: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4036313ms] [LOG] 2026-03-07 15:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4096987ms] [LOG] 2026-03-07 15:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4157720ms] [LOG] 2026-03-07 15:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4218323ms] [LOG] 2026-03-07 15:32: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4279028ms] [LOG] 2026-03-07 15:33: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4339761ms] [LOG] 2026-03-07 15:34: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4400435ms] [LOG] 2026-03-07 15:35: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4461062ms] [LOG] 2026-03-07 15:36: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4521664ms] [LOG] 2026-03-07 15:37: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4582510ms] [LOG] 2026-03-07 15:38: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4643137ms] [LOG] 2026-03-07 15:39: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4703725ms] [LOG] 2026-03-07 15:40: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4764364ms] [LOG] 2026-03-07 15:41: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4825998ms] [LOG] 2026-03-07 15:42: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4832500ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 4886669ms] [LOG] 2026-03-07 15:44: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4893251ms] [LOG] BX.debug:  [processing, TypeError: Cannot read properties of null (reading 'INTRANET_USTAT_ONLINE_DATA')
+    at BX.Messenge…, Object] @ https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:6363
+[ 4893251ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/components/bitrix/im.messenger/im.ajax.php?UPDATE_STATE&V=130:0
+[ 4947336ms] [LOG] 2026-03-07 15:45: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 4982487ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5008012ms] [LOG] 2026-03-07 15:46: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5068680ms] [LOG] 2026-03-07 15:47: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5072489ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5129322ms] [LOG] 2026-03-07 15:48: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5162492ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5189959ms] [LOG] 2026-03-07 15:49: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5250547ms] [LOG] 2026-03-07 15:50: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5311240ms] [LOG] 2026-03-07 15:51: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5342480ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5371906ms] [LOG] 2026-03-07 15:52: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5432478ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5432616ms] [LOG] 2026-03-07 15:53: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5492482ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5493318ms] [LOG] 2026-03-07 15:54: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5553981ms] [LOG] 2026-03-07 15:55: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5582475ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 5614671ms] [LOG] 2026-03-07 15:56: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5676276ms] [LOG] 2026-03-07 15:57: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5736913ms] [LOG] 2026-03-07 15:58: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5797560ms] [LOG] 2026-03-07 15:59: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5858216ms] [LOG] 2026-03-07 16:00: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5918852ms] [LOG] 2026-03-07 16:01: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 5979526ms] [LOG] 2026-03-07 16:02: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6040170ms] [LOG] 2026-03-07 16:03: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6100791ms] [LOG] 2026-03-07 16:04: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6161442ms] [LOG] 2026-03-07 16:05: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6222031ms] [LOG] 2026-03-07 16:06: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6282653ms] [LOG] 2026-03-07 16:07: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6343244ms] [LOG] 2026-03-07 16:08: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6403893ms] [LOG] 2026-03-07 16:09: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6464509ms] [LOG] 2026-03-07 16:10: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6525144ms] [LOG] 2026-03-07 16:11: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6585804ms] [LOG] 2026-03-07 16:12: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6646423ms] [LOG] 2026-03-07 16:13: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6707074ms] [LOG] 2026-03-07 16:14: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6767728ms] [LOG] 2026-03-07 16:15: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6828443ms] [LOG] 2026-03-07 16:16: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6889089ms] [LOG] 2026-03-07 16:17: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 6949736ms] [LOG] 2026-03-07 16:18: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7011334ms] [LOG] 2026-03-07 16:19: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7072007ms] [LOG] 2026-03-07 16:20: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7132598ms] [LOG] 2026-03-07 16:21: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7193507ms] [LOG] 2026-03-07 16:22: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7254182ms] [LOG] 2026-03-07 16:23: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7314842ms] [LOG] 2026-03-07 16:24: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7375543ms] [LOG] 2026-03-07 16:25: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7436217ms] [LOG] 2026-03-07 16:26: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7496839ms] [LOG] 2026-03-07 16:27: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7557437ms] [LOG] 2026-03-07 16:28: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7618068ms] [LOG] 2026-03-07 16:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7678791ms] [LOG] 2026-03-07 16:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7739466ms] [LOG] 2026-03-07 16:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7800073ms] [LOG] 2026-03-07 16:32: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7860720ms] [LOG] 2026-03-07 16:33: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7921580ms] [LOG] 2026-03-07 16:34: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 7982317ms] [LOG] 2026-03-07 16:35: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8042976ms] [LOG] 2026-03-07 16:36: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8103578ms] [LOG] 2026-03-07 16:37: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8164249ms] [LOG] 2026-03-07 16:38: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8224908ms] [LOG] 2026-03-07 16:39: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8285510ms] [LOG] 2026-03-07 16:40: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8346142ms] [LOG] 2026-03-07 16:41: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8406766ms] [LOG] 2026-03-07 16:42: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8467404ms] [LOG] 2026-03-07 16:43: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8528062ms] [LOG] 2026-03-07 16:44: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8588782ms] [LOG] 2026-03-07 16:45: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8649439ms] [LOG] 2026-03-07 16:46: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8710122ms] [LOG] 2026-03-07 16:47: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8770829ms] [LOG] 2026-03-07 16:48: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8831478ms] [LOG] 2026-03-07 16:49: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8892118ms] [LOG] 2026-03-07 16:50: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 8952742ms] [LOG] 2026-03-07 16:51: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9013452ms] [LOG] 2026-03-07 16:52: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9074155ms] [LOG] 2026-03-07 16:53: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9135798ms] [LOG] 2026-03-07 16:54: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9196407ms] [LOG] 2026-03-07 16:55: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9257028ms] [LOG] 2026-03-07 16:56: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9302483ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9317947ms] [LOG] 2026-03-07 16:57: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9379628ms] [LOG] 2026-03-07 16:58: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9392487ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9440299ms] [LOG] 2026-03-07 16:59: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9482493ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9500926ms] [LOG] 2026-03-07 17:00: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9561655ms] [LOG] 2026-03-07 17:01: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9572472ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9622333ms] [LOG] 2026-03-07 17:02: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9662493ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9682980ms] [LOG] 2026-03-07 17:03: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9743668ms] [LOG] 2026-03-07 17:04: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9752502ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9804350ms] [LOG] 2026-03-07 17:05: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9812482ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9865009ms] [LOG] 2026-03-07 17:06: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9902479ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[ 9925916ms] [LOG] 2026-03-07 17:07: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9986519ms] [LOG] 2026-03-07 17:09: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[ 9992484ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10047169ms] [LOG] 2026-03-07 17:10: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10082481ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10107817ms] [LOG] 2026-03-07 17:11: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10168463ms] [LOG] 2026-03-07 17:12: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10172495ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10229108ms] [LOG] 2026-03-07 17:13: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10262497ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10289789ms] [LOG] 2026-03-07 17:14: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10322491ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10350406ms] [LOG] 2026-03-07 17:15: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10411101ms] [LOG] 2026-03-07 17:16: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10412480ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10471713ms] [LOG] 2026-03-07 17:17: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10502487ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10532357ms] [LOG] 2026-03-07 17:18: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10592486ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10593055ms] [LOG] 2026-03-07 17:19: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10653709ms] [LOG] 2026-03-07 17:20: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10682488ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10714353ms] [LOG] 2026-03-07 17:21: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10772490ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10775003ms] [LOG] 2026-03-07 17:22: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10834492ms] [LOG] BX.debug:  [processing, TypeError: Cannot read properties of null (reading 'INTRANET_USTAT_ONLINE_DATA')
+    at BX.Messenge…, Object] @ https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:6363
+[10834492ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/components/bitrix/im.messenger/im.ajax.php?UPDATE_STATE&V=130:0
+[10835646ms] [LOG] 2026-03-07 17:23: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10896314ms] [LOG] 2026-03-07 17:24: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[10922481ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[10956964ms] [LOG] 2026-03-07 17:25: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11012489ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11017589ms] [LOG] 2026-03-07 17:26: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11078271ms] [LOG] 2026-03-07 17:27: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11102485ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11138885ms] [LOG] 2026-03-07 17:28: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11192474ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11199596ms] [LOG] 2026-03-07 17:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11260298ms] [LOG] 2026-03-07 17:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11282495ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11320982ms] [LOG] 2026-03-07 17:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11372505ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11381658ms] [LOG] 2026-03-07 17:32: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11432497ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11442375ms] [LOG] 2026-03-07 17:33: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11502976ms] [LOG] 2026-03-07 17:34: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11522483ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11563642ms] [LOG] 2026-03-07 17:35: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11612485ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11624330ms] [LOG] 2026-03-07 17:36: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11684933ms] [LOG] 2026-03-07 17:37: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11702491ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11745608ms] [LOG] 2026-03-07 17:38: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11792478ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[11806291ms] [LOG] 2026-03-07 17:39: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11867003ms] [LOG] 2026-03-07 17:40: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11928635ms] [LOG] 2026-03-07 17:41: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[11989301ms] [LOG] 2026-03-07 17:42: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12049949ms] [LOG] 2026-03-07 17:43: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12110547ms] [LOG] 2026-03-07 17:44: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12171128ms] [LOG] 2026-03-07 17:45: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12231720ms] [LOG] 2026-03-07 17:46: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12292353ms] [LOG] 2026-03-07 17:47: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12353008ms] [LOG] 2026-03-07 17:48: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12413702ms] [LOG] 2026-03-07 17:49: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12454718ms] [LOG] BX.debug:  [processing, TypeError: Cannot read properties of null (reading 'INTRANET_USTAT_ONLINE_DATA')
+    at BX.Messenge…, Object] @ https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:6363
+[12454719ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/components/bitrix/im.messenger/im.ajax.php?UPDATE_STATE&V=130:0
+[12474441ms] [LOG] 2026-03-07 17:50: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12535153ms] [LOG] 2026-03-07 17:51: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12542489ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[12595828ms] [LOG] 2026-03-07 17:52: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12632473ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[12656519ms] [LOG] 2026-03-07 17:53: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12717198ms] [LOG] 2026-03-07 17:54: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12722473ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[12777881ms] [LOG] 2026-03-07 17:55: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12812483ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[12838533ms] [LOG] 2026-03-07 17:56: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12899164ms] [LOG] 2026-03-07 17:57: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12902474ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[12959798ms] [LOG] 2026-03-07 17:58: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[12992486ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13020407ms] [LOG] 2026-03-07 17:59: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13052486ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13081037ms] [LOG] 2026-03-07 18:00: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13141664ms] [LOG] 2026-03-07 18:01: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13142474ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13202313ms] [LOG] 2026-03-07 18:02: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13232485ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13262974ms] [LOG] 2026-03-07 18:03: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13322494ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13323629ms] [LOG] 2026-03-07 18:04: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13384227ms] [LOG] 2026-03-07 18:05: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13412488ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13444849ms] [LOG] 2026-03-07 18:06: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13502488ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13505556ms] [LOG] 2026-03-07 18:07: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13562474ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13566171ms] [LOG] 2026-03-07 18:08: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13626838ms] [LOG] 2026-03-07 18:09: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13652494ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13687436ms] [LOG] 2026-03-07 18:10: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13742485ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13748070ms] [LOG] 2026-03-07 18:11: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13808717ms] [LOG] 2026-03-07 18:12: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13832483ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13869391ms] [LOG] 2026-03-07 18:13: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13922487ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[13930053ms] [LOG] 2026-03-07 18:14: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[13990688ms] [LOG] 2026-03-07 18:15: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14012517ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14051322ms] [LOG] 2026-03-07 18:16: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14075241ms] [LOG] BX.debug:  [processing, TypeError: Cannot read properties of null (reading 'INTRANET_USTAT_ONLINE_DATA')
+    at BX.Messenge…, Object] @ https://edu.bpmsoft.ru/bitrix/js/main/core/core.js?1754975324511455:6363
+[14075241ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/components/bitrix/im.messenger/im.ajax.php?UPDATE_STATE&V=130:0
+[14111955ms] [LOG] 2026-03-07 18:17: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14162554ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14172599ms] [LOG] 2026-03-07 18:18: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14233240ms] [LOG] 2026-03-07 18:19: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14252573ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14293866ms] [LOG] 2026-03-07 18:20: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14342590ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14354497ms] [LOG] 2026-03-07 18:21: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14415202ms] [LOG] 2026-03-07 18:22: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14432601ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14475867ms] [LOG] 2026-03-07 18:23: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14522614ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14536532ms] [LOG] 2026-03-07 18:24: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14597192ms] [LOG] 2026-03-07 18:25: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14612656ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14657916ms] [LOG] 2026-03-07 18:26: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14672669ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14718593ms] [LOG] 2026-03-07 18:27: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14762681ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14779223ms] [LOG] 2026-03-07 18:28: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14839902ms] [LOG] 2026-03-07 18:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14852705ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14900539ms] [LOG] 2026-03-07 18:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[14942706ms] [ERROR] Failed to load resource: net::ERR_SSL_BAD_RECORD_MAC_ALERT @ https://edu.bpmsoft.ru/bitrix/services/main/ajax.php?mode=class&c=norbit%3Auser.blocked-popup&action=getUserStatus:0
+[14961173ms] [LOG] 2026-03-07 18:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
