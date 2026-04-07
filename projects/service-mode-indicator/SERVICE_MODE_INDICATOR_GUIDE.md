@@ -2,7 +2,7 @@
 
 **Проект:** BPMSoft 1.9, пакет CTI (`21b087cf-bb70-cdc0-5180-6979fdd2220c`)
 **Дата:** 2026-04-05
-**Статус:** 📋 Готово к внедрению
+**Статус:** 🟢 Внедрено (2026-04-07)
 
 ---
 
@@ -21,9 +21,10 @@
 
 - **Источник данных:** `TimeToPrioritize.SolutionTimeUnit.Code`
   - Code содержит `"Working"` → режим **8×5**
-  - Code содержит `"Calendar"` → режим **24×7**
+  - Любой другой код (Hour, Day, Minute) → режим **24×7**
 - **Связь с договором:** через `ServiceInServicePact` (не напрямую через `ServicePact`)
 - **Атрибут:** `UsrServiceMode` (TEXT, виртуальный, только в памяти страницы)
+- **Отображение:** `contentType: BPMSoft.ContentType.LABEL` — модельный элемент в формате надписи
 - **Обновление:** при изменении Priority, ServiceItem, ServicePact, а также при открытии обращения (`onEntityInitialized`) и после автозаполнения из КЕ (`onConfItemChanged`)
 
 ### Справочник TimeUnit (из БД)
@@ -37,56 +38,87 @@
 | `36df302e-5ab6-43a0-aec7-45c2795d839d` | Day | 24×7 |
 | `48b4ff98-e3bf-4f59-a6cf-284e4084fb2f` | Minute | 24×7 |
 
+### DOM-элемент (результат)
+
+```html
+<label id="CasePageUsrServiceModeLabelLabel"
+    class="t-label usr-service-mode-label usr-service-mode-calendar"
+    data-item-marker="UsrServiceModeLabel">24×7 (календарное время)</label>
+```
+
 ---
 
 ## Компоненты
 
 | # | Артефакт | Тип | Статус |
 |---|---|---|---|
-| 1 | CSS-схема `UsrCasePageCSS` | CSS (новая схема в CTI) | ⬜ |
-| 2 | Атрибут `UsrServiceMode` в CasePage | JS (правка attributes) | ⬜ |
-| 3 | Элемент `UsrServiceModeLabel` в diff | JS (правка diff) | ⬜ |
-| 4 | Методы в CasePage | JS (правка methods) | ⬜ |
-| 5 | Вызовы в `onEntityInitialized` и `onConfItemChanged` | JS (правка methods) | ⬜ |
+| 1 | CSS-схема `UsrCasePageCSS` | Модуль с LESS (в CTI) | ✅ |
+| 2 | Атрибут `UsrServiceMode` в CasePage | JS (attributes) | ✅ |
+| 3 | Элемент `UsrServiceModeLabel` в diff | JS (diff, contentType: LABEL) | ✅ |
+| 4 | Методы updateServiceModeIndicator, getServiceModeVisible, applyServiceModeStyle | JS (methods) | ✅ |
+| 5 | Вызовы в `onEntityInitialized` и `onConfItemChanged` | JS (methods) | ✅ |
+| 6 | Подписки dependencies на Priority, ServiceItem, ServicePact | JS (attributes) | ✅ |
 
 ---
 
 ## Шаг 1. CSS-схема `UsrCasePageCSS`
 
+> В BPMSoft 1.9 отдельного типа схемы «CSS» нет. Стили оформляются как **«Модуль»** (ClientUnit) с LESS-файлом.
+
 ### Инструкция
 1. Открыть **Конфигурация** → пакет **CTI**
-2. Нажать **«Добавить»** → **«CSS»**
+2. Нажать **«Добавить»** → **«Модуль»**
 3. Название схемы: `UsrCasePageCSS`
-4. Вставить код:
+4. В JS-редакторе заменить содержимое на:
 
-```css
-.usr-service-mode-working .label-inner {
-    color: #2e7d32;
-    font-weight: bold;
+```javascript
+define("UsrCasePageCSS", [], function() {
+    return {};
+});
+```
+
+5. Переключиться на вкладку **LESS** и вставить:
+
+```less
+.usr-service-mode-label {
+    padding: 2px 0;
+    margin-bottom: 4px;
 }
 
-.usr-service-mode-calendar .label-inner {
+.usr-service-mode-label.usr-service-mode-working {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.usr-service-mode-label.usr-service-mode-calendar {
+    display: inline-block;
+    background-color: #ffebee;
     color: #c62828;
     font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 4px;
 }
 ```
 
-5. **Сохранить** → **Опубликовать**
+> **Важно:** CSS-селекторы `.class1.class2` (оба класса на одном элементе), а НЕ `.class1 .class2` (вложенность) — `<label>` не содержит вложенных элементов.
+
+6. **Сохранить**
 
 ---
 
-## Шаг 2. Правки в `CasePage` (CTI)
+## Шаг 2. Полный код CasePage (CTI)
 
-**Конфигурация → CTI → CasePage → Исходный код**
+Вставляется через **мастер раздела → Исходный код** (сохраняет локализацию).
 
-⚠️ **Критичное правило:** все методы должны быть строго **внутри** блока `methods: { ... }`. Код вне `methods` платформа игнорирует.
-⚠️ **Не заменять весь исходный код схемы** — это сбросит ресурсы локализации (кнопки переключатся на английский). Вносить только точечные правки.
+Можно также через **Конфигурация → CTI → CasePage → Исходный код**, но тогда **сначала** нужно сохранить через мастер раздела без изменений, чтобы зафиксировать ресурсы локализации.
 
----
+### Ключевые элементы индикатора в коде
 
-### Правка 2.1 — Атрибут `UsrServiceMode`
-
-Найти блок `attributes: {` и добавить атрибут **первым** (перед `"ServicePact"`):
+**В `attributes`:**
 
 ```javascript
 "UsrServiceMode": {
@@ -100,100 +132,51 @@
 },
 ```
 
-> Подписка на `Priority` здесь. Подписки на `ServiceItem` и `ServicePact` добавим в их существующие `dependencies` ниже.
-
----
-
-### Правка 2.2 — Подписка на изменение `ServicePact`
-
-Найти в атрибуте `"ServicePact"` блок `dependencies` и добавить новый элемент:
+Подписки на `ServicePact` и `ServiceItem` добавлены в их собственные `dependencies`:
 
 ```javascript
-// Найти:
-dependencies: [
-    {
-        columns: ["ServicePact"],
-        methodName: "onServicePactChanged"
-    },
-    // ...
-]
+// В ServicePact.dependencies:
+{ columns: ["ServicePact"], methodName: "updateServiceModeIndicator" },
 
-// Добавить в массив:
-{
-    columns: ["ServicePact"],
-    methodName: "updateServiceModeIndicator"
-},
+// В ServiceItem.dependencies:
+{ columns: ["ServiceItem"], methodName: "updateServiceModeIndicator" },
 ```
 
----
+> **Важно:** подписка `onServicePactChanged` в ServicePact.dependencies должна быть сохранена — не заменять её, а добавить рядом.
 
-### Правка 2.3 — Подписка на изменение `ServiceItem`
-
-Найти в атрибуте `"ServiceItem"` блок `dependencies` и добавить:
-
-```javascript
-{
-    columns: ["ServiceItem"],
-    methodName: "updateServiceModeIndicator"
-},
-```
-
----
-
-### Правка 2.4 — Элемент индикатора в `diff`
-
-Найти в блоке `diff` операцию `move` для `ServicePact`:
-
-```javascript
-{
-    "operation": "move",
-    "name": "ServicePact",
-    "parentName": "ProfileContainer",
-    "propertyName": "items",
-    "index": 4
-},
-```
-
-Добавить **перед** ней (через запятую) новый элемент:
+**В `diff`:**
 
 ```javascript
 {
     "operation": "insert",
     "name": "UsrServiceModeLabel",
-    "values": {
-        "itemType": {"bindTo": "BPMSoft.ViewItemType.LABEL"},
-        "caption": {"bindTo": "UsrServiceMode"},
-        "labelClass": {"bindTo": "getServiceModeLabelClass"},
-        "visible": {"bindTo": "getServiceModeVisible"}
-    },
     "parentName": "ProfileContainer",
     "propertyName": "items",
-    "index": 2
+    "index": 2,
+    "values": {
+        "contentType": BPMSoft.ContentType.LABEL,
+        "caption": {"bindTo": "UsrServiceMode"},
+        "visible": {"bindTo": "getServiceModeVisible"},
+        "classes": {"labelClass": ["usr-service-mode-label"]},
+        "layout": {
+            "colSpan": 24,
+            "column": 0,
+            "row": 2
+        }
+    }
 },
 ```
 
-> `index: 2` — сразу после поля «Приоритет» (CasePriority стоит на index 1).
+> Используется `contentType: BPMSoft.ContentType.LABEL` — модельный элемент с типом отображения «надпись». Именно так ProfileContainer может его отрисовать. Документация: `klientskaya-razrabotka.pdf`, стр. 972.
 
----
-
-### Правка 2.5 — Три новых метода в `methods`
-
-Найти конец метода `onConfItemChanged` (последний метод в блоке `methods`) и добавить после него через запятую:
+**В `methods`:**
 
 ```javascript
-/**
- * Обновляет индикатор режима обслуживания.
- * ESQ к TimeToPrioritize по Priority + ServiceItem + ServicePact.
- * SolutionTimeUnit.Code: "Working*" → 8×5, "Calendar*" → 24×7.
- * Вызывается через dependencies при изменении любого из трёх полей,
- * а также явно из onConfItemChanged и onEntityInitialized.
- */
 updateServiceModeIndicator: function() {
     var priority = this.get("Priority");
     var serviceItem = this.get("ServiceItem");
     var servicePact = this.get("ServicePact");
 
-    // Если не все три поля заполнены — сбрасываем индикатор
     if (!priority || !priority.value ||
         !serviceItem || !serviceItem.value ||
         !servicePact || !servicePact.value) {
@@ -232,95 +215,60 @@ updateServiceModeIndicator: function() {
 
         if (code.indexOf("Working") >= 0) {
             this.set("UsrServiceMode", "8×5 (рабочее время)");
-        } else if (code.indexOf("Calendar") >= 0) {
+        } else if (code.length > 0) {
             this.set("UsrServiceMode", "24×7 (календарное время)");
         } else {
             this.set("UsrServiceMode", "");
         }
+        this.applyServiceModeStyle();
     }, this);
 },
 
-/**
- * CSS-класс для Label индикатора.
- * Зелёный для 8×5, красный для 24×7.
- */
-getServiceModeLabelClass: function() {
-    var mode = this.get("UsrServiceMode") || "";
-    if (mode.indexOf("8×5") >= 0) {
-        return ["usr-service-mode-label", "usr-service-mode-working"];
-    } else if (mode.indexOf("24×7") >= 0) {
-        return ["usr-service-mode-label", "usr-service-mode-calendar"];
-    }
-    return ["usr-service-mode-label"];
-},
-
-/**
- * Видимость индикатора — только если значение определено.
- */
 getServiceModeVisible: function() {
     var mode = this.get("UsrServiceMode");
     return !Ext.isEmpty(mode);
-}
-```
+},
 
----
-
-### Правка 2.6 — Вызов при открытии обращения (`onEntityInitialized`)
-
-Найти метод `onEntityInitialized` и добавить вызов в конце перед закрывающей `}`:
-
-```javascript
-onEntityInitialized: function() {
-    this.callParent(arguments);
-    // ... существующий код ...
-    this.startBackgroundUpdater();
-
-    // ДОБАВИТЬ:
-    this.updateServiceModeIndicator();
+applyServiceModeStyle: function() {
+    var mode = this.get("UsrServiceMode") || "";
+    Ext.defer(function() {
+        var el = document.querySelector(".usr-service-mode-label");
+        if (!el) {
+            return;
+        }
+        el.classList.remove("usr-service-mode-working", "usr-service-mode-calendar");
+        if (mode.indexOf("8") >= 0) {
+            el.classList.add("usr-service-mode-working");
+        } else if (mode.indexOf("24") >= 0) {
+            el.classList.add("usr-service-mode-calendar");
+        }
+    }, 100, this);
 },
 ```
 
----
-
-### Правка 2.7 — Вызов после автозаполнения из КЕ (`onConfItemChanged`)
-
-Найти в методе `onConfItemChanged` коллбек `esq.getEntityCollection`. Внутри него, **после** последнего `this.set("Account", ...)`, добавить:
+**Вызовы:**
 
 ```javascript
-// После:
-if (accountsByConfItem.length > 0) {
-    this.set("Account", { ... });
-}
+// В onEntityInitialized — в конце метода:
+this.updateServiceModeIndicator();
 
-// ДОБАВИТЬ:
+// В onConfItemChanged — в конце ESQ-коллбека, после this.set("Account", ...):
 this.updateServiceModeIndicator();
 ```
-
-> Важно вызывать именно здесь, внутри коллбека — к этому моменту ServicePact и ServiceItem уже установлены через this.set().
 
 ---
 
 ## Публикация и проверка
 
-1. **Сохранить** → **Опубликовать** CasePage
-2. Очистить кэш браузера: **Ctrl+Shift+R**
-3. Открыть любое обращение где заполнены Приоритет, Сервис и Сервисный договор
-4. Под полем «Приоритет» должен появиться индикатор:
+1. **Сохранить** через мастер раздела (или Конфигурацию)
+2. На странице **Конфигурация** нажать кнопку **«Компилировать»**
+3. Очистить кэш браузера: **Ctrl+Shift+R**
+4. Открыть обращение где заполнены Приоритет, Сервис и Сервисный договор
+5. Под полем «Приоритет» должен появиться индикатор:
    - 🟢 **8×5 (рабочее время)** — зелёным
    - 🔴 **24×7 (календарное время)** — красным
-5. Изменить Приоритет — индикатор должен обновиться без сохранения
-6. Создать новое обращение, выбрать КЕ — индикатор должен заполниться автоматически вместе с Сервисом и Договором
-
-### Проверка в консоли браузера (F12)
-
-```javascript
-BPMSoft.require(["CasePage"], function(schema) {
-    var methods = Object.keys(schema.methods || {});
-    console.log("updateServiceModeIndicator:", methods.indexOf("updateServiceModeIndicator") >= 0);
-    console.log("getServiceModeLabelClass:", methods.indexOf("getServiceModeLabelClass") >= 0);
-    console.log("getServiceModeVisible:", methods.indexOf("getServiceModeVisible") >= 0);
-});
-```
+6. Изменить Приоритет — индикатор должен обновиться без сохранения
+7. Создать новое обращение, выбрать КЕ — индикатор должен заполниться автоматически
 
 ---
 
@@ -330,12 +278,7 @@ BPMSoft.require(["CasePage"], function(schema) {
 |---|---|
 | Не заполнен хотя бы один из трёх полей (Приоритет/Сервис/Договор) | Индикатор скрыт |
 | В `TimeToPrioritize` нет записи для данной комбинации | Индикатор скрыт |
-| Приоритет изменён — индикатор не обновляется | Не должно быть: подписка через `dependencies` на `Priority` |
 
 ---
 
-## Журнал изменений
-
-| Дата | Изменение |
-|---|---|
-| 2026-04-05 | Документ создан. Инструкция готова к внедрению. |
+История подходов и журнал изменений → [SERVICE_MODE_INDICATOR_HISTORY.md](SERVICE_MODE_INDICATOR_HISTORY.md)

@@ -44,7 +44,7 @@ BPMsoft/
 │   │   ├── bpmsoft-cc-notifications-plan.md
 │   │   ├── CC_IMPLEMENTATION_GUIDE.md
 │   │   └── cc-implementation-code.md   ← готовый код C# (UsrCcAddressResolver + EventListener)
-│   └── service-mode-indicator/         ← Индикатор режима обслуживания (в работе)
+│   └── service-mode-indicator/         ← Индикатор режима обслуживания (внедрено)
 │       └── SERVICE_MODE_INDICATOR_GUIDE.md
 │
 └── learning/                           ← учёба (на паузе, блоки 0–3 пройдены)
@@ -116,7 +116,7 @@ BPMsoft/
 | Проект | Статус | Файлы |
 |--------|--------|-------|
 | CC-адреса в уведомлениях | Реализовано, **ожидает переноса на прод** | `projects/cc-notifications/` |
-| Индикатор режима обслуживания | **В работе** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
+| Индикатор режима обслуживания | **Внедрено** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
 
 ---
 
