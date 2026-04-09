@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="cs-CZ">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Odložit do" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Více prvku ve frontě bylo propojeno na proces. Id procesu: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Znovu zařadit do fronty" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Nelze znovu zařadit do fronty. Chybová zpráva: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Stránka není napojená na prvek ve frontě agentského desktopu. Akce byla zrušena." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Nelze znovu zařadit do fronty" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Znovu zařazen do fronty úspěšně" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Nemáte dostupné služby. Obraťte se prosím na podporu." />
+		</Items>
+	</Group>
+</Resources>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="fa-IR">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="به تعویق انداختن تا" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="بیش از یک عنصر صف به فرایند متصل است. شناسه فرایند: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="تشکیل صف دوباره" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="امکان صف بندی مجدد آیتم وجود ندارد. پیام خطا: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="صفحه به عنصر صف عامل دسکتاپ متصل نیست. اقدام لغو شد." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="امکان صف بندی مجدد آیتم وجود ندارد" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="با موفقیت دوباره در صف قرار گرفت" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="شما هیچ خدماتی ندارید لطفا با تیم پشتیبانی تماس بگیرید." />
+		</Items>
+	</Group>
+</Resources>

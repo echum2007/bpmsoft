@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="fr-FR">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Décaler jusqu'à" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Plus d'un élément de file d'attente est connecté au processus. Id du processus: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Mettre à nouveau en file d'attente" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Impossible de remettre l'élément en file d'attente. Message d'erreur: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="La page n'est pas associée à l'élément file d'attente de l'opérateur. Action annulée." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Impossible d'inscrire à nouveau l'élément en file d'attente" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Réintégré en file d'attente avec succès" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Vos services ne sont pas disponibles. merci de contacter votre équipe support." />
+		</Items>
+	</Group>
+</Resources>

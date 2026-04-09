@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="fr-FR">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Page du cas" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Décaler jusqu'à" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Caption" Value="Réponse au cas" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Value" Value="Réponse au cas {0} {1}" />
+			<Item Name="LocalizableStrings.EscalationTitle.Caption" Value="EscalationTitle" />
+			<Item Name="LocalizableStrings.EscalationTitle.Value" Value="Escalader" />
+			<Item Name="LocalizableStrings.FoundSimilarCaseTextTemplate.Value" Value="Cas similaires trouvés: {0}" />
+			<Item Name="LocalizableStrings.GeneralInfoTabCaption.Value" Value="Détails" />
+			<Item Name="LocalizableStrings.GroupCaption.Value" Value="Groupe responsable" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Caption" Value="Masquer les messages systèmes" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Value" Value="Masquer les messages systèmes" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Caption" Value="Historique" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Value" Value="Historique" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Plus d'un élément de file d'attente est connecté au processus. Id du processus: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelByServiceModuleCaption.Value" Value="Afficher les dépendances de service" />
+			<Item Name="LocalizableStrings.OwnerCaption.Value" Value="OwnerCaption" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Caption" Value="Profil du cas" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Value" Value="Profil du cas" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Mettre à nouveau en file d'attente" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Impossible de remettre l'élément en file d'attente. Message d'erreur: {0}" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Caption" Value="En cours de traitement" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Value" Value="En cours de traitement" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="La page n'est pas associée à l'élément file d'attente de l'opérateur. Action annulée." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Impossible d'inscrire à nouveau l'élément en file d'attente" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Réintégré en file d'attente avec succès" />
+			<Item Name="LocalizableStrings.ReclassificationTitle.Value" Value="Reclassifier" />
+			<Item Name="LocalizableStrings.SchemaLocalizableString1.Caption" Value="Message à l'utilisateur 1" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Caption" Value="Recherche de cas identiques" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Value" Value="Recherche de cas identiques" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessageByLic.Value" Value="&lt;p&gt; Les services déterminent les catégories de cas ainsi que les délais de réponse et de résolution par défaut. L'étendue des services est déterminée par le contrat de niveau de service (SLA) du client. Utilisez le &lt;a href=&quot;../0/Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt; &quot;Services&quot; &lt;/a&gt; et &quot;Contrats de service&quot; pour configurer les services disponibles &lt;/ p&gt;" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Caption" Value="ServiceItemTipMessage" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Value" Value="&lt;p&gt; Les services déterminent les catégories de cas ainsi que les délais de réponse et de résolution par défaut. L'étendue des services est déterminée par le contrat de niveau de service (SLA) du client. Utilisez le &lt;a href=&quot;../0/Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt; &quot;Services&quot; &lt;/a&gt; et &lt;a href = &quot;../Nui/ViewModule.aspx # SectionModuleV2/Section ServicePactSection/&quot;&gt;&quot;Contrats de service&quot;&lt;/a&gt; pour configurer les services disponibles &lt;/ p&gt;" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Caption" Value="ServicePactTipMessage" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Value" Value="&lt;p&gt; Les contrats de niveau de service (SLA) déterminent l'étendue des services délivrés à différents types de clients, ainsi que les conditions de prestation des services sous-traités et internes. Utilisez la section &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt; &quot;Contrats de service&quot; &lt;/a&gt; pour créer et modifier des contrats de service. &lt;/ P&gt;" />
+			<Item Name="LocalizableStrings.SetCaseContactMessage.Value" Value="Définir le contact {0} dans le cas?" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Caption" Value="Afficher les messages systèmes" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Value" Value="Afficher les messages systèmes" />
+			<Item Name="LocalizableStrings.SolutionFieldPlaceholder.Value" Value="Descriptif de la solution" />
+			<Item Name="LocalizableStrings.SolvedOnSupportLevelCaption.Value" Value="Niveau de support" />
+			<Item Name="LocalizableStrings.SupportLevelCaption.Value" Value="Niveau de support" />
+			<Item Name="LocalizableStrings.SymptomsCaption.Value" Value="Symptômes" />
+		</Items>
+	</Group>
+</Resources>

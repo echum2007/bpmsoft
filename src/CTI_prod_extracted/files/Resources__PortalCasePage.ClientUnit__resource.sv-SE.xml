@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="sv-SE">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Senarelägg till" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Mer än ett köelement kopplat till processen. Process-ID: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Ställ i kö igen" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Kan inte ställa artikel i kö igen. Felmeddelande: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Sidan är inte kopplad till agentens skrivbordsköelement. Åtgärd avbruten." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Kan inte ställa artikel i kö igen" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Ställdes i kö igen" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Du har inga tjänster tillgängliga. Kontakta supportteamet." />
+		</Items>
+	</Group>
+</Resources>

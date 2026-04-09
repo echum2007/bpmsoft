@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="pt-BR">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Adiar até" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Mais de uma fila de elementos ligada ao processo. ID do processo: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Re-enfileirar" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Não é possível recolocar item na fila. Mensagem de erro: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="A página não está ligada ao elemento fila de desktop de agente. Ação cancelada." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Nao é possível recolocar item na fila" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Item recolocado na fila com sucesso" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Você não tem serviços disponíveis. Entre em contato com a equipe de suporte." />
+		</Items>
+	</Group>
+</Resources>

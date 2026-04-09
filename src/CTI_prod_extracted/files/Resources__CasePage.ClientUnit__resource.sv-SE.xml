@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="sv-SE">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Ärendesida" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Senarelägg till" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Caption" Value="Ärendesvar" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Value" Value="Ärendesvar {0} {1}" />
+			<Item Name="LocalizableStrings.EscalationTitle.Caption" Value="EscalationTitle" />
+			<Item Name="LocalizableStrings.EscalationTitle.Value" Value="Eskalera" />
+			<Item Name="LocalizableStrings.FoundSimilarCaseTextTemplate.Value" Value="Similar cases found: {0}" />
+			<Item Name="LocalizableStrings.GeneralInfoTabCaption.Value" Value="Detaljer" />
+			<Item Name="LocalizableStrings.GroupCaption.Value" Value="Grupp med tilldelande personer" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Caption" Value="Dölj systemmeddelanden" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Value" Value="Dölj systemmeddelanden" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Caption" Value="Historik" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Value" Value="Historik" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Mer än ett köelement kopplat till processen. Process-ID: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelByServiceModuleCaption.Value" Value="Visa tjänsts beroenden" />
+			<Item Name="LocalizableStrings.OwnerCaption.Value" Value="OwnerCaption" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Caption" Value="Ärendeprofil" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Value" Value="Ärendeprofil" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Ställ i kö igen" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Kan inte ställa artikel i kö igen. Felmeddelande: {0}" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Caption" Value="Bearbetar" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Value" Value="Bearbetar" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Sidan är inte kopplad till agentens skrivbordsköelement. Åtgärd avbruten." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Kan inte ställa artikel i kö igen" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Ställdes i kö igen" />
+			<Item Name="LocalizableStrings.ReclassificationTitle.Value" Value="Omklassificera" />
+			<Item Name="LocalizableStrings.SchemaLocalizableString1.Caption" Value="Meddelande till användare 1" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Caption" Value="Sök efter liknande Ärende" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Value" Value="Sök efter liknande Ärende" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessageByLic.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and  &quot;Service agreements&quot; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Caption" Value="ServiceItemTipMessage" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and   &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Caption" Value="ServicePactTipMessage" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Value" Value="&lt;p&gt;Service level agreements (SLA) determine the scope of services provided to different types of customers, as well as conditions for rendering subcontracted and internal services. Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; section to create and modify service agreements &lt;/p&gt;" />
+			<Item Name="LocalizableStrings.SetCaseContactMessage.Value" Value="Ange {0} som kontakt i Ärende?" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Caption" Value="Visa systemmeddelanden" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Value" Value="Visa systemmeddelanden" />
+			<Item Name="LocalizableStrings.SolutionFieldPlaceholder.Value" Value="Upplsösningsbeskrivning" />
+			<Item Name="LocalizableStrings.SolvedOnSupportLevelCaption.Value" Value="Supportnivå¨" />
+			<Item Name="LocalizableStrings.SupportLevelCaption.Value" Value="Supportnivå¨" />
+			<Item Name="LocalizableStrings.SymptomsCaption.Value" Value="Symptom" />
+		</Items>
+	</Group>
+</Resources>

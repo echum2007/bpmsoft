@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="nl-NL">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Uitstellen tot" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Meerdere wachtrijen verbonden met het proces. Proces Id: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Plaats opnieuw in wachtrij" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Niet in staat om opnieuw wachtrij te plaatsen. Error message: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Pagina is niet aangesloten op de agent desktop wachtrij element. Actie geannuleerd." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Niet in staat om opnieuw wachtrij te plaatsen" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Met succes opnieuw in de wachtrij" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Je hebt geen services beschikbaar. Neem contact op met support team." />
+		</Items>
+	</Group>
+</Resources>

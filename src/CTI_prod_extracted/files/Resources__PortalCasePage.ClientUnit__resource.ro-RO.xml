@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="ro-RO">
+	<Group Type="String">
+		<Items>
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="Amana pana la" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="Mai mult decat un element in coada conexat procesului. Id Proces: {0}" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="Refa coada" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="Nu a fost posibila repunerea in coada a item-ului. Mesaj de eroare: {0}" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="Pagina nu este conectata la elementul in coada pe ecranul agentului. Actiune anulata." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="Nu a fost posibila re-punerea in coada a item-ului" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="Re-punere in coada cu succes" />
+			<Item Name="LocalizableStrings.ServicePactErrorMessage.Value" Value="Nu aveti servicii disponibile. Rugam contactati echipa suport." />
+		</Items>
+	</Group>
+</Resources>

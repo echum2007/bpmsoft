@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Resources Culture="fa-IR">
+	<Group Type="String">
+		<Items>
+			<Item Name="Caption" Value="Case page" />
+			<Item Name="LocalizableStrings.ChangeQueueItemDateButtonCaption.Value" Value="به تعویق انداختن تا" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Caption" Value="پاسخ پرونده" />
+			<Item Name="LocalizableStrings.EmailTitleCaption.Value" Value="پاسخ پرونده {0} {1}" />
+			<Item Name="LocalizableStrings.EscalationTitle.Caption" Value="EscalationTitle" />
+			<Item Name="LocalizableStrings.EscalationTitle.Value" Value="افزایش یابد" />
+			<Item Name="LocalizableStrings.FoundSimilarCaseTextTemplate.Value" Value="Similar cases found: {0}" />
+			<Item Name="LocalizableStrings.GeneralInfoTabCaption.Value" Value="جزییات" />
+			<Item Name="LocalizableStrings.GroupCaption.Value" Value="گروه نماینده" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Caption" Value="پنهان سازی پیغام های سیستم" />
+			<Item Name="LocalizableStrings.HideSystemMessagesString.Value" Value="پنهان سازی پیغام های سیستم" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Caption" Value="تاریخچه" />
+			<Item Name="LocalizableStrings.MessageHistoryGroupCaption.Value" Value="تاریخچه" />
+			<Item Name="LocalizableStrings.MultipleQueueItemsFoundError.Value" Value="بیش از یک عنصر صف به فرایند متصل است. شناسه فرایند: {0}" />
+			<Item Name="LocalizableStrings.OpenServiceModelByServiceModuleCaption.Value" Value="نمایش وابستگی های خدمات" />
+			<Item Name="LocalizableStrings.OwnerCaption.Value" Value="OwnerCaption" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Caption" Value="پروفایل پرونده" />
+			<Item Name="LocalizableStrings.ParametersTabCaption.Value" Value="پروفایل پرونده" />
+			<Item Name="LocalizableStrings.PostponeQueueItemButtonCaption.Value" Value="تشکیل صف دوباره" />
+			<Item Name="LocalizableStrings.PostponeQueueItemError.Value" Value="امکان صف بندی مجدد آیتم وجود ندارد. پیام خطا: {0}" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Caption" Value="در حال پردازش" />
+			<Item Name="LocalizableStrings.ProcessingTabCaption.Value" Value="در حال پردازش" />
+			<Item Name="LocalizableStrings.QueueItemIsEmptyError.Value" Value="صفحه به عنصر صف عامل دسکتاپ متصل نیست. اقدام لغو شد." />
+			<Item Name="LocalizableStrings.QueueItemPostponeFailedMessage.Value" Value="امکان صف بندی مجدد آیتم وجود ندارد" />
+			<Item Name="LocalizableStrings.QueueItemPostponeSucceedMessage.Value" Value="با موفقیت دوباره در صف قرار گرفت" />
+			<Item Name="LocalizableStrings.ReclassificationTitle.Value" Value="طبقه بندی دوباره" />
+			<Item Name="LocalizableStrings.SchemaLocalizableString1.Caption" Value="پیام به کاربر 1" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Caption" Value="جستجو برای موارد مشابه" />
+			<Item Name="LocalizableStrings.SearchForSimilarCasesButtonCaption.Value" Value="جستجو برای موارد مشابه" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessageByLic.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and  &quot;Service agreements&quot; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Caption" Value="ServiceItemTipMessage" />
+			<Item Name="LocalizableStrings.ServiceItemTipMessage.Value" Value="&lt;p&gt;  Services determine case categories as well as default response and resolution deadlines. The scope of services is determined by the customer’s service level agreement (SLA). Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServiceItemSection/&quot;&gt;&quot;Services&quot;&lt;/a&gt;  and   &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; sections to configure available services&lt;/p&gt;" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Caption" Value="ServicePactTipMessage" />
+			<Item Name="LocalizableStrings.ServicePactTipMessage.Value" Value="&lt;p&gt;Service level agreements (SLA) determine the scope of services provided to different types of customers, as well as conditions for rendering subcontracted and internal services. Use the  &lt;a href=&quot;../Nui/ViewModule.aspx#SectionModuleV2/ServicePactSection/&quot;&gt;&quot;Service agreements&quot;&lt;/a&gt; section to create and modify service agreements &lt;/p&gt;" />
+			<Item Name="LocalizableStrings.SetCaseContactMessage.Value" Value="Specify {0} as contact in case?" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Caption" Value="نمایش پیام سیستم" />
+			<Item Name="LocalizableStrings.ShowSystemMessagesString.Value" Value="نمایش پیام سیستم" />
+			<Item Name="LocalizableStrings.SolutionFieldPlaceholder.Value" Value="شرح رزولوشن" />
+			<Item Name="LocalizableStrings.SolvedOnSupportLevelCaption.Value" Value="سطح پشتیبانی" />
+			<Item Name="LocalizableStrings.SupportLevelCaption.Value" Value="سطح پشتیبانی" />
+			<Item Name="LocalizableStrings.SymptomsCaption.Value" Value="علائم" />
+		</Items>
+	</Group>
+</Resources>

@@ -2,7 +2,7 @@
 
 **Проект:** BPMSoft 1.9, пакет CTI (`21b087cf-bb70-cdc0-5180-6979fdd2220c`)  
 **Дата начала:** 2026-03-30  
-**Статус:** 🔄 Тестирование (ожидание доступа к почтовой подсистеме)
+**Статус:** 🔄 Перенесено на продуктив — ожидает финального подтверждения (2026-04-08)
 
 ---
 
@@ -279,6 +279,8 @@ namespace BPMSoft.Configuration
         /// <summary>
         /// Объединяет две строки с адресами, исключает дубли (без учёта регистра).
         /// Поддерживает разделители: пробел и точка с запятой.
+        /// Нормализует токены: убирает угловые скобки, пропускает части отображаемых имён.
+        /// Пример входящего формата: "User Name <user@example.com>" → сохраняется "user@example.com"
         /// </summary>
         public string MergeAddresses(string first, string second)
         {
@@ -286,12 +288,41 @@ namespace BPMSoft.Configuration
             var addresses = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
             foreach (var addr in first.Split(separators, StringSplitOptions.RemoveEmptyEntries))
-                addresses.Add(addr.Trim());
+            {
+                var normalized = NormalizeEmailToken(addr.Trim());
+                if (!string.IsNullOrEmpty(normalized))
+                    addresses.Add(normalized);
+            }
 
             foreach (var addr in second.Split(separators, StringSplitOptions.RemoveEmptyEntries))
-                addresses.Add(addr.Trim());
+            {
+                var normalized = NormalizeEmailToken(addr.Trim());
+                if (!string.IsNullOrEmpty(normalized))
+                    addresses.Add(normalized);
+            }
 
-            return string.Join(" ", addresses);
+            return string.Join("; ", addresses);
+        }
+
+        /// <summary>
+        /// Нормализует один токен из строки с адресами.
+        /// Убирает угловые скобки: &lt;email@example.com&gt; → email@example.com.
+        /// Возвращает null для токенов без «@» (это части отображаемого имени).
+        /// </summary>
+        private static string NormalizeEmailToken(string token)
+        {
+            if (string.IsNullOrEmpty(token))
+                return null;
+
+            // Убираем угловые скобки: <email@example.com> → email@example.com
+            if (token.StartsWith("<") && token.EndsWith(">"))
+                token = token.Substring(1, token.Length - 2).Trim();
+
+            // Пропускаем токены без @ — это части отображаемого имени (Display Name)
+            if (!token.Contains("@"))
+                return null;
+
+            return token;
         }
     }
 }
@@ -464,11 +495,20 @@ namespace BPMSoft.Configuration
 					return { invalidMessage: "" };
 				}
 				var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-				var parts = cc.split(/[;,]/);
+				// Разбиваем по пробелу, точке с запятой и запятой
+				// (формат хранения — пробел; ввод вручную может использовать ; или ,)
+				var parts = cc.split(/[\s;,]+/);
 				var invalid = [];
 				Ext.Array.each(parts, function(part) {
 					var trimmed = part.trim();
-					if (trimmed && !emailRegex.test(trimmed)) {
+					if (!trimmed) { return; }
+					// Убираем угловые скобки на случай формата <email@example.com>
+					if (trimmed.charAt(0) === "<" && trimmed.charAt(trimmed.length - 1) === ">") {
+						trimmed = trimmed.substring(1, trimmed.length - 1);
+					}
+					// Токены без @ — это части отображаемого имени, пропускаем
+					if (trimmed.indexOf("@") === -1) { return; }
+					if (!emailRegex.test(trimmed)) {
 						invalid.push(trimmed);
 					}
 				});
@@ -571,14 +611,21 @@ BPMSoft.require(["CasePage"], function(schema) {
 				// Намеренно упрощённое: полная RFC-валидация избыточна для UI.
 				var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-				// Разбиваем строку по ; и , — поддерживаем оба разделителя
-				var parts = cc.split(/[;,]/);
+				// Разбиваем по пробелу, точке с запятой и запятой
+				// (формат хранения — пробел; ввод вручную может использовать ; или ,)
+				var parts = cc.split(/[\s;,]+/);
 				var invalid = [];
 
 				Ext.Array.each(parts, function(part) {
 					var trimmed = part.trim();
-					// Пропускаем пустые фрагменты (двойные разделители и т.п.)
-					if (trimmed && !emailRegex.test(trimmed)) {
+					if (!trimmed) { return; }
+					// Убираем угловые скобки на случай формата <email@example.com>
+					if (trimmed.charAt(0) === "<" && trimmed.charAt(trimmed.length - 1) === ">") {
+						trimmed = trimmed.substring(1, trimmed.length - 1);
+					}
+					// Токены без @ — это части отображаемого имени, пропускаем
+					if (trimmed.indexOf("@") === -1) { return; }
+					if (!emailRegex.test(trimmed)) {
 						invalid.push(trimmed);
 					}
 				});
@@ -608,24 +655,25 @@ BPMSoft.require(["ServicePactPage"], function(schema) {
 
 ## Тестирование
 
-### Частичная проверка (выполнена, без почтовой подсистемы)
+### ✅ Полное тестирование выполнено (тестовая система)
+
 - ✅ Поле CC заполнено в обращении и сервисном договоре
 - ✅ При создании нового сообщения по обращению поле CC заполнилось двумя адресами (из обращения и из договора)
 - ✅ Дедупликация работает корректно
 - ✅ Валидация CasePage — некорректные адреса блокируют сохранение
 - ✅ Валидация ServicePactPage — некорректные адреса блокируют сохранение
+- ✅ Сценарий «Исходящие» — письмо ушло с заполненным полем CC
+- ✅ Сценарий «Входящие» — `Case.UsrCcEmails` обновился адресами из CC входящего письма, дубли не накапливаются
 
-### Полное тестирование (ожидает доступа к почтовой подсистеме)
+### Проверка GUID-констант на продуктиве (выполнена перед переносом)
 
-**Сценарий 1 — Исходящие:**
-1. Заполнить `UsrCcEmails` в обращении и/или сервисном договоре
-2. Инициировать отправку уведомления (например сменить ответственного)
-3. Проверить что письмо пришло с заполненным полем CC
+```sql
+SELECT "Id" FROM "ActivityType" WHERE "Code" = 'Email';
+-- e2831dec-cfc0-df11-b00f-001d60e938c6 ✅ совпадает с кодом
 
-**Сценарий 2 — Входящие:**
-1. Отправить письмо по обращению с адресами в CC
-2. Проверить что `Case.UsrCcEmails` обновился — адреса из CC письма добавились
-3. Отправить то же письмо повторно — убедиться что дубли не накапливаются
+SELECT DISTINCT "MessageTypeId" FROM "Activity" WHERE "MessageTypeId" IS NOT NULL LIMIT 10;
+-- 7f6d3f94-f36b-1410-068c-20cf30b39373 ✅ совпадает с кодом
+```
 
 **Проверка через SQL после тестов:**
 ```sql
@@ -646,6 +694,8 @@ LIMIT 10;
 | Валидатор не срабатывает | Методы `setValidationConfig` / `validateCcEmails` размещены вне блока `methods: {}` | Перенести оба метода **внутрь** `methods: { ... }` |
 | Кнопки «Сохранить», «Действия» на английском | Замена всего кода схемы через Конфигурацию сбрасывает ресурсы локализации | Открыть мастер раздела → сделать косметическое изменение (сдвинуть поле) → Сохранить |
 | Метод `validators` в `attributes` не работает | Механизм `validators` в `attributes` не поддерживается для пользовательских валидаторов | Использовать `setValidationConfig` + `addColumnValidator` внутри `methods` |
+| CC из входящего письма сохраняется дважды: `email <email>` | `CopyRecepient` хранит адрес в формате `Display Name <email>`, `MergeAddresses` разбивал по пробелу и добавлял оба токена | Добавлен `NormalizeEmailToken`: убирает `<>`, пропускает токены без `@` |
+| Валидатор ругается на адреса из входящих писем | JS `split(/[;,]/)` не разбивал по пробелу, а хранение использует `;` как разделитель | Разделитель изменён на `/[\s;,]+/`, добавлена обработка `<email>` и пропуск DisplayName-токенов |
 
 ---
 
@@ -656,3 +706,5 @@ LIMIT 10;
 | 2026-03-30 | Документ создан. Шаги 1–6 описаны на уровне инструкций. |
 | 2026-04-01 | Шаги 1–6 выполнены в тестовой системе. Добавлен финальный код шагов 5–6. Расширена функциональность: добавлена обработка входящих писем (CC из входящего сохраняется в обращение с дедупликацией). Получены и зафиксированы Guid констант из БД тестовой системы. |
 | 2026-04-04 | Добавлены шаги 7–8: клиентская валидация формата email на CasePage и ServicePactPage. Документировано решение проблемы с размещением методов вне блока `methods`. Добавлен раздел «Известные проблемы и решения». |
+| 2026-04-08 | Полное тестирование завершено (исходящие и входящие письма). GUID-константы проверены на продуктиве — совпадают. Статус обновлён: ожидает переноса на продуктив. |
+| 2026-04-08 | Исправлено два бага: (1) `MergeAddresses` добавлял токен `<email>` как отдельный адрес — добавлен `NormalizeEmailToken`, убирающий `<>` и пропускающий части DisplayName; (2) JS-валидатор разбивал только по `;,`, не по пробелу — разделитель изменён на `/[\s;,]+/`, добавлена обработка `<email>` и токенов без `@`. Разделитель в `string.Join` изменён с пробела на `"; "`. Всё протестировано на тестовой системе — работает корректно. |
