@@ -43,5 +43,30 @@
       "Edit(C:/Windows/*)",
       "Edit(C:/Program Files/*)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"c:/Users/echum/Documents/BPMsoft/.claude/hooks/check-readonly.py\"",
+            "blockOnFailure": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"c:/Users/echum/Documents/BPMsoft/.claude/hooks/kestrel-reminder.py\""
+          }
+        ]
+      }
+    ]
   }
 }
