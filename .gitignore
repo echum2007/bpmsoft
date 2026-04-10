@@ -37,6 +37,9 @@ Documentation 1.9/
 # Артефакты — старые папки
 vs code/
 
+# Локальные логи ошибок и отладочные материалы
+projects/errors/
+
 # Windows
 Thumbs.db
 Desktop.ini
