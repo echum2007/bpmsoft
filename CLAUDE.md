@@ -109,7 +109,7 @@ BPMsoft/
 - `GetColumnValue<T>` на `IDataReader` требует `using BPMSoft.Common`
 - После публикации `EntityEventListener` — **обязательный перезапуск Kestrel**
 - CC-поле в таблице Activity: `CopyRecepient` (именно так, с опечаткой)
-- `src/CTI/CTI/` в репозитории выгружен с **продуктивной системы** — CC-изменения туда ещё не перенесены
+- `src/CTI/CTI/` в репозитории выгружен с **продуктивной системы** (актуален: CC и индикатор перенесены 2026-04-11)
 
 ---
 
@@ -117,8 +117,8 @@ BPMsoft/
 
 | Проект | Статус | Файлы |
 |--------|--------|-------|
-| CC-адреса в уведомлениях | **Перенесено на прод 2026-04-08**, ожидает подтверждения | `projects/cc-notifications/` |
-| Индикатор режима обслуживания | Реализовано, **ожидает переноса на прод** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
+| CC-адреса в уведомлениях | **На проде 2026-04-11** | `projects/cc-notifications/` |
+| Индикатор режима обслуживания | **На проде 2026-04-11** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
 | Трудозатраты (labor-records) | ТЗ v1.5 на обсуждении (с 08.04.2026) | `projects/labor-records/` |
 
 ---
