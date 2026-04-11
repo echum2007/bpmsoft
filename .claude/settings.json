@@ -23,7 +23,6 @@
       "Bash(chown:*)",
       "Bash(mkfs:*)",
       "Bash(dd if=:*)",
-      "Bash(:(){ :|:& };:)",
       "Bash(shutdown:*)",
       "Bash(reboot:*)",
       "Bash(kill -9:*)",
