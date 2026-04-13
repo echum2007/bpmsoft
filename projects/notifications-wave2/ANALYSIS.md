@@ -208,6 +208,8 @@ protected override void FillActivityWithCaseData(Activity activity, CaseData dat
 
 Также в справочнике CaseNotificationRule есть поле **«Процитировать оригинальный email»** — но оно работает через тот же механизм `ParentActivity` и тоже даёт корневое письмо.
 
+> **Уточнение (2026-04-12):** Feature-toggle `EmailMessageMultiLanguageV2` = **1 (включён)** на проде. Конвейер `EmailWithMacrosManager` **активен** для процессов, которые через него идут (например, `UsrSendEmailToSROwnerCustom1`). Однако процесс push-уведомления `UsrSendNotificationToCaseOwnerCustom1` не отправляет email через этот конвейер — он создаёт только Reminding.
+
 ---
 
 ## 4. Сравнение: документированная модель vs. лучшие практики ITSM

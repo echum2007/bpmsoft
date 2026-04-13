@@ -1,0 +1,489 @@
+"Code","Name","Enabled","AdminUnit"
+"","",1,All employees
+"","",1,All portal users
+AllowBpmnImportInProcessLibrary,AllowBpmnImportInProcessLibrary,1,All employees
+AsyncEmailEventHandling,AsyncEmailEventHandling,1,All employees
+AttachedImagesForCaseEstimationEmoticons,"",1,All employees
+AttachedImagesForCaseEstimationEmoticons,"",1,All portal users
+BETSegmentation717,"",1,All employees
+BETSending717,"",1,All employees
+BorderRadiusFeature,BorderRadiusFeature,,
+BulkEmailAudienceImport,BulkEmailAudienceImport,1,All employees
+BulkEmailDynamicContentBuilder,"",1,All employees
+BulkEmailExtendedMacro,"",1,All employees
+BulkEmailFacadeInCampaign,BulkEmailFacadeInCampaign,1,All employees
+BulkEmailHyperlinksClicksChart,BulkEmailHyperlinksClicksChart,1,All employees
+BulkEmailPause,BulkEmailPause,1,All employees
+BulkEmailReplyTo,"",1,All employees
+BulkEmailStop,BulkEmailStop,1,All employees
+BulkEmailThrottlingQueue,BulkEmailThrottlingQueue,1,All employees
+BulkEmailUX,BulkEmailUX,1,All employees
+BulkLicenseDistribution,BulkLicenseDistribution,1,All employees
+CalcTotalByFormula,"",1,All employees
+CampaignAddModifyElements,CampaignAddModifyElements,1,All employees
+CampaignAddToEventElement,"",1,All employees
+CampaignAnalyticsHistory,"",1,All employees
+CampaignAnalyticsInfoLabels,"",1,All employees
+CampaignAudienceImport,"",1,All employees
+CampaignBatchedQueries,CampaignBatchedQueries,1,All employees
+CampaignConditionalTransitionDescription,"",1,All employees
+CampaignDeduplicatorElement,"",1,All employees
+CampaignElementTemplate,"",1,All employees
+CampaignEventLandingElements,CampaignEventLandingElements,1,All employees
+CampaignSignalRecurringEntrance,"",1,All employees
+CampaignSplitGatewayElement,"",1,All employees
+CampaignStartEventElement,"",1,All employees
+CampaignStartLandingElement,"",1,All employees
+CampaignStartSignalElement,CampaignStartSignalElement,1,All employees
+CampaignViewerReadonlyPropertiesPage,"",1,All employees
+CanUpdateHistoryMessage,CanUpdateHistoryMessage,1,All employees
+CaseRuleApplier,CaseRuleApplier,0,All employees
+CaseRuleApplier,CaseRuleApplier,0,All portal users
+CaseStagesFromDCM,"",1,All employees
+CategoryFromMailBox,CategoryFromMailBox,1,All employees
+CategoryFromMailBox,CategoryFromMailBox,1,All portal users
+ChangeEntityActivitiesAndProcessOwner,ChangeEntityActivitiesAndProcessOwner,1,All employees
+ChangeEntityActivitiesAndProcessOwner,ChangeEntityActivitiesAndProcessOwner,1,All portal users
+ChangeProductPrice,"",1,All employees
+ChangeToAppropriateDcmInstance,ChangeToAppropriateDcmInstance,1,All employees
+ChangeToAppropriateDcmInstance,ChangeToAppropriateDcmInstance,1,All portal users
+CheckAndCloseAllCaseIntervals,"",1,All employees
+CheckAndCloseAllCaseIntervals,"",1,All portal users
+CheckCanChangeRightsInDetail,CheckCanChangeRightsInDetail,1,All employees
+CheckCanChangeRightsInDetail,CheckCanChangeRightsInDetail,1,All portal users
+CheckMasterRecordEditRights,CheckMasterRecordEditRights,1,All employees
+CheckMasterRecordEditRights,CheckMasterRecordEditRights,1,All portal users
+CKEditorColorPicker,CKEditorColorPicker,,
+CKEditorIndentPanel,CKEditorIndentPanel,1,All employees
+CKEditorLetterSpacingPanel,CKEditorLetterSpacingPanel,1,All employees
+CKEditorLineHeightPanel,CKEditorLineHeightPanel,1,All employees
+CKeditorTableEdit,CKeditorTableEdit,1,All employees
+ClearSolutionDateAfterReopenCase,"",1,All employees
+CompleteCardLockout,Complete card lockout,1,All employees
+ContentBlockDesigner,ContentBlockDesigner,1,All employees
+ContentBuilderPropertiesPanel,ContentBuilderPropertiesPanel,1,All employees
+ContentButtonPropertiesPage,ContentButtonPropertiesPage,,
+ContentImageSettingsFeature,ContentImageSettingsFeature,,
+ContentTextSettingsFeature,ContentTextSettingsFeature,,
+ControlLicenseDistributionDuringLDAPSync,ControlLicenseDistributionDuringLDAPSync,1,System administrators
+CreateCaseFromHistory,"",1,All employees
+CreateViewModelLookupMultiAddMixin,"",1,All employees
+CSATRatingService,"",1,All employees
+CSATRatingService,"",1,All portal users
+DataBindingEnabled,Enable data binding,0,All employees
+DcmCasesVersioning,DcmCasesVersioning,1,All employees
+DcmNotImplementedElements,DcmNotImplementedElements,1,All employees
+DcmStagesPermissions,DcmStagesPermissions,1,All employees
+DcmStagesPermissions,DcmStagesPermissions,1,All portal users
+DeactivateDeletedAdUsers,DeactivateDeletedAdUsers,1,System administrators
+DeactivateExcludedLdapUsers,DeactivateExcludedLdapUsers,1,System administrators
+DecodeGoogleTagManagerScript,DecodeGoogleTagManagerScript,0,All employees
+Deduplication,Deduplication,0,All employees
+DelayedNotification,DelayedNotification,1,All employees
+DelayedNotification,DelayedNotification,1,All portal users
+DisableAdminRightsInScriptTask,DisableAdminRightsInScriptTask,1,All employees
+DisableAdminRightsInScriptTask,DisableAdminRightsInScriptTask,1,All portal users
+DisableAdminRightsInScriptTask,DisableAdminRightsInScriptTask,1,System administrators
+DisableEmailDecoding,DisableEmailDecoding,1,All employees
+DisableEmptyFilterBeforeBuildEsq,DisableEmptyFilterBeforeBuildEsq,1,All employees
+DisableOldOpportunityStageSynchronizers,"",1,All employees
+DisableOldOpportunityStageSynchronizers,"",1,All portal users
+DisplayAllProcessPagesStartedByRecords,DisplayAllProcessPagesStartedByRecords,1,All employees
+DisplayAllProcessPagesStartedByRecords,DisplayAllProcessPagesStartedByRecords,1,All portal users
+DoNotUseMetadataForEmail,DoNotUseMetadataForEmail,1,All employees
+DuplicatesPageFilters,DuplicatesPageFilters,0,All employees
+DuplicatesWidget,Duplicates Widget,0,All employees
+DynamicContentClickHeatmap,DynamicContentClickHeatmap,1,All employees
+DynamicContentTestEmail,DynamicContentTestEmail,1,All employees
+EditableEmailDefRights,EditableEmailDefRights,1,All employees
+EmailCommunicationRestriction,Новый модуль ограничения коммуникаций в email рассылках,1,All employees
+EmailHeadersEnabled,EmailHeadersEnabled,1,All employees
+EmailIntegrationV2,EmailIntegrationV2,0,All employees
+EmailIntegrationV2,EmailIntegrationV2,0,All portal users
+EmailLinkHandler,EmailLinkHandler,1,All employees
+EmailMessageMultiLanguageV2,EmailMessageMultiLanguageV2,1,All employees
+EmailMobileBackgroundFeature,EmailMobileBackgroundFeature,1,All employees
+EmailReadonlyAsHtml,EmailReadonlyAsHtml,1,All employees
+EmailReadonlyAsHtml,EmailReadonlyAsHtml,1,All portal users
+EmailRelationAddingEnabled,EmailRelationAddingEnabled,1,All employees
+EmailTemplateGroupButtonsFeature,EmailTemplateGroupButtonsFeature,1,All employees
+EmailTemplateLegacyMarkupFeature,EmailTemplateLegacyMarkupFeature,0,All employees
+EmailTemplateLookupGallery,"",1,All employees
+EmailTemplateMultiLanguageInActionDashBoard,EmailTemplateMultiLanguageInActionDashBoard,1,All employees
+EmailTemplateMultiLanguageInEmailPage,EmailTemplateMultiLanguageInEmailPage,1,All employees
+EmailTemplateUserTaskMultiLanguageV2,EmailTemplateUserTaskMultiLanguageV2,1,All employees
+EmailTemplateUserTaskMultiLanguageV2,EmailTemplateUserTaskMultiLanguageV2,1,All portal users
+EnableCustomPrefixRouteApi,EnableCustomPrefixRouteApi,1,All portal users
+EnableNewUserLicensing,EnableNewUserLicensing,0,All employees
+EnableOldCampaignEventElement,"",0,All employees
+EnableOldCampaignLandingElement,"",1,All employees
+EnableOldPartnershipLogic,EnableOldPartnershipLogic,0,All employees
+EnableReportFileProcessingUserTask,EnableReportFileProcessingUserTask,1,All employees
+EnableReportFileProcessingUserTask,EnableReportFileProcessingUserTask,1,All portal users
+EnableThemeSwitcher,EnableThemeSwitcher,,
+EntityPublishWithCompilation,EntityPublishWithCompilation,0,All employees
+EntityStageHistoryJournaling,EntityStageHistoryJournaling,1,All employees
+EntityStageHistoryJournaling,EntityStageHistoryJournaling,1,All portal users
+EsnCenterLoggerEnabled,EsnCenterLoggerEnabled,0,All employees
+ESPSelection,"",0,All employees
+EstimateWithIcons,EstimateWithIcons,1,All employees
+EstimateWithIcons,EstimateWithIcons,1,All portal users
+EventAudienceImport,"",1,All employees
+ExchangeCalendarWithoutMetadata,ExchangeCalendarWithoutMetadata,1,All employees
+ExchangeListenerEnabled,ExchangeListenerEnabled,1,All employees
+ExchangeListenerEnabled,ExchangeListenerEnabled,1,All employees
+ExchangeListenerEnabled,ExchangeListenerEnabled,1,All portal users
+ExchangeRecurringAppointments,"",1,All employees
+ExecutionDiagramMultiInstanceLabels,ExecutionDiagramMultiInstanceLabels,1,All employees
+ExecutionDiagramMultiInstanceLabels,ExecutionDiagramMultiInstanceLabels,1,All portal users
+FetchSchemaFromMetadataForDeduplication,"",1,All employees
+FillSingleQueue,FillSingleQueue,1,All employees
+FillSingleQueue,FillSingleQueue,1,All portal users
+FindDuplicatesOnSave,FindDuplicatesOnSave,0,All employees
+FixChatMessageId,FixChatMessageId,1,All employees
+FixedSectionGridCaptions,FixedSectionGridCaptions,1,All employees
+FixedSectionGridCaptions,FixedSectionGridCaptions,1,All portal users
+ForceOpenProcessPagesFromWebSocket,"",1,All employees
+ForceOpenProcessPagesFromWebSocket,"",1,All portal users
+ForecastAutoCalculation,ForecastAutoCalculation,1,All employees
+ForecastCalculationByOperationRights,"",1,All employees
+ForecastDrilldown,"",1,All employees
+ForecastDrilldownGoToSection,ForecastDrilldownGoToSection,0,All employees
+ForecastGroupEdit,"",1,All employees
+ForecastGroupSummary,"",1,All employees
+ForecastHistoryDrilldown,"",1,All employees
+ForecastRowRights,"",1,All employees
+ForecastRowSnapshot,"",1,All employees
+ForecastSaveHierarchy,"",1,All employees
+ForecastSnapshot,"",1,All employees
+ForecastSummaryFormula,"",0,All employees
+ForecastUIV2,"",1,All employees
+ForecastV2,ForecastV2,1,All employees
+FormSubmitGeneratedWebForm,FormSubmitGeneratedWebForm,1,All employees
+FromEmailFromNameMacros,"",1,All employees
+FullPipeline,"",1,All employees
+FullPipelineDesigner,Full pipeline designer,1,All employees
+FullscreenForecasts,FullscreenForecasts,1,All employees
+GenerateAnnyversaryOnSave,GenerateAnnyversaryOnSave,1,All employees
+GenerateGridItemPrefixWithGuid,GenerateGridItemPrefixWithGuid,1,All employees
+GenerateImagesListUsingDiv,Генерировать список иконок с помощью div,1,All employees
+GenerateImagesListUsingDiv,Генерировать список иконок с помощью div,1,All portal users
+GetProcessStepsViaResponse,GetProcessStepsViaResponse,1,All employees
+GetProcessStepsViaResponse,GetProcessStepsViaResponse,1,All portal users
+GlobalSearch,GlobalSearch,1,All employees
+GlobalSearch,GlobalSearch,1,All portal users
+HandleMessagePublishingExceptions,HandleMessagePublishingExceptions,1,All employees
+HandleMessagePublishingExceptions,HandleMessagePublishingExceptions,1,All portal users
+HideAutoEmailNotifications,HideAutoEmailNotifications,1,All employees
+HighestSpeedFileImport,HighestSpeedFileImport,1,All employees
+HtmlContentBuilder,HtmlContentBuilder,1,All employees
+ImportDateTimeKindUnspecified,ImportDateTimeKindUnspecified,1,All employees
+InstallApplicationUIV2,InstallApplicationUIV2,1,All employees
+IsESEmailsSearch,IsESEmailsSearch,1,All employees
+IsMacrosButtonHidden,IsMacrosButtonHidden,1,All employees
+IsMailboxSyncSettingsCached,IsMailboxSyncSettingsCached,1,All employees
+IsObjectLinkEnabled,IsObjectLinkEnabled,1,All employees
+IsQuotesBody,IsQuotesBody,1,All employees
+IsSSPContactSocialMentions,IsSSPContactSocialMentions,1,All employees
+IsSSPContactSocialMentions,IsSSPContactSocialMentions,1,All portal users
+LazyLoadDeduplicationResult,LazyLoadDeduplicationResult,1,All employees
+LDAPUseSecureConnection,LDAPUseSecureConnection,1,All employees
+LeadPortalMessages,"",0,All employees
+LeadPortalMessages,"",0,All portal users
+LinkPreview,LinkPreview,1,All employees
+LoadAttachmentsInSameProcess,LoadAttachmentsInSameProcess,1,All employees
+LoadPrimaryDisplayColumnForAggregateColumn,LoadPrimaryDisplayColumnForAggregateColumn,0,All employees
+MacroFromBET717,"",1,All employees
+MailboxRightsForEmail,MailboxRightsForEmail,1,All employees
+MailboxSyncSettingsMacrosesEnabled,MailboxSyncSettingsMacrosesEnabled,1,All employees
+ManageProcessCollectionParameters,ManageProcessCollectionParameters,1,All employees
+ManageProcessCollectionParameters,ManageProcessCollectionParameters,1,All portal users
+ManualLimitThrottlingQueue,"",1,All employees
+MarketingContentBuilderWizard,"",1,All employees
+MessageDirectionByMailbox,MessageDirectionByMailbox,1,All employees
+MessageHistoryV2,"",1,All employees
+MessageHistoryV2,"",1,All portal users
+MinifyEmailHtml,MinifyEmailHtml,1,All employees
+MjmlContentBuilder,MjmlContentBuilder,1,All employees
+MobileContinueInterruptedImport,MobileContinueInterruptedImport,1,All employees
+MobileContinueInterruptedImport,MobileContinueInterruptedImport,1,All portal users
+MobileDisableSyncRelogin,MobileDisableSyncRelogin,0,All employees
+MultiDelete,MultiDelete,1,All employees
+MultiLanguageContentBuilderEnabled,MultiLanguageContentBuilderEnabled,1,All employees
+MultilanguageRegistrationEmail,MultilanguageRegistrationEmail,1,All employees
+NewCasePriorityLookup,NewCasePriorityLookup,1,All employees
+NewChangeLogUI,NewChangeLogUI,1,All employees
+NewConfigurationSettingsUI,NewConfigurationSettingsUI,1,All employees
+NewCurrencyLookup,NewCurrencyLookup,1,All employees
+NewLicenseManagerUI,NewLicenseManagerUI,1,All employees
+NewMailboxSettingsUI,NewMailboxSettingsUI,1,All employees
+NewOpportunityStageManager,NewOpportunityStageManager,1,All employees
+NewProductCatalogueFolderManager,NewProductCatalogueFolderManager,1,All portal users
+NewProductCatalogueFolderManager,NewProductCatalogueFolderManager,1,Supervisor
+NewProductSelectionCatalogue,"",1,All employees
+NewProductSelectionCatalogue,"",1,All portal users
+NewQueueSortingUI,NewQueueSortingUI,1,All employees
+NewRightsManagementUI,NewRightsManagementUI,1,All employees
+NoCompilationFeature,NoCompilationFeature,1,All employees
+NotificationsOnOneClassJob,NotificationsOnOneClassJob,0,All employees
+NotificationV2,NotificationV2,1,All employees
+NotificationV2,NotificationV2,1,All portal users
+OAuth20Integration,OAuth20Integration,0,System administrators
+OldMessageHistoryDisabled,OldMessageHistoryDisabled,1,All employees
+OldMessageHistoryDisabled,OldMessageHistoryDisabled,1,All portal users
+OpenEditPageInDcm,OpenEditPageInDcm,1,All employees
+OpenProcessPagesInChain,OpenProcessPagesInChain,1,All employees
+OpenProcessPagesInChain,OpenProcessPagesInChain,1,All portal users
+OpportunityMetrics,Opportunity metrics,1,All employees
+OpportunityMetrics,Opportunity metrics,1,Partner portal users
+OptimizeMobileBackgroundTemplate,OptimizeMobileBackgroundTemplate,1,All employees
+OutboundCampaign,OutboundCampaign,1,All employees
+PageDesignerCustomGeneratorFix,PageDesignerCustomGeneratorFix,1,All employees
+PageDesignerSourceCode,PageDesignerSourceCode,1,All employees
+PassProcessParameterValueAsArray,PassProcessParameterValueAsArray,1,All employees
+PassProcessParameterValueAsArray,PassProcessParameterValueAsArray,1,All portal users
+PivotTable,PivotTable,1,All employees
+Playbook,Playbook,1,All employees
+PopulateBusinessRuleAction,PopulateBusinessRuleAction,1,All employees
+PopulateBusinessRuleAction,PopulateBusinessRuleAction,1,All portal users
+PortalColumnConfig,"",1,All employees
+PortalColumnConfig,"",1,All portal users
+PortalSetupInSystemDesigner,PortalSetupInSystemDesigner,1,All employees
+PortalUserAction,PortalUserAction,1,All employees
+PortalUserAction,PortalUserAction,1,All portal users
+PortalUserManagementV2,PortalUserManagementV2,1,All employees
+PortalUserManagementV2,PortalUserManagementV2,1,All portal users
+PrimaryCommunicationSelector,PrimaryCommunicationSelector,,
+PrivateMeetings,PrivateMeetings,1,All employees
+ProcessDashboardRequest,ProcessDashboardRequest,1,All employees
+ProcessDashboardRequest,ProcessDashboardRequest,1,All portal users
+ProcessLogArchivation,ProcessLogArchivation,1,Supervisor
+ProcessNotImplementedElements,ProcessNotImplementedElements,1,All employees
+ProcessParameterCollections,ProcessParameterCollections,1,All employees
+QueryStrictMode,QueryStrictMode,1,All employees
+QuotedEmailInMessageHistory,QuotedEmailInMessageHistory,1,All employees
+QuotedEmailInMessageHistory,QuotedEmailInMessageHistory,1,All portal users
+RecurringCampaigns,RecurringCampaigns,1,All employees
+RelatedEmails,RelatedEmails,1,All employees
+ReloadListAfterInstallApp,ReloadListAfterInstallApp,1,All employees
+ReplyAllByTemplateAction,ReplyAllByTemplateAction,1,All employees
+ReplyAllByTemplateAction,ReplyAllByTemplateAction,1,All portal users
+ResolvedButtonMenuIsNotVisible,"",1,All employees
+ReverseColumnOrderContentBuilderFeature,ReverseColumnOrderContentBuilderFeature,1,All employees
+RunningProcessesOnMultipleRecordsFromSection,Running processes on multiple records from a section,1,All employees
+RunReopenCaseAndNotifyAssigneeClass,RunReopenCaseAndNotifyAssigneeClass,1,All employees
+RunReopenCaseAndNotifyAssigneeClass,RunReopenCaseAndNotifyAssigneeClass,1,All portal users
+SafeEmailBodyCutting,"",1,All employees
+SafeEmailBodyCutting,"",1,All portal users
+SanitizeHtml,SanitizeHtml,1,All employees
+SanitizeHtml,SanitizeHtml,1,All portal users
+SectionPageWizard,SectionPageWizard,1,All employees
+SecureEstimation,SecureEstimation,1,All employees
+SecureEstimation,SecureEstimation,1,All portal users
+SecurePortalMessage,"",1,All employees
+SecurePortalMessage,"",1,All portal users
+SecurePortalMessageFileInHistory,"",0,All employees
+SecurePortalMessageFileInHistory,"",1,All portal users
+SendEmailToCaseOnStatusChangeClass,SendEmailToCaseOnStatusChangeClass,1,All employees
+SendEmailToCaseOnStatusChangeClass,SendEmailToCaseOnStatusChangeClass,1,All portal users
+ServiceModelNetwork,ServiceModelNetwork,1,All employees
+ServiceTerms,ServiceTerms,1,All employees
+ServiceTerms,ServiceTerms,1,All portal users
+SharedMailboxes,SharedMailboxes,1,All employees
+ShowAllContactsAsOwner,ShowAllContactsAsOwner,1,All employees
+ShowAllContactsAsOwner,ShowAllContactsAsOwner,1,All portal users
+ShowBulkDuplicatesSummary,ShowBulkDuplicatesSummary,0,All employees
+ShowEmailOnPortal,ShowEmailOnPortal,1,All employees
+ShowEmailOnPortal,ShowEmailOnPortal,1,All portal users
+ShowEmailOnPortalByCaseContact,"",1,All employees
+ShowEmailOnPortalByCaseContact,"",1,All portal users
+ShowESNOnSSP,ShowESNOnSSP,1,All employees
+ShowESNOnSSP,ShowESNOnSSP,1,All portal users
+ShowLinkedColumnsIcons,ShowLinkedColumnsIcons,1,All employees
+ShowMobileDashboards,"Show ""Dashboards"" in mobile app",1,All employees
+ShowOmniChatInCommPanel,Show omnichannel chat,1,All employees
+SimplifyContactMention,SimplifyContactMention,0,All employees
+SkipLoadMessagesOnMessageInsertedReceived,SkipLoadMessagesOnMessageInsertedReceived,1,All employees
+SocialLeadGen,"",1,All employees
+SocialLeadGenSection,SocialLeadGenSection,1,All employees
+SSPRegistrationMailboxEnabled,SSPRegistrationMailboxEnabled,1,All employees
+SSPRegistrationMailboxEnabled,SSPRegistrationMailboxEnabled,1,All portal users
+SspSectionWizard,"",1,All employees
+SSPUserContactPage,SSP user contact page,1,All employees
+SSPUserContactPage,SSP user contact page,1,All portal users
+SynchronizeLeadContact,"",1,All employees
+SynchronizeLeadContact,"",1,All portal users
+SyncOppWithFund,"",1,All employees
+SyncOppWithFund,"",1,All portal users
+TermCalculationLogging,TermCalculationLogging,1,All employees
+Tracking,"",1,All employees
+TrackingDemoData,"",0,All employees
+TriggerEmailThrottlingQueue,"",1,All employees
+UploadLargeFileByChunk,UploadLargeFileByChunk,1,All employees
+Use7xFiltersForWordReports,Use7xFiltersForWordReports,1,All employees
+Use7xFiltersForWordReports,Use7xFiltersForWordReports,1,All portal users
+UseAliasNotifier,UseAliasNotifier,1,All employees
+UseAliasNotifier,UseAliasNotifier,1,All portal users
+UseAnimationSpinner,UseAnimationSpinner,1,All employees
+UseAsyncEmailSender,UseAsyncEmailSender,1,All employees
+UseAsyncEmailSender,UseAsyncEmailSender,1,All portal users
+UseBackgroundProcessMode,UseBackgroundProcessMode,1,All employees
+UseBaseEditWithButtonGenerator,UseBaseEditWithButtonGenerator,1,All employees
+UseBaseEditWithButtonGenerator,UseBaseEditWithButtonGenerator,1,All portal users
+UseBaseEntityFileDeleteListener,UseBaseEntityFileDeleteListener,0,All employees
+UseBaseEntityFileDeleteListener,UseBaseEntityFileDeleteListener,0,All portal users
+UseCallTypeFromAD,UseCallTypeFromAD,1,All employees
+UseColumnExpression,UseColumnExpression,1,All employees
+UseContentStreamOnFileLoad,UseContentStreamOnFileLoad,1,All employees
+UseContentStreamOnFileLoad,UseContentStreamOnFileLoad,1,All portal users
+UseCrossRateForOrderPaymentAmount,UseCrossRateForOrderPaymentAmount,1,All employees
+UseCSATRatingService,UseCSATRatingService,1,All employees
+UseCSATRatingService,UseCSATRatingService,1,All portal users
+UseDataServiceImport,UseDataServiceModelLoader,1,All employees
+UseDateForNotificationsQuery,UseDateForNotificationsQuery,1,All employees
+UseDcmSchemaInfoInDcmActionsDashboard,UseDcmSchemaInfoInDcmActionsDashboard,1,All employees
+UseDcmSchemaInfoInDcmActionsDashboard,UseDcmSchemaInfoInDcmActionsDashboard,1,All portal users
+UseDcmServerEndPoint,UseDcmServerEndPoint,1,All employees
+UseDcmServerEndPoint,UseDcmServerEndPoint,1,All portal users
+UseDuplicatesHistory,UseDuplicatesHistory,1,All employees
+UseEmailSenderForSelfReg,UseEmailSenderForSelfReg,1,All employees
+UseEntityCloneInLocalMessage,"",1,Supervisor
+UseEntityOperationGrantee,UseEntityOperationGrantee,1,All employees
+UseEsnRights,UseEsnRights,1,All employees
+UseEsnRights,UseEsnRights,1,All portal users
+UseExplicitCastInDuplicatesSearchOnDataImport,UseExplicitCastInDuplicatesSearchOnDataImport,1,All employees
+UseFacebookDebugLibrary,UseFacebookDebugLibrary,0,All employees
+UseFastLoadDcmActionDashboard,UseFastLoadDcmActionDashboard,1,All employees
+UseFetchForSearchExistEntityInFileImport,"",0,All employees
+UseFileImportTemplate,UseFileImportTemplate,1,All employees
+UseFilterUngroupVisibilitySettings,UseFilterUngroupVisibilitySettings,1,All employees
+UseHomePageInterfaceDesigner,UseHomePageInterfaceDesigner,0,
+UseHomePageInterfaceDesigner,UseHomePageInterfaceDesigner,0,
+UseLDAPSyncId,UseLDAPSyncId,1,All employees
+UseLoadedMessagesFilterInESN,UseLoadedMessagesFilterInESN,1,All employees
+UseLookupInvoiceForSupplyPaymentDetail,UseLookupInvoiceForSupplyPaymentDetail,1,All employees
+UseMacrosAdditionalParameters,UseMacrosAdditionalParameters,1,All employees
+UseMacrosAdditionalParameters,UseMacrosAdditionalParameters,1,All portal users
+UseMessageHistoryPagination,UseMessageHistoryPagination,1,All employees
+UseMessageHistoryPagination,UseMessageHistoryPagination,1,All portal users
+UseMobileApprovalPushNotifications,UseMobileApprovalPushNotifications,1,All employees
+UseMobileApprovals,UseMobileApprovals,0,All employees
+UseMobileApprovalsOfflineFirst,UseMobileApprovalsOfflineFirst,1,All employees
+UseMobileAsyncAppStructureLoading,UseMobileAsyncAppStructureLoading,0,All employees
+UseMobileCase,UseMobileCase,1,All employees
+UseMobileCasePushNotifications,"",1,All employees
+UseMobileDataService,Use DataService in mobile app,1,All employees
+UseMobileDataService,Use DataService in mobile app,1,All portal users
+UseMobileDataServiceBatch,UseMobileDataServiceBatch,1,All employees
+UseMobileDataServiceChangeOperations,UseMobileDataServiceChangeOperations,1,All employees
+UseMobileDataServiceChangeOperations,UseMobileDataServiceChangeOperations,1,All portal users
+UseMobileDynamicLink,UseMobileDynamicLink,1,All employees
+UseMobileDynamicLink,UseMobileDynamicLink,1,All portal users
+UseMobileEmbeddedDetailLimit,UseMobileEmbeddedDetailLimit,1,All employees
+UseMobileExtendedLogging,UseMobileExtendedLogging,0,All employees
+UseMobileFileService,UseMobileFileService,1,All employees
+UseMobileFileService,UseMobileFileService,1,All portal users
+UseMobileFlutterApprovals,UseMobileFlutterApprovals,1,All employees
+UseMobileFlutterApprovalsHistory,UseMobileFlutterApprovalsHistory,1,All employees
+UseMobileFolders,UseMobileFolders,1,All employees
+UseMobileFolders,UseMobileFolders,1,All portal users
+UseMobileHybridMode,UseMobileHybridMode,1,All employees
+UseMobileHybridMode,UseMobileHybridMode,1,All portal users
+UseMobileImageFileSystemCache,UseMobileImageFileSystemCache,1,All employees
+UseMobileInternalCamera,UseMobileInternalCamera,0,All employees
+UseMobileInvoiceCacheManager,"",0,All employees
+UseMobileMainMenuServiceLogout,UseMobileMainMenuServiceLogout,1,All employees
+UseMobileNativeBackgroundSync,UseMobileNativeBackgroundSync,1,All employees
+UseMobileNativeBackgroundSync,UseMobileNativeBackgroundSync,1,All portal users
+UseMobileNativeExport,UseMobileNativeExport,1,All employees
+UseMobileNativeExport,UseMobileNativeExport,1,All portal users
+UseMobileNativeFileImport,UseMobileNativeFileImport,1,All employees
+UseMobileNativeFullSynchronization,UseMobileNativeFullSynchronization,1,All employees
+UseMobileNativeFullSynchronization,UseMobileNativeFullSynchronization,1,All portal users
+UseMobileNativeImport,UseMobileNativeImport,1,All employees
+UseMobileNativeImport,UseMobileNativeImport,1,All portal users
+UseMobileNativeImportFeatures,UseMobileNativeImportFeatures,1,All employees
+UseMobileNativeImportFeatures,UseMobileNativeImportFeatures,1,All portal users
+UseMobileNativeInternalLoginProvider,UseMobileNativeInternalLoginProvider,1,All employees
+UseMobileNativeInternalLoginProvider,UseMobileNativeInternalLoginProvider,1,All portal users
+UseMobileNativeRequestExceptionResolving,UseMobileNativeRequestExceptionResolving,1,All employees
+UseMobileNativeRequestExceptionResolving,UseMobileNativeRequestExceptionResolving,1,All portal users
+UseMobileNativeSyncMetadata,UseMobileNativeSyncMetadata,1,All employees
+UseMobileNativeSyncMetadata,UseMobileNativeSyncMetadata,1,All portal users
+UseMobileOfflineAutoExport,UseMobileOfflineAutoExport,0,Supervisor
+UseMobilePageCache,UseMobilePageCache,1,All employees
+UseMobilePageCache,UseMobilePageCache,1,All portal users
+UseMobilePushNotifications,UseMobilePushNotifications,1,All employees
+UseMobilePushNotifications,UseMobilePushNotifications,1,All portal users
+UseMobileQueryCancellation,UseMobileQueryCancellation,1,All employees
+UseMobileQueryCancellation,UseMobileQueryCancellation,1,All portal users
+UseMobileQuickFilters,UseMobileQuickFilters,1,All employees
+UseMobileQuickFilters,UseMobileQuickFilters,1,All portal users
+UseMobileRecents,UseMobileRecents,1,All employees
+UseMobileRecents,UseMobileRecents,1,All portal users
+UseMobileSearchOnlyInSections,UseMobileSearchOnlyInSections,1,All employees
+UseMobileSearchOnlyInSections,UseMobileSearchOnlyInSections,1,All portal users
+UseMobileSummaries,UseMobileSummaries,1,All employees
+UseMobileSummaries,UseMobileSummaries,1,All portal users
+UseMultiInstanceSubProcess,"",1,All employees
+UseMultiInstanceSubProcess,"",1,All portal users
+UseNavigationServiceRedirect,UseNavigationServiceRedirect,1,All employees
+UseNavigationServiceRedirect,UseNavigationServiceRedirect,1,All portal users
+UseNewLookupComparison,UseNewLookupComparison,1,All employees
+UseNewLookupComparison,UseNewLookupComparison,1,All portal users
+UseNewRelationshipDetailUI,UseNewRelationshipDetailUI,1,All employees
+UseNewStructureExplorer,UseNewStructureExplorer,1,All employees
+UseNewStructureExplorer,UseNewStructureExplorer,0,All portal users
+UseNewWidgetMarketPlace,UseNewWidgetMarketPlace,0,All employees
+UseOldNavigationMenu,UseOldNavigationMenu,,
+UseOldOpportunityManagementProcess,UseOldOpportunityManagementProcess,,
+UseOptionalProcessUserTaskActivities,UseOptionalProcessUserTaskActivities,1,All employees
+UseOptionalProcessUserTaskActivities,UseOptionalProcessUserTaskActivities,1,All portal users
+UsePackageZipFileStorage,UsePackageZipFileStorage,1,All employees
+UsePersistentFileImport,UsePersistentFileImport,1,All employees
+UsePortalDataService,UsePortalDataService,1,All portal users
+UsePredefinedProductPriceList,"",1,All employees
+UsePredefinedProductPriceList,"",1,Partner portal users
+UsePriceListsLogic,"",1,All employees
+UsePriceListsLogic,"",1,Partner portal users
+UseProcessDiagramComponent,"",1,All employees
+UseProcessEmailAttachments,UseProcessEmailAttachments,1,All employees
+UseProcessEmailAttachments,UseProcessEmailAttachments,1,All portal users
+UseProcessFormulaServerValidation,UseProcessFormulaServerValidation,1,All employees
+UseProcessPageCompleteNotification,UseProcessPageCompleteNotification,1,All employees
+UseProcessPageCompleteNotification,UseProcessPageCompleteNotification,1,All portal users
+UseProcessPerformerAssignment,UseProcessPerformerAssignment,1,All employees
+UseProcessPerformerAssignment,UseProcessPerformerAssignment,1,All portal users
+UseProcessRemindings,UseProcessRemindings,1,All employees
+UseProcessSchemaExecuteRights,UseProcessSchemaExecuteRights,1,All employees
+UseProcessSchemaExecuteRights,UseProcessSchemaExecuteRights,1,All portal users
+UseProductPriceListPrice,"",1,All employees
+UseProductPriceListPrice,"",1,Partner portal users
+UseQueryOptimize,UseQueryOptimize,1,All employees
+UseRelationshipDesigner,UseRelationshipDesigner,1,All employees
+UseSchemaNameGeneration,UseSchemaNameGeneration,1,All employees
+UseServiceForDeleteFolder,UseServiceForDeleteFolder,1,All employees
+UseServiceForIncludeEntitiesInFolder,UseServiceForIncludeEntitiesInFolder,1,All employees
+UseSysSettingsRights,UseSysSettingsRights,1,All employees
+UseTabOrderProperty,UseTabOrderProperty,1,All employees
+UseTypedWorkplaces,Use typed workplaces,1,All employees
+UseTypedWorkplaces,Use typed workplaces,1,All portal users
+UseUrlPathEncodeForGenerateFileName,UseUrlPathEncodeForGenerateFileName,1,All employees
+UseValuePickerDateTimeFunctions,UseValuePickerDateTimeFunctions,1,All employees
+UseValuePickerDateTimeFunctions,UseValuePickerDateTimeFunctions,1,All portal users
+UseValuePickerInPopulateBusinessRule,UseValuePickerInPopulateBusinessRule,1,All employees
+UseVoiceToText,UseVoiceToText,1,All employees
+UseVoiceToTextForTextEdit,UseVoiceToTextForTextEdit,0,All employees
+UseVwWorkspaceObjects,UseVwWorkspaceObjects,1,All employees
+UseWebToObject,UseWebToObject,0,All employees
+ValignTopSimpleMarkupFeature,ValignTopSimpleMarkupFeature,1,All employees
+VariableResponseCookieDataType,VariableResponseCookieDataType,1,All employees
+VoiceToTextHtmlEdit,VoiceToTextHtmlEdit,0,All employees
+WaitAllRequestsBeforeOpenProcessPage,WaitAllRequestsBeforeOpenProcessPage,1,All employees
+WaitAllRequestsBeforeOpenProcessPage,WaitAllRequestsBeforeOpenProcessPage,1,All portal users
+WaitForEntitySaveBeforeOpenProcessPage,WaitForEntitySaveBeforeOpenProcessPage,,
+WarmUpEditPages,WarmUpEditPages,1,All employees
+WbqjAnyVoipPackageUrl,WebitelAnyVoipPackageUrl,,
+WebFormAsyncHandler,WebFormAsyncHandler,1,All employees
+WebServiceDesigner,WebServiceDesigner,1,All employees
+WebServiceOAuth20Auth,WebServiceOAuth20Auth,1,All employees

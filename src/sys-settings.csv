@@ -1,0 +1,713 @@
+"Code","Name","Value","ValueTypeName"
+AcceptApprovalWithoutComment,Accept approval without comment,"",Boolean
+AccountCodeMask,Account code mask,{0},LongText
+AccountEnrichmentServiceUrl,Account enrichment service url,"",LongText
+AccountLastNumber,Current number of account,"",Integer
+AccountTypeForOurCompany,Account type for creating users,"",Lookup
+ActiveContactsWarningThreshold,"Активные контакты - условие предупреждения, %","",Integer
+ActiveFileContentStorage,Active file content storage,"",Lookup
+ActualizeAge,Enable updating contact ages,"",Boolean
+AISupportEmailDef,Emails to connect AI support,"",MediumText
+AllowedTimeForProcessInErrorState,"Allowed time for process instances in the ""Error"" state (days)","",Integer
+AllowFilesWithUnknownType,Allow processing files of unknown type,"",Boolean
+AllowSaveUnlockedSchema,Configuration items can be saved without locking,"",Boolean
+AltCaseBindingRegex,Регулярное выражение для привязки писем,"",MediumText
+ApiUrl,Object generation URL api,https://files.cloudbpm.ru/Delivery/js/create-object.js,LongText
+AppModule,TsConfig for Angular module,"import { NgModule } from '@angular/core'; import { testComponent } from 'src/components/test.module'; @NgModule({     declarations: [],     imports: [testComponent],     providers: [] }) export class ComponentModule {}",MaxSizeText
+AreConfiguredChats,Are configured chats,"",Boolean
+AreConfiguredChats,Are configured chats,"",Boolean
+AuditLogCulture,Audit log culture,"",Lookup
+AuthenticationTime,BPMSoftOCCAuthenticationTime,"",Integer
+AutomaticAgeActualizationTime,Time of automatic daily update of the contact ages,"",Time
+AutoNotifyOnlyContact,Отправлять автоматические уведомления только контакту обращения,"",Boolean
+BaseCalendar,Базовый календарь,"",Lookup
+BasePriceList,Базовый прайс-лист,"",Lookup
+BaseRightGridPage,Base permissions page,"",Lookup
+BaseUserCalendar,Base personal calendar,"",Lookup
+BETArchiveFirstGenerationPeriod,BulkEmailTarget Archiving First Generation Period (Days),"",Integer
+BETArchiveSecondGenerationPeriod,BulkEmailTarget Archiving Second Generation Period (Days),"",Integer
+BETArchivingIterationSize,BulkEmailTarget Archiving Iteration Size,"",Integer
+BpmAuthKey,Ключ аутентификации трекинга (секретный),"",ShortText
+BpmCrmExchangeEventsEndpointUrl,URL сервиса обработки событий Exchange в BPMSoft,https://10.1.134.130:5002/ServiceModel/ExchangeListenerService.svc/ProcessFullEmail,Text
+BpmCrmSignatureKey,BpmCrm signature key,bpmcrm-signature,MediumText
+BpmEventTrackingServiceUrl,Внешний URL приложения для получения событий сайта,"",MediumText
+bpmsoftoccAuthLink,bpmsoftoccAuthLink,https://domain.bpmcrm.com,MaxSizeText
+BPMSoftOCCChatCodeMask,BPMSoftOCCChatCodeMask,Chat-{0:0000000},ShortText
+BPMSoftOCCChatLastNumber,BPMSoftOCCChatLastNumber,"",Integer
+BPMSoftOCCFBclientId,BPMSoftOCCFBclientId,"2216527901956864",LongText
+BPMSoftOCCFBclientId,BPMSoftOCCFBclientId,"2216527901956864",LongText
+BPMSoftOCCFBclientSecret,BPMSoftOCCFBclientSecret,"995120b3d58e0fc713f2c428bf03a330",LongText
+BPMSoftOCCFBclientSecret,BPMSoftOCCFBclientSecret,"995120b3d58e0fc713f2c428bf03a330",LongText
+BPMSoftOCCFBLService,BPMSoftOCCFBLService,https://bpmsoft-oc-connector1.cloudbpm.ru/fblogin/3.2/2216527901956864/995120b3d58e0fc713f2c428bf03a330,LongText
+BPMSoftOCCFBLService,BPMSoftOCCFBLService,https://bpmsoft-oc-connector1.cloudbpm.ru/fblogin/3.2/2216527901956864/995120b3d58e0fc713f2c428bf03a330,LongText
+BPMSoftOCCFileServer,"",https://bpmsoft-oc-fileservice1.cloudbpm.ru,LongText
+BPMSoftOCCFirstMsgRoute,BPMSoftOCCFirstMsgRoute,"",Boolean
+BPMSoftOCCGroupChatCodeMask,"",GroupChat-{0:0000000},ShortText
+BPMSoftOCCGroupChatLastNumber,"","",Integer
+BPMSoftOCCInstagramService,BPMSoftOCCInstagramService,https://bpmsoft-oc-connector1.cloudbpm.ru/fblogin/instagram/12.0/581455576300934/2e74f0c0430196ec706e09d2328da57e,LongText
+BPMSoftOCCIsAllChatHistory,BPMSoftOCCIsAllChatHistory,"",Boolean
+BPMSoftOCCIsAllChatHistory,BPMSoftOCCIsAllChatHistory,"",Boolean
+BPMSoftOCCKnowledgeBaseLength,BPMSoftOCCKnowledgeBaseLength,"",Integer
+BPMSoftOCCOperatoHost,"",https://bpmsoft-oc-connector1.cloudbpm.ru,MaxSizeText
+BPMSoftOCCOperatorAppId,BPMSoftOCCOperatorAppId,"",Text
+BPMSoftOCCOperatorToken,"","",LongText
+BPMSoftOCCServices,BPMSoftOCCServices,https://bpmsoft-oc-connector1.cloudbpm.ru/services/{0},LongText
+BPMSoftOCCServices,BPMSoftOCCServices,https://bpmsoft-oc-connector1.cloudbpm.ru/services/{0},LongText
+BPMSoftOCCUseFtp,BPMSoftOCCUseFtp,"",Boolean
+BPMSoftOCCUseObsoleteWhatsAppApi,"","",Boolean
+BpmsQueryBuilderMaxExportRecordsCount,Максимальное количество экспортируемых записей логов и результата SQL-запросов,"",Integer
+BpmsQueryBuilderMaxSavedQueriesCount,Максимальное количество сохраненных SQL запросов.,"",Integer
+BpmsServiceTimeout,Таймаут для сервисов конструктора запросов (мс),"",Integer
+BPSysCustomerIdentification,Business process: Customer identification by system,SysCustomerIdentificationProcess,ShortText
+BuildThreadsAmount,Number of Angular module compilation threads,"",Integer
+BuildType,BuildType,"",Lookup
+BuildType,BuildType,"",Lookup
+BulkEmailExpirationPeriod,Время актуальности отправки рассылки (минуты),"",Integer
+BulkEmailFailoverJobInterval,Периодичность запуска процесса восстановления зависших рассылок (минуты),"",Integer
+BulkEmailHourlyStatisticPeriod,"Интервал сбора статистики по рассылкам Email, часов","",Integer
+CallRecordLogin,Логин для получения записи звонка,"",MediumText
+CallRecordPassword,Пароль для получения записи звонка,"",SecureText
+CallRecordToken,Токен для получения записи звонка,"",SecureText
+CampaignElementAudienceQueryBatchSize,Размер пачки для запроса при работе с большой аудиторией,"",Integer
+CampaignFailoverJobInterval,Schedule interval of the campaign failover job (minutes),"",Integer
+CampaignGarbageLifeTime,"Lifetime of campaign garbage (unlinked entities, suspended participants info etc.)","",Integer
+CampaignLogRecordLifeTime,Срок жизни записей журнала кампании,"",Integer
+CampaignQueueMonitoringLoopsCount,Число циклов для CampaignQueueMonitoring,"",Integer
+CampaignQueueSingleBatchSize,"Размер пакета, при чтении из очереди CampaignQueue","",Integer
+CampaignSignalQueueSingleBatchSize,"Размер пакета, при чтении из очереди CampaignSignalQueue","",Integer
+CampaignSyncJobPocessInterval,"Интервал актуализации аудитории кампании, часов","",Integer
+CampaignTriggeredQueueTimeout,Максимальная задержка в очереди на обработку для участника кампании (минуты),"",Integer
+CanCollectMobileUsageStatistics,Statistical data collection for anonymous application usage,"",Boolean
+CartographicServicesApiKey,API ключ картографических сервисов,,SecureText
+CaseClosureCodeDef,Код закрытия обращения по умолчанию,"",Lookup
+CaseClosureCodeDef,Код закрытия обращения по умолчанию,"",Lookup
+CaseCodeMask,Маска номера обращения,SR{0:00000000},ShortText
+CaseGroupDef,Группа обращения по умолчанию,"",Lookup
+CaseImpactDef,Case default impact,"",Lookup
+CaseLastNumber,Текущий номер обращения,"",Integer
+CaseOriginDef,Происхождение обращения по умолчанию,"",Lookup
+CaseOriginDef,Происхождение обращения по умолчанию,"",Lookup
+CaseOverduesCheckTerm,"Срок проверки просроченности обращения, минут","",Integer
+CaseOverduesCheckTerm,"Срок проверки просроченности обращения, минут","",Integer
+CasePortalMessageMultiLanguageProcess,Мультиязычный процесс Отправка email сообщения контакту обращения при публикации сообщения в канале Портал,"",Lookup
+CasePriorityCalculationFromMatrix,Сase priority calculation from matrix,"",Boolean
+CasePriorityDef,Приоритет обращения по умолчанию,"",Lookup
+CasePriorityDef,Приоритет обращения по умолчанию,"",Lookup
+CaseServiceLevelDef,Уровень поддержки обращения по умолчанию,"",Lookup
+CaseServiceLevelDef,Уровень поддержки обращения по умолчанию,"",Lookup
+CaseStatusDef,Состояние обращения по умолчанию,"",Lookup
+CaseStatusDef,Состояние обращения по умолчанию,"",Lookup
+CaseUrgencyDef,Case default urgency,"",Lookup
+CashflowCodeMask,Маска номера операции,{0},ShortText
+CashflowLastNumber,Текущий номер операции,"",Integer
+ChangeCategoryDef,Категория изменения по умолчанию,"",Lookup
+ChangeCodeMask,Маска номера изменения,CR-{0},MediumText
+ChangeLastNumber,Текущий номер изменения,"",Integer
+ChangePriorityDef,Приоритет изменения по умолчанию,"",Lookup
+ChangePurposeDef,Цель изменения по умолчанию,"",Lookup
+ChangeSourceDef,Источник изменения по умолчанию,"",Lookup
+ChangeStatusDef,Состояние изменения по умолчанию,"",Lookup
+ChartQueryDataLimit,Chart data request restriction,"",Integer
+CheckTermsAndConditions,Request consent to privacy terms and conditions from the portal users,,Boolean
+ChurnCalculationRequiredSystemDaysQuantity,Required number of days in the system to calculate churn potential degree,"",Integer
+CKEditorDefaultFont,CKEditor default font,Golos Regular,Text
+CKEditorFontsList,CKEditor font list,"Arial/Arial, Helvetica, sans-serif;Comic Sans MS/Comic Sans MS, cursive;Courier New/Courier New, Courier, monospace;Georgia/Georgia, serif;Golos Regular/Golos Regular, serif;Lucida Sans Unicode/Lucida Sans Unicode, Lucida Grande, sans-serif;Tahoma/Tahoma, Geneva, sans-serif;Times New Roman/Times New Roman, Times, serif;Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;Verdana/Verdana, Geneva, sans-serif",Text
+ClearAssigneeOnCaseReopening,Очищать ответственного при переоткрытии обращения,"",Boolean
+CloseChatMessageText,CloseChatMessageText,Чат закрыт.,MaxSizeText
+CloseResolvedCases,Автоматически закрывать решенные обращения,"",Boolean
+CloseTelephonyConnectionOnLogout,Close telephony connection on logout,"",Boolean
+CloudServicesAPIKey,API ключ облачных сервисов BPMSoft,"",ShortText
+CloudServicesAuthKey,Cloud service authenticate key,"",Text
+CloudServicesBaseUrl,URL подключения к облачным сервисам BPMSoft,"",Text
+CodeCompilerWarningLevel,Display C# compiler warnings when publishing configuration,"",Integer
+CollectMobileAppUsageStatistics,Enable gathering mobile application usage statistics,"",Boolean
+CommunicationHistoryRowCount,"Number of records on the ""Calls history"" tab","",Integer
+ConfigurationItemStatusDef,Состояние конфигурационной единицы по умолчанию,"",Lookup
+ConfigurationVersion,Configuration version,"1.9.0.14114",ShortText
+ConnectEmailsByCaseNumberInBody,Привязывать письма к обращения по номеру обращения в теле письма,"",Boolean
+ConnectorPackageUrl,"Url-адрес хранилища пакета ""Интеграция с 1С""","",Text
+ContactCenterOperatorsFolder,Группа операторов КЦ,"",Lookup
+ContactFieldConverter,Order of first/last names,"",Lookup
+ContractCodeMask,Маска номера договора,{0},LongText
+ContractLastNumber,Текущий номер договора,"",Integer
+ContractVisaEmailTemplate,Шаблон Email для отправки информации о визе договора,"",Lookup
+ContractVisaProcess,Процесс визирования договора,"",Lookup
+ConvertServiceUrl,ConvertServiceUrl,"",MediumText
+CreateAccountOnQualification,Создавать нового контрагента при квалификации лида,"",Boolean
+CreateCasesFromJunkEmails,Создавать обращения по нежелательным письмам,"",Boolean
+CreateInvoiceFromOrderProcess,Процесс создания счета на основании заказа,"",Lookup
+CreateLeadForOpportunity,Создать лид по продаже,"",Boolean
+CreateLeadForOrder,Создавать лиды для заказов,"",Boolean
+CreateNewContactsForUnknownEmailAddresses,Создавать контакты по неопознанным email-адресам,"",Boolean
+CreateOpportunityFromLeadProcess,Процесс создания продажи на основании лида,"",Lookup
+CreateOrderFromOpportunityProcess,Процесс создания заказа на основании продажи,"",Lookup
+CreateUsersAutomaticallyWhenLdapSynchronize,Create users automatically when synchronizing with LDAP,"",Boolean
+CSVCodePage,"Encoding used for export to "".csv""",utf-8,LongText
+CSVDelimiter,"Separator used for export to "".csv""",;,Text
+CurrentPackageId,Current package,"",Lookup
+CurrentSettingStep,"","",Integer
+CurrentSettingStep,"","",Integer
+CustomerId,ID компании для лицензирования,"202308044265",LongText
+CustomerId,ID компании для лицензирования,"111",LongText
+CustomerId,ID компании для лицензирования,"202308044265",LongText
+CustomerId,ID компании для лицензирования,"202308044265",LongText
+CustomPackageUId,Custom Package Id,"",Lookup
+DaDataAPIKey,API ключ DaData,"",SecureText
+DataServiceQueryTimeout,Data service client query timeout (milliseconds),"",Integer
+DCEnabledStrategies,Стратегия распределения получателей динамического контента,"",Integer
+DCMaxFiltersCountForCombiningStrategy,Максимальное число фильтров для DCCombiningStrategy,"",Integer
+DeduplicationWebApiUrl,Deduplication service api address,"",MediumText
+DefaultAccountCommunicationType,Account communication option type by default,"",Lookup
+DefaultAccountCommunicationType,Account communication option type by default,"",Lookup
+DefaultActionsDashboardStageItemColor,Default color for action dashboard stage item,#8ecb60,ShortText
+DefaultCartographicServicesLibrary,Библиотека картографического сервиса по умолчанию,,Lookup
+DefaultCaseCategory,Категория обращения по умолчанию,"",Lookup
+DefaultCaseCategoryForPortal,Default category for registering a free-form case,"",Lookup
+DefaultContactCommunicationType,Default type of contact communication options,"",Lookup
+DefaultESPEmail,Default ESP email,"",ShortText
+DefaultExternalAccessClient,Default external access client,"",Lookup
+DefaultExternalAccessClientId,Default external access client id,"",ShortText
+DefaultExternalAccessDurationDays,Default external access duration in days,"",Integer
+DefaultIntroPage,Default main page,TeamIntro,Lookup
+DefaultIntroPage,Default main page,"",Lookup
+DefaultIntroPage,Default main page,"",Lookup
+DefaultLeadStage,Стадия лида по умолчанию,"",Lookup
+DefaultMapService,Maps service by default,"",Lookup
+DefaultMessageLanguage,Default language for messages,"",Lookup
+DefaultNotifyContactInCase,Notification of the service user as the point of contact for case,"",Boolean
+DefaultNotifyInitiatorInCase,Notification of the initiator as the point of contact for case,"",Boolean
+DefaultNumberItemsReturned,Number of records not deleted in a background process,"",Integer
+DefaultSectionPanelBackgroundColor,Section panel background by default,#ffffff,ShortText
+DefaultSectionPanelFontColor,Text in section panel by default,#67748E,ShortText
+DefaultSectionPanelSelectedBackgroundColor,Selected section background by default,#F9763D,ShortText
+DefaultSectionPanelSelectedFontColor,Text in selected section by default,#252F40,ShortText
+DefaultServiceForPortal,Default service for free-form case registration,"",Lookup
+DefaultServicePact,Сервисный договор по умолчанию,"",Lookup
+DefaultServicePact,Сервисный договор по умолчанию,"",Lookup
+DefaultTax,Tax by default,"",Lookup
+DefaultTimeZone,Default TimeZone,"",Lookup
+DefaultUnit,Единица измерения по умолчанию,"",Lookup
+DefaultWebFormContactIdentificationProcess,Default web form contact identification process,"",Lookup
+DefaultWorkspace,Default workspace,"",Lookup
+DefineCaseCategoryFromMailBox,Включить взаимосвязь почтовых ящиков поддержки и категорий обрабатываемых обращений,"",Boolean
+DefLookupEditPageSchemaUId,Base lookup card page,"",Lookup
+DefLookupGridPageSchemaUId,Base lookup page,"",Lookup
+DelayedNotificationCleaningExecutionPeriod,"Частота вызова очистки отложенных уведомлений, минут","",Integer
+DelayedNotifyingExecutionPeriod,Частота отправки уведомлений на оценку обращений (минут),"",Integer
+DetailsConfig,Details config,"",MaxSizeText
+DisableQueueFillingScheduler,Отключить планировщик наполнения очередей,"",Boolean
+DisplayAccountLockoutMessageAtLogin,Show message about locking account during logging in,"",Boolean
+DisplayIncorrectPasswordMessageAtLogin,Show message about incorrect password during logging in,"",Boolean
+DocumentCodeMask,Маска номера документа,{0},LongText
+DocumentLastNumber,Текущий номер документа,"",Integer
+DocumentStatusDef,Состояние документа по умолчанию ,"",Lookup
+DomainToRedirect,Domain to redirect,,MediumText
+DropdownRecordsLimit ,Number of records in the dropdown list,"",Integer
+EmailBodyForCaseMaxLength,Максимальная длина тела письма при создании обращения по e-mail,"",Integer
+EmailMiningIdentificationActualPeriod,Relevance period of contact and account identification data (days),"",Integer
+EmailMiningPackageSize,Email package size handled by enrichment process,"",Integer
+EmailMiningPeriodMin,Enrichment process launch frequency (minutes),"",Integer
+EmailPattern,Email address mask,[а-яА-Яa-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[а-яА-Яa-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[а-яА-Яa-zA-Z0-9](?:[а-яА-Яa-zA-Z0-9-]*[а-яА-Яa-zA-Z0-9])?\.)+[а-яА-Яa-zA-Z0-9](?:[а-яА-Яa-zA-Z0-9-]*[а-яА-Яa-zA-Z0-9])?,Text
+EmailProcessTag,Email processes tag,Email Process,Text
+EmailServiceName,Email service name,"",MediumText
+EmployeeCityDef,Город для сотрудника по умолчанию,"",Lookup
+Enable2FA,Использовать 2FA,"",Boolean
+EnableAngularSupport,Enable support for Angular modules,"",Boolean
+EnableAutoCompleteDaData,Включить автозаполнение полей DaData,"",Boolean
+EnableComplainFunction,Включить возможность пожаловаться на портале,"",Boolean
+EnableComplainFunction,Включить возможность пожаловаться на портале,"",Boolean
+EnableContextHelp,Show help,"",Boolean
+EnableContextHelp,Show help,"",Boolean
+EnableDynamicVector,Enabling Dynamic Vector,"",Boolean
+EnableEmailIndicatorMonitoring,Включить возможность мониторинга показателей состояния email-рассылок.,"",Boolean
+EnableEmailMining,Enable enrichment of contacts from the incoming emails,"",Boolean
+EnableLoggingGatewaysFlows,Logging of gateways and flows in business processes,,Boolean
+EnableMobileErrorLog,Enable mobile app error log,"",Boolean
+EnableProcessMetrics,Metric for completing process steps,"",Boolean
+EnableQuestionToRequestor,Включить вопрос пользователю,"",Boolean
+EnableReSynchronizationMechanism,"","",Boolean
+EnableRightsOnServiceObjects,Включение прав на сервисные договоры и конфигурационные единицы для пользователей портала,"",Boolean
+EnableUserMetrics,Metrics about the users,"",Boolean
+EnableWebHooksLogging,Включить логирование получаемых webhooks,"",Boolean
+EnrichmentEmailsLimit,Email enrichment limit,"",Integer
+EnrichmentPhoneNumbersLimit,Phone number enrichment limit,"",Integer
+EnrichmentSocialLinksLimit,Social links enrichment limit,"",Integer
+EventTrackingApiKey,API-ключ трекинга,"",MediumText
+EventTrackingCodeTemplate,Шаблон кода трекинга,"<script type=""text/javascript"" src=""http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js""></script> <script type=""text/javascript"">                 (function (d, s, i, r) {                                if (d.getElementById(i)) { return; }                                var n = d.createElement(s); e = d.getElementsByTagName(s)[0]; n.id = i;                                n.src = ""https://webtracking-v01.bpmcrm.com/Src/tracking_"" + r + "".js""; e.parentNode.insertBefore(n, e);                 })(document, ""script"", ""bpmTracking"", ""{apiKey}""); </script>",LongText
+EventTrackingLogin,Параметры подключения к сервису трекинга Bpmcrm: логин,Supervisor,MediumText
+EventTrackingPassword,Параметры подключения к сервису трекинга Bpmcrm: пароль,Pzrlgm1m1ufrAp64wJcGtRbJDaL7VnMSDXGdMP4Mey+q8bG1krJBqnNp2pxb/Q3JuXTG4SChXazhSypJCRJVuu8Cyg93S5HSzsFHBGVaPU0=,SecureText
+EventTrackingWebAppUrl,URL сервиса трекинга Bpmcrm,https://someexisteddomain.ru,Text
+ExcelExportBatchSize,Number of records in Excel export batch,"",Integer
+ExchangeAutodiscoverRedirectUrlRegex,Exchange Autodiscover Redirection Url Regex,"",Text
+ExchangeListenerServiceUri,ExchangeListenerServiceUri, http://10.1.134.133:10000,Text
+ExecuteAngularNpmInstallCommand,Run npm install command for Angular modules,"",Boolean
+ExpiredTaskColor,Color of overdue activity,#FFDFDF,LongText
+ExpireLicenseNotificationTerm,Term of expired license notification,"",Integer
+ExportToExcelFallbackCharacter,Replacement symbol for invalid characters when exporting to Excel,"",ShortText
+ExternalAccessSessionNotificationEnabled,Notify grantor about start/end session using external access,"",Boolean
+FaviconImage,Favicon,"",Binary
+FieldForcePackageUrl,Url-адрес хранилища пакета FieldForce,"",Text
+FileChunkBufferSize,Размер читаемого блока файла,,Integer
+FileDetailDefaultIcon,Attachments and notes default icon,"",Lookup
+FileExtensionsAllowList,File extensions AllowList,"doc,docx,rtf,odt,pages,pdf,xls,xlsx,xlsm,xlsb,csv,ods,ppt,pptx,ppsx,txt,log,json,md,config,zip,rar,7z,gz,pjp,pjpeg,jfif,webp,tif,bmp,png,jpeg,jpg,gif,ico,xbm,dib,emz,jfif,heic,ai,eps,jpe,cod,ief,ras,cmx,pnm,pbm,pgm,ppm,rgb,xpm,xwd,mp3,wav,mp4,mov,wmv,bpmn,frx,msg,vcf,ics,p7s,p7m,wmz,mso,dwg,mpp,step,vsd,vsdx,psd,gbt,prn,stp,rdp,dtf",Text
+FileExtensionsDenyList,File extensions DenyList,"ade,adp,apk,app,appx,appxbundle,asp,aspx,asx,bas,bat,bin,cab,cer,chm,cmd,cnt,com,command,conf,cpl,crt,csh,der,diagcab,dll,dmg,elf,exe,fxp,gadget,grp,hlp,hpj,hta,htc,html,inf,inf1,ins,inx,ipa,iso,isp,isu,its,jar,jnlp,job,js,jse,ksh,lib,lnk,mad,maf,mag,mam,maq,mar,mas,mat,mau,mav,maw,mcf,mda,mdb,mde,mdt,mdw,mdz,msc,msh,msh1,msh1xml,msh2,msh2xml,mshxml,msi,msix,msixbundle,msp,mst,msu,nsh,ops,osd,osx,out,paf,pcd,pif,pl,plg,prf,prg,printerexport,ps1,ps1xml,ps2,ps2xml,psc1,psc2,psd1,psdm1,pst,py,pyc,pyo,pyw,pyz,pyzw,rb,reg,rgs,run,scf,scr,sct,sh,shb,shs,sys,theme,tmp,u3p,url,vb,vbe,vbp,vbs,vbscript,vhd,vhdx,vsmacros,vsw,vxd,webpnp,website,workflow,ws,wsc,wsf,wsh,xbap,xll,xnk,xml",Text
+FileImportEntitySaveChunksCount,FileImportEntitySaveChunksCount,"",Integer
+FileImportMaxFileSize,Max file size for import in Mb,"",Integer
+FileImportMaximumNewTagsInFile,Максимальное количество создаваемых при импорте тегов,"",Integer
+ FileImportNewTagCountValidationBatchSize,Количество тегов в одном запросе на проверку лимита создаваемых тегов при импорте,,Integer
+FileSecurityMode,File Security Mode,"",Lookup
+FinishedTaskColor,Color of completed activity,#A0A0A0,Text
+FirebaseDynamicLinksTemplate,Template from Firebase dynamic links service,{0},MediumText
+FirstReevaluationWaitingDays,Количество дней ожидания после запроса оценки,"",Integer
+FirstSupportLine,"1-я линия поддержки","",Lookup
+ForceExternalAccessDataIsolation,Restrict external access to data,"",Boolean
+ForceProcessLogging,Force process logging (for debug),"",Boolean
+ForceSetNeedProcess,Force set email need processing,"",Boolean
+GlobalSearchConfigServiceUrl,Global search config service url adress,"",MediumText
+GlobalSearchDefaultEntityWeight,Global search default entity weight,"",Integer
+GlobalSearchDefaultPrimaryColumnWeight,Global search default primary column weight,"",Integer
+GlobalSearchIndexedDataConfig,GlobalSearchIndexedDataConfig,"{ 	""VwCampaignLog"": { IgnoredColumns: [""*""] }, 	""VwQueueItem"": { IgnoredColumns: [""*""] }, 	""VwProcessLib"": { IgnoredColumns: [""*""] }, 	""VwSysDcmLib"": { IgnoredColumns: [""*""] }, 	""SysTranslation"": { IgnoredColumns: [""*""] }, 	""SysProcessLog"": { IgnoredColumns: [""*""] }, 	""SysAdminUnit"": { IgnoredColumns: [""*""] }, 	""SysAdminOperation"": { IgnoredColumns: [""*""] }, 	""DuplicateRule"": { IgnoredColumns: [""*""] }, 	""Email"": { IgnoredColumns: [""*""] }, 	""EmailTemplate"": { IgnoredColumns: [""*""] }, 	""EmailTemplateFile"": { IgnoredColumns: [""*""] }, 	""DuplicatesRule"": { IgnoredColumns: [""*""] }, 	""ScoringModel"": { IgnoredColumns: [""*""] }, 	""SocialMessage"": { IgnoredColumns: [""*""] }, 	""BulkEmailSplit"": { IgnoredColumns: [""*""] }, 	""BulkEmailSplitFile"": { IgnoredColumns: [""*""] }, 	""Lookup"": { IgnoredColumns: [""*""] }, 	""SiteEventType"": { IgnoredColumns: [""*""] }, 	""SiteEventTypeFile"": { IgnoredColumns: [""*""] }, 	""PaymentRule"": { IgnoredColumns: [""*""] }, 	""PaymentRuleFile"": { IgnoredColumns: [""*""] }, 	""CampaignPlanner"": { IgnoredColumns: [""*""] }, 	""CampaignPlannerFile"": { IgnoredColumns: [""*""] }, 	""VwSysProcessLog"": { IgnoredColumns: [""*""] }, 	""SysPrcHistoryLog"": { IgnoredColumns: [""*""] }, 	""SysSettings"": { IgnoredColumns: [""*""] }, 	""Contact"": { IgnoredColumns: [""dear"", ""salutationtype"", ""gender"", ""twitterafda"", ""facebookafda"", ""linkedinafda"", ""surname"", ""givenname"", ""middlename"", ""owner""] }, 	""Account"": { IgnoredColumns: [""owner""] }, 	""KnowledgeBase"": { IgnoredColumns: [""notes"", ""code"", ""keywords""] }, 	""Case"": { IgnoredColumns: [""notes"", ""priority"", ""origin"", ""closurecode"", ""satisfactionlevel"", ""category"", ""parentcase"", ""processingtimeunit"", ""servicecategory"", ""solvedonsupportlevel"", ""supportlevel"", ""holder"", ""problem"", ""change""] }, 	""ServiceItem"": { IgnoredColumns: [""reactiontime"", ""solutiontime""] }, 	""Problem"": { IgnoredColumns: [""author"", ""type"", ""priority"", ""status"", ""change""] }, 	""Release"": { IgnoredColumns: [""status"", ""type"", ""priority""] }, 	""ServicePact"": { IgnoredColumns: [""status"", ""type"", ""serviceprovider"", ""serviceprovidercontact"", ""calendar"", ""supportlevel""] }, 	""Change"": { IgnoredColumns: [""author"", ""parentchange"", ""source"", ""purpose"", ""category"", ""priority"", ""status"", ""release""] }, 	""ConfItem"": { IgnoredColumns: [""status"", ""parentconfitem"", ""category"", ""country"", ""region"", ""city"", ""street"", ""address""] }, 	""GeneratedWebForm"": { IgnoredColumns: [""body"", ""state"", ""owner"", ""type""] }, 	""Call"": { IgnoredColumns: [""direction"", ""result"", ""activity"", ""lead"", ""order"", ""opportunity"", ""case""] }, 	""Activity"": { IgnoredColumns: [""priority"", ""author"", ""timezone"", ""color"", ""allowedresult"", ""messagetype"", ""mailhash"", ""globalactivityid"", ""activityconnection"", ""organizer"", ""calldirection"", ""useremailaddress"", ""location"", ""queueitem"", ""body""] }, 	""Order"": { IgnoredColumns: [""currency"", ""sourceorder"", ""paymenttype"", ""receivername"", ""comment"", ""contactnumber""] }, 	""Invoice"": { IgnoredColumns: [""paymentstatus"", ""supplierbillinginfo"", ""customerbillinginfo"", ""currency""] }, 	""Product"": { IgnoredColumns: [""owner"", ""unit"", ""currency"", ""type"", ""tax""] }, 	""Opportunity"": { IgnoredColumns: [""type"", ""closereason"", ""category"", ""responsibledepartment"", ""weaknesses"", ""strength"", ""winner"", ""description"", ""leadtype""] }, 	""Contract"": { IgnoredColumns: [""state"", ""parent"", ""ourcompany"", ""currency""] }, 	""Lead"": { IgnoredColumns: [""status"", ""industry"", ""annualrevenue"", ""addresstype"", ""leadtype"", ""leadtypestatus"", ""accountcategory"", ""accountownership"", ""department"", ""gender"", ""dear"", ""owner"", ""salesowner"", ""opportunitydepartment"", ""saletype"", ""countrystr"", ""regionstr"", ""citystr"", ""bpmhref"", ""bpmref""] }, 	""MktgActivity"": { IgnoredColumns: [""channel"", ""status"", ""owner"", ""currency"", ""campaignplanner""] }, 	""Event"": { IgnoredColumns: [""type"", ""owner"", ""status"", ""goal"", ""territory"", ""industry"", ""actualresponse"", ""actualizestatus"", ""segmentsstatus"", ""campaign""] }, 	""Campaign"": { IgnoredColumns: [""campaignstatus"", ""segmentsstatus"", ""targetdescription"", ""owner"", ""utmcampaign"", ""type""] }, 	""BulkEmail"": { IgnoredColumns: [""owner"", ""type"", ""status"", ""segmentsstatus"", ""utmsource"", ""utmmedium"", ""utmcampaign"", ""utmterm"", ""utmcontent"", ""domains"", ""category"", ""splittest"", ""launchoption"", ""templateconfig""] }, 	""Queue"": { IgnoredColumns: [""entityschemacaption"", ""processschemacaption"", ""filterdata"", ""filtereditdata"", ""queueentityschema"", ""businessprocessschema""] }, 	""Document"": { IgnoredColumns: [""state""] }, 	""Bonus"": { IgnoredColumns: [""currency""] }, 	""*"": { IgnoredColumns: [""modifiedby"", ""createdby"", ""lockedby"", ""facebookid"", ""twitterid"", ""_headerproperties"", ""_durationinmnutesandhours"", ""_erroronsend"", ""_emailsendstatus"", ""formfields"", ""entitydefaultvalues"", ""_solutiontimeunit"", ""_reactiontimeunit"", ""_pricelist"", ""_gpse"", ""_gpsn"", ""_nonactualreason"", ""_externalcommunicationtype"", ""_socialmediaid"", ""_communicationtype"", ""_addresstype"", ""_searchNumber"", ""_templateBody"", ""^campaign\\.schemadata$""] } }",MaxSizeText
+GlobalSearchIndexingApiUrl,Global search indexing api address,"",MediumText
+GlobalSearchShouldMatchPercent,Match threshold for displaying in search results (percent),"",Integer
+GlobalSearchUrl,Global search url address,"",ShortText
+GoogleAnalyticsTrackingDomains,Значение по умолчанию поля Список доменов в Email,www.example.com,MediumText
+GoogleCalendarLastSynchronization,Date of last synchronization with Google Calendar,"",DateTime
+GoogleCalendarLastSynchronizationEnd,Completion date of last synchronization with Google Calendar,"",DateTime
+GoogleCalendarSynchInterval,Interval for periodic synchronization with Google Calendars,"",Integer
+GoogleConsumerKey,Google services access key,"",ShortText
+GoogleConsumerSecret,Google secret access key,"",ShortText
+GoogleContactGroup,Contacts folder for synchronization with Google,"",Lookup
+GoogleContactLastSynchronization,Date of last synchronization with Google Contacts,"",DateTime
+GoogleContactLastSynchronizationEnd,Completion date of last synchronization with Google Contacts,"",DateTime
+GoogleContactSynchInterval,Interval for periodic synchronization with Google Contacts,"",Integer
+GoogleContactType,Type of imported Google contact,"",Lookup
+GoogleMapsApiKey,Google Maps access key,cvfmjngfbkjcgfvjuhcfxtgfew5r,MediumText
+GoogleRegistrationPage,Application registration page in Google,https://code.google.com/apis/console/,ShortText
+GoogleTagManagerScript,Google Tag Manager script,"",MaxSizeText
+GrantCasePermissionsForPortalOrganization,Раздавать права на обращение организации портального пользователя,"",Boolean
+HasAccountMiniPageAddMode,Enable account mini page add mode,"",Boolean
+HasActivityMiniPageAddMode,Enable activity mini page add mode,"",Boolean
+HasContactMiniPageAddMode,Enable contact mini page add mode,"",Boolean
+HasEmployeeMiniPageAddMode,Enable employee mini page add mode,"",Boolean
+HasLeadMiniPageAddMode,Использовать миникарточку добавления лида,"",Boolean
+HasOpportunityMiniPageAddMode,Использовать миникарточку добавления продажи,"",Boolean
+HasPartnershipMiniPageAddMode,Использовать миникарточку добавления партнерства,"",Boolean
+HeaderLogoImage,Upper panel logo,"",Binary
+HostingDataCollectionScriptUrl,Url скрипта сбора данных по хостингу,https://files.cloudbpm.ru/Delivery/js/track-cookies.js,LongText
+IconServiceCatalogLevel,Icon for the default group,"",Binary
+IconServiceItem,Icon for the default service,"",Binary
+IdentityServerClientId,Идентификатор стороннего приложения,"",ShortText
+IdentityServerClientSecret,Секретный код стороннего приложения,,SecureText
+IdentityServerUrl,Адрес сервера аутентификации,"",Text
+IgnoreExchangeSSLWarnings,Ignore invalid certificates from Exchange server,"",Boolean
+IgnorePictureAspectRatio,Ignore picture aspect ratio for word report,"",Boolean
+ImageCaseNotFound,Логотип не найдено обращение,"",Binary
+ImageRaitingAlredyExist,Логотип оценка уже выставлена,"",Binary
+ImageRaitingNotFound,Логотип не найдено значение оценки,"",Binary
+ImageThanksForRaiting,Логотип спасибо за оценку,"",Binary
+ImportLdapUsersAutomaticaly,Import LDAP users automatically ,"",Boolean
+ImproveEmailDef,Email for product feedback,info@omnichannel.ru,Text
+InactiveUserDeactivationIntervalInDay,Интервал деактивации неактивного пользователя (в днях),"",Integer
+IncidentManagentAutoStart,Автоматический запуск процесса управления инцидентами,"",Boolean
+IncidentRegistrationFromEmailAutoStart,"Автоматический запуск процесса ""Регистрация инцидента по входящему email""","",Boolean
+IncomingCallRingtone,Incoming call ringtone,"",Binary
+InsertQueueItemTopValue,Количество одновремено добавляемых записей в элементы очереди,"",Integer
+InsightMasterLogin,Login for Insight requests,,ShortText
+InsightMasterPassword,Password for Insight requests,,SecureText
+InsightProjectSyncPeriod,Insight project synchronization period (in minutes),,Integer
+InsightServerAddress,Insight server address,"",LongText
+InternalNumberLength,Number of digits in internal numbers,"",Integer
+InternalNumberLength,Number of digits in internal numbers,"",Integer
+IntervalInMinutesForFindReminding,Interval in minutes to search for reminders,"",Integer
+IntroPageWidgetUrl,Url for widget on intro page,"",Text
+InvoiceCodeMask,Маска номера счета,INV-{0},LongText
+InvoiceLastNumber,Текущий номер счета,"",Integer
+InvoicePaymentStatusDef,Состояние оплаты счета по умолчанию,"",Lookup
+InvoiceVisaEmailTemplate,Шаблон Email для отправки информации о визе счета,"",Lookup
+InvoiceVisaProcess,Процесс визирования счета,"",Lookup
+IsCtiPanelMenuItemVisible,Display CTI in communication panel,"",Boolean
+IsCtiPanelMenuItemVisible,Display CTI in communication panel,"",Boolean
+IsDebug,Debug mode,"",Boolean
+jQueryFileName,jQuery file name,jQuery-3.5.1,ShortText
+JQueryLibrariesUrl,Url библиотеки jquery,https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js,LongText
+JunkCaseDefaultStatus,Состояние нежелательных обращений по умолчанию,"",Lookup
+KnowledgeBaseCodeMask,Knowledge base article number mask,{0},Text
+KnowledgeBaseCodeMask,Knowledge base article number mask,{0},Text
+KnowledgeBaseImage,Knowledge base link - Tile view,"",Binary
+KnowledgeBaseLastNumber,Current number of knowledge base article,"",Integer
+KnowledgeBaseLastNumber,Current number of knowledge base article,"",Integer
+LastAccountDuplicatesSearch,Date of last duplicates search by accounts,"",DateTime
+LastActualWorkEstimation,Last calculation date of actual project work hours,"",DateTime
+LastAgeActualizationDate,Date of the last update of the contact ages,"",Date
+LastContactDuplicatesSearch,Date of last duplicates search by contacts,"",DateTime
+LDAPAllowLicenseDistributionDuringLDAPSync,Grant licenses during LDAP synchronization,"",Boolean
+LDAPAuthType,LDAP authentication type,"",Lookup
+LDAPEntryMaxModifiedOn,Maximum modification date of LDAP entry,"",DateTime
+LDAPEntryModifiedOnAttribute,Name of attribute containing LDAP entry modification date,whenChanged,ShortText
+LDAPGroupIdentityAttribute,Name of attribute to identify LDAP group,objectSid,ShortText
+LDAPGroupNameAttribute,Name of attribute containing LDAP group name,cn,ShortText
+LDAPGroupsEntry,"LDAP entry, which contains list of LDAP groups","",ShortText
+LDAPGroupsFilter,Condition to form list of LDAP groups,(&(objectClass=group)(!(userAccountControl:1.2.840.113556.1.4.803:=2))),ShortText
+LDAPKeyDistributionCenter,Key Distribution Center,"",Text
+LDAPLogNotificationSender,LDAP log notification sender,"",Lookup
+LdapParallelOperationsBatchSize,LDAP parallel operations batch size,"",Integer
+LDAPServer,LDAP server name or IP,"",ShortText
+LDAPServerLogin,LDAP server user login,"",ShortText
+LDAPServerPassword,LDAP server user password,bYeJ6pe732RZA9OFCTSKIxO5K1NYTmmSonWwFRAP4q1pEBN2mb78S3CCeP7AUcQnM90AG6zzo+NPOR34urtF7Q==,SecureText
+LDAPSynchInterval,"LDAP synchronization interval, hours","",Integer
+LDAPSynchronizeOnlyGroups,Synchronize only LDAP groups,"",Boolean
+LdapSyncRetryCountOnFailure,The count of attempts to establish an LDAP connection when an error occurs,"",Integer
+LdapSyncRetryDelay,Delay between repeated attempts to establish a connection to LDAP (in milliseconds).,"",Integer
+LDAPUserCompanyAttribute,Name of attribute containing LDAP current employment,company,MediumText
+LDAPUserEmailAttribute,Name of attribute containing LDAP user email,mail,MediumText
+LDAPUserFullNameAttribute,Name of attribute containing LDAP user full name,cn,ShortText
+LDAPUserIdentityAttribute,Name of attribute to identify LDAP user,objectSid,ShortText
+LDAPUserJobTitleAttribute,Name of attribute containing LDAP user job title,title,MediumText
+LdapUserLicPackages,License packages for LDAP user,,Text
+LDAPUserLoginAttribute,Name of attribute containing LDAP user login,sAMAccountName,ShortText
+LDAPUserPhoneAttribute,Name of attribute containing LDAP user phone number,homePhone,MediumText
+LDAPUsersEntry,"LDAP entry, which contains list of LDAP users","",ShortText
+LDAPUsersFilter,Condition to form list of LDAP users,(&(objectClass=user)(objectClass=person)(!(objectClass=computer))(!(isDeleted=TRUE))),ShortText
+LDAPUsersInGroupFilter,Condition to form list of LDAP users in group,(memberOf=[#LDAPGroupDN#]),ShortText
+LDAPUseSecureConnection,Enable LDAP over SSL,"",Boolean
+LeadGenRecipientsOfNotifications,Recipients of notifications for lead generation errors from social networks,"",Lookup
+LeadManagementProcess,Процесс управления лидом,"",Lookup
+LinkExpiryPeriod,"Registration links expiration term, days","",Integer
+LMSUrl,LMS address,https://bpm-soft.ru/,MediumText
+LMSUrl,LMS address,https://bpm-soft.ru/,MediumText
+LoginAttemptBeforeWarningCount,Quantity of login attempts for warning message,"",Integer
+LoginAttemptCount,Number of logon attempts,"",Integer
+LoginPageCommunicationBlockCaption,Caption for communication options block on login page,Техническая поддержка,ShortText
+LoginPageLinksBlockCaption,Caption for useful links block on login page,Важные ссылки,ShortText
+LoginPageWidgetUrl,Url for widget on login page,"",Text
+LoginRegistrationEmailTemplate,Template for registration confirmation email,"",Lookup
+LoginRegistrationMailboxSettings,Mailbox for sending registration confirmation letter,"",Lookup
+LoginReservationPeriod,Срок резерва логина удаленного пользователя (в днях),"",Integer
+LogoImage,Logo on login page,"",Binary
+MailboxSyncInterval,Mailbox synchronization interval,"",Integer
+MailingProvider,Провайдер рассылок,"",Lookup
+MailingStatisticUpdatePeriod,Период (дней) обновления статистики по рассылкам.,"",Integer
+MailoutsWarningThreshold,"Отправленные email-письма - условие предупреждения, %","",Integer
+MailReSynchronizationFrequency,"","",Integer
+Maintainer,Publisher,Customer,MediumText
+mandrillApiKey,API-ключ для сервиса Email-рассылок,"",MediumText
+MandrillMailingDelayInSeconds,"Время задержки перед началом отправки рассылки, секунд","",Integer
+MandrillShedulerTimeStep,"Интервал проверка наличия запущенных Email-рассылок, минут","",Integer
+MandrillStatisticUpdatePeriodDays,Период (дней) обновления статистики по рассылкам,"",Integer
+MandrillWebHookProcessingPackageCount,Количество пачек откликов для разбора (агрегированная статистика),"",Integer
+MandrillWebHooksSyncProcessInterval,"Интервал выполнения синхронизации webhooks, минут","",Integer
+MarketingDashboardPrefix,MarketingDashboardPrefix,Marketing: ,Text
+MarketingDashboardsWithPrefix,MarketingDashboardsWithPrefix,"'A05A7FA9-87BB-4F95-A8E1-E9FFDD689DBB','15F50549-EC9D-46AB-9411-87F73AB5C36F','95625DA6-3CB7-4098-A8DA-EA7D3D0D54C0','6DB925F8-950A-40FD-BA91-A4168D4476D8'",Text
+MarketingVideoUrl,Ссылка на видео для marketing,"",ShortText
+MassStageChangingMaxLeadsCount,Максимальное количество лидов при массовом изменении стадии,"",Integer
+MaxCloseQueueProgressRecordsCount,Максимальное количество записей в работе для закрытой очереди,"",Integer
+MaxDayTransitionCount,"Максимальное значение параметра ""Перейти через, дней""","",Integer
+MaxDegreeOfParallelismWhileProcessingLdapGroups,Maximum degree of parallelism while processing LDAP groups,"",Integer
+MaxDegreeOfParallelismWhileProcessingLdapUsers,Maximum degree of parallelism for LDAP users in each LDAP group,"",Integer
+MaxEmailSendDateForCaseReg,"Максимальный срок давности письма для регистрации обращения, дней","",Integer
+MaxFileSize,Attachment max size,"",Integer
+MaxGroupSysWorkplaceIconSize,Maximum size of section group icon to upload,"",Integer
+MaxImportExcelRecordCount,Maximum number of records to import from Excel,"",Integer
+MaximumQueueItemsInQueue,Максимальное количество необработанных элементов в очереди,"",Integer
+MaxLevelServiceCatalogGroup,Maximum nesting level of the service catalog,"",Integer
+MaxMandrillStatisticUpdatePeriodMinutes,Максимальный интервал (минут) обновления статистики по рассылкам,"",Integer
+MaxNumberOfProcessesForPlanning,Maximum number of business processes for planning,"",Integer
+MaxPackageSchemaDataRowsCount,Maximum quantity of data strings to be bound to package,"",Integer
+MaxPasswordAge,"Password validity term, days","",Integer
+MaxProcessLoopCount,Maximum number of process item repetitions,"",Integer
+MaxProcessLoopCount,Maximum number of process item repetitions,"",Integer
+MaxRecipientsForGroupingStrategy,MaxRecipientsForGroupingStrategy,"",Integer
+MaxWorkspaceCount,Maximum number of user workspaces,"",Integer
+MenuLogoImage,Логотип в главном меню,"",Binary
+MessagesNumberEverySearchIteration,Maximum number of feed messages during first load,"",Integer
+MinMandrillStatisticUpdatePeriodMinutes,Минимальный интервал (минут) обновления статистики по рассылкам,"",Integer
+MinPasswordLength,Password complexity: Minimum length,"",Integer
+MinPasswordLowercaseCharCount,Password complexity: Minimum quantity of lower case characters,"",Integer
+MinPasswordNumericCharCount,Password complexity: Minimum quantity of digits,"",Integer
+MinPasswordSpecialCharCount,Password complexity: Minimum quantity of special characters,"",Integer
+MinPasswordUppercaseCharCount,Password complexity: Minimum quantity of upper case characters,"",Integer
+MLBatchPredictionChunkSize,ML Batch prediction chunk size,"",Integer
+MLLicNotifications,Machine learning analytics notification sending,"",Boolean
+MLLicServiceURL,URL of the machine learning license service,"",MediumText
+MLModelBatchPredictionPeriodMinutes,Periodicity of batch prediction job,"",Integer
+MlModelEventsNotificationGroup,ML model events notification group,"",Lookup
+MLModelTrainingAutoRefreshSeconds,Periodicity of training status auto refresh in ML model page,"",Integer
+MLModelTrainingPeriodMinutes,Periodicity of machine learning model training job,"",Integer
+MLPredictionResultsLifeDays,Life period for prediction results (days),"",Integer
+MLRecommendationChunkSize,ML Recommendation chunk size,"",Integer
+MLSegmentationLLMURL,Address of the LLM request in segmentation,"",MediumText
+MLSegmentsNamesFormingTaskDescription,Segments names forming task description,"",Text
+MLServiceAPIKey,API-key of the machine learning service,"",ShortText
+MLTrainingChunkSize,ML training chunk size,"",Integer
+MLTrainingMaxRecordsCount,Default maximum number of records for ML training,"",Integer
+MLTrainingMinimumRecordsCount,Default minimum number of records for ML training,"",Integer
+MobileAppCheckUpdatePeriod,Update checks frequency,"",Integer
+MobileApplicationMode,Mobile application operation mode,"",Lookup
+MobileAppUsageStatisticsEmail,Email for sending mobile application usage statistics,support@omnichannel.ru,ShortText
+MobileAppUsageStatisticsStorePeriod,Expiration term of storing statistics about mobile application usage on device,"",Integer
+MobileDataSyncFrequency,"Background data synchronization frequency, minutes","",Integer
+MobileDefaultCaseOrigin,Происхождение обращения из мобильного приложения по умолчанию,"",Lookup
+MobileEmailForPermissionRequests,Email for sending permission requests,"",MediumText
+MobileExtendedAuthenticationUrl,Page for advanced authentication in mobile application,"",LongText
+MobileLogoImage,Mobile application logo,"",Binary
+MobileShowMenuOnApplicationStart,Display menu of the selected section when starting mobile app,"",Boolean
+MobileTrackLocationFrequency,"Track device location frequency, minutes","",Integer
+MobileUseSSO,Use SSO in the mobile app,"",Boolean
+NewAppCodePrefix,Prefix for new application code,App,ShortText
+NoteworthyEventNotificationPeriod,"Noteworthy event notification period, days","",Integer
+NoteworthyPeriodForOpportunityParticipants,"Период уведомления о знаменательных событиях участников продажи, месяцев","",Integer
+NotificationsExpirationTerm,Notification storage period (days),"",Integer
+NotificatonJobInterval,Notifications interval,"",Integer
+NotifyMobileUserAboutAppUpdate,Notify user about mobile app updates,"",Boolean
+NumberOfPackagesForActualizingAudienceOfBulkEmail,Количество пачек откликов для разбора (отклики получателей),"",Integer
+NumberOfProcessedRecords,Number of processed records,"",Integer
+OAuth20IdentityServerClientId,Client id for OAuth 2.0 integrations,,ShortText
+OAuth20IdentityServerClientSecret,Client secret for OAuth 2.0 integrations,,SecureText
+OAuth20IdentityServerUrl,Authorization server Url for OAuth 2.0 integrations,,Text
+OData4PageSize,"","",Integer
+ODataFilterTreeMaxNodeCount,"","",Integer
+OIDCprovider,OIDC провайдер,OIDC,ShortText
+OmniChatNotificationSound,Omni chat notification sound,"",Binary
+OmniChatOperatorAcceptChatTimeout,Omni chat operator accept chat timeout,"",Integer
+OpenIDEmailClaimType,Тип OpenID утверждения 'email',http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress,MediumText
+OpenIDIdentityServerClientId,Client id for OpenID authentication,,ShortText
+OpenIDIdentityServerClientSecret,Client secret for OpenID authentication,,SecureText
+OpenIDIdentityServerUrl,Authorization server url for OpenID authentication,,Text
+OpenIDNameClaimType,Type for OpenID 'name' claim,name,MediumText
+OperatorSingleWindowSocialChannel,Канал для отображения в Едином окне оператора,"",Lookup
+OpportunityManagementProcess,Процесс корпоративных продаж,"",Lookup
+OrderCodeMask,Маска номера заказа,ORD-{0},LongText
+OrderDeliveryStatusDef,Состояние поставки заказа,"",Lookup
+OrderLastNumber,Текущий номер заказа,"",Integer
+OrderPassportTemplateDef,Шаблон графика поставок и оплат по умолчанию,"",Lookup
+OrderPaymentStatusDef,Состояние оплаты заказа,"",Lookup
+OrderStatusDef,Состояние заказа,"",Lookup
+OrderVisaEmailTemplate,Шаблон Email для отправки информации о визе заказа,"",Lookup
+OrderVisaProcess,Процесс визирования заказа,"",Lookup
+PackageJson,Package Json for Angular module,"{   ""name"": ""angular"",   ""version"": ""0.0.0"",   ""license"": ""MIT"",   ""scripts"": {         ""ng"": ""nx"",         ""nx"": ""nx""     },   ""private"": true,   ""dependencies"": {     ""@angular/animations"": ""~18.2.0"",     ""@angular/material"": ""~18.2.0"",     ""@angular/common"": ""~18.2.0"",     ""@angular/compiler"": ""~18.2.0"",     ""@angular/core"": ""~18.2.0"",     ""@angular/forms"": ""~18.2.0"",     ""@angular/platform-browser"": ""~18.2.0"",     ""@angular/platform-browser-dynamic"": ""~18.2.0"",     ""@angular/router"": ""~18.2.0"",     ""@nx/angular"": ""19.6.0"",     ""broadcast-channel"": ""^7.0.0"",     ""@ngx-translate/core"": ""^16.0.3"",     ""class-transformer"": ""^0.5.1"",     ""rxjs"": ""~7.8.0"",     ""tslib"": ""^2.3.0"",     ""zone.js"": ""~0.14.3""   },   ""devDependencies"": {     ""@angular-devkit/build-angular"": ""~18.2.0"",     ""@angular-devkit/core"": ""~18.2.0"",     ""@angular-devkit/schematics"": ""~18.2.0"",     ""@angular-eslint/eslint-plugin"": ""^18.0.1"",     ""@angular-eslint/eslint-plugin-template"": ""^18.0.1"",     ""@angular-eslint/template-parser"": ""^18.0.1"",     ""@angular/cli"": ""~18.2.0"",     ""@angular/compiler-cli"": ""~18.2.0"",     ""@angular/language-service"": ""~18.2.0"",     ""@nx/eslint"": ""19.6.0"",     ""@nx/eslint-plugin"": ""19.6.0"",     ""@nx/jest"": ""19.6.0"",     ""@nx/js"": ""19.6.0"",     ""@nx/workspace"": ""19.6.0"",     ""@schematics/angular"": ""~18.2.0"",     ""@swc-node/register"": ""~1.9.1"",     ""@swc/core"": ""~1.5.7"",     ""@swc/helpers"": ""~0.5.11"",     ""@types/jest"": ""^29.5.12"",     ""@types/node"": ""18.16.9"",     ""@typescript-eslint/eslint-plugin"": ""^7.16.0"",     ""@typescript-eslint/parser"": ""^7.16.0"",     ""@typescript-eslint/utils"": ""^7.16.0"",     ""eslint"": ""~8.57.0"",     ""eslint-config-prettier"": ""^9.0.0"",     ""jest"": ""^29.7.0"",     ""jest-environment-jsdom"": ""^29.7.0"",     ""jest-preset-angular"": ""~14.1.0"",     ""nx"": ""19.6.0"",     ""prettier"": ""^2.6.2"",     ""ts-jest"": ""^29.1.0"",     ""ts-node"": ""10.9.1"",     ""typescript"": ""~5.5.2""   } }",MaxSizeText
+ParentAccountRelationType,"Connection type - ""Parent account""","",Lookup
+PartnershipDueDate,Дата завершения партнерства,"",Date
+PasswordChangeReminding,"Reminder about password change, days","",Integer
+PasswordHistoryRecordCount,Quantity of analyzed passwords,"",Integer
+PeriodActualizeBulkEmailRecipients,"Как часто актуализировать отклики в рассылках, ч","",Integer
+PeriodStartSendSMS,Period for sending text messages (SMS),"0/30 * * * * ?",ShortText
+PeriodStartSendSMSMin,"Period for sending text messages (SMS), minutes","",Integer
+PharmaPackageUrl,Url-адрес хранилища пакета Pharma,"",Text
+PortalCaseOriginDef,Происхождение обращения на портале по умолчанию,"",Lookup
+PortalInvitationEmailTemplate,SSP invite template,"",Lookup
+PortalRecoveryPasswordEmailTemplate,Password reset email template for portal user,"",Lookup
+PortalRegistrationEmailTemplate,Confirmation email template for portal user registration,"",Lookup
+PortalSiteUrl,Portal hostname,"",MediumText
+PreparingToSendTimeoutPeriod,"Допустимое время пребывания рассылки в состоянии ""Готовится к отправке"" (минуты)","",Integer
+PreventDuplicatesSending,Предотвращать отправку писем получателям с одинаковым email адресом.,"",Boolean
+PriceWithTaxes,Price includes taxes,"",Boolean
+PrimaryCommunicationSelection,Выбор основного средства связи контакта,"",Boolean
+PrimaryCulture,Культура по умолчанию,"",Lookup
+PrimaryCulture,Культура по умолчанию,"",Lookup
+PrimaryCurrency,Base currency,"",Lookup
+ProblemCodeMask,Маска номера проблемы,PR_{0},MediumText
+ProblemLastNumber,Текущий номер проблемы,"",Integer
+ProblemPriorityDef,Приоритет проблемы по умолчанию,"",Lookup
+ProblemStatusDef,Состояние проблемы по умолчанию,"",Lookup
+ProcessLogArchiveDataExpirationTerm,Archive data expiration term (days),"",Integer
+ProcessLogArchivingPeriod,Process log archiving period (days),"",Integer
+ProcessLogArchivingRecordsCount,SysProcessLog archiving records count,"",Integer
+ProcessMaintenanceJobFrequencyMinutes,Frequency of running operations for process log maintenance (minutes),"",Integer
+ProcessMaintenanceJobTimeout,Maximum time for the process log maintenance execution (minutes),"",Integer
+ProcessTempDataCleanupJobEnabled,Включить периодическую очистку таблиц временных данных БП,,Boolean
+ProcessTempDataCleanupJobFrequencyMinutes,Частота очистки таблиц временных данных БП в минутах,"",Integer
+ProductEdition,Product version,SalesEnterprise_Marketing_ServiceEnterprise,MediumText
+ProductName,Product name,BPMSoft,MediumText
+ProjectStateDef,Состояние проекта по умолчанию,"",Lookup
+QueryJoinRightLevel,Joined objects administering,"",Integer
+QueryJoinRightLevel,Joined objects administering,"",Integer
+QueuesUpdateInterval,Интервал обновления очередей единого окна,"",Integer
+ReadDataChunkSize,Read data chunk size,"",Integer
+RecentEntityCount,Maximum number of last used objects,"",Integer
+RedirectUnsuscribersTo,Сайт для перенаправления отписавшихся,"",LongText
+ReleaseCodeMask,Маска номера релиза,{0},MediumText
+ReleaseLastNumber,Текущий номер релиза,"",Integer
+ReleasePriorityDef,Значения приоритета релиза по умолчанию,"",Lookup
+ReleaseStatusDef,Состояние релиза по умолчанию,"",Lookup
+ReleaseTypeDef,Тип релиза по умолчанию,"",Lookup
+RemindingsCheckInterval,Notification monitor,"",Integer
+RemoveProcessParameterInfo,Удалять ParameterInfo,,Boolean
+ReportDecimalSeparator,Decimal symbol in Word printables,"",ShortText
+RequestsCachingOptions,RequestsCachingOptions,"",MaxSizeText
+RequestsCachingTtl,RequestsCachingTtl,"",Integer
+RuMapCartographicServiceKey,Ключ к картографическому сервису RuMap,,SecureText
+RunAgeActualizationDaily,Enable automatic daily update of the contact ages,"",Boolean
+RunMobileSyncInService,Use separate service for mobile data synchronization,"",Boolean
+RunProcessesInBackgroundOnFileImport,RunProcessInBackgroundOnFileImport,"",Boolean
+S3FilePartSize,S3FilePartSize ,,Integer
+SalesDashboardPrefix,SalesDashboardPrefix,Sales: ,Text
+SalesDashboardsWithPrefix,SalesDashboardsWithPrefix,"'E2895654-6CE4-4EF8-A126-5F75F49D9073','C5BCB884-0543-4305-B394-730F0E88380D','04F34100-E082-449C-94FB-10F75031FAE6','222A5FB8-B4DA-4DA5-B217-EE4B268DA944'",Text
+SaveAFKChatJob,SaveAFKChatJob,"",Integer
+SaveEmailRecipientMacros,Сохранять значения макросов получателей перед отправкой,"",Boolean
+SaveWordReportAsRecordAttachment,Save Word printables as attachments,"",Boolean
+SchedulerDisplayTimingStart,Calendar start time,"",Integer
+SchedulerDisplayTimingStart,Calendar start time,"",Integer
+SchedulerItemsAmountPerPage,Records number on the calendar page,"",Integer
+SchedulerTimingEnd,Calendar end date,"",Integer
+SchedulerTimingEnd,Calendar end date,"",Integer
+SchedulerTimingStart,Calendar start date,"",Integer
+SchedulerTimingStart,Calendar start date,"",Integer
+SchemaNamePrefix,Prefix for object name,Usr,ShortText
+ScoringRulesSyncTime,Scoring rules daily sync time,"",DateTime
+ScriptTemplate,Auto-generated script template on the landing page,"<div style=""font-family: &quot;Courier New&quot;, monospace; font-size: 10pt;"">&lt;script&nbsp;src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js&quot;&gt;&lt;/script&gt;<br>&lt;script&nbsp;src=&quot;https://webtracking-v01.bpmcrm.com/JS/track-cookies.js&quot;&gt;&lt;/script&gt;<br>&lt;script&nbsp;src=##apiUrl##&gt;&lt;/script&gt;<br>&lt;script&gt;<br>/**<br>*&nbsp;Replace&nbsp;the&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;&nbsp;placeholders&nbsp;in&nbsp;the&nbsp;code&nbsp;below&nbsp;with&nbsp;the&nbsp;element&nbsp;selectors&nbsp;on&nbsp;your&nbsp;landing&nbsp;page.<br>*&nbsp;You&nbsp;can&nbsp;use&nbsp;#id&nbsp;or&nbsp;any&nbsp;other&nbsp;CSS&nbsp;selector&nbsp;that&nbsp;will&nbsp;define&nbsp;the&nbsp;input&nbsp;field&nbsp;explicitly.<br>*&nbsp;Example:&nbsp;&quot;Email&quot;:&nbsp;&quot;#MyEmailField&quot;.<br>*&nbsp;If&nbsp;you&nbsp;don&#39;t&nbsp;have&nbsp;a&nbsp;field&nbsp;from&nbsp;the&nbsp;list&nbsp;below&nbsp;placed&nbsp;on&nbsp;your&nbsp;landing,&nbsp;leave&nbsp;the&nbsp;placeholder&nbsp;or&nbsp;remove&nbsp;the&nbsp;line.<br>*/<br>var&nbsp;config&nbsp;=&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;fields:&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Name&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Name&nbsp;of&nbsp;a&nbsp;visitor,&nbsp;submitting&nbsp;the&nbsp;page<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Email&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Visitor&#39;s&nbsp;email<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Zip&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Visitor&#39;s&nbsp;ZIP&nbsp;code<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;MobilePhone&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Visitor&#39;s&nbsp;phone&nbsp;number<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Company&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Name&nbsp;of&nbsp;a&nbsp;company&nbsp;(for&nbsp;business&nbsp;landing&nbsp;pages)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Industry&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Company&nbsp;industry&nbsp;(for&nbsp;business&nbsp;landing&nbsp;pages)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;FullJobTitle&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Visitor&#39;s&nbsp;job&nbsp;title&nbsp;(for&nbsp;business&nbsp;landing&nbsp;pages)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;UseEmail&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Logical&nbsp;value:&nbsp;&#39;true&#39;&nbsp;equals&nbsp;to&nbsp;visitor&#39;s&nbsp;opt-in&nbsp;to&nbsp;receive&nbsp;emails<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;City&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;City<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Country&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;,&nbsp;//&nbsp;Country<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Commentary&quot;:&nbsp;&quot;<span style=""color: #0c0cec;"">css-selector</span>&quot;##customColumnsComma##&nbsp;//&nbsp;Notes##customColumns##<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;landingId:&nbsp;##landingId##,<br>&nbsp;&nbsp;&nbsp;&nbsp;serviceUrl:&nbsp;##serviceUrl##,<br>&nbsp;&nbsp;&nbsp;&nbsp;redirectUrl:&nbsp;##redirectUrl##<br>};<br>/**<br>*&nbsp;The&nbsp;function&nbsp;below&nbsp;creates&nbsp;a&nbsp;lead&nbsp;from&nbsp;the&nbsp;submitted&nbsp;data.<br>*&nbsp;Bind&nbsp;this&nbsp;function&nbsp;call&nbsp;to&nbsp;the&nbsp;&quot;onSubmit&quot;&nbsp;event&nbsp;of&nbsp;the&nbsp;form&nbsp;or&nbsp;any&nbsp;other&nbsp;elements&nbsp;events.<br>*&nbsp;Example:&nbsp;&lt;form&nbsp;class=&quot;mainForm&quot;&nbsp;name=&quot;landingForm&quot;&nbsp;onSubmit=&quot;createLead();&nbsp;return&nbsp;false&quot;&gt;<br>*/<br>function&nbsp;createLead()&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;landing.createLeadFromLanding(config)<br>}<br>&lt;/script&gt;</div>",LongText
+SearchInFacebookURL,Поиск в Facebook URL,https://www.facebook.com/search/people/?q=,LongText
+SearchInGoogleURL,Поиск в Google URL,https://www.google.com/search?q=,LongText
+SearchInLinkedInURL,Поиск в LinkedIn URL,https://www.linkedin.com/search/results/all/?keywords=,LongText
+SearchNumberLength,Number of digits for search,"",Integer
+SecondReevaluationWaitingDays,Количество дней ожидания после повторного запроса оценки,"",Integer
+SecondSupportLine,"2-я линия поддержки","",Lookup
+SectionPanelBackgroundColor,Section panel background,#ffffff,ShortText
+SectionPanelFontColor,Text in section panel,#1f5b75,ShortText
+SectionPanelSelectedBackgroundColor,Selected section background,#ff7600,ShortText
+SectionPanelSelectedFontColor,Text in selected section,#182438,ShortText
+SendAllExchangeAppointmentNotifications,Send notifications about Exchange meetings changes,"",Boolean
+SendCloseNotification,SendCloseNotification,"",Boolean
+SendEmailToCaseStatusChangedAutoStart,"Автоматический запуск процесса ""Отправка email сообщения контакту о смене состояния обращения ""","",Boolean
+SendEmailToCaseStatusChangedAutoStart,"Автоматический запуск процесса ""Отправка email сообщения контакту о смене состояния обращения ""","",Boolean
+SendingInProgressTimeoutPeriod,"Допустимое время пребывания рассылки в состоянии ""Идет отправка"" (минуты)","",Integer
+SendVisaEmail,Send email message if approval is required,"",Boolean
+ServiceItemStatusDef,Состояние сервиса по умолчанию,"",Lookup
+ServicePactCodeMask,Маска кода сервисного договора,{0},ShortText
+ServicePactLastNumber,Текущий номер сервисного договора,"",Integer
+ServicePactStatusDef,Статус сервисного договора по умолчанию,"",Lookup
+ServicePactTypeDef,Тип сервисного договора по умолчанию,"",Lookup
+ServiceUrl,Landing pages data collection service URL,"",LongText
+ShowBrowserPopupWindowToolbars,Display pop-up window message,"",Boolean
+ShowChangeStageConfirmDialog,Display message when the status/stage is changed in the workflow bar,"",Boolean
+ShowConfigurationVersion,Show Configuration Version,"",Boolean
+ShowDemoLinks,Display demo links,"",Boolean
+ShowDemoLinks,Display demo links,"",Boolean
+ShowEditPageNavigationButtons,Display navigation buttons in edit card,"",Boolean
+ShowMobileLocalNotifications,Show local notifications on mobile device,"",Boolean
+ShowOpenIDConnectLogin,Show OIDC provider login action,"",Boolean
+ShowPreview,Show an image preview on the “Files and attachments” detail,"",Boolean
+ShowUnsupportedBrowser,Displaying on the login page notification about browsers that are not supported.,"",Boolean
+ShowWidgetOnIntroPage,Show widget on intro page,"",Boolean
+ShowWidgetOnLoginPage,Show widget on login page,"",Boolean
+SimultaneousChats,Simultaneous Chats,"",Integer
+SiteUrl,Website URL,bpm.cti.ru,MediumText
+SMSSendEndTime,Time to end sending text messages (SMS),"",DateTime
+SMSSendStartTime,Time to start sending text messages (SMS),"",DateTime
+SmtpEnableSsl,Use SSL,"",Boolean
+SmtpHost,SMTP server name or IP,"",LongText
+SmtpLogin,Smtp Login,"",ShortText
+SmtpPort,SMTP server port,"",Integer
+SmtpUserName,SMTP server login,"",LongText
+SmtpUserPassword,SMTP server password,"",LongText
+SocialAccountServiceUrl,Social account service URL,"",MediumText
+SocialReceiverServiceUrl,Social receiver service URL,"",MediumText
+SSPLogoImage,SSP Logo,"",Binary
+SSPMainPage,Portal start page,"",Lookup
+SSPRegistrationMailbox,SSP registration mail box,"",Lookup
+SSPUserLicPackage,Licensed solution for portal users,"",Lookup
+StartHandleWebHookProcessAt,Time to start parsing bulkemail responses,"",DateTime
+StartOppBusinessProcess,Запускать процесс продажи,"",Boolean
+StopHandleWebHookProcessAt,Time to stop parsing bulk email responses,"",DateTime
+StringColumnSearchComparisonType,String columns filter,"",Integer
+StringColumnSearchMinCharCount,Minimum characters necessary to filter list,"",Integer
+StructureExplorerAggColumnEditPageSchemaUId,Base card page - Aggregate column,"",Lookup
+StructureExplorerColumnEditPageSchemaUId,Base column card page,"",Lookup
+SupplyPaymentElementCodeMask,Маска номера элемента графика поставок и оплат,{0},LongText
+SupplyPaymentElementLastNumber,Текущий номер элемента графика поставок и оплат,"",Integer
+SupportEmailDef,Emails to connect our technical support,support@omnichannel.ru,ShortText
+SupportServiceEmail,E-mail службы поддержки,"",MediumText
+SupportServiceEmail,E-mail службы поддержки,servicedesk@cti.ru,MediumText
+SyncAppStructureOnce,Synchronize mobile application structure once,"",Boolean
+SyncMemoryLimitToDeallocate,Memory limit for deallocation,"",Float
+SysMsgFinesseDefaulNotReadyReasonCode,Code for default reason for the NOT_READY status (Finesse),"7",ShortText
+SysMsgLib,Default messages exchange library,"",Lookup
+SysMsgLib,Default messages exchange library,"",Lookup
+SysMsgServerNode,Message exchange server,ws://your_msg_serverName:2013,ShortText
+SysMsgServerNode,Message exchange server,"",ShortText
+SysPrcPersistentStoreCleanupCountRows,Количество очищаемых записей таблицы SysPrcPersistentStore,"",Integer
+SystemEmailIgnoreUnsubscribeFromAllMailings,"Включение опции ""Системная рассылка""","",Boolean
+SystemUser,System operations user,"",Lookup
+TelephonyServerTimeZone,Часовой пояс сервера для получения записи звонка,,Lookup
+TemplateAngularHtml,Angular Html File Template,<div>Здесь будет ваш код</div>,MaxSizeText
+TemplateAngularScss,Angular Scss File Template,// Здесь будет ваш код,MaxSizeText
+TemplateAngularTs,Angular Ts File Template,"import { Component } from '@angular/core'; @Component({     selector: 'app-root',     templateUrl: './app.component.html',     styleUrls: ['./app.component.scss'],     imports: [],     standalone: true, }) export class AppComponent {     title = 'test-app-component'; }",MaxSizeText
+TemplateAngularTsComponent,Angular Ts file template (Component),"import { Component, OnInit } from ""@angular/core""; import { BaseComponent } from ""apps/render-app/src/components/base/base.component"";  @Component({     selector: ""app-root"",     standalone: true,     imports: [],     templateUrl: ""./app.component.html"",     styleUrls: [""./app.component.scss""] }) export class AppComponent extends BaseComponent implements OnInit {      public ngOnInit() {         this.initBaseEntityService();     }  }",MaxSizeText
+TestSendingBulkEmailContact,Контакт получателя для тестовой отправки Email,"",Lookup
+TextParsingService,Text parsing cloud service,"",MediumText
+TotpResetPasswordTokenTtl,TOTP Reset Password Token Ttl,"",Integer
+TotpSetupTokenTtl,TOTP Setup Token Ttl,"",Integer
+TrackingReceiverUrl,TrackingReceiverUrl,"",MediumText
+TrackingReportUrl,TrackingReportUrl,"",MediumText
+TrackingTenantUrl,TrackingTenantUrl,"",MediumText
+TranslationActualizedOn,Translation actualization date,"",DateTime
+TrialUrl,Trial version URL,,ShortText
+TriggerEmailFailoverJobInterval,Периодичность запуска процесса доотправки триггерных рассылок (минуты),"",Integer
+TrirdSupportLine,"3-я линия поддержки","",Lookup
+UISCallEndTimeShift,UIS: Временной сдвиг для даты завершения звонка (Минуты),,Integer
+UISCallRecordLogin,UIS: Логин для получения записи звонка,,SecureText
+UISCallRecordPassword,UIS: Пароль для получения записи звонка,,SecureText
+UISCallRecordToken,UIS: Токен для получения записи звонка,,SecureText
+UISCallStartTimeShift,UIS: Временной сдвиг для даты начала звонка (Минуты),,Integer
+UnregisterComponentsCount,Count of the components to be unregistered,"",Integer
+UnregisterComponentsInterval,Interval to unregister components (ms),"",Integer
+UnsubscribeApplicationUrl,"Внешний URL-адрес приложения, используемый для получения запросов отписки от Email-рассылок","",LongText
+UnsubscribeFromAllMailings,Отписывать пользователя от всех рассылок,"",Boolean
+UnsubscribeLink,Html текст для блока отписки,"<p><span style=""color:rgb(102, 102, 102); font-family:verdana,geneva,sans-serif; font-size:11px"">If you don't want to receive it anymore, </span><a href=""[#Unsubscribe.URL#]"" style=""font-family: verdana, geneva, sans-serif; font-size: 11px; line-height: 16.7999992370605px;""><span style=""color:rgb(46, 108, 184)"">unsubscribe</span></a><span style=""color:rgb(102, 102, 102); font-family:verdana,geneva,sans-serif; font-size:11px"">.</span></p>",LongText
+UpdateNotificationStatusChunkSize,Update notification status chunk size,"",Integer
+UseAdminClientIPLog,Log client IP range management events,"",Boolean
+UseAdminEntitySchemaColumnLog,Log entity schema columns access rights management events,"",Boolean
+UseAdminEntitySchemaExternalServiceLog,Log external resources access rights management events,"",Boolean
+UseAdminEntitySchemaLog,Log administrated entities management events,"",Boolean
+UseAdminEntitySchemaOperationLog,Log entity access rights management events,"",Boolean
+UseAdminEntitySchemaRecordDefRightLog,Log entity schema default records access rights management events,"",Boolean
+UseAdminEntitySchemaRecordRightLog,Log entity schema records access rights management events,"",Boolean
+UseAdminOperationAuditLog,Log audit log operations management events,"",Boolean
+UseAdminOperationImportExport,Регистрировать события управления операциями импорта и экспорта,"",Boolean
+UseAdminOperationLog,Log operation access rights management events,"",Boolean
+UseAdminSettingsLog,Log system settings management events,"",Boolean
+UseAdminUnitAdminLog,Log organizational structure management events,"",Boolean
+UseAdminUserLog,Log users management events,"",Boolean
+UseAdminUserRoleLog,Log user roles management events,"",Boolean
+UseDeniedOperationLog,Log denied operations management events,"",Boolean
+UseFaviconFromSysSettings,Use favicon from system settings,"",Boolean
+UseGoogleSharedApplication,Use shared Google application,"",Boolean
+UseGoogleTagManager,Use Google tag management system,"",Boolean
+UseInexactGlobalSearch,Display search results with partial match,"",Boolean
+UseLMSDocumentation,Use LMS documentation,"",Boolean
+UseLMSDocumentation,Use LMS documentation,"",Boolean
+UseLocalizableGlobalSearchResult,Show localized data in the global search results,"",Boolean
+UseMacrosTimeZoneConversion,Конвертировать даты в макросах с учетом часового пояса,"",Boolean
+UseMobileCertificateAuthentication,Use authentication by certificate in mobile application,"",Boolean
+UseMobileLastKnownLocation,Use last known location of user,"",Boolean
+UseMobileUIV2,Use MobileUIV2,"",Boolean
+UsePartnershipRight,Наследовать права партнерства,"",Boolean
+UsePerformerCultureInUserTask,Create business process tasks in the owner’s language,"",Boolean
+UseProcessLeadManagement,Использовать бизнес-процесс управления лидом,"",Boolean
+UserLockoutDuration,User locking time,"",Integer
+UserNameExpireDays,User name expiration term (days),"",Integer
+UserSessionTimeout,User session timeout,"",Integer
+UseTheSalesReadyLeadLifecycle,Использовать жизненный цикл готовых к продаже лидов,"",Boolean
+UseUserAuthorizationLog,Log user authorization management events,"",Boolean
+UseUserSessionLog,Log user sessions management events,"",Boolean
+UseWarmupApp,Use application warmup,"",Boolean
+UseWarmupEntities,Use object warmup,"",Boolean
+UseWelcomeScreen,Use welcome window,"",Boolean
+UtmCampaignDefault,Значение по умолчанию поля utm_campaign в Email,"",LongText
+UtmContentDefault,Значение по умолчанию поля utm_content в Email,"",LongText
+UtmMediumDefault,Значение по умолчанию поля utm_medium в Email,email,LongText
+UtmSourceDefault,Значение по умолчанию поля utm_source в Email,"",LongText
+UtmTermDefault,Значение по умолчанию поля utm_term в Email,"",LongText
+VisaMailboxSettings,Mailbox for sending email with information on approval,"",Lookup
+WbqjAnyVoipPackageUrl,Wbqj AnyVoip package Url,"",Text
+WebhooksApplicationUrl,"Внешний URL-адрес приложения, используемый для получения webhooks","",LongText
+WebLeadUserName,User name for registration of leads from third-party systems,"",ShortText
+WebLeadUserPassword,Пароль пользователя для регистрации лида из внешних ресурсов,"",SecureText
+WebRTCCancelRing,WebRTC: Звук неудачного звонка,"",Binary
+WebRTCInRing,WebRTC: Звук входящего звонка,"",Binary
+WebRTCOutRing,WebRTC: Звук исходящего звонка,"",Binary
+WelcomeScreenVideoUrl,Link to start page video,https://www.youtube.com/watch?v=ZDAz9EgdZ1M&ab_channel=BPMSoft,ShortText
+WorkingHoursPerDayAmount,Number of working hours in working day,"",Integer
+WorkStateDef,Operating status,"",Lookup
+YandexMapsDistanceMatrixRouteDetailsKey,Ключ Яндекс Карт Матрица расстояний + Детали маршрута,,SecureText
+YandexMapsJavaScriptApiGeocoderKey,Ключ Яндекс Карт JavaScript API + Геокодер,,SecureText
+YandexMapsTilesApiKey,Ключ Яндекс Карт Tiles API,,SecureText

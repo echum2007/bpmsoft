@@ -1,6 +1,6 @@
 # Зада��а 2.3 — Текст письма клиента в уведомлении инженеру
 
-**Статус:** Проектирование  
+**Статус:** Готов к внедрению  
 **Дата:** 2026-04-12  
 **Приоритет:** 1 (первая задача Волны 2)  
 **Автор:** Claude (аналитик-разработчик BPMSoft)
@@ -109,9 +109,7 @@
 
 **Идея:** Создать C#-класс, реализующий `IMacrosInvokable`, зарегистрировать как макрос, добавить в шаблон email.
 
-**Отклонён.** Feature-toggles `EmailMessageMultiLanguage` / `EmailMessageMultiLanguageV2` **выключены**. Конвейер `EmailWithMacrosManager` → `MacrosProcessor` → invokable-макросы **не вызывается**. Активен старый BPMN-путь: `AddDataUserTask → FillEmailUserTask → ActivityEmailSender.Send()`. В старом пути invokable-макросы не поддерживаются.
-
-Включение feature-toggles повлияет на все email-уведомления системы — непредсказуемые побочные эффекты.
+**Отклонён.** Хотя `EmailMessageMultiLanguageV2` = 1 (включён на проде) и конвейер `EmailWithMacrosManager` активен, это не помогает: процесс `UsrSendNotificationToCaseOwnerCustom1` не отправляет email — он создаёт только push-уведомление (Reminding). Invokable-макросы работают внутри `EmailWithMacrosManager`, а у нас нет email-отправки, в которую их можно встроить. Чтобы использовать макрос, пришлось бы сначала создать email-отправку — а это и есть наша задача.
 
 ### Вариант B: Опция «Процитировать оригинальный email» в CaseNotificationRule
 
@@ -214,7 +212,7 @@ namespace BPMSoft.Configuration
             string subject = string.Format(
                 "[Обращение №{0}] Новый ответ от клиента",
                 caseData.Number);
-            string body = BuildEmailBody(caseData, emailData);
+            string body = BuildEmailBody(userConnection, caseData, emailData, caseId);
 
             // 5. Создаём Activity (email) и отправляем
             var activityId = CreateEmailActivity(
@@ -287,10 +285,15 @@ namespace BPMSoft.Configuration
 
         #region Формирование email
 
-        private static string BuildEmailBody(CaseInfo c, EmailInfo e)
+        private static string BuildEmailBody(
+            UserConnection uc, CaseInfo c, EmailInfo e, Guid caseId)
         {
-            // Извлекаем имя отправителя из формата "Display Name <email@example.com>"
             var senderDisplay = ExtractDisplayName(e.Sender);
+            var siteUrl = Core.Configuration.SysSettings
+                .GetValue<string>(uc, "SiteUrl", string.Empty).TrimEnd('/');
+            var caseLink = !string.IsNullOrEmpty(siteUrl)
+                ? string.Format("https://{0}/Shell/Case/{1}", siteUrl, caseId)
+                : string.Empty;
 
             var sb = new StringBuilder();
             sb.AppendLine("<div style=\"font-family: Arial, sans-serif; font-size: 14px;\">");
@@ -305,6 +308,12 @@ namespace BPMSoft.Configuration
             sb.AppendLine(e.Body); // HTML-тело письма клиента
             sb.AppendLine("</blockquote>");
             sb.AppendLine("<hr style=\"border: none; border-top: 1px solid #ccc;\">");
+            if (!string.IsNullOrEmpty(caseLink))
+            {
+                sb.AppendFormat(
+                    "<p><a href=\"{0}\" style=\"color: #2196F3;\">Открыть обращение в системе</a></p>",
+                    caseLink);
+            }
             sb.AppendFormat(
                 "<p style=\"font-size: 12px; color: #666;\">Ответственный: {0}</p>",
                 System.Net.WebUtility.HtmlEncode(c.OwnerName));
@@ -401,14 +410,16 @@ UsrNewEmailNotifier.NotifyOwner(UserConnection, caseId, ActivityId);
 return true;
 ```
 
-**Размещение в процессе:**
+**Размещение в процессе (подтверждено по диаграмме 2026-04-12):**
 
 ```
-... → CreateNotificationScriptTask → SendEmailToOwnerScriptTask → SetActivityServiceProcessed → ...
-                  ↑ push-уведомление         ↑ email инженеру           ↑ обновление Activity
+... → New notification → SendEmailToOwnerScriptTask → Terminate
+        ↑ push-уведомление       ↑ email инженеру        ↑ конец процесса
 ```
 
-Новый ScriptTask вставляется **между** `CreateNotificationScriptTask` и `SetActivityServiceProcessed`.
+Новый ScriptTask вставляется **между** `New notification` (CreateNotificationScriptTask) и `Terminate`.
+
+> **Важно:** элемент «Обновить признак обработки в активности» (SetActivityServiceProcessed) находится на **другой ветке** процесса (ветка «Granted» — обработка смены статуса). Он НЕ связан напрямую с `New notification`.
 
 ---
 
@@ -447,14 +458,14 @@ return true;
 
 1. Конфигурация → найти `UsrSendNotificationToCaseOwnerCustom1`
 2. Открыть в дизайнере процессов
-3. Найти связь `CreateNotificationScriptTask` → `SetActivityServiceProcessed`
-4. Удалить эту связь (стрелку)
+3. Найти элемент **«New notification»** (push-уведомление) — он соединён стрелкой с **Terminate** (красный кружок)
+4. Удалить стрелку `New notification` → `Terminate`
 5. Добавить элемент **Задание-сценарий** (ScriptTask):
    - Имя: `SendEmailToOwnerScriptTask`
    - Код: см. п. 5.2
 6. Провести стрелки:
-   - `CreateNotificationScriptTask` → `SendEmailToOwnerScriptTask`
-   - `SendEmailToOwnerScriptTask` → `SetActivityServiceProcessed`
+   - `New notification` → `SendEmailToOwnerScriptTask`
+   - `SendEmailToOwnerScriptTask` → `Terminate`
 7. Сохранить → Опубликовать
 
 ---
@@ -512,11 +523,38 @@ LIMIT 10;
 
 ## 10. Открытые вопросы (требуют решения до реализации)
 
-1. **Ссылка на обращение в email** — нужно знать `BaseUrl` продуктивной системы для формирования прямой ссылки. Где он хранится? (`SysSettings.SiteUrl`? Или захардкодить?)
+1. ~~**Ссылка на обращение в email**~~ → **Закрыт.** `SysSettings.SiteUrl` = `bpm.cti.ru`. Ссылка: `https://{SiteUrl}/Shell/Case/{CaseId}`.
 
-2. **Нужна ли системная настройка для отключения?** — Если инженер не хочет получать email с текстом (только push), нужен ли checkbox? Или для v1 достаточно без настройки?
+2. ~~**Нужна ли системная настройка для отключения?**~~ → **Закрыт.** v1 без настройки. Если понадобится — добавим позже.
 
-3. **Подтвердить поток BPMN** — Перед модификацией открыть процесс в дизайнере и убедиться, что связь `CreateNotificationScriptTask → SetActivityServiceProcessed` действительно прямая (без промежуточных элементов).
+3. ~~**Подтвердить поток BPMN**~~ → **Закрыт.** Диаграмма подтверждена (2026-04-12). `New notification` → `Terminate` — прямая связь. `SetActivityServiceProcessed` на отдельной ветке.
+
+---
+
+## 11. Актуальные значения системных настроек и feature-toggles
+
+**Источник:** выгрузка с продуктивной системы 2026-04-12 → `src/sys-settings.csv`, `src/feature-toggles.csv`
+
+### Релевантные системные настройки
+
+| Code | Значение | Комментарий |
+|------|---------|-------------|
+| `SiteUrl` | `bpm.cti.ru` | Базовый URL для ссылок в email |
+| `SupportServiceEmail` | `servicedesk@cti.ru` | Адрес отправителя |
+| `AutoNotifyOnlyContact` | пусто (false) | CC/BCC **не** обнуляется — наши CC работают |
+| `ClearAssigneeOnCaseReopening` | пусто (false) | При переоткрытии ответственный не сбрасывается |
+
+### Релевантные feature-toggles
+
+| Code | State | Комментарий |
+|------|-------|-------------|
+| `EmailMessageMultiLanguageV2` | **1** (ВКЛ) | ⚠️ Конвейер `EmailWithMacrosManager` **активен**. Расходится с ранним анализом |
+| `UseAsyncEmailSender` | **1** (ВКЛ) | Асинхронная отправка через `AsyncEmailSender.SendAsync()` |
+| `DelayedNotification` | **1** (ВКЛ) | Отложенные уведомления включены |
+| `SendEmailToCaseOnStatusChangeClass` | **1** (ВКЛ) | Уведомления при смене статуса — C#-класс |
+| `RunReopenCaseAndNotifyAssigneeClass` | **1** (ВКЛ) | Уведомление при переоткрытии — C#-класс |
+
+> **Важно:** `EmailMessageMultiLanguageV2 = 1` означает, что процессы уведомлений (например, `UsrSendEmailToSROwnerCustom1`) **уже используют** мультиязычный путь через `EmailWithMacrosManager`. Это не влияет на задачу 2.3 (push-процесс не отправляет email), но важно для задач 2.4 и будущих доработок — invokable-макросы будут работать.
 
 ---
 
