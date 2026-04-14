@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="pt-PT">
-	<Group Type="String">
-		<Items>
-			<Item Name="Caption" Value="Enviar email para o responsavel pelo caso" />
-		</Items>
-	</Group>
-</Resources>

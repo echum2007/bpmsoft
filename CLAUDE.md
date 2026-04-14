@@ -17,12 +17,10 @@ Claude выступает как **аналитик-разработчик BPMSo
 ```
 BPMsoft/
 ├── CLAUDE.md                           ← этот файл (инструкции для Claude Code)
-├── src/CTI/CTI/                        ← РАБОЧИЙ ПАКЕТ (наш код)
-│   ├── Schemas/                        ← 51 схема
-│   ├── Data/, Resources/, SqlScripts/
-│   └── descriptor.json
-├── src/CTI/[зависимости]/             ← заголовки системных пакетов (только чтение)
-├── src/All packages/                   ← экспорт всех пакетов v1.9 (бинарный, только чтение)
+├── src/CTI_2026-04-11_15.14.44/CTI/CTI ← АКТУАЛЬНЫЙ ПАКЕТ (бинарный архив с прода 2026-04-11)
+│   (кастомный формат BPMSoft — читать Python-скриптом из раздела ниже)
+├── src/PKG_BPMSoft_Full_House_1.9.0.14114/  ← все системные пакеты v1.9 (распакованные)
+│   └── <PackageName>/Schemas/, Data/, ...    (только чтение)
 ├── Documentation 1.9/                  ← PDF-документация BPMSoft (только чтение)
 │   ├── Для разработчика/
 │   ├── Для аналитика/
@@ -42,12 +40,17 @@ BPMsoft/
 │       └── skill-system-prompt.md      ← расширенная системная инструкция
 │
 ├── projects/                           ← доработки
-│   ├── cc-notifications/               ← CC-копирование уведомлений (реализовано, не на проде)
-│   │   ├── bpmsoft-cc-notifications-plan.md
+│   ├── cc-notifications/               ← CC-копирование уведомлений (на проде 2026-04-11)
 │   │   ├── CC_IMPLEMENTATION_GUIDE.md
-│   │   └── cc-implementation-code.md   ← готовый код C# (UsrCcAddressResolver + EventListener)
-│   └── service-mode-indicator/         ← Индикатор режима обслуживания (внедрено)
-│       └── SERVICE_MODE_INDICATOR_GUIDE.md
+│   │   └── CC_USER_GUIDE.md
+│   ├── service-mode-indicator/         ← Индикатор режима обслуживания (на проде 2026-04-11)
+│   │   └── SERVICE_MODE_INDICATOR_GUIDE.md
+│   ├── notifications-wave2/            ← Уведомления волна 2 (в разработке)
+│   │   ├── ANALYSIS.md                 ← GAP-анализ, архитектура, рекомендации по задачам
+│   │   ├── TASK_2_3_DESIGN.md          ← задача 2.3: текст письма клиента в уведомлении
+│   │   ├── TASK_2_3_DEPLOY.md
+│   │   └── TASK_2_3_INVESTIGATION.md
+│   └── labor-records/                  ← Трудозатраты (ТЗ v1.5 на обсуждении)
 │
 └── learning/                           ← учёба (на паузе, блоки 0–3 пройдены)
     ├── BPMSOFT_LEARNING_PLAN_v3.1.md
@@ -109,7 +112,7 @@ BPMsoft/
 - `GetColumnValue<T>` на `IDataReader` требует `using BPMSoft.Common`
 - После публикации `EntityEventListener` — **обязательный перезапуск Kestrel**
 - CC-поле в таблице Activity: `CopyRecepient` (именно так, с опечаткой)
-- `src/CTI/CTI/` в репозитории выгружен с **продуктивной системы** (актуален: CC и индикатор перенесены 2026-04-11)
+- `src/CTI_2026-04-11_15.14.44/CTI/CTI` — бинарный архив пакета CTI с прода (2026-04-11). Читать Python-скриптом (см. раздел ниже). Папка `src/CTI/CTI/` удалена — она устарела
 
 ---
 
@@ -118,7 +121,8 @@ BPMsoft/
 | Проект | Статус | Файлы |
 |--------|--------|-------|
 | CC-адреса в уведомлениях | **На проде 2026-04-11** | `projects/cc-notifications/` |
-| Индикатор режима обслуживания | **На проде 2026-04-11** | `projects/service-mode-indicator/SERVICE_MODE_INDICATOR_GUIDE.md` |
+| Индикатор режима обслуживания | **На проде 2026-04-11** | `projects/service-mode-indicator/` |
+| Уведомления волна 2 | **В разработке** (задача 2.3 — приоритет 1) | `projects/notifications-wave2/` |
 | Трудозатраты (labor-records) | ТЗ v1.5 на обсуждении (с 08.04.2026) | `projects/labor-records/` |
 
 ---
@@ -158,17 +162,29 @@ Claude **НЕ вносит изменения напрямую в систему
 
 1. Прочитать `knowledge/references/uids-and-schemas.md` — актуальные UId
 2. Прочитать `knowledge/BPMSOFT_CONFIGURATION_ANALYSIS_3.md` — текущая конфигурация
-3. Проверить `src/CTI/CTI/Schemas/` — существующие схемы
+3. Прочитать актуальный код CTI из `src/CTI_2026-04-11_15.14.44/CTI/CTI` (Python-скрипт, раздел ниже)
 4. **Искать информацию в онлайн-базе знаний** → `/bpmsoft-kb` (Playwright MCP, требует авторизации)
 5. Только если база знаний недоступна — читать PDF из `Documentation 1.9/` через Read
-6. Для поиска по системным пакетам — `src/CTI/[пакет]/` или `src/All packages/`
+6. Для поиска по системным пакетам — `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/`
 
-### Формат бинарных .gz пакетов
+### Чтение бинарного архива CTI
 
-Не tar/zip — кастомный формат BPMSoft:
+`src/CTI_2026-04-11_15.14.44/CTI/CTI` — кастомный формат BPMSoft (уже gunzip'ed):
 `[4 байта LE = длина имени в UTF-16 code units][имя UTF-16LE][4 байта LE = длина контента][контент]`
-Для чтения: `gunzip` → `struct.unpack_from('<I', data, pos)`.
-Расположение: `src/All packages/*.gz` (~190 пакетов).
+
+```python
+import struct, os
+data = open('src/CTI_2026-04-11_15.14.44/CTI/CTI', 'rb').read()
+pos = 0
+while pos < len(data):
+    name_len = struct.unpack_from('<I', data, pos)[0]; pos += 4
+    name = data[pos:pos + name_len * 2].decode('utf-16-le'); pos += name_len * 2
+    content_len = struct.unpack_from('<I', data, pos)[0]; pos += 4
+    content = data[pos:pos + content_len]; pos += content_len
+    # name = относительный путь файла, content = байты
+```
+
+**Системные пакеты** уже распакованы: `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/Schemas/`
 
 ---
 

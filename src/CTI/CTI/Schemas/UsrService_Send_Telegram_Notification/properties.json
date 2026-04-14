@@ -1,7 +1,0 @@
-﻿{
-  "Properties": {
-    "BaseUri": "https://api.telegram.org/",
-    "CreatedInVersion": "1.6.0.200",
-    "Type": "Rest"
-  }
-}

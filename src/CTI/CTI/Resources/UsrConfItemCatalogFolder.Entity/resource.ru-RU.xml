@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="ru-RU">
-	<Group Type="String">
-		<Items>
-			<Item Name="Caption" Value="Группа Конфигурационная единица в сервисной договоре" />
-			<Item Name="EventsProcessSchema.Caption" Value="Бизнес-процесс" />
-		</Items>
-	</Group>
-</Resources>

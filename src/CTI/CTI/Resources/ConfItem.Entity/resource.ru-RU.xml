@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="ru-RU">
-	<Group Type="String">
-		<Items>
-			<Item Name="Columns.UsrVendor.Caption" Value="Вендор" />
-		</Items>
-	</Group>
-</Resources>

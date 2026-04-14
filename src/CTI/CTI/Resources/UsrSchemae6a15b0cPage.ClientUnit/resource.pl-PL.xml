@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="pl-PL">
-	<Group Type="String">
-		<Items>
-			<Item Name="Caption" Value="Czas na nadanie priorytetu" />
-			<Item Name="LocalizableStrings.Caption.Value" Value="Czas na nadanie priorytetu" />
-		</Items>
-	</Group>
-</Resources>

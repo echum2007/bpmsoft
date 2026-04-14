@@ -239,8 +239,8 @@ LIMIT 20;
                                 └─ EmailTemplateUserTask2 → ОТПРАВЛЯЕТ EMAIL инженеру
                                      ├─ Шаблон: 18834f34-0ebc-4392-a313-c21f40ea0d26
                                      ├─ Кому: email ответственного (из Contact)
-                                     ├─ CC: из справочника
-                                     └─ Отправитель: из справочника почтовых ящиков
+                                     ├─ CC: роль «1-я линия» (VwSysFunctionalRole, Id: e142ad2e-d2a5-4702-9e8a-bf3ec94ff10f)
+                                     └─ Отправитель: servicedesk@cti.ru (MailboxSyncSettings, Id: 8cdcb9c4-b1fd-4ce5-adbe-ac65c2aa83c5)
 ```
 
 ### UsrProcess_0c71a12CTI5 — детали
@@ -251,8 +251,11 @@ LIMIT 20;
 - **Пакет:** CTI (6 версий: base, CTI1-CTI5)
 - **Триггер:** StartSignal на изменение Case, фильтр Status = "Получен ответ" (`f063ebbe-fdc6-4982-8431-d8cfa52fedcf`)
 - **Отслеживаемая колонка:** `a71adaea-3464-4dee-bb4f-c7a535450ad7` (StatusId)
-- **Email-шаблон:** `18834f34-0ebc-4392-a313-c21f40ea0d26`
+- **Email-шаблон:** `18834f34-0ebc-4392-a313-c21f40ea0d26` («Добавление нового email по обращению»)
 - **CreateActivity:** false (не создаёт Activity, только отправляет)
+- **Отправитель:** `servicedesk@cti.ru` — MailboxSyncSettings, Id: `8cdcb9c4-b1fd-4ce5-adbe-ac65c2aa83c5` (захардкожен в процессе)
+- **Получатель (Recipient1):** email ответственного инженера — берётся динамически из ReadDataUserTask → Contact.Email
+- **Копия (CopyRecipient1):** роль «1-я линия» — VwSysFunctionalRole, Id: `e142ad2e-d2a5-4702-9e8a-bf3ec94ff10f` (захардкожена в процессе)
 
 ### CaseBroker.ReopenOnCondition() — полный код
 

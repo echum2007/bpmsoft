@@ -2321,3 +2321,4 @@
 [  390511ms] [LOG] 2026-03-09 09:29: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
 [  451338ms] [LOG] 2026-03-09 09:30: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
 [  511946ms] [LOG] 2026-03-09 09:31: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805
+[  572686ms] [LOG] 2026-03-09 09:32: Pull: Websocket connection with push-server closed. Code: 1006, reason:  @ https://edu.bpmsoft.ru/bitrix/js/pull/client/pull.client.js?175497526983861:1805

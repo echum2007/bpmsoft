@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="ru-RU">
-	<Group Type="String">
-		<Items>
-			<Item Name="Caption" Value="Схема раздела: &quot;Сервисные договоры&quot;" />
-			<Item Name="LocalizableStrings.Caption.Value" Value="Сервисные договоры" />
-		</Items>
-	</Group>
-</Resources>

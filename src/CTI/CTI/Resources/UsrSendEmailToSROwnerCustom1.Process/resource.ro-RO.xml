@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Resources Culture="ro-RO">
-	<Group Type="String">
-		<Items>
-			<Item Name="Caption" Value="Transmite email catre cel caruia i s-a asignat cazul" />
-		</Items>
-	</Group>
-</Resources>
