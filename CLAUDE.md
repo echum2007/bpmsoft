@@ -27,17 +27,24 @@ BPMsoft/
 │   ├── Для администратора/
 │   └── Для пользователя/
 │
-├── knowledge/                          ← накопленные знания о платформе
-│   ├── BPMSOFT_CONFIGURATION_ANALYSIS_3.md  ← главный файл знаний
+├── knowledge/                          ← LLM Wiki (накопленные знания о платформе)
+│   ├── INDEX.md                        ← навигационный индекс вики ← ЧИТАТЬ ПЕРВЫМ
+│   ├── WIKI_SCHEMA.md                  ← правила ведения вики, операции Ingest/Lint
 │   ├── DOCUMENTATION_INDEX.md          ← индекс PDF-документации
-│   ├── PROJECT_INSTRUCTIONS.md         ← системная инструкция (исходная)
-│   ├── PROJECT_KNOWLEDGE.md            ← знания о проекте (ч/б старые UId Custom)
-│   └── references/
-│       ├── uids-and-schemas.md         ← актуальные UId схем CTI ← ЧИТАТЬ ПЕРВЫМ
-│       ├── architecture-packages.md    ← стек, пакеты, SLA-архитектура, email
-│       ├── bpmn-processes.md           ← BPMN, Script Task, уведомления
-│       ├── no-code-tools.md            ← мастер разделов, бизнес-правила
-│       └── skill-system-prompt.md      ← расширенная системная инструкция
+│   ├── wiki/                           ← основные страницы знаний
+│   │   ├── platform.md                 ← стек, пакеты, email-архитектура, SLA
+│   │   ├── cti-package.md              ← UId схем CTI, метаданные ← ЧИТАТЬ ВТОРЫМ
+│   │   ├── notifications.md            ← процессы уведомлений, email-архитектура
+│   │   ├── processes.md                ← BPMN, Script Task, EventListener, DCM
+│   │   ├── ui-customization.md         ← мастер разделов, бизнес-правила, JS AMD
+│   │   ├── data-model.md               ← таблицы БД, ESQ, ORM-примеры
+│   │   ├── troubleshooting.md          ← диагностика, известные проблемы
+│   │   └── projects/                   ← страницы по активным проектам
+│   │       ├── cc-notifications.md
+│   │       ├── service-mode-indicator.md
+│   │       ├── notifications-wave2.md
+│   │       └── labor-records.md
+│   └── archive/                        ← устаревшие файлы (с датой)
 │
 ├── projects/                           ← доработки
 │   ├── cc-notifications/               ← CC-копирование уведомлений (на проде 2026-04-11)
@@ -160,12 +167,13 @@ Claude **НЕ вносит изменения напрямую в систему
 
 ### При получении новой задачи
 
-1. Прочитать `knowledge/references/uids-and-schemas.md` — актуальные UId
-2. Прочитать `knowledge/BPMSOFT_CONFIGURATION_ANALYSIS_3.md` — текущая конфигурация
-3. Прочитать актуальный код CTI из `src/CTI_2026-04-11_15.14.44/CTI/CTI` (Python-скрипт, раздел ниже)
-4. **Искать информацию в онлайн-базе знаний** → `/bpmsoft-kb` (Playwright MCP, требует авторизации)
-5. Только если база знаний недоступна — читать PDF из `Documentation 1.9/` через Read
-6. Для поиска по системным пакетам — `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/`
+1. Прочитать `knowledge/INDEX.md` — найти релевантные страницы вики
+2. Прочитать `knowledge/wiki/cti-package.md` — актуальные UId и метаданные CTI
+3. Прочитать релевантные страницы вики (`wiki/notifications.md`, `wiki/platform.md` и др.)
+4. При необходимости — прочитать актуальный код CTI из `src/CTI_2026-04-11_15.14.44/CTI/CTI` (Python-скрипт, раздел ниже)
+5. **Искать информацию в онлайн-базе знаний** → `/bpmsoft-kb` (Playwright MCP, требует авторизации)
+6. Только если база знаний недоступна — читать PDF из `Documentation 1.9/` через Read
+7. Для поиска по системным пакетам — `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/`
 
 ### Чтение бинарного архива CTI
 

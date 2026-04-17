@@ -47,3 +47,17 @@ ehthumbs.db
 
 # VS Code
 .vscode/
+
+# Memory compiler — личные данные (knowledge/ коммитится через memory-compiler/.gitignore)
+memory-compiler/daily/
+memory-compiler/reports/
+memory-compiler/scripts/state.json
+memory-compiler/scripts/last-flush.json
+memory-compiler/scripts/flush.log
+memory-compiler/scripts/compile.log
+memory-compiler/scripts/session-flush-*
+memory-compiler/scripts/flush-context-*
+memory-compiler/.venv/
+memory-compiler/__pycache__/
+memory-compiler/**/__pycache__/
+memory-compiler/**/*.pyc
