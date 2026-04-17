@@ -1,8 +1,8 @@
 # Волна 2 — Уведомления по почте: Анализ и рекомендации
 
-**Дата:** 2026-04-12 (обновлён)  
+**Дата:** 2026-04-12 (обновлён 2026-04-17 — верифицирован по БД mordor)  
 **Автор:** Claude (аналитик-разработчик BPMSoft)  
-**Источники:** Документация BPMSoft v1.9 (edu.bpmsoft.ru), анализ системных пакетов, пакет CTI
+**Источники:** Документация BPMSoft v1.9 (edu.bpmsoft.ru), анализ системных пакетов, пакет CTI, прямые SQL-выгрузки из БД (VwSysProcess.MetaData)
 
 ---
 
@@ -87,10 +87,13 @@
 
 ### 2.1 Наши кастомизации
 
-| Компонент | Что делает |
-|-----------|-----------|
-| `UsrSendNotificationToCaseOwnerCustom1` | BPMN-процесс: уведомление ответственному при получении ответа от клиента |
-| `UsrCaseEmailNotificationEventListener` | EventListener: инжектит CC-адреса (из контракта и аккаунта) в исходящие email-уведомления |
+| Компонент | Что делает | Статус (из БД 2026-04-17) |
+| --- | --- | --- |
+| `UsrSendEmailToSROwnerCustom1` | BPMN: email ответственному при назначении. StartSignal: Case INSERT/UPDATE, Owner IS NOT NULL. При `EmailMessageMultiLanguageV2=1` идёт через `SendMultiLanguageNotification` | Активен, мультиязычный путь |
+| `UsrProcess_0c71a12CTI5` | BPMN: email ответственному при статусе «Получен ответ». Хардкод sender: `servicedesk@cti.ru`, CC: роль «1-линия». Шаблон `18834f34` | Активен |
+| `UsrSendNotificationToCaseOwnerCustom1` | BPMN-замещение `SendNotificationToCaseOwner`: только Reminding (push), email **не отправляет**. **При `RunReopenCaseAndNotifyAssigneeClass=1` не вызывается** — C# путь обходит SubProcess | Активен, но **не вызывается** при текущих настройках |
+| `UsrProcess_send_reg_mail` | BPMN: уведомление клиенту о регистрации обращения | Активен |
+| `UsrCaseEmailNotificationEventListener` | EventListener: инжектит CC-адреса (из Case.UsrCcEmails и ServicePact.UsrCcEmails) в исходящие email | Активен (на проде с 2026-04-11) |
 
 ### 2.2 Что работает из коробки у нас
 
@@ -141,31 +144,60 @@
 
 ## 3. Архитектура email-уведомлений (по коду)
 
-### 3.1 Цепочка отправки
+> **Системные настройки на проде (верифицировано из БД 2026-04-17):**
+>
+> - `EmailMessageMultiLanguageV2` = **1** (мультиязычный путь активен)
+> - `RunReopenCaseAndNotifyAssigneeClass` = **1** (C# путь при входящем письме)
+> - `SupportServiceEmail` = `servicedesk@cti.ru`
+> - `SiteUrl` = `bpm.cti.ru`
 
+### 3.1 Маршруты уведомлений (актуальные)
+
+#### Маршрут A — Назначение ответственного
+
+```text
+Case INSERT/UPDATE, Owner IS NOT NULL
+  → UsrSendEmailToSROwnerCustom1 (StartSignal)
+      → ScriptTask2: EmailMessageMultiLanguageV2=1 → IsCloseAndExit=true
+          → AppScheduler.TriggerJob<SendMultiLanguageNotification>
+              → EmailWithMacrosManager → Activity → UsrCaseEmailNotificationEventListener → SMTP
 ```
-Событие (смена статуса, входящее письмо)
-   |
-   v
-BPMN-процесс (запускается сигналом по Case)
-   |
-   v
-CaseNotificationRule --> выбор шаблона EmailTemplate по состоянию + категории
-   |
-   v
-EmailWithMacrosManager.SendEmail(caseId, templateId)
-   |
-   v
-BaseEmailWithMacrosManager:
-   - GetTemplateBody() --> читает шаблон из EmailTemplate / EmailTemplateLang
-   - MacrosProcessor.GetTextTemplate() --> резолвит макросы
-   |
-   v
-Создаётся Activity (Type=Email)
-   --> UsrCaseEmailNotificationEventListener добавляет CC-адреса
-   |
-   v
-AsyncEmailSender --> IEmailClient --> SMTP/Exchange
+
+#### Маршрут B — Входящий email от клиента (текущий, при RunReopenCaseAndNotifyAssigneeClass=1)
+
+```text
+Activity INSERT (входящий email, CaseId NOT NULL, ServiceProcessed=false)
+  → RunSendNotificationCaseOwnerProcess (StartSignal)
+      → ScriptTask1: IsFeatureEnable("RunReopenCaseAndNotifyAssigneeClass") = true
+      → ExclusiveGateway2: feature=true → ScriptTask2
+          → ReopenCaseAndNotifyAssignee.Run()
+              → создаёт Reminding (push) для ответственного
+              → меняет Case.Status = f063ebbe ("Получен ответ")
+              [UsrSendNotificationToCaseOwnerCustom1 НЕ вызывается — SubProcess обходится]
+  → Case.Status = f063ebbe → UsrProcess_0c71a12CTI5 (StartSignal)
+      → EmailTemplateUserTask2: email ответственному
+          Шаблон: 18834f34, Sender: servicedesk@cti.ru, CC: роль "1-линия" (хардкод)
+```
+
+> ⚠️ **GAP маршрута B:** если обращение в статусе «Новое» или «В работе» — `ReopenCaseAndNotifyAssignee` всё равно меняет статус на «Получен ответ», что запускает `UsrProcess_0c71a12CTI5`. Но если статус уже «Получен ответ» (повторный ответ клиента) — статус не меняется → email **не уходит**.
+
+#### Маршрут C — Смена статуса клиенту (штатный)
+
+```text
+Case.Status меняется
+  → SendEmailToCaseStatusChangedProcess (StartSignal)
+      → CaseNotificationRule (Status + Category → EmailTemplate)
+          → EmailWithMacrosManager → Activity → UsrCaseEmailNotificationEventListener → SMTP
+```
+
+#### Маршрут D — Входящий email при RunReopenCaseAndNotifyAssigneeClass=0 (неактивен на проде)
+
+```text
+Activity INSERT → RunSendNotificationCaseOwnerProcess
+  → ExclusiveGateway2: feature=false → SubProcess1
+      → SendNotificationToCaseOwner (системный) → UsrSendNotificationToCaseOwnerCustom1 (CTI-замещение)
+          → Reminding (push) + смена статуса
+          [email НЕ отправляется — только push]
 ```
 
 ### 3.2 Ключевые компоненты
@@ -203,12 +235,13 @@ protected override void FillActivityWithCaseData(Activity activity, CaseData dat
 }
 ```
 
-**Проблема 1:** текущий BPMN использует `EmailWithMacrosManager`, а не `ExtendedEmailWithMacrosManager`.  
-**Проблема 2:** `data.ParentActivityId` = `Case.ParentActivity` — это **корневое** письмо, а не последний ответ клиента.
+**Проблема 1:** `UsrProcess_0c71a12CTI5` использует `EmailTemplateUserTask` напрямую (не через `EmailWithMacrosManager`/`ExtendedEmailWithMacrosManager`) — поэтому `ExtendedEmailWithMacrosManager` здесь нерелевантен.
+
+**Проблема 2:** `data.ParentActivityId` = `Case.ParentActivity` — это **корневое** письмо, а не последний ответ клиента. Применимо к маршруту C (клиентские уведомления через `CaseNotificationRule`).
 
 Также в справочнике CaseNotificationRule есть поле **«Процитировать оригинальный email»** — но оно работает через тот же механизм `ParentActivity` и тоже даёт корневое письмо.
 
-> **Уточнение (2026-04-12):** Feature-toggle `EmailMessageMultiLanguageV2` = **1 (включён)** на проде. Конвейер `EmailWithMacrosManager` **активен** для процессов, которые через него идут (например, `UsrSendEmailToSROwnerCustom1`). Однако процесс push-уведомления `UsrSendNotificationToCaseOwnerCustom1` не отправляет email через этот конвейер — он создаёт только Reminding.
+> **Статус (верифицировано из БД 2026-04-17):** `EmailMessageMultiLanguageV2=1` — мультиязычный путь активен. `UsrSendEmailToSROwnerCustom1` идёт через `SendMultiLanguageNotification` → `EmailWithMacrosManager`. `UsrProcess_0c71a12CTI5` использует `EmailTemplateUserTask` напрямую — мимо `EmailWithMacrosManager`. `UsrSendNotificationToCaseOwnerCustom1` при текущих настройках **не вызывается** (см. маршрут D выше).
 
 ---
 

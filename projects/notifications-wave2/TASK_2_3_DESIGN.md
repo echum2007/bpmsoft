@@ -376,6 +376,8 @@ LIMIT 5;
 
 ## 8. Что НЕ трогаем
 
-- `UsrProcess_0c71a12CTI5` — оставляем работать параллельно до стабилизации
-- `ReopenCaseAndNotifyAssignee` — системный класс, не модифицируем
-- `UsrSendNotificationToCaseOwnerCustom1` — не трогаем (при toggle=1 не используется)
+- `UsrProcess_0c71a12CTI5` — оставляем работать параллельно до стабилизации нового механизма
+- `ReopenCaseAndNotifyAssignee` — системный C# класс, не модифицируем
+- `UsrSendNotificationToCaseOwnerCustom1` — не трогаем; при `RunReopenCaseAndNotifyAssigneeClass=1` (текущее значение на проде) этот процесс **не вызывается** — `RunSendNotificationCaseOwnerProcess` идёт напрямую в C# через `ScriptTask2`, минуя `SubProcess1`
+
+> ⚠️ **Важно для дублирования:** новый `UsrSendEmailToCaseOwnerOnReplyProcess` будет срабатывать на **каждый** входящий Activity. `UsrProcess_0c71a12CTI5` срабатывает только при смене статуса на «Получен ответ». При первом ответе клиента оба процесса сработают → два email. Решение: после стабилизации деактивировать `UsrProcess_0c71a12CTI5` или добавить фильтр дедупликации.

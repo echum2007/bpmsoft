@@ -174,10 +174,12 @@ ScriptTask2 → AppScheduler.TriggerJob<SendMultiLanguageNotification>
 
 | Настройка | Код | Значение | Влияние |
 |---|---|---|---|
-| Email службы поддержки | `SupportServiceEmail` | ? | Адрес отправителя |
-| Только контакту | `AutoNotifyOnlyContact` | **false** ✅ | При false CC не обнуляется |
-| Мультиязычные email | `EmailMessageMultiLanguage` | **false** ❌ | Старый BPMN-путь активен |
-| Мультиязычные email v2 | `EmailMessageMultiLanguageV2` | **false** ❌ | Старый BPMN-путь активен |
+| Email службы поддержки | `SupportServiceEmail` | `servicedesk@cti.ru` | Адрес отправителя |
+| Сайт системы | `SiteUrl` | `bpm.cti.ru` | Ссылки в письмах |
+| Мультиязычные email v2 | `EmailMessageMultiLanguageV2` | **1 (включён)** ✅ | Путь B (мультиязычный) активен |
+| Переоткрытие и уведомление | `RunReopenCaseAndNotifyAssigneeClass` | **1 (включён)** ✅ | C# путь через ReopenCaseAndNotifyAssignee активен, BPMN-путь SendNotificationToCaseOwner обходится |
+
+> ⚠️ **Важно:** `EmailMessageMultiLanguageV2=1` — путь B активен. Это означает `UsrSendEmailToSROwnerCustom1` использует `SendMultiLanguageNotification`, а не старый BPMN AddData+Script. Вики требовала уточнения — данные из БД mordor 2026-04-17.
 
 ---
 
