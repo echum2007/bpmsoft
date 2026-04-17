@@ -1,578 +1,381 @@
-# Зада��а 2.3 — Текст письма клиента в уведомлении инженеру
+# Задача 2.3 — Текст письма клиента в уведомлении сотруднику
 
-**Статус:** ТРЕБУЕТ ПЕРЕРАБОТКИ (см. ниже)  
-**Дата:** 2026-04-12 (создан) / 2026-04-15 (обновлён)  
-**Приоритет:** 1 (первая задача Волны 2)  
-**Автор:** Claude (аналитик-разработчик BPMSoft)
-
-> **15.04.2026 — Смена архитектурного подхода:**
-> По результатам обсуждения с командой принято решение строить единый механизм
-> уведомления сотрудников (`UsrEmployeeNotificationManager` + справочник
-> `UsrEmployeeNotificationRule`) вместо модификации отдельных BPMN-процессов.
->
-> Дизайн ниже (Вариант E: C#-хелпер + ScriptTask) **устарел**:
-> 1. Предполагал модификацию BPMN `UsrSendNotificationToCaseOwnerCustom1`, который на проде не выполняется (toggle=1)
-> 2. Не решал проблему фильтра по статусам: email не уходил из «Новое»/«В работе»
-> 3. Не масштабировался на другие события (2.2, 2.4, 2.1)
->
-> Новый дизайн — в `ANALYSIS.md`, раздел 5.
-> Задачи 2.6 (текст ответа инженера клиенту) и 2.7 (имя инженера) добавлены по обратной связи команды.
+**Статус:** Готово к реализации
+**Дата:** 17.04.2026
+**Архитектурное решение принято:** 17.04.2026
 
 ---
 
 ## 1. Проблема
 
-Когда клиент отвечает на обращение по email, инженер получает **push-уведомление** в системе BPMSoft:
+Когда клиент отвечает на обращение по email:
 
-> «Получен новый email по обращению №XXX»
+- Сотрудник получает push-уведомление «Получен новый email по обращению №...» — текста нет
+- Email-уведомление уходит **только если статус обращения изменился** на «Получен ответ» (через `UsrProcess_0c71a12CTI5`)
+- Если обращение в «Новое» или «В работе» — статус не меняется → **email не уходит совсем**
+- Шаблон `18834f34` не содержит текст клиентского письма
 
-Текста письма в уведомлении нет. Чтобы узнать, что написал клиент, инженер должен:
-1. Открыть BPMSoft
-2. Найти обращение
-3. Перейти на вкладку «Хронология» или «Email»
-4. Прочитать письмо
+## 2. Решение
 
-Это **3–5 минут** на каждое уведомление. При 10–20 ответах в день — ощутимые потери. Инженеры откладывают реакцию до момента, когда «накопится», что ухудшает SLA.
+По аналогии с клиентским механизмом (`SendEmailToCaseOnStatusChange` + `CaseNotificationRule`) создаём четыре новых компонента в пакете CTI.
 
----
-
-## 2. Текущее состояние
-
-### 2.1 Что происходит при получении письма от клиента
-
-```
-Входящий email → Activity (Type=Email, MessageType=Incoming, CaseId=...)
-       │
-       ├─ UsrActivityCcEventListener:OnSaving()
-       │    └─ Сохраняет CC-адреса из письма в Case.UsrCcEmails
-       │
-       ├─ [Платформа] Связывает Activity с Case, меняет статус на «Получен ответ»
-       │
-       └─ Сигнал запускает BPMN: UsrSendNotificationToCaseOwnerCustom1
-            ├─ ReadCaseData → читает Case (OwnerId, Number)
-            ├─ ExclusiveGateway1 → проверка условий
-            ├─ CreateNotificationScriptTask → создаёт Reminding (push)
-            │    └─ SubjectCaption = "Получен новый email по обращению №{Number}"
-            ├─ SetActivityServiceProcessed → Activity.ServiceProcessed = false
-            └─ ChangeDataUserTask → обновление статуса
-```
-
-**Ключевое ограничение:** процесс `UsrSendNotificationToCaseOwnerCustom1` создаёт только **push-уведомление** (запись в таблице `Reminding`). Никакого email инженеру не отправляется.
-
-### 2.2 Компоненты, связанные с задачей
-
-| Компонент | Пакет | Что делает | Релевантность |
-|-----------|-------|-----------|---------------|
-| `UsrSendNotificationToCaseOwnerCustom1` | CTI | BPMN: push-уведомление при новом email | **Точка расширения** |
-| `UsrSendEmailToSROwnerCustom1` | CTI | BPMN: email инженеру при назначении | Образец отправки email |
-| `UsrActivityCcEventListener` | CTI | EventListener: CC-адреса | Автоматически добавит CC |
-| `UsrCcAddressResolver` | CTI | Хелпер: чтение/мерж CC | Переиспользуем |
-| `ActivityEmailSender` | Платформа | Отправка email по Activity | Механизм отправки |
-| `AsyncEmailSender` | CaseService | Асинхронная отправка | Альтернативный механизм |
-
-### 2.3 Параметры процесса `UsrSendNotificationToCaseOwnerCustom1`
-
-| Параметр | Тип | Назначение |
-|----------|-----|-----------|
-| `ActivityId` | Guid | ID входящего письма (Activity) |
-| `CaseOwnerId` | Guid | ID ответственного (из Case.OwnerId) |
-| `CaseId` | Guid | ID обращения |
-| `SubjectCaption` | String | Текст push-уведомления |
-| `AssigneeIsCleared` | Boolean | Флаг очистки ответственного при переоткрытии |
+Новый BPMN стреляет напрямую на Activity INSERT — **без зависимости от смены статуса**.
 
 ---
 
-## 3. Цель
+## 3. Компоненты
 
-Инженер получает **email-уведомление** с текстом последнего письма клиента. Формат:
+### 3.1 `UsrLatestCustomerEmailGenerator` (C# — Исходный код)
 
-```
-Тема: [Обращение №INC-001234] Новый ответ от клиента
-От: noreply@support.cti.ru (служба поддержки)
-Кому: engineer@cti.ru
-Копия: (CC из Case.UsrCcEmails + ServicePact.UsrCcEmails — автоматически)
+Invokable-макрос: читает последний входящий email клиента по CaseId и возвращает HTML-тело.
 
-─────────────────────────────────────────────
-По обращению №INC-001234 «Не работает VPN» 
-получен новый ответ от клиента Иванов Иван:
-─────────────────────────────────────────────
-
-> Добрый день!
-> Проблема повторилась после перезагрузки.
-> Ошибка: "Connection timeout" при подключении к vpn.company.ru.
-> Скриншот во вложении.
-
-─────────────────────────────────────────────
-Открыть обращение: https://bpmsoft.cti.ru/Shell/Case/...
-```
-
-### Критерии приёмки
-
-1. При получении входящего email по обращению инженер (Case.Owner) получает email с текстом письма клиента
-2. CC-адреса из обращения и договора подставляются автоматически (через существующий `UsrActivityCcEventListener`)
-3. Если у обращения нет ответственного или у ответственного нет email — уведомление не отправляется (без ошибки)
-4. Тема письма содержит номер обращения для группировки в почтовом клиенте
-5. Push-уведомление продолжает работать как раньше (не ломаем существующее)
-
----
-
-## 4. Рассмотренные варианты
-
-### Вариант A: Invokable-макрос `[#@Invoke.UsrLastCustomerEmailGenerator#]`
-
-**Идея:** Создать C#-класс, реализующий `IMacrosInvokable`, зарегистрировать как макрос, добавить в шаблон email.
-
-**Отклонён.** Хотя `EmailMessageMultiLanguageV2` = 1 (включён на проде) и конвейер `EmailWithMacrosManager` активен, это не помогает: процесс `UsrSendNotificationToCaseOwnerCustom1` не отправляет email — он создаёт только push-уведомление (Reminding). Invokable-макросы работают внутри `EmailWithMacrosManager`, а у нас нет email-отправки, в которую их можно встроить. Чтобы использовать макрос, пришлось бы сначала создать email-отправку — а это и есть наша задача.
-
-### Вариант B: Опция «Процитировать оригинальный email» в CaseNotificationRule
-
-**Идея:** Включить флаг в правиле уведомлений → `ExtendedEmailWithMacrosManager` добавит тело письма.
-
-**Отклонён.** Две проблемы:
-1. `ExtendedEmailWithMacrosManager` берёт тело из `Case.ParentActivity` — это **корневое** письмо (первое обращение), а не последний ответ клиента.
-2. Тот же конвейер `EmailWithMacrosManager` не активен из-за выключенных feature-toggles.
-
-### Вариант C: EventListener на Activity (OnInserted)
-
-**Идея:** Новый EventListener, который при сохранении входящего email создаёт исходящий email инженеру.
-
-**Отклонён.** Создание Activity внутри EventListener на Activity — рискованно:
-- Вложенные транзакции могут конфликтовать
-- Новая Activity вызовет цепочку EventListener-ов (CC, другие)
-- Процесс импорта email может быть чувствителен к задержкам в EventListener
-
-### Вариант D: Новый BPMN-процесс (параллельный)
-
-**Идея:** Создать отдельный BPMN, срабатывающий на тот же сигнал (новый email по обращению).
-
-**Отклонён.** Избыточная сложность: два процесса на одно событие, синхронизация, дублирование логики чтения Case.
-
-### ✅ Вариант E: C#-хелпер + ScriptTask в существующем BPMN (рекомендуемый)
-
-**Идея:**
-1. Создать C#-класс `UsrNewEmailNotifier` — вся логика формирования и отправки email
-2. Добавить один ScriptTask в `UsrSendNotificationToCaseOwnerCustom1` — вызов `UsrNewEmailNotifier.NotifyOwner()`
-
-**Преимущества:**
-- Минимальная модификация BPMN (один элемент)
-- Вся логика в тестируемом C#-классе
-- CC-адреса подставятся автоматически (через существующий `UsrActivityCcEventListener`)
-- Не зависит от feature-toggles
-- Push-уведомление продолжает работать
-
----
-
-## 5. Детальный дизайн
-
-### 5.1 Компонент 1: `UsrNewEmailNotifier` (C# — Исходный код)
-
-**Назначение:** Читает входящее письмо, формирует email-уведомление инженеру, отправляет.
+Паттерн — точно как `SymptomsGenerator` (CaseService, UId `329987ff-8d3d-43d0-9d20-f67e71c9e0b6`).
 
 ```csharp
 namespace BPMSoft.Configuration
 {
     using System;
-    using System.Text;
+    using System.Collections.Generic;
     using BPMSoft.Common;
     using BPMSoft.Core;
     using BPMSoft.Core.DB;
-    using BPMSoft.Core.Entities;
-    using BPMSoft.Core.Factories;
-    using BPMSoft.Configuration;
 
-    /// <summary>
-    /// Отправляет email-уведомление ответственному по обращению
-    /// с текстом последнего письма клиента.
-    /// </summary>
-    public class UsrNewEmailNotifier
+    public class UsrLatestCustomerEmailGenerator : IMacrosInvokable
     {
-        private static readonly Guid EmailActivityTypeId =
-            new Guid("e2831dec-cfc0-df11-b00f-001d60e938c6");
-        private static readonly Guid OutgoingMessageTypeId =
-            new Guid("7f6d3f94-f36b-1410-068c-20cf30b39373");
+        public UserConnection UserConnection { get; set; }
 
-        /// <summary>
-        /// Основной метод: отправить уведомление ответственному.
-        /// Вызывается из ScriptTask BPMN-процесса.
-        /// </summary>
-        /// <param name="userConnection">Подключение пользователя</param>
-        /// <param name="caseId">ID обращения</param>
-        /// <param name="incomingActivityId">ID входящего письма (Activity)</param>
-        /// <returns>true если email отправлен, false если пропущен</returns>
-        public static bool NotifyOwner(
-            UserConnection userConnection, Guid caseId, Guid incomingActivityId)
+        // Паттерн точно как SymptomsGenerator: аргумент = KeyValuePair<string, Guid>
+        private Guid GetCaseId(object argument)
         {
-            if (caseId == Guid.Empty || incomingActivityId == Guid.Empty)
-                return false;
-
-            // 1. Читаем данные обращения и ответственного
-            var caseData = ReadCaseData(userConnection, caseId);
-            if (caseData == null || string.IsNullOrEmpty(caseData.OwnerEmail))
-                return false;
-
-            // 2. Читаем тело входящего письма
-            var emailData = ReadIncomingEmail(userConnection, incomingActivityId);
-            if (emailData == null || string.IsNullOrEmpty(emailData.Body))
-                return false;
-
-            // 3. Получаем адрес отправителя (почтовый ящик поддержки)
-            var senderEmail = Core.Configuration.SysSettings
-                .GetValue<string>(userConnection, "SupportServiceEmail", string.Empty);
-            if (string.IsNullOrEmpty(senderEmail))
-                return false;
-
-            // 4. Формируем email
-            string subject = string.Format(
-                "[Обращение №{0}] Новый ответ от клиента",
-                caseData.Number);
-            string body = BuildEmailBody(userConnection, caseData, emailData, caseId);
-
-            // 5. Создаём Activity (email) и отправляем
-            var activityId = CreateEmailActivity(
-                userConnection, subject, body, senderEmail,
-                caseData.OwnerEmail, caseId);
-            if (activityId == Guid.Empty)
-                return false;
-
-            SendEmail(userConnection, activityId);
-            return true;
+            var kv = argument as KeyValuePair<string, Guid>?;
+            return kv.HasValue ? kv.Value.Value : Guid.Empty;
         }
 
-        #region Чтение данных
-
-        private static CaseInfo ReadCaseData(UserConnection uc, Guid caseId)
+        public string GetMacrosValue(object arguments)
         {
-            var select = new Select(uc)
-                    .Column("Case", "Number")
-                    .Column("Case", "Subject")
-                    .Column("Case", "OwnerId")
-                    .Column("Contact", "Email").As("OwnerEmail")
-                    .Column("Contact", "Name").As("OwnerName")
-                .From("Case")
-                .LeftOuterJoin("Contact")
-                    .On("Case", "OwnerId").IsEqual("Contact", "Id")
-                .Where("Case", "Id").IsEqual(Column.Parameter(caseId))
+            var caseId = GetCaseId(arguments);
+            if (caseId == Guid.Empty)
+                return string.Empty;
+
+            var select = new Select(UserConnection)
+                    .Column("a", "Body")
+                .From("Activity").As("a")
+                .InnerJoin("ActivityType").As("at")
+                    .On("a", "TypeId").IsEqual("at", "Id")
+                .Where("a", "CaseId").IsEqual(Column.Parameter(caseId))
+                    .And("at", "Code").IsEqual(Column.Const("Email"))
+                    .And("a", "IsHtmlBody").IsEqual(Column.Const(true))
+                .OrderByDesc("a", "CreatedOn")
                 as Select;
 
-            using (var dbExec = uc.EnsureDBConnection())
+            select.Top(1);
+
+            using (var dbExec = UserConnection.EnsureDBConnection())
             using (var reader = select.ExecuteReader(dbExec))
             {
-                if (!reader.Read()) return null;
-                return new CaseInfo {
-                    Number = reader.GetColumnValue<string>("Number") ?? string.Empty,
-                    Subject = reader.GetColumnValue<string>("Subject") ?? string.Empty,
-                    OwnerId = reader.GetColumnValue<Guid>("OwnerId"),
-                    OwnerEmail = reader.GetColumnValue<string>("OwnerEmail") ?? string.Empty,
-                    OwnerName = reader.GetColumnValue<string>("OwnerName") ?? string.Empty
-                };
-            }
-        }
+                if (!reader.Read())
+                    return string.Empty;
 
-        private static EmailInfo ReadIncomingEmail(UserConnection uc, Guid activityId)
-        {
-            var select = new Select(uc)
-                    .Column("Activity", "Title")
-                    .Column("Activity", "Body")
-                    .Column("Activity", "Sender")
-                .From("Activity")
-                .Where("Activity", "Id").IsEqual(Column.Parameter(activityId))
-                as Select;
-
-            using (var dbExec = uc.EnsureDBConnection())
-            using (var reader = select.ExecuteReader(dbExec))
-            {
-                if (!reader.Read()) return null;
                 var body = reader.GetColumnValue<string>("Body") ?? string.Empty;
-                // Ограничиваем размер тела письма (защита от огромных email)
-                if (body.Length > 100_000)
-                    body = body.Substring(0, 100_000) + "\n<p><i>... (текст обрезан)</i></p>";
-                return new EmailInfo {
-                    Title = reader.GetColumnValue<string>("Title") ?? string.Empty,
-                    Body = body,
-                    Sender = reader.GetColumnValue<string>("Sender") ?? string.Empty
-                };
+                if (body.Length > 50_000)
+                    body = body.Substring(0, 50_000) + "<p><i>... (текст обрезан)</i></p>";
+                return body;
             }
         }
-
-        #endregion
-
-        #region Формирование email
-
-        private static string BuildEmailBody(
-            UserConnection uc, CaseInfo c, EmailInfo e, Guid caseId)
-        {
-            var senderDisplay = ExtractDisplayName(e.Sender);
-            var siteUrl = Core.Configuration.SysSettings
-                .GetValue<string>(uc, "SiteUrl", string.Empty).TrimEnd('/');
-            var caseLink = !string.IsNullOrEmpty(siteUrl)
-                ? string.Format("https://{0}/Shell/Case/{1}", siteUrl, caseId)
-                : string.Empty;
-
-            var sb = new StringBuilder();
-            sb.AppendLine("<div style=\"font-family: Arial, sans-serif; font-size: 14px;\">");
-            sb.AppendFormat(
-                "<p>По обращению <b>№{0}</b> «{1}» получен новый ответ от <b>{2}</b>:</p>",
-                System.Net.WebUtility.HtmlEncode(c.Number),
-                System.Net.WebUtility.HtmlEncode(c.Subject),
-                System.Net.WebUtility.HtmlEncode(senderDisplay));
-            sb.AppendLine("<hr style=\"border: none; border-top: 1px solid #ccc;\">");
-            sb.AppendLine("<blockquote style=\"padding: 12px 16px; background: #f9f9f9; " +
-                "border-left: 4px solid #2196F3; margin: 12px 0;\">");
-            sb.AppendLine(e.Body); // HTML-тело письма клиента
-            sb.AppendLine("</blockquote>");
-            sb.AppendLine("<hr style=\"border: none; border-top: 1px solid #ccc;\">");
-            if (!string.IsNullOrEmpty(caseLink))
-            {
-                sb.AppendFormat(
-                    "<p><a href=\"{0}\" style=\"color: #2196F3;\">Открыть обращение в системе</a></p>",
-                    caseLink);
-            }
-            sb.AppendFormat(
-                "<p style=\"font-size: 12px; color: #666;\">Ответственный: {0}</p>",
-                System.Net.WebUtility.HtmlEncode(c.OwnerName));
-            sb.AppendLine("</div>");
-            return sb.ToString();
-        }
-
-        private static string ExtractDisplayName(string sender)
-        {
-            if (string.IsNullOrEmpty(sender)) return "клиента";
-            // Формат: "Display Name <email@example.com>" или просто "email@example.com"
-            var idx = sender.IndexOf('<');
-            if (idx > 0)
-                return sender.Substring(0, idx).Trim().Trim('"');
-            return sender.Trim();
-        }
-
-        #endregion
-
-        #region Создание и отправка Activity
-
-        private static Guid CreateEmailActivity(
-            UserConnection uc, string subject, string body,
-            string sender, string recipient, Guid caseId)
-        {
-            var schema = uc.EntitySchemaManager.GetInstanceByName("Activity");
-            var activity = schema.CreateEntity(uc);
-            activity.SetDefColumnValues();
-            activity.SetColumnValue("TypeId", EmailActivityTypeId);
-            activity.SetColumnValue("MessageTypeId", OutgoingMessageTypeId);
-            activity.SetColumnValue("Title", subject);
-            activity.SetColumnValue("Body", body);
-            activity.SetColumnValue("Sender", sender);
-            activity.SetColumnValue("Recepient", recipient);
-            activity.SetColumnValue("CaseId", caseId);
-            activity.SetColumnValue("IsHtmlBody", true);
-            // CC будет добавлен автоматически через UsrActivityCcEventListener
-            if (!activity.Save())
-                return Guid.Empty;
-            return activity.PrimaryColumnValue;
-        }
-
-        private static void SendEmail(UserConnection uc, Guid activityId)
-        {
-            if (uc.GetIsFeatureEnabled("UseAsyncEmailSender"))
-            {
-                var asyncSender = new AsyncEmailSender(uc);
-                asyncSender.SendAsync(activityId);
-            }
-            else
-            {
-                var factory = ClassFactory.Get<EmailClientFactory>(
-                    new ConstructorArgument("userConnection", uc));
-                var sender = new ActivityEmailSender(factory, uc);
-                sender.Send(activityId);
-            }
-        }
-
-        #endregion
-
-        #region DTO
-
-        private class CaseInfo
-        {
-            public string Number;
-            public string Subject;
-            public Guid OwnerId;
-            public string OwnerEmail;
-            public string OwnerName;
-        }
-
-        private class EmailInfo
-        {
-            public string Title;
-            public string Body;
-            public string Sender;
-        }
-
-        #endregion
     }
 }
 ```
 
-### 5.2 Компонент 2: ScriptTask в BPMN-процессе
+### 3.2 `UsrSendEmailToCaseOwnerOnReply` (C# — Исходный код)
 
-**Процесс:** `UsrSendNotificationToCaseOwnerCustom1`  
-**Действие:** Добавить элемент **ScriptTask** с именем `SendEmailToOwnerScriptTask`
-
-**Код ScriptTask:**
+Основной класс-обработчик. По аналогии с `SendEmailToCaseOnStatusChange` (CaseService).
 
 ```csharp
-var caseId = ReadCaseData.ResultEntity.PrimaryColumnValue;
-UsrNewEmailNotifier.NotifyOwner(UserConnection, caseId, ActivityId);
-return true;
+namespace BPMSoft.Configuration
+{
+    using System;
+    using global::Common.Logging;
+    using BPMSoft.Common;
+    using BPMSoft.Core;
+    using BPMSoft.Core.DB;
+    using BPMSoft.Core.Entities;
+
+    public class UsrSendEmailToCaseOwnerOnReply
+    {
+        private static readonly ILog _log = LogManager.GetLogger("EmailCases");
+
+        private EmailWithMacrosManager _emailWithMacrosManager;
+
+        public EmailWithMacrosManager EmailWithMacrosManager {
+            get => _emailWithMacrosManager ?? (_emailWithMacrosManager = new EmailWithMacrosManager(UserConnection));
+            set => _emailWithMacrosManager = value;
+        }
+
+        public UserConnection UserConnection { get; private set; }
+
+        public UsrSendEmailToCaseOwnerOnReply(UserConnection userConnection)
+        {
+            UserConnection = userConnection;
+        }
+
+        /// <summary>
+        /// Вызывается из ScriptTask BPMN-процесса.
+        /// </summary>
+        public bool Run(Guid activityId)
+        {
+            if (activityId == Guid.Empty)
+                return false;
+
+            var caseData = ReadCaseByActivity(activityId);
+            if (caseData == null || caseData.OwnerId == Guid.Empty)
+                return false;
+
+            var ownerEmail = ReadContactEmail(caseData.OwnerId);
+            if (ownerEmail.IsNullOrEmpty())
+                return false;
+
+            var rule = ReadNotificationRule(caseData.StatusId, caseData.CategoryId);
+            if (rule == null || rule.EmailTemplateId == Guid.Empty)
+                return false;
+
+            var senderEmail = Core.Configuration.SysSettings
+                .GetValue<string>(UserConnection, "SupportServiceEmail", string.Empty);
+            if (senderEmail.IsNullOrEmpty())
+                return false;
+
+            try
+            {
+                EmailWithMacrosManager.SendEmailFromTo(
+                    caseData.CaseId, rule.EmailTemplateId, senderEmail, ownerEmail);
+            }
+            catch (Exception ex)
+            {
+                _log.ErrorFormat(
+                    "UsrSendEmailToCaseOwnerOnReply: error sending email. CaseId={0}, tplId={1}. {2}",
+                    caseData.CaseId, rule.EmailTemplateId, ex.Message);
+                return false;
+            }
+            return true;
+        }
+
+        private CaseData ReadCaseByActivity(Guid activityId)
+        {
+            var select = new Select(UserConnection)
+                    .Column("a", "CaseId")
+                    .Column("c", "OwnerId")
+                    .Column("c", "StatusId")
+                    .Column("c", "CategoryId")
+                .From("Activity").As("a")
+                .InnerJoin("Case").As("c")
+                    .On("a", "CaseId").IsEqual("c", "Id")
+                .Where("a", "Id").IsEqual(Column.Parameter(activityId))
+                as Select;
+
+            using (var dbExec = UserConnection.EnsureDBConnection())
+            using (var reader = select.ExecuteReader(dbExec))
+            {
+                if (!reader.Read()) return null;
+                return new CaseData {
+                    CaseId = reader.GetColumnValue<Guid>("CaseId"),
+                    OwnerId = reader.GetColumnValue<Guid>("OwnerId"),
+                    StatusId = reader.GetColumnValue<Guid>("StatusId"),
+                    CategoryId = reader.GetColumnValue<Guid>("CategoryId")
+                };
+            }
+        }
+
+        private string ReadContactEmail(Guid contactId)
+        {
+            var esq = new EntitySchemaQuery(UserConnection.EntitySchemaManager, "Contact");
+            esq.AddColumn("Email");
+            var contact = esq.GetEntity(UserConnection, contactId);
+            return contact?.GetTypedColumnValue<string>("Email") ?? string.Empty;
+        }
+
+        private NotificationRule ReadNotificationRule(Guid statusId, Guid categoryId)
+        {
+            var esq = new EntitySchemaQuery(UserConnection.EntitySchemaManager, "UsrEmployeeNotificationRule");
+            esq.AddColumn("UsrEmailTemplate");
+            esq.Filters.Add(esq.CreateFilterWithParameters(
+                FilterComparisonType.Equal, "UsrIsActive", true));
+            // Фильтр: статус совпадает ИЛИ не задан
+            var statusFilter = esq.CreateFilterGroup();
+            statusFilter.LogicalOperation = LogicalOperationStrict.Or;
+            statusFilter.Add(esq.CreateFilterWithParameters(
+                FilterComparisonType.Equal, "UsrCaseStatus", statusId));
+            statusFilter.Add(esq.CreateIsNullFilter("UsrCaseStatus"));
+            esq.Filters.Add(statusFilter);
+            // Фильтр: категория совпадает ИЛИ не задана
+            var categoryFilter = esq.CreateFilterGroup();
+            categoryFilter.LogicalOperation = LogicalOperationStrict.Or;
+            categoryFilter.Add(esq.CreateFilterWithParameters(
+                FilterComparisonType.Equal, "UsrCaseCategory", categoryId));
+            categoryFilter.Add(esq.CreateIsNullFilter("UsrCaseCategory"));
+            esq.Filters.Add(categoryFilter);
+
+            var collection = esq.GetEntityCollection(UserConnection);
+            if (collection.Count == 0) return null;
+            return new NotificationRule {
+                EmailTemplateId = collection[0].GetTypedColumnValue<Guid>("UsrEmailTemplateId")
+            };
+        }
+
+        private class CaseData
+        {
+            public Guid CaseId;
+            public Guid OwnerId;
+            public Guid StatusId;
+            public Guid CategoryId;
+        }
+
+        private class NotificationRule
+        {
+            public Guid EmailTemplateId;
+        }
+    }
+}
 ```
 
-**Размещение в процессе (подтверждено по диаграмме 2026-04-12):**
+### 3.3 `UsrEmployeeNotificationRule` (объект — справочник)
 
+Создаётся в дизайнере объекта CTI.
+
+| Колонка BPMSoft | Тип | Обязательное | Назначение |
+| --- | --- | --- | --- |
+| `UsrCaseStatusId` | Lookup → CaseStatus | Нет | Статус обращения (NULL = любой) |
+| `UsrCaseCategoryId` | Lookup → CaseCategory | Нет | Категория обращения (NULL = любая) |
+| `UsrEmailTemplateId` | Lookup → EmailTemplate | Да | Шаблон email |
+| `UsrRuleUsageId` | Lookup → CaseNotificationRuleUsage | Нет | Сразу / С задержкой / Не используется |
+| `UsrIsActive` | Boolean | Да | Активно (по умолчанию true) |
+
+Первая запись данных:
+
+| UsrCaseStatusId | UsrCaseCategoryId | UsrEmailTemplateId | UsrIsActive |
+| --- | --- | --- | --- |
+| NULL (любой) | NULL (любая) | `18834f34-...` | true |
+
+### 3.4 `UsrSendEmailToCaseOwnerOnReplyProcess` (BPMN-процесс)
+
+**StartSignal:** Activity INSERT
+
+- `TypeId` = `e2831dec-cfc0-df11-b00f-001d60e938c6` (Email)
+- `CaseId` IS NOT NULL
+- `ServiceProcessed` = false
+- Фильтр на не авто-ответ (аналогично `RunSendNotificationCaseOwnerProcess`)
+
+**Структура:**
+
+```text
+StartSignal (Activity INSERT)
+  |
+  v
+[ScriptTask: SendEmailScriptTask]
+  UsrSendEmailToCaseOwnerOnReply notifier =
+      new UsrSendEmailToCaseOwnerOnReply(UserConnection);
+  notifier.Run(Get<Guid>("ActivityId"));
+  return true;
+  |
+  v
+Terminate
 ```
-... → New notification → SendEmailToOwnerScriptTask → Terminate
-        ↑ push-уведомление       ↑ email инженеру        ↑ конец процесса
-```
 
-Новый ScriptTask вставляется **между** `New notification` (CreateNotificationScriptTask) и `Terminate`.
-
-> **Важно:** элемент «Обновить признак обработки в активности» (SetActivityServiceProcessed) находится на **другой ветке** процесса (ветка «Granted» — обработка смены статуса). Он НЕ связан напрямую с `New notification`.
+> **Feature-toggle:** при желании обернуть в `if (UserConnection.GetIsFeatureEnabled("UsrSendEmailToCaseOwnerOnReplyClass"))` — для возможности быстрого отключения без остановки процесса.
 
 ---
 
-## 6. Как работает CC (автоматически)
+## 4. Регистрация макроса в EmailTemplateMacros
 
-При вызове `activity.Save()` в методе `CreateEmailActivity`:
-
-1. Срабатывает `UsrActivityCcEventListener.OnSaving()`
-2. Определяет: это исходящий email, привязанный к Case
-3. Вызывает `UsrCcAddressResolver.GetCcForCase(caseId)`
-4. Дописывает CC из `Case.UsrCcEmails` + `ServicePact.UsrCcEmails` в `Activity.CopyRecepient`
-
-**Никакого дополнительного кода для CC не нужно** — существующая инфраструктура покроет.
-
----
-
-## 7. Порядок внедрения
-
-| # | Артефакт | Тип | Способ | Перезапуск Kestrel |
-|---|----------|-----|--------|-------------------|
-| 1 | `UsrNewEmailNotifier` | C# (Исходный код) | Конфигурация → CTI → Добавить → Исходный код | Нет |
-| 2 | Модификация BPMN | ScriptTask в процессе | Дизайнер процессов | Нет |
-| 3 | Публикация | — | Опубликовать оба | **Нет** (нет EventListener) |
-
-> **Важно:** В отличие от CC-проекта, здесь **нет нового EventListener** — перезапуск Kestrel не требуется. `UsrNewEmailNotifier` — обычный C#-класс, а ScriptTask вызывается из BPMN.
-
-### Шаг 1. Создать `UsrNewEmailNotifier`
-
-1. Конфигурация → пакет CTI
-2. Добавить → Исходный код
-3. Название: `UsrNewEmailNotifier`
-4. Вставить код из п. 5.1
-5. Сохранить → Опубликовать
-
-### Шаг 2. Модифицировать BPMN-процесс
-
-1. Конфигурация → найти `UsrSendNotificationToCaseOwnerCustom1`
-2. Открыть в дизайнере процессов
-3. Найти элемент **«New notification»** (push-уведомление) — он соединён стрелкой с **Terminate** (красный кружок)
-4. Удалить стрелку `New notification` → `Terminate`
-5. Добавить элемент **Задание-сценарий** (ScriptTask):
-   - Имя: `SendEmailToOwnerScriptTask`
-   - Код: см. п. 5.2
-6. Провести стрелки:
-   - `New notification` → `SendEmailToOwnerScriptTask`
-   - `SendEmailToOwnerScriptTask` → `Terminate`
-7. Сохранить → Опубликовать
-
----
-
-## 8. Тестирование
-
-### 8.1 Основной сценарий
-
-1. Создать обращение с ответственным (у ответственного должен быть email)
-2. Отправить email на адрес поддержки от имени клиента (тема = `Re: [№обращения]`)
-3. Дождаться обработки (1–2 минуты)
-4. **Проверить:**
-   - Ответственный получил push-уведомление (как раньше)
-   - Ответственный получил email с текстом клиентского письма
-   - В email корректно отображается: номер обращения, тема, текст, имя отправителя
-   - CC-адреса из обращения/договора подставились
-
-### 8.2 Граничные случаи
-
-| Кейс | Ожидаемый результат |
-|------|-------------------|
-| Нет ответственного (Owner = null) | Push-уведомление создаётся, email не отправляется, ошибки нет |
-| У ответственного нет email | Push-уведомление создаётся, email не отправляется, ошибки нет |
-| Пустой `SupportServiceEmail` | Email не отправляется, ошибки нет |
-| Большое тело письма (> 100 КБ) | Текст обрезан, email отправлен |
-| Письмо с HTML-форматированием | HTML сохраняется в blockquote |
-| Несколько быстрых ответов подряд | Каждый генерирует отдельное уведомление |
-
-### 8.3 Проверка SQL (до/после)
+SQL-сценарий (добавить в пакет CTI как SQL Script):
 
 ```sql
--- Последние Activity (email) от системы к инженерам
+DO $$
+DECLARE
+    v_id uuid := gen_random_uuid();
+    v_parent_id uuid := '16339f82-6ff0-4c75-b20d-13f07a79f854';
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM "EmailTemplateMacros"
+        WHERE "ColumnPath" = 'BPMSoft.Configuration.UsrLatestCustomerEmailGenerator'
+    ) THEN
+        INSERT INTO "EmailTemplateMacros"
+            ("Id", "CreatedOn", "ModifiedOn", "ParentId", "Name", "ColumnPath", "ReferenceSchemaName")
+        VALUES
+            (v_id, NOW(), NOW(), v_parent_id,
+             'Последнее письмо клиента',
+             'BPMSoft.Configuration.UsrLatestCustomerEmailGenerator',
+             'Case');
+    END IF;
+END $$;
+```
+
+После выполнения в шаблоне `18834f34` появится макрос `[#@Invoke.UsrLatestCustomerEmailGenerator#]` — добавить его в нужное место шаблона через Дизайнер системы → Шаблоны сообщений.
+
+---
+
+## 5. CC — автоматически
+
+При `activity.Save()` внутри `EmailWithMacrosManager` срабатывает `UsrActivityCcEventListener.OnSaving()` — добавляет CC из `Case.UsrCcEmails` + `ServicePact.UsrCcEmails`. Дополнительного кода не нужно.
+
+---
+
+## 6. Порядок внедрения
+
+| # | Артефакт | Тип | Действие | Перезапуск Kestrel |
+| --- | --- | --- | --- | --- |
+| 1 | `UsrLatestCustomerEmailGenerator` | C# Исходный код | CTI → Добавить → Исходный код → Опубликовать | Нет |
+| 2 | `UsrSendEmailToCaseOwnerOnReply` | C# Исходный код | CTI → Добавить → Исходный код → Опубликовать | Нет |
+| 3 | `UsrEmployeeNotificationRule` | Объект | Дизайнер объекта → Опубликовать | Нет |
+| 4 | `UsrSendEmailToCaseOwnerOnReplyProcess` | BPMN | Дизайнер процессов → Опубликовать | Нет |
+| 5 | Регистрация макроса | SQL-сценарий | CTI → SQL Script → Выполнить | Нет |
+| 6 | Макрос в шаблон `18834f34` | Шаблон | Дизайнер системы → Шаблоны сообщений | Нет |
+| 7 | Запись в `UsrEmployeeNotificationRule` | Данные | UI → Справочник → Добавить запись | Нет |
+
+> Перезапуск Kestrel не нужен — нет нового EventListener.
+
+---
+
+## 7. Тестирование
+
+### 7.1 Основной сценарий
+
+1. Создать обращение, назначить ответственного (у ответственного должен быть email)
+2. Убедиться что обращение в статусе «В работе» (GAP-кейс — email не уходил раньше)
+3. Отправить входящий email на `servicedesk@cti.ru`, привязать к обращению
+4. Дождаться обработки (~1-2 мин)
+
+Ожидаемый результат:
+
+- [ ] Push-уведомление пришло (как раньше)
+- [ ] Email пришёл ответственному с текстом клиентского письма
+- [ ] Текст письма клиента виден в блоке цитаты
+- [ ] CC-адреса из обращения и договора подставились
+
+### 7.2 Граничные случаи
+
+| Кейс | Ожидание |
+| --- | --- |
+| Обращение без ответственного | Email не уходит, ошибки нет |
+| У ответственного нет email | Email не уходит, ошибки нет |
+| Нет записи в `UsrEmployeeNotificationRule` | Email не уходит, ошибки нет |
+| Обращение в «Новое» | Email уходит (был GAP — теперь исправлен) |
+| Обращение в «Решено» | Email уходит |
+| Большое тело письма (> 50 КБ) | Текст обрезан, email отправлен |
+
+### 7.3 SQL для проверки
+
+```sql
+-- Смотрим созданные Activity от нового механизма
 SELECT a."Title", a."Recepient", a."CopyRecepient", a."CreatedOn"
 FROM "Activity" a
-WHERE a."TypeId" = 'e2831dec-cfc0-df11-b00f-001d60e938c6'
-  AND a."MessageTypeId" = '7f6d3f94-f36b-1410-068c-20cf30b39373'
-  AND a."Title" LIKE '[Обращение №%] Новый ответ от клиента'
+WHERE a."CaseId" = '<guid обращения>'
 ORDER BY a."CreatedOn" DESC
-LIMIT 10;
+LIMIT 5;
 ```
 
 ---
 
-## 9. Риски и ограничения
+## 8. Что НЕ трогаем
 
-| Риск | Вероятность | Влияние | Митигация |
-|------|-----------|---------|-----------|
-| **Email flooding** при серии быстрых ответов клиента | Средняя | Низкое (раздражение) | v1 — по одному email на каждый ответ. В будущем — дебаунс или дайджест |
-| **Sender не настроен** (`SupportServiceEmail` пуст) | Низкая | Высокое (не работает) | Проверка в коде + документация |
-| **Большие email** замедляют отправку | Низкая | Низкое | Обрезка до 100 КБ |
-| **HTML injection** через тело клиентского письма | Средняя | Низкое (внутренний email) | Тело вставляется в blockquote; почтовые клиенты изолируют HTML |
-| **Конфликт с будущим включением feature-toggles** | Низкая | Среднее | Наше решение не зависит от feature-toggles; при включении — пересмотреть |
-
----
-
-## 10. Открытые вопросы (требуют решения до реализации)
-
-1. ~~**Ссылка на обращение в email**~~ → **Закрыт.** `SysSettings.SiteUrl` = `bpm.cti.ru`. Ссылка: `https://{SiteUrl}/Shell/Case/{CaseId}`.
-
-2. ~~**Нужна ли системная настройка для отключения?**~~ → **Закрыт.** v1 без настройки. Если понадобится — добавим позже.
-
-3. ~~**Подтвердить поток BPMN**~~ → **Закрыт.** Диаграмма подтверждена (2026-04-12). `New notification` → `Terminate` — прямая связь. `SetActivityServiceProcessed` на отдельной ветке.
-
----
-
-## 11. Актуальные значения системных настроек и feature-toggles
-
-**Источник:** выгрузка с продуктивной системы 2026-04-12 → `src/sys-settings.csv`, `src/feature-toggles.csv`
-
-### Релевантные системные настройки
-
-| Code | Значение | Комментарий |
-|------|---------|-------------|
-| `SiteUrl` | `bpm.cti.ru` | Базовый URL для ссылок в email |
-| `SupportServiceEmail` | `servicedesk@cti.ru` | Адрес отправителя |
-| `AutoNotifyOnlyContact` | пусто (false) | CC/BCC **не** обнуляется — наши CC работают |
-| `ClearAssigneeOnCaseReopening` | пусто (false) | При переоткрытии ответственный не сбрасывается |
-
-### Релевантные feature-toggles
-
-| Code | State | Комментарий |
-|------|-------|-------------|
-| `EmailMessageMultiLanguageV2` | **1** (ВКЛ) | ⚠️ Конвейер `EmailWithMacrosManager` **активен**. Расходится с ранним анализом |
-| `UseAsyncEmailSender` | **1** (ВКЛ) | Асинхронная отправка через `AsyncEmailSender.SendAsync()` |
-| `DelayedNotification` | **1** (ВКЛ) | Отложенные уведомления включены |
-| `SendEmailToCaseOnStatusChangeClass` | **1** (ВКЛ) | Уведомления при смене статуса — C#-класс |
-| `RunReopenCaseAndNotifyAssigneeClass` | **1** (ВКЛ) | Уведомление при переоткрытии — C#-класс |
-
-> **Важно:** `EmailMessageMultiLanguageV2 = 1` означает, что процессы уведомлений (например, `UsrSendEmailToSROwnerCustom1`) **уже используют** мультиязычный путь через `EmailWithMacrosManager`. Это не влияет на задачу 2.3 (push-процесс не отправляет email), но важно для задач 2.4 и будущих доработок — invokable-макросы будут работать.
-
----
-
-## 11. Связь с другими задачами Волны 2
-
-- **Задача 2.2** (зависание в «Получен ответ»): может переиспользовать `UsrNewEmailNotifier` для отправки напоминания (другой шаблон, но тот же механизм `CreateEmailActivity` + `SendEmail`)
-- **Задача 2.4** (уведомление инженеру о смене статуса): аналогичный подход — C#-хелпер + ScriptTask/EventListener
-- **Задача 2.5** (наблюдатели): когда появится, `UsrNewEmailNotifier` нужно будет расширить — отправлять не только Owner, но и наблюдателям
+- `UsrProcess_0c71a12CTI5` — оставляем работать параллельно до стабилизации
+- `ReopenCaseAndNotifyAssignee` — системный класс, не модифицируем
+- `UsrSendNotificationToCaseOwnerCustom1` — не трогаем (при toggle=1 не используется)

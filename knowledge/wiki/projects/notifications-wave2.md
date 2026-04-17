@@ -1,6 +1,6 @@
 # Проект: Уведомления волна 2
 
-**Обновлено:** 2026-04-15  
+**Обновлено:** 2026-04-17  
 **Статус:** 🔧 В разработке (задача 2.3 — приоритет 1)  
 **Детальная документация:** `projects/notifications-wave2/`
 
@@ -25,15 +25,25 @@
 
 Когда клиент отвечает на обращение (email) → инженер получает уведомление. Сейчас уведомление не содержит текст ответа клиента. Нужно включить текст письма в уведомление.
 
-### Ключевые находки
+### Текущий маршрут (из БД, 2026-04-17)
 
-- `ExtendedEmailWithMacrosManager` (пакет CaseService) — расширенная версия менеджера, поддерживает цитирование оригинального email
-- Справочник `CaseNotificationRule` → поле «Процитировать оригинальный email» — штатная настройка
-- `UsrEmployeeNotificationManager` — кастомный менеджер уведомлений в CTI (создан для волны 2)
+Входящий email клиента → `RunSendNotificationCaseOwnerProcess` → `ReopenCaseAndNotifyAssignee.Run()`
+→ меняет `Case.Status = f063ebbe` → срабатывает `UsrProcess_0c71a12CTI5`
+→ отправляет email инженеру по шаблону `18834f34` (sender: servicedesk@cti.ru, CC: роль "1-я линия" хардкод)
 
-### Архитектурное решение (принято 2026-04-15)
+Шаблон `18834f34` содержит: номер, статус, контрагент, приоритет, оборудование, группа, ссылка.
+**Текст письма клиента в шаблоне отсутствует** — это и есть GAP задачи 2.3.
 
-`UsrEmployeeNotificationManager` наследует `ExtendedEmailWithMacrosManager` и переопределяет метод формирования тела письма, добавляя текст входящего email клиента.
+### Архитектурное решение (принято 2026-04-17)
+
+Новый C# класс `UsrLatestCustomerEmailGenerator` реализует `IMacrosInvokable`:
+
+- Читает последнее входящее Activity (Type=Email, Direction=Incoming) по CaseId
+- Возвращает тело письма в виде HTML-строки
+- Регистрируется в `EmailTemplateMacros` (ParentId=`16339f82`, ColumnPath=`BPMSoft.Configuration.UsrLatestCustomerEmailGenerator`)
+- Макрос добавляется в шаблон `18834f34`
+
+Дополнительно: новый класс `UsrEmployeeNotificationManager` вызывается из `UsrSendNotificationToCaseOwnerCustom1` для отправки email инженеру.
 
 **Важно:** Объект — `Employee` (сотрудник), не `Engineer`. В BPMSoft нет объекта Engineer.
 

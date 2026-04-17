@@ -1,21 +1,38 @@
 # Система уведомлений BPMSoft
 
-**Обновлено:** 2026-04-15  
-**Источники:** BPMSOFT_CONFIGURATION_ANALYSIS_3.md, bpmn-processes.md, архив CTI 2026-04-11
+**Обновлено:** 2026-04-17  
+**Источники:** архив CTI 2026-04-11, выгрузки из БД (VwSysProcess.MetaData) 2026-04-17
 
 ---
 
 ## Карта процессов уведомлений
 
-| Процесс | Пакет | Триггер | Тип уведомления | CC |
-|---|---|---|---|---|
-| UsrSendEmailToSROwnerCustom1 | CTI | Назначение ответственного / группы | Email | ✅ |
-| UsrSendNotificationToCaseOwnerCustom1 | CTI | Новый комментарий | Push (Reminding) | ❌ |
-| UsrProcess_send_reg_mail | CTI | Создание обращения | Email | ✅ |
-| RunSendEmailToCaseGroupV2 | CaseService | Owner=NULL и Group IS NOT NULL | Email | ✅ |
-| SendEmailToCaseContactPersonsProcess | CaseService | — | Email | ✅ |
-| SendEmailToCaseStatusChangedProcess | CaseService | Смена статуса | Email | ✅ |
-| SendResolution | CaseService | Отправка решения | Email | ✅ |
+Восстановлена из MetaData (`VwSysProcess`) 2026-04-17 — достоверные данные из БД прода.
+
+| Процесс | UId | Пакет | Триггер (StartSignal) | Получатель | Примечание |
+|---------|-----|-------|----------------------|------------|------------|
+| UsrSendEmailToSROwnerCustom1 | `7477f83b` | CTI | Case INSERT/UPDATE, Owner IS NOT NULL | Инженер (Owner) | Email через SendMultiLanguageNotification |
+| RunSendEmailToCaseGroupV2 | `3081ee20` | CaseService | Case INSERT/UPDATE, Owner IS NULL AND Group IS NOT NULL | Группа (все участники роли) | Email через EmailWithMacrosManager.SendEmailFromTo |
+| RunSendEmailToCaseGroup | `ca99430d` | CaseService | Case INSERT/UPDATE (старый формат фильтра) | Группа | Старая версия, дублирует V2 |
+| RunSendNotificationCaseOwnerProcess | `69d87f84` | CaseService | Activity UPDATE: Type=Email, Case NOT NULL, ServiceProcessed=false, не авто-ответ, SendDate NOT NULL | Инженер (Owner) | Входящий email клиента → переоткрывает обращение |
+| UsrSendNotificationToCaseOwnerCustom1 | `2769a020` | CTI | (запускается из RunSendNotificationCaseOwnerProcess) | Инженер (Owner) | Только Reminding (push), email НЕ отправляет |
+| UsrProcess_0c71a12CTI5 | `cf34d5cc` | CTI | Case UPDATE, Status = f063ebbe (Получен ответ) | Инженер (Owner) + CC роль "1-я линия" | Email с хардкодом: sender=servicedesk@cti.ru, CC=вся роль 1-я линия |
+
+### Полный маршрут при входящем письме клиента
+
+```
+Activity (входящий email, ServiceProcessed=false)
+  → RunSendNotificationCaseOwnerProcess (StartSignal: Activity UPDATE)
+      → ScriptTask1: проверяет IsFeatureEnable (RunReopenCaseAndNotifyAssigneeClass=1 на проде)
+      → ScriptTask2: вызывает ReopenCaseAndNotifyAssignee.Run()
+          → создаёт Reminding (push-уведомление) — email НЕ отправляется
+          → меняет Case.Status = f063ebbe (Получен ответ)
+  → Case.Status меняется → срабатывает UsrProcess_0c71a12CTI5
+      → EmailTemplateUserTask2: email инженеру + CC роль "1-я линия"
+         Шаблон: 18834f34 ("Отправка уведомления ответственному о смене статуса на Получен ответ (RU)")
+         Sender: servicedesk@cti.ru (хардкод)
+         CC: роль e142ad2e (1-я линия) (хардкод)
+```
 
 ---
 
@@ -24,25 +41,93 @@
 ### UsrSendEmailToSROwnerCustom1
 
 **UId:** `7477f83b-2d61-4541-843d-2d6444bbcd42`  
-**Родитель:** `77b64dfc-5e59-42e8-baa6-a231f1fdd698` (SendEmailToSROwner)
+**Триггер:** Case INSERT или UPDATE, Owner IS NOT NULL  
+**ScriptTask2 (активный путь при EmailMessageMultiLanguageV2=1):**
 
-Два пути внутри процесса:
-1. **ScriptTask1 (активный):** `ActivityEmailSender.Send(activityId)` или `AsyncEmailSender.SendAsync(activityId)`
-2. **ScriptTask2 (неактивный):** `AppScheduler.TriggerJob<SendMultiLanguageNotification>(...)` — только если `EmailMessageMultiLanguage` включён
-
-Параметры: `EmailTemplateId`, `SenderEmail` (из SysSettings `SupportServiceEmail`), `Subject`, `CaseRecordId`, `IsCloseAndExit`
+```csharp
+SenderEmail = SysSettings.GetValue<string>(UserConnection, "SupportServiceEmail", string.Empty);
+// если не модифицирующий == Owner → запускает SendMultiLanguageNotification с AssigneeTemplateId
+```
 
 ### UsrSendNotificationToCaseOwnerCustom1
 
 **UId:** `2769a020-a622-498f-a15d-a9449e30dd16`  
-**Тип уведомления:** Push (`Reminding`), НЕ email
+**Тип уведомления:** только Reminding (push), email НЕ отправляется  
+**Логика:**
+- ExclusiveGateway: если `(IsFinalStatus OR IsResolvedStatus) AND Status != f063ebbe` → ChangeDataUserTask1 (сбрасывает Owner, ставит статус f063ebbe "Переоткрыто")
+- иначе → ChangeDataUserTask2 (только ставит статус f063ebbe "Получен ответ")
+- CreateNotificationScriptTask: создаёт `Reminding`
 
-Создаёт запись `Reminding` (уведомление в интерфейсе BPMSoft) + обновляет `Activity.ServiceProcessed = false`.
+### UsrProcess_0c71a12CTI5
 
-### UsrProcess_send_reg_mail
+**UId:** `cf34d5cc-43e8-4495-841b-c2e2eb90cbb1`  
+**Триггер:** Case UPDATE, Status = `f063ebbe` (Получен ответ), watches column Status  
+**EmailTemplateUserTask2:**
+- Шаблон: `18834f34` ("Отправка уведомления ответственному о смене статуса на Получен ответ (RU)")
+- Получатель: `ReadDataUserTask2.ResultEntity.Email` (email инженера)
+- CC: `[#Lookup.8153ea60...e142ad2e#]` — хардкод роль "1-я линия"
+- Sender: `[#Lookup.5e487721...8cdcb9c4#]` — хардкод ящик servicedesk@cti.ru
+- CreateActivity: false, Importance: High
 
-**UId:** `265d4466-a887-461c-906f-79f16ce9f059`  
-Использует стандартный элемент `EmailTemplateUserTask`. CC не заложен в стандартном элементе.
+**Содержимое шаблона 18834f34:**
+- Кейс #[#Number#] сменил статус: [#Status#]
+- Контрагент: [#Account#], Приоритет: [#Priority#]
+- Оборудование: [#ConfItem#], Группа ответственных: [#Group#]
+- Ссылка на кейс: `https://bpm.cti.ru/Navigation/Navigation.aspx?schemaName=Case&recordId=[#Id#]`
+- ⚠️ Поле "Тема обращения" использует макрос `[#Owner.Salutation#]` — явная ошибка в шаблоне
+
+---
+
+---
+
+## CaseNotificationRule — декларативные правила уведомлений
+
+Таблица `CaseNotificationRule` — декларативная привязка статус+категория → шаблон.
+
+**Структура колонок:** Id, Name, CaseStatusId, CaseCategoryId, EmailTemplateId, EmailTemplateForInitiatorId, RuleUsageId, Delay, IsQuoteOriginalEmail
+
+**Ключевые выводы из выгрузки (2026-04-17):**
+
+- Покрывает статусы: Новое, В работе, Решено, Закрыто, Отменено
+- **Статус "Получен ответ" (f063ebbe) отсутствует** — обрабатывается только через BPMN `UsrProcess_0c71a12CTI5`
+- `EmailTemplateId` — шаблон для инженера; `EmailTemplateForInitiatorId` — шаблон для клиента
+- `IsQuoteOriginalEmail=true` для Новое/В работе; `false` для Закрыто/Отменено
+- Все записи имеют одинаковый `RuleUsageId = e34695a7-7d65-45d8-b5a0-7b69ae52be6a`
+
+---
+
+## Invokable макросы в email-шаблонах
+
+Механизм добавления динамического контента в шаблоны через C# классы.
+
+**Как работает:**
+
+1. Класс реализует интерфейс `IMacrosInvokable` (пакет CaseService):
+
+```csharp
+public interface IMacrosInvokable {
+    UserConnection UserConnection { get; set; }
+    string GetMacrosValue(object arguments); // arguments = KeyValuePair<string, Guid>(entityName, recordId)
+}
+```
+
+2. Регистрация в таблице `EmailTemplateMacros`:
+   - `ParentId = 16339f82-6ff0-4c75-b20d-13f07a79f854` (запись "@Invoke")
+   - `ColumnPath = "BPMSoft.Configuration.ИмяКласса"` (полное имя типа)
+   - `Name` — отображаемое имя макроса в UI
+
+3. Воркер `InvokeMethodMacrosWorker` (`[MacrosWorker("{16339F82...}")]`) вызывает класс через `ClassFactory.ForceGet<IMacrosInvokable>(assemblyQualifiedName)`
+
+**Существующие invokable макросы:**
+
+| Name | ColumnPath | Id |
+|------|-----------|-----|
+| SymptomsGenerator | `BPMSoft.Configuration.SymptomsGenerator` | `77dea058` |
+| EstimateLinksGenerator | `BPMSoft.Configuration.EstimateLinksGenerator` | `60445e91` |
+
+**Образец — SymptomsGenerator:** читает `Case.Symptoms` по caseId, возвращает HTML-строку (переносы → `<br />`).
+
+**Для задачи 2.3** нужно создать `UsrLatestCustomerEmailGenerator` по тому же паттерну + SQL-сценарий для регистрации в `EmailTemplateMacros`.
 
 ---
 
