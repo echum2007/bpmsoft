@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -z \"$CLAUDE_INVOKED_BY\" ] && /c/Users/echum/.local/bin/uv.exe run python hooks/session-start.py || true",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -z \"$CLAUDE_INVOKED_BY\" ] && /c/Users/echum/.local/bin/uv.exe run python hooks/pre-compact.py || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -z \"$CLAUDE_INVOKED_BY\" ] && /c/Users/echum/.local/bin/uv.exe run python hooks/session-end.py || true",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
