@@ -48,6 +48,12 @@ ehthumbs.db
 # VS Code
 .vscode/
 
+# Playwright MCP логи
+.playwright-mcp/
+
+# Архив CTI с прода (бинарный, большой)
+src/CTI_2026-04-11_15.14.44/
+
 # Memory compiler — личные данные (knowledge/ коммитится через memory-compiler/.gitignore)
 memory-compiler/daily/
 memory-compiler/reports/
