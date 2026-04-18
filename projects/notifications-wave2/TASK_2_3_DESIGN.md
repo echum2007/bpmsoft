@@ -252,7 +252,7 @@ namespace BPMSoft.Configuration
 
 | UsrCaseStatusId | UsrCaseCategoryId | UsrEmailTemplateId | UsrIsActive |
 | --- | --- | --- | --- |
-| NULL (любой) | NULL (любая) | `18834f34-...` | true |
+| NULL (любой) | NULL (любая) | `UsrNotifyEngineerOnReply` (новый шаблон) | true |
 
 ### 3.4 `UsrSendEmailToCaseOwnerOnReplyProcess` (BPMN-процесс)
 
@@ -308,7 +308,9 @@ BEGIN
 END $$;
 ```
 
-После выполнения в шаблоне `18834f34` появится макрос `[#@Invoke.UsrLatestCustomerEmailGenerator#]` — добавить его в нужное место шаблона через Дизайнер системы → Шаблоны сообщений.
+После выполнения макрос `[#@Invoke.UsrLatestCustomerEmailGenerator#]` станет доступен в редакторе шаблонов.
+
+> ⚠️ **Важно:** макрос добавляется в **новый шаблон `UsrNotifyEngineerOnReply`**, а не в существующий `18834f34`. Шаблон `18834f34` используется в `UsrProcess_0c71a12CTI5` через `EmailTemplateUserTask` напрямую — без `EmailWithMacrosManager` — и invokable-макросы там не раскрываются.
 
 ---
 
@@ -320,17 +322,27 @@ END $$;
 
 ## 6. Порядок внедрения
 
+### Фаза 1 — Новый механизм
+
 | # | Артефакт | Тип | Действие | Перезапуск Kestrel |
 | --- | --- | --- | --- | --- |
 | 1 | `UsrLatestCustomerEmailGenerator` | C# Исходный код | CTI → Добавить → Исходный код → Опубликовать | Нет |
 | 2 | `UsrSendEmailToCaseOwnerOnReply` | C# Исходный код | CTI → Добавить → Исходный код → Опубликовать | Нет |
 | 3 | `UsrEmployeeNotificationRule` | Объект | Дизайнер объекта → Опубликовать | Нет |
-| 4 | `UsrSendEmailToCaseOwnerOnReplyProcess` | BPMN | Дизайнер процессов → Опубликовать | Нет |
-| 5 | Регистрация макроса | SQL-сценарий | CTI → SQL Script → Выполнить | Нет |
-| 6 | Макрос в шаблон `18834f34` | Шаблон | Дизайнер системы → Шаблоны сообщений | Нет |
-| 7 | Запись в `UsrEmployeeNotificationRule` | Данные | UI → Справочник → Добавить запись | Нет |
+| 4 | Регистрация макроса | SQL-сценарий | CTI → SQL Script → Выполнить | Нет |
+| 5 | Новый шаблон `UsrNotifyEngineerOnReply` | Шаблон | Дизайнер системы → Шаблоны сообщений: клонировать `18834f34`, добавить `[#@Invoke.UsrLatestCustomerEmailGenerator#]` | Нет |
+| 6 | `UsrSendEmailToCaseOwnerOnReplyProcess` | BPMN | Дизайнер процессов → Опубликовать | Нет |
+| 7 | Запись в `UsrEmployeeNotificationRule` | Данные | UI → Справочник → Добавить запись (шаблон = `UsrNotifyEngineerOnReply`) | Нет |
 
 > Перезапуск Kestrel не нужен — нет нового EventListener.
+
+### Фаза 2 — Вывод старого механизма (после стабилизации)
+
+| # | Действие |
+| --- | --- |
+| 1 | Деактивировать `UsrProcess_0c71a12CTI5` в дизайнере процессов |
+| 2 | Убедиться, что дублирования писем нет (мониторинг ~1 неделя) |
+| 3 | Шаблон `18834f34` более не используется — можно оставить в системе как архив |
 
 ---
 
@@ -374,10 +386,12 @@ LIMIT 5;
 
 ---
 
-## 8. Что НЕ трогаем
+## 8. Что НЕ трогаем в Фазе 1
 
-- `UsrProcess_0c71a12CTI5` — оставляем работать параллельно до стабилизации нового механизма
+- `UsrProcess_0c71a12CTI5` — работает параллельно в период стабилизации; деактивируется в Фазе 2
 - `ReopenCaseAndNotifyAssignee` — системный C# класс, не модифицируем
 - `UsrSendNotificationToCaseOwnerCustom1` — не трогаем; при `RunReopenCaseAndNotifyAssigneeClass=1` (текущее значение на проде) этот процесс **не вызывается** — `RunSendNotificationCaseOwnerProcess` идёт напрямую в C# через `ScriptTask2`, минуя `SubProcess1`
 
-> ⚠️ **Важно для дублирования:** новый `UsrSendEmailToCaseOwnerOnReplyProcess` будет срабатывать на **каждый** входящий Activity. `UsrProcess_0c71a12CTI5` срабатывает только при смене статуса на «Получен ответ». При первом ответе клиента оба процесса сработают → два email. Решение: после стабилизации деактивировать `UsrProcess_0c71a12CTI5` или добавить фильтр дедупликации.
+> ⚠️ **Дублирование в период Фазы 1:** при первом ответе клиента по обращению в статусе «Получен ответ» оба процесса сработают → **два email** инженеру. Это временно и приемлемо. После деактивации `UsrProcess_0c71a12CTI5` (Фаза 2) дублирование прекратится.
+
+> ℹ️ **Почему не добавляем макрос в `18834f34`:** `UsrProcess_0c71a12CTI5` использует `EmailTemplateUserTask` напрямую, минуя `EmailWithMacrosManager` — invokable-макросы там не раскрываются и останутся как текст в письме.

@@ -143,7 +143,7 @@ BPMN → AddDataUserTask (создаёт Activity)
 
 CC нужно добавить в `Activity.CopyRecepient` **до** вызова Send.
 
-### Путь B — Мультиязычный (неактивен, feature-toggles выключены)
+### Путь B — Мультиязычный (активен: `EmailMessageMultiLanguageV2=1` на проде, данные из БД mordor 2026-04-17)
 
 ```
 ScriptTask2 → AppScheduler.TriggerJob<SendMultiLanguageNotification>
@@ -191,6 +191,8 @@ ScriptTask2 → AppScheduler.TriggerJob<SendMultiLanguageNotification>
 - `UsrCcAddressResolver` — читает CC из Case и ServicePact
 - `UsrActivityCcEventListener` — `OnSaving` Activity: если исходящий email + связан с Case → дописывает CC
 
-**Формат:** адреса через пробел (как стандартное `Activity.CopyRecepient`).
+**Формат хранения в `UsrCcEmails` и `Activity.CopyRecepient`:** адреса через `"; "` (точка с запятой + пробел) — так пишет `MergeAddresses` в `UsrCcAddressResolver`. C#-парсинг читает по разделителям `{ ' ', ';' }`.
+
+**JS-валидация на странице (ввод пользователя):** разбивает по `/[\s;,]+/` — принимает пробел, `;` и `,` как допустимые разделители при ручном вводе. Нормализация убирает токены `<>` и части Display Name без `@`.
 
 **Охват:** все процессы отправки (старый + мультиязычный + ручная отправка).

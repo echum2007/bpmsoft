@@ -1,7 +1,7 @@
 # Платформа BPMSoft — Стек и архитектура
 
-**Обновлено:** 2026-04-15  
-**Источники:** BPMSOFT_CONFIGURATION_ANALYSIS_3.md, architecture-packages.md, документация 1.9
+**Обновлено:** 2026-04-18  
+**Источники:** BPMSOFT_CONFIGURATION_ANALYSIS_3.md, architecture-packages.md, документация 1.9, выгрузка из БД mordor 2026-04-17
 
 ---
 
@@ -30,11 +30,11 @@
 | Пакет | UId | Роль |
 |---|---|---|
 | **CTI** | `21b087cf-bb70-cdc0-5180-6979fdd2220c` | **Основной** — все доработки только сюда |
-| Custom | `a00051f4-cde3-4f3f-b08e-c5ad1a5c735a` | Legacy, не использовать |
+| Custom | `a00051f4-cde3-4f3f-b08e-c5ad1a5c735a` | Legacy, новые доработки не вносить |
 
 **Иерархия:** Базовые пакеты → ... → Custom → CTI (CTI наследует всё через зависимости)
 
-Custom содержит несколько записей по ошибке системы. В нормальных условиях не должен использоваться.
+Custom содержит несколько схем-дублей (ServiceItem, ConfItem, ServicePact, UsrConfIteminService), попавших туда по ошибке — они применяются ПОВЕРХ CTI. Чистка запланирована, не срочно. Подробнее: `wiki/cti-package.md`, раздел «UId пакета Custom».
 
 ### Ключевые системные пакеты (только чтение)
 
@@ -71,6 +71,8 @@ CaseTermCalculationManager
 
 **Текущий сервис в системе:** один — «Техподдержка». Консультации всегда 8×5.
 
+> **Принцип SLA vs Категория:** строгость контроля определяется SLA, а не категорией обращения. Категория (`CaseCategory`: Инцидент/Запрос) влияет на шаблоны и маршрутизацию, но не на расчёт сроков. Не использовать категорию как фильтр для уведомлений о просрочке — ошибочная классификация при регистрации создаёт слепую зону. Все эскалации привязываются строго к расчётным показателям SLA.
+
 ---
 
 ## Архитектура Email
@@ -92,14 +94,37 @@ BPMN-процесс
 - `ActivityEmailSender` — платформенная сборка (dll), исходников нет. Читает `CopyRecepient` из БД
 - `EmailWithMacrosManager.FillActivityWithCaseData()` — виртуальный метод, точка переопределения CC
 - Системная настройка `AutoNotifyOnlyContact = false` — CC не обнуляется ✅
-- Feature-toggles `EmailMessageMultiLanguage` / `EmailMessageMultiLanguageV2` — **оба выключены**, мультиязычный путь не активен
+- Feature-toggle `EmailMessageMultiLanguageV2` — **включён (=1)** на проде; `UsrSendEmailToSROwnerCustom1` использует путь B (`SendMultiLanguageNotification`). Данные из БД mordor 2026-04-17.
 
 ### Два пути отправки (важно для задач)
 
 | Путь | Когда активен | CC |
 |---|---|---|
-| Старый BPMN: `ScriptTask → ActivityEmailSender` | Всегда (feature-toggle выключен) | CC из `Activity.CopyRecepient` |
-| Новый мультиязычный: `SendMultiLanguageNotification → EmailWithMacrosManager` | Если `EmailMessageMultiLanguage` включён | CC из `ParentActivity.CopyRecepient` |
+| Старый BPMN: `ScriptTask → ActivityEmailSender` | Для процессов без мультиязычного пути (`RunSendEmailToCaseGroupV2`, `UsrProcess_0c71a12CTI5`) | CC из `Activity.CopyRecepient` |
+| Новый мультиязычный: `SendMultiLanguageNotification → EmailWithMacrosManager` | **Активен** (`EmailMessageMultiLanguageV2=1` на проде). Использует `UsrSendEmailToSROwnerCustom1` | CC из `ParentActivity.CopyRecepient` |
+
+---
+
+## Матрица перезапуска Kestrel
+
+| Тип изменений | Перезапуск | Примечание |
+|---|---|---|
+| Схемы «Исходный код» (C#) | **Да** | Компиляция сборок и загрузка в домен приложения |
+| EntityEventListener | **Да** | Регистрация слушателей событий происходит строго при старте |
+| Макросы (IMacrosInvokable) | **Да** | Новые провайдеры регистрируются через рефлексию при инициализации |
+| Feature Toggles | **Нет*** | Переключение применяется на лету; если флаг активирует новый C# код — перезапуск обязателен |
+| JS/CSS/AMD модули | **Нет** | Загружаются браузером как статические ресурсы |
+| BPMN (без скриптов) | **Нет** | Интерпретируются движком динамически |
+
+---
+
+## Git-стратегия
+
+- `master` — зеркало промышленной среды, прямые коммиты запрещены
+- `dev` — ветка для интеграции и тестирования перед деплоем
+- Git-теги на `master` перед каждым импортом — обязательные точки отката
+
+> ⚠️ **Запрет «Сохранить новую версию»** для системных BPMN-процессов: создаёт замещение в CTI, которое «замораживает» логику и блокирует применение обновлений вендора при kernel upgrade.
 
 ---
 

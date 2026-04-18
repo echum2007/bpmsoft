@@ -19,7 +19,8 @@
 
 ### Нюансы полей Activity
 
-- `CopyRecepient` — **с опечаткой** (не CopyRecipient). Строка адресов через пробел
+- `CopyRecepient` — **с опечаткой** (не CopyRecipient). Формат хранения в нашей системе: `"; "` (точка с запятой + пробел) — так пишет `UsrCcAddressResolver.MergeAddresses`; C# читает по `{ ' ', ';' }`. JS-валидатор на UI-странице при вводе пользователем принимает пробел, `;` и `,` — это отдельный слой, не формат хранения.
+- `ServiceProcessed` (Boolean) — дивергенция: C#-путь устанавливает `true`, старые BPMN — `false`. Во всей новой логике принудительно устанавливать `true` для паритета с C#-путём.
 - `TypeId` для Email: `e2831dec-cfc0-df11-b00f-001d60e938c6` (константа ActivityType)
 - `MessageTypeId` для исходящих: `7f6d3f94-f36b-1410-068c-20cf30b39373`
 - `MessageTypeId` для входящих: `NULL` (Guid.Empty)
@@ -100,6 +101,18 @@ var typeId = entity.GetTypedColumnValue<Guid>("TypeId");
 var cc = entity.GetTypedColumnValue<string>("CopyRecepient");
 entity.SetColumnValue("CopyRecepient", newValue);
 ```
+
+---
+
+## Нюансы PostgreSQL
+
+- **Функциональные роли:** всегда использовать представление **`VwSysFunctionalRole`** — прямой запрос к таблице `SysFunctionalRole` в PostgreSQL возвращает неполные данные из-за специфики архитектуры представлений платформы.
+- **Feature Toggles:** состояние хранится в `AdminUnitFeatureState` (не `FeatureState` — такой таблицы не существует):
+  ```sql
+  SELECT * FROM "AdminUnitFeatureState"
+  JOIN "Feature" ON "Feature"."Id" = "FeatureId"
+  WHERE "Feature"."Code" = 'CodeName'
+  ```
 
 ---
 
