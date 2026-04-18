@@ -1,6 +1,6 @@
 # BPMSoft Wiki — Навигационный индекс
 
-**Обновлено:** 2026-04-17  
+**Обновлено:** 2026-04-18  
 **Последний Lint:** 2026-04-15
 
 > Правила ведения вики → [WIKI_SCHEMA.md](WIKI_SCHEMA.md)
@@ -27,6 +27,10 @@
 - [projects/labor-records.md](wiki/projects/labor-records.md) — 📋 ТЗ на обсуждении
 
 ---
+
+## Инструменты исследования
+
+- [research-tools.md](research-tools.md) — приоритеты поиска документации (NotebookLM → edu.bpmsoft.ru → PDF → вики)
 
 ## Справочники
 

@@ -171,9 +171,10 @@ Claude **НЕ вносит изменения напрямую в систему
 2. Прочитать `knowledge/wiki/cti-package.md` — актуальные UId и метаданные CTI
 3. Прочитать релевантные страницы вики (`wiki/notifications.md`, `wiki/platform.md` и др.)
 4. При необходимости — прочитать актуальный код CTI из `src/CTI_2026-04-11_15.14.44/CTI/CTI` (Python-скрипт, раздел ниже)
-5. **Искать информацию в онлайн-базе знаний** → `/bpmsoft-kb` (Playwright MCP, требует авторизации)
-6. Только если база знаний недоступна — читать PDF из `Documentation 1.9/` через Read
-7. Для поиска по системным пакетам — `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/`
+5. **🔴 ПРИОРИТЕТ: Искать в NotebookLM** → `mcp__notebooklm__ask_question` (ID: `bpmsoft-documentation`) — 5-7x эффективнее по токенам, с цитатами
+6. Fallback: онлайн-база знаний → `/bpmsoft-kb` (Playwright MCP, требует авторизации) — если NotebookLM недоступен
+7. Fallback: локальные PDF из `Documentation 1.9/` через Read — только если сеть недоступна
+8. Для поиска по системным пакетам — `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/`
 
 ### Чтение бинарного архива CTI
 
