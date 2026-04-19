@@ -97,29 +97,9 @@ BPMsoft/
 
 ---
 
-## Технологический стек
+**Полное описание** → [TECH_STACK.md](TECH_STACK.md)
 
-| Слой | Технология |
-|------|-----------|
-| Backend | C# / .NET 8 |
-| ORM | `EntitySchemaQuery`, `Entity`, `Select/Insert/Update/Delete` |
-| DI/IoC | `ClassFactory`, `[DefaultBinding]`, `ConstructorArgument` |
-| Entity Events | `[EntityEventListener(SchemaName = "...")]` |
-| Email | `IEmailClient` → `EmailClient` / `ExchangeClient`. Поле CC в Activity: `CopyRecepient` (с опечаткой) |
-| Frontend | ExtJS + AMD/RequireJS, Angular + Angular Elements (с 1.9) |
-| Процессы | BPMN через `ProcessEngineService` |
-| БД | PostgreSQL |
-
----
-
-## Важные нюансы (проверено на практике)
-
-- Кнопка открытия мастера раздела: **«Настройка вида»** (не «Вид»)
-- В мастере раздела кнопка **«Сохранить»**, а не «Опубликовать»
-- `GetColumnValue<T>` на `IDataReader` требует `using BPMSoft.Common`
-- После публикации `EntityEventListener` — **обязательный перезапуск Kestrel**
-- CC-поле в таблице Activity: `CopyRecepient` (именно так, с опечаткой)
-- `src/CTI_2026-04-11_15.14.44/CTI/CTI` — бинарный архив пакета CTI с прода (2026-04-11). Читать Python-скриптом (см. раздел ниже). Папка `src/CTI/CTI/` удалена — она устарела
+**Важные нюансы** → [IMPORTANT_NOTES.md](IMPORTANT_NOTES.md)
 
 ---
 
@@ -136,34 +116,7 @@ BPMsoft/
 
 ## Принципы работы
 
-### Формат ответа на задачу
-
-Claude **НЕ вносит изменения напрямую в систему BPMSoft**:
-1. **Анализ** — что нужно, какие объекты затронуты
-2. **Код** (C#, JavaScript, SQL, JSON-метаданные) — готовый к переносу
-3. **Инструкция по внедрению** — пошагово как перенести в BPMSoft
-
-### Порядок внедрения (стандартный)
-
-1. Объекты/колонки → UI: дизайнер объекта → **Опубликовать**
-2. Поля на страницах → мастер раздела → **Сохранить**
-3. C#-сервисы → схема «Исходный код» → **Опубликовать**
-4. EventListener → «Исходный код» → Опубликовать → **⚠️ перезапуск Kestrel**
-5. BPMN-процессы → дизайнер процессов
-6. Экспорт CTI → перенос на прод
-
-### Выбор способа реализации
-
-| Задача | Способ |
-|--------|--------|
-| Новый объект / колонка | UI: дизайнер объекта |
-| Замещение объекта | UI: Конфигурация → Добавить → Замещающий объект |
-| Страница / деталь (UI) | JavaScript AMD-модуль → схема «Клиентский модуль» |
-| Серверная логика | C# → схема «Исходный код» |
-| EventListener | C# → схема «Исходный код» + перезапуск Kestrel |
-| BPMN-процессы | Дизайнер процессов + C# Script Task |
-| SQL | Конфигурация → Добавить → SQL-сценарий |
-| Простые настройки | Мастер разделов (no-code) |
+**Полное руководство** → [IMPLEMENTATION_GUIDE.md](IMPLEMENTATION_GUIDE.md)
 
 ### При получении новой задачи
 
@@ -232,57 +185,14 @@ Claude **НЕ вносит изменения напрямую в систему
 
 #### Шаг 4: Специализированные источники (по необходимости)
 
-- Актуальный код CTI: `src/CTI_2026-04-11_15.14.44/CTI/CTI` (Python-скрипт, раздел ниже)
+- Актуальный код CTI: `src/CTI_2026-04-11_15.14.44/CTI/CTI` → [CTI_BINARY_FORMAT.md](CTI_BINARY_FORMAT.md)
 - Системные пакеты: `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/`
 
 **Более подробное описание всех источников** → `knowledge/research-tools.md`
 
-### Чтение бинарного архива CTI
-
-`src/CTI_2026-04-11_15.14.44/CTI/CTI` — кастомный формат BPMSoft (уже gunzip'ed):
-`[4 байта LE = длина имени в UTF-16 code units][имя UTF-16LE][4 байта LE = длина контента][контент]`
-
-```python
-import struct, os
-data = open('src/CTI_2026-04-11_15.14.44/CTI/CTI', 'rb').read()
-pos = 0
-while pos < len(data):
-    name_len = struct.unpack_from('<I', data, pos)[0]; pos += 4
-    name = data[pos:pos + name_len * 2].decode('utf-16-le'); pos += name_len * 2
-    content_len = struct.unpack_from('<I', data, pos)[0]; pos += 4
-    content = data[pos:pos + content_len]; pos += content_len
-    # name = относительный путь файла, content = байты
-```
-
-**Системные пакеты** уже распакованы: `src/PKG_BPMSoft_Full_House_1.9.0.14114/<PackageName>/Schemas/`
-
 ---
 
-## Онлайн-база знаний (приоритет над PDF)
+## Справочные материалы
 
-**URL:** `https://edu.bpmsoft.ru/baza-znaniy/`
-**Авторизация:** через `https://bpmsoft.ru/avtorizatsiya/` (логин: `e.chumak@cti.ru`)
-**Инструмент:** Playwright MCP → скилл `/bpmsoft-kb`
-
-Разделы базы знаний (версия 1.9):
-- **Для пользователя** — работа с разделами, обращения, SLA
-- **Для аналитика** — бизнес-процессы, настройки no-code
-- **Для разработчика** — C#, JavaScript, замещения, схемы
-- **Для администратора** — установка, настройка системы
-
-> **Правило:** сначала искать в онлайн-базе знаний. PDF использовать только если сайт недоступен.
-
----
-
-## Документация (резервный источник)
-
-Индекс PDF → `knowledge/DOCUMENTATION_INDEX.md`. Ключевые файлы:
-
-| PDF | Где | Что |
-|-----|-----|-----|
-| `servernaya-razrabotka.pdf` | Для разработчика | C#, ORM, ESQ, веб-сервисы, события |
-| `klientskaya-razrabotka.pdf` | Для разработчика | JavaScript/AMD, MVVM, страницы, детали |
-| `arkhitektura.pdf` | Для разработчика | Архитектура платформы |
-| `obshchie-printsipy-razrabotki.pdf` | Для разработчика | Git, IDE, замещение, SQL-сценарии |
-| `biznes-protsessy.pdf` | Для аналитика | BPMN, дизайнер процессов |
-| `upravlenie-servisom.pdf` | Для пользователя | Обращения, SLA, уведомления |
+- **edu.bpmsoft.ru** — онлайн-база знаний (логин: `e.chumak@cti.ru`, инструмент: `/bpmsoft-kb`)
+- **PDF-документация** — индекс → `knowledge/DOCUMENTATION_INDEX.md`
