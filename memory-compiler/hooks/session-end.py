@@ -164,6 +164,7 @@ def main() -> None:
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             creationflags=creation_flags,
+            env=os.environ.copy(),
         )
         logging.info("Spawned flush.py for session %s (%d turns, %d chars)", session_id, turn_count, len(context))
     except Exception as e:

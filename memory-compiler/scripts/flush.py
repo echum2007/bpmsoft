@@ -122,7 +122,7 @@ respond with exactly: FLUSH_OK
             options=ClaudeAgentOptions(
                 cwd=str(ROOT),
                 allowed_tools=[],
-                max_turns=2,
+                max_turns=1,
             ),
         ):
             if isinstance(message, AssistantMessage):
@@ -134,6 +134,9 @@ respond with exactly: FLUSH_OK
     except Exception as e:
         import traceback
         logging.error("Agent SDK error: %s\n%s", e, traceback.format_exc())
+        logging.error("Env check: CLAUDE_AUTH_TOKEN=%s, HOME=%s",
+                     "set" if os.environ.get("CLAUDE_AUTH_TOKEN") else "NOT SET",
+                     os.environ.get("HOME", "NOT SET"))
         response = f"FLUSH_ERROR: {type(e).__name__}: {e}"
 
     return response
