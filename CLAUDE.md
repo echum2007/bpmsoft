@@ -133,13 +133,19 @@ BPMsoft/
 
 **🔴 ВСЕГДА ПЕРВЫМ — Поиск в NotebookLM блокнотах**
 
-Доступные блокноты (ID для `mcp__notebooklm__ask_question`):
-- `bpmsoft-documentation` — BPMSoft 1.9, платформа, архитектура
-- `modern-net-and-c-development-g` — C# 12, .NET 8, async/await, DI
-- `bpmn-2-0-specification-and-gui-1` — BPMN 2.0, диаграммы процессов
-- `sencha-extjs-4-complete-guide` — ExtJS 4.2, компоненты, классы
-- `backend-infrastructure-stack-b` — OAuth 2.0, Email, REST API, Redis, PostgreSQL, Kestrel
-- `angular-18-2-modern-frontend-f` — Angular 18.2, компоненты, DI, routing
+**MCP:** `mcp__notebooklm-mcp__notebook_query` (jacob-bd/notebooklm-mcp-cli)
+
+Доступные блокноты (передавать `notebook_id` = UUID):
+
+| Блокнот | UUID | Охватывает |
+| ------- | ---- | ---------- |
+| BPMSoft Documentation | `eb410184-caa8-42fe-92b4-6f1971f4425f` | BPMSoft 1.9, платформа, архитектура, C#, JS |
+| Backend & Infrastructure Stack | `0c1bba11-acba-4eda-a893-a5964378147c` | OAuth 2.0, Email, REST, Redis, PostgreSQL, Kestrel |
+| Data-Driven System Analysis & OAuth | `841311ac-1245-4b76-a1f2-352ed8c3539c` | Системный анализ, BPMSoft OAuth |
+| Angular 18.2 Modern Frontend | `d545f7f8-575b-400d-9ca0-ce6e8da0e43e` | Angular 18.2, компоненты, DI, routing |
+| Sencha ExtJS 4 Complete Guide | `5a51c51e-ae09-4265-a42f-127c6a9c6ce9` | ExtJS 4.2, компоненты, классы |
+| BPMN 2.0 Specification and Guide | `ae040e01-cddd-4441-a79b-14d0bb249f94` | BPMN 2.0, диаграммы процессов |
+| Modern .NET and C# Development | `ceb5a347-06e6-4115-bd82-d7feec387716` | C# 12, .NET 8, async, DI |
 
 **Преимущества:** 5-7x экономия токенов, цитаты с источниками, быстро, контролируемый контент
 

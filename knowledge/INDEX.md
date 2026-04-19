@@ -1,6 +1,6 @@
 # BPMSoft Wiki — Навигационный индекс
 
-**Обновлено:** 2026-04-18  
+**Обновлено:** 2026-04-20  
 **Последний Lint:** 2026-04-15
 
 > Правила ведения вики → [WIKI_SCHEMA.md](WIKI_SCHEMA.md)
@@ -44,6 +44,14 @@
 | [[concepts/tool-availability-verification]] | Проверяй доступные инструменты первым; edu.bpmsoft.ru > PDF > вики; не предлагай альтернативы без поиска | daily/2026-04-18.md | 2026-04-18 |
 | [[concepts/bpmsoft-web-knowledge-base-navigation]] | Навигация в edu.bpmsoft.ru требует Playwright MCP; URL кодирование и сессии ломают прямые запросы | daily/2026-04-18.md | 2026-04-18 |
 | [[concepts/google-mail-oauth2-bpmsoft-integration]] | Google Mail OAuth 2.0 в BPMSoft 1.9; исследование архитектуры почты; dev-server диагностика | daily/2026-04-18.md | 2026-04-18 |
+| [[concepts/feature-toggle-subprocess-execution]] | Feature-toggle (RunReopenCaseAndNotifyAssigneeClass=1) пропускает SubProcess1; прямой вызов C# код вместо процесса | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/exchangelistenerservice-microservice-prerequisite]] | ExchangeListenerService — отдельный Docker микросервис; требуется до конфигурации OAuth 2.0; система setting + diagnostic API | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/knowledge-base-file-standardization]] | Стандартизация markdown формата в knowledge/concepts/; YAML frontmatter, таблицы, wikilinks; регулярные audits для consistency | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/memory-compiler-scheduling-task-scheduler]] | Windows Task Scheduler для гарантированной ежедневной компиляции; вместо event-driven; StartWhenAvailable для пропущенных окон | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/notebooklm-documentation-strategy-alert-rules]] | NotebookLM как primary source (5-7x эффективность); 2 focused notebooks; 3 mandatory alert rules вместо молчаливых fallback-ов | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/imacrosinvokable-pattern-bpmsoft]] | IMacrosInvokable interface для email макросов; GetMacrosValue(object arguments) с KeyValuePair<string, Guid> распаковкой | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/lazy-property-pattern-service-initialization]] | Lazy property через ClassFactory.Get в property getter (не в constructor); BPMSoft convention для сервисов | daily/2026-04-19.md | 2026-04-19 |
+| [[concepts/notebooklm-notebooks-curated]] | Актуальный состав 7 блокнотов после аудита 2026-04-20: мусор удалён, версии зафиксированы (PG12, Redis 7, .NET 8) | session/2026-04-20 | 2026-04-20 |
 
 ---
 
@@ -53,6 +61,7 @@
 |-------|-----------|----------|------|
 | [[connections/dev-server-investigation-workflow]] | ED25519 доступ, read-only протокол, проверка инструментов, Google Mail OAuth 2.0 | daily/2026-04-18.md | 2026-04-18 |
 | [[connections/investigation-methodology-and-metadata-discovery]] | Data-driven анализ, VwSysProcess, StartSignal метаданные, BPMN диагностика | daily/2026-04-17.md | 2026-04-18 |
+| [[connections/infrastructure-and-architecture-prerequisites]] | ExchangeListenerService, OAuth 2.0, feature-toggle logic, IMacrosInvokable, lazy pattern | daily/2026-04-19.md | 2026-04-19 |
 
 ---
 
@@ -62,6 +71,7 @@
 
 ## Справочники
 
+- [reference_dev_server.md](reference_dev_server.md) — SSH подключение к dev-серверу (192.168.102.46), версии ПО, команды
 - [DOCUMENTATION_INDEX.md](DOCUMENTATION_INDEX.md) — индекс PDF-документации BPMSoft 1.9 (резервный источник)
 
 ---
