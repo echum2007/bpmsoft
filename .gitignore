@@ -75,3 +75,10 @@ memory-compiler/**/*.pyc
 # Knowledge base — артефакты компилятора (не коммитим)
 knowledge/concepts-index.md
 knowledge/concepts-log.md
+knowledge/log.md
+
+# Архив знаний (обработка вручную позже)
+knowledge/archive/
+
+# Memory compiler — вся папка и её артефакты
+memory-compiler/

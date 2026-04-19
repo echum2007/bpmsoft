@@ -1,6 +1,5 @@
 {
   "permissions": {
-    "defaultMode": "bypassPermissions",
     "deny": [
       "Bash(rm -rf:*)",
       "Bash(rm -r /:*)",
@@ -41,6 +40,10 @@
       "Edit(/sbin/*)",
       "Edit(C:/Windows/*)",
       "Edit(C:/Program Files/*)"
+    ],
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "mcp__notebooklm__ask_question"
     ]
   },
   "hooks": {
@@ -50,8 +53,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"c:/Users/echum/Documents/BPMsoft/.claude/hooks/check-readonly.py\"",
-            "blockOnFailure": true
+            "command": "python3 \"c:/Users/echum/Documents/BPMsoft/.claude/hooks/check-readonly.py\""
           }
         ]
       }

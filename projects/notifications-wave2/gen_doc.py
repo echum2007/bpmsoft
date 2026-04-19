@@ -3,12 +3,10 @@ from docx.shared import Pt, RGBColor, Cm
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
-from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 doc = Document()
 
 # === LANDSCAPE ORIENTATION ===
-from docx.oxml import OxmlElement
 section = doc.sections[0]
 section.page_width, section.page_height = section.page_height, section.page_width
 section.left_margin = Cm(1.5)
@@ -78,7 +76,8 @@ def add_h(doc, text, level=1):
 
 def add_body(doc, text):
     p = doc.add_paragraph(text)
-    p.runs[0].font.size = Pt(9.5)
+    if p.runs:
+        p.runs[0].font.size = Pt(9.5)
     return p
 
 
@@ -95,27 +94,40 @@ def add_note(doc, text):
     r2.font.color.rgb = RGBColor(0x60, 0x60, 0x60)
 
 
+def add_mono(doc, text):
+    p = doc.add_paragraph()
+    p.paragraph_format.left_indent = Cm(0.5)
+    run = p.add_run(text)
+    run.font.name = 'Courier New'
+    run.font.size = Pt(8)
+    run.font.color.rgb = RGBColor(0x20, 0x20, 0x20)
+    return p
+
+
 # ===================== TITLE =====================
 title = doc.add_heading('Система email-уведомлений по обращениям', 0)
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-sub = doc.add_paragraph('Описание работающего механизма (CTI / BPMSoft 1.9). Источники: анализ кода + документация BPMSoft v1.9')
+sub = doc.add_paragraph(
+    'Описание работающего механизма (CTI / BPMSoft 1.9). '
+    'Источники: анализ кода + документация BPMSoft v1.9 + выгрузка vwprocesslib с прода (15.04.2026)'
+)
 sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
 sub.runs[0].font.color.rgb = RGBColor(0x70, 0x70, 0x70)
 sub.runs[0].font.size = Pt(10)
-d = doc.add_paragraph('Дата: 14.04.2026  |  Архив прода: CTI от 2026-04-11')
+d = doc.add_paragraph('Дата: 15.04.2026 (v2)  |  Архив прода: CTI от 2026-04-11')
 d.alignment = WD_ALIGN_PARAGRAPH.CENTER
 d.runs[0].font.size = Pt(8.5)
 d.runs[0].font.color.rgb = RGBColor(0xAA, 0xAA, 0xAA)
 doc.add_paragraph()
 
-# ===================== РАЗДЕЛ 0: Кому уходят уведомления =====================
+# ===================== РАЗДЕЛ 0 =====================
 add_h(doc, '0. Кому отправляются уведомления — логика получателей', 1)
 add_body(doc,
     'В обращении есть два разных контакта на стороне клиента:\n'
     '  \u2022 \u00abИнициатор\u00bb — контакт, который зарегистрировал обращение (кто написал/позвонил)\n'
     '  \u2022 \u00abПользователь услуги\u00bb — контакт, для которого зарегистрировано обращение (кто фактически пострадал)\n\n'
     'Это могут быть разные люди. Например: секретарь (инициатор) подала обращение за директора (пользователь услуги).\n\n'
-    '\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u043e\u0435 \u043b\u0438\u0446\u043e (кому реально уйдёт письмо) определяется системными настройками:'
+    'Контактное лицо (кому реально уйдёт письмо) определяется системными настройками:'
 )
 doc.add_paragraph()
 
@@ -149,7 +161,7 @@ add_note(doc,
     'берётся из системной настройки \u00abE-mail службы поддержки\u00bb.'
 )
 
-# ===================== РАЗДЕЛ 1: Клиент =====================
+# ===================== РАЗДЕЛ 1 =====================
 doc.add_page_break()
 add_h(doc, '1. Уведомления в сторону Заказчика (клиента)', 1)
 add_body(doc,
@@ -214,6 +226,12 @@ client_rows = [
      'Запрос оценки по обращению (для инициатора)',
      'SendEmailToCaseStatusChanged\n+ CaseNotificationRule',
      'C#-класс (CaseService)\n+ справочник'),
+    ('Сообщение с портала',
+     'Контактное лицо\n(по настройке)',
+     '(по шаблону)',
+     '\u2014',
+     'CasePortalMessageHistoryNotification\nProcessMultiLanguage',
+     'BPMN (Portal)'),
 ]
 
 for i, r in enumerate(client_rows):
@@ -229,46 +247,148 @@ add_note(doc,
     'включить цитату исходного письма (ParentActivity), но это корневое письмо, не последний ответ.'
 )
 
-# ===================== РАЗДЕЛ 2: Инженер =====================
-doc.add_page_break()
-add_h(doc, '2. Уведомления в сторону Инженера', 1)
+doc.add_paragraph()
+add_h(doc, '1.2 Текст ответа инженера в уведомлении заказчику', 2)
 add_body(doc,
-    'Инженер получает уведомления при назначении ответственным и при получении ответа от клиента. '
-    'Push-уведомление (колокольчик) приходит при ЛЮБОМ входящем письме, независимо от статуса.'
+    'Текущее состояние: текст ответа инженера НЕ включается в email заказчику. '
+    'Шаблон «Сообщение о получении нового ответа по обращению» содержит только номер/тему/статус.\n\n'
+    'Возможное улучшение: invokable-макрос [#@Invoke.UsrLastEngineerReply#] в шаблоне. '
+    'Запланировано как задача 2.6.'
 )
+
+doc.add_paragraph()
+add_h(doc, '1.3 Имя отправителя', 2)
+add_body(doc,
+    'Текущее состояние: все письма уходят от servicedesk@cti.ru без подписи инженера.\n\n'
+    'Возможное улучшение: добавить макрос [#Owner.Name#] в подвал шаблонов. '
+    'Запланировано как задача 2.7.'
+)
+
+# ===================== РАЗДЕЛ 2 =====================
+doc.add_page_break()
+add_h(doc, '2. Уведомления в сторону Сотрудников (инженеры, сервис-менеджеры, 1-я линия)', 1)
+
+add_h(doc, '2.1 Текущие механизмы (три разных, без единой конфигурации)', 2)
 doc.add_paragraph()
 
 t2 = doc.add_table(rows=1, cols=6)
 t2.style = 'Table Grid'
-add_header_row(t2, ['Событие', 'Получатель', 'Шаблон письма', 'Содержание', 'Механизм (системное имя)', 'Тип механизма'])
+add_header_row(t2, ['Событие', 'Получатель', 'Шаблон письма', 'Содержание', 'Механизм', 'Тип'])
 
-eng_rows = [
+emp_rows = [
     ('Назначен ответственным',
-     'Назначенный инженер',
+     'Назначенный сотрудник',
      'Назначение ответственного в обращении',
-     '«Вас назначили ответственным\nпо обращению №...»',
-     'UsrSendEmailToSROwnerCustom1\n(замещает SendEmailToSROwner)',
-     'BPMN-процесс (CTI)\n[родитель: CaseService]'),
-    ('Назначено на группу',
-     'Вся группа\nответственных',
-     'На группу назначено обращение',
-     '«На группу назначено\nобращение №...»',
-     'SendEmailToSROwner\n(базовый, CaseService)',
-     'BPMN-процесс\n(CaseService)'),
-    ('Клиент написал ответ\n\u2192 «Получен ответ»\n(только из ряда статусов,\nсм. раздел 5)',
-     'Ответственный инженер\n+ копия: роль «1-я линия»',
-     'Добавление нового email\nпо обращению',
-     '«Получен новый email\nпо обращению №...»\n\u26a0 Текст письма клиента\nНЕ включён\n\nОт: servicedesk@cti.ru\nКому: email ответственного\nКопия: роль «1-я линия»',
-     'UsrProcess_0c71a12CTI5\n(запускается StartSignal\nпри смене Case.Status)',
+     '«Вас назначили ответственным по обращению №...»',
+     'UsrSendEmailToSROwnerCustom1',
      'BPMN-процесс (CTI)'),
+    ('Создано обращение с ответственным',
+     'Ответственный сотрудник',
+     'Назначение ответственного в обращении',
+     'То же',
+     'UsrSendEmailToSROwnerCustom1\n(второй StartSignal)',
+     'BPMN-процесс (CTI)'),
+    ('Назначено на группу\n(Owner=NULL, Group!=NULL)',
+     'Все сотрудники группы',
+     'На группу назначено обращение',
+     '«На группу назначено обращение №...»',
+     'RunSendEmailToCaseGroupV2',
+     'BPMN-процесс (CaseService)'),
+    ('Клиент написал ответ\n\u2192 «Получен ответ»',
+     'Ответственный\n+ CC: роль «1-я линия»',
+     'Добавление нового email\nпо обращению',
+     '«Получен новый email по обращению №...»\n\u26a0 Текст письма клиента НЕ включён.',
+     'UsrProcess_0c71a12CTI5',
+     'BPMN-процесс (CTI)'),
+    ('Сообщение с портала',
+     'Ответственный',
+     '(по шаблону)',
+     '\u2014',
+     'CasePortalMessageHistoryNotification\nProcessML',
+     'BPMN (Portal)'),
 ]
-for i, r in enumerate(eng_rows):
+for i, r in enumerate(emp_rows):
     bg = 'EBF3FB' if i % 2 == 0 else None
     add_data_row(t2, r, bg)
-set_col_widths(t2, [Cm(3.5), Cm(3.0), Cm(5.5), Cm(4.5), Cm(5.5), Cm(3.5)])
+set_col_widths(t2, [Cm(3.5), Cm(3.0), Cm(5.0), Cm(5.0), Cm(5.5), Cm(3.5)])
 
-# ===================== РАЗДЕЛ 3: Push =====================
 doc.add_paragraph()
+add_h(doc, '2.2 Критические GAP-ы в текущем механизме', 2)
+doc.add_paragraph()
+
+t_gap = doc.add_table(rows=1, cols=3)
+t_gap.style = 'Table Grid'
+add_header_row(t_gap, ['GAP', 'Описание', 'Влияние'])
+gap_rows = [
+    ('Нет текста письма клиента',
+     'Инженер получает «Получен новый email...» без текста. Надо открывать систему.',
+     '3-5 мин на каждое уведомление (задача 2.3)'),
+    ('Фильтр по статусам',
+     'UsrProcess_0c71a12CTI5 срабатывает ТОЛЬКО при смене статуса на «Получен ответ». '
+     'Если обращение в статусе «Новое» или «В работе» — email инженеру не уходит (только push в колокольчик).',
+     'Ответ клиента может быть пропущен (задача 2.3/2.4)'),
+    ('Нет единого механизма',
+     'Три разных BPMN на три события. Нет справочника правил (как CaseNotificationRule для клиентов).',
+     'Сложно добавлять новые события, нет гибкой настройки'),
+    ('Нет уведомлений о смене статуса',
+     'Инженер не получает email при эскалации, переоткрытии, отмене и т.д.',
+     'Задача 2.4'),
+    ('Нет SLA-предупреждений',
+     'Только визуальные индикаторы на странице.',
+     'Задача 2.1'),
+    ('Нет напоминаний о зависании',
+     'Обращение может «зависнуть» в «Получен ответ».',
+     'Задача 2.2'),
+]
+for i, r in enumerate(gap_rows):
+    bg = 'FCE4D6' if i % 2 == 0 else 'FFF2CC'
+    add_data_row(t_gap, r, bg)
+set_col_widths(t_gap, [Cm(4.5), Cm(14), Cm(7)])
+
+doc.add_paragraph()
+add_h(doc, '2.3 UsrSendEmailToSROwnerCustom1 — диаграмма (по скриншоту 15.04.2026)', 2)
+add_mono(doc,
+    'StartSignal1: «Обращение назначено на ответственного» (смена Owner)\n'
+    'StartSignal2: «Создано обращение с ответственным» (создание Case с Owner)\n'
+    '  |\n'
+    '  v\n'
+    '[Задание-сценарий] -> [ExclusiveGateway]\n'
+    '                          |\n'
+    '        +-----------------+------------------+\n'
+    '        | «Ответственный = Изменил»          | (другое условие -> ?)\n'
+    '        v                                     |\n'
+    '  [Читать данные обращения]                   |\n'
+    '        |                                     |\n'
+    '  [Читать данные ответственного]              |\n'
+    '        |                                     |\n'
+    '        +-- (нет email) -> [Terminate]        |\n'
+    '        |                                     |\n'
+    '        | «E-mail ответственного указан»      |\n'
+    '        v                                     |\n'
+    '  [Читать данные схемы Обращение]             |\n'
+    '        |                                     |\n'
+    '  [Обработать шаблон письма с макросами]      |\n'
+    '        |                                     |\n'
+    '  [ExclusiveGateway: «Происхождение по email?»]\n'
+    '        |                                     |\n'
+    '  +-----+----------------------+              |\n'
+    '  | Не по email                | По email     |\n'
+    '  v                            v              |\n'
+    '  [Добавить данные email]  [Первая активность]|\n'
+    '        |                  [Изменить тему]    |\n'
+    '        |                       |             |\n'
+    '        +----------+------------+             |\n'
+    '                   v                          |\n'
+    '             [Отправить письмо] <-------------+'
+)
+add_note(doc,
+    'Ветка «Происхождение по email» — если обращение создано из email, процесс ищет первую Activity '
+    '(корневое письмо) и меняет тему для email-threading (In-Reply-To). '
+    'Групповое назначение здесь не обрабатывается — для группы работает RunSendEmailToCaseGroupV2.'
+)
+
+# ===================== РАЗДЕЛ 3 =====================
+doc.add_page_break()
 add_h(doc, '3. Push-уведомления внутри BPMSoft (не email)', 1)
 
 t3 = doc.add_table(rows=1, cols=4)
@@ -289,8 +409,8 @@ for i, r in enumerate(push_rows):
     add_data_row(t3, r, bg)
 set_col_widths(t3, [Cm(5.5), Cm(3.5), Cm(8), Cm(4)])
 
-# ===================== РАЗДЕЛ 4: Цепочка =====================
-doc.add_page_break()
+# ===================== РАЗДЕЛ 4 =====================
+doc.add_paragraph()
 add_h(doc, '4. Полная цепочка при получении email от клиента', 1)
 
 steps = [
@@ -302,16 +422,17 @@ steps = [
      'Сигнал на новую Activity по обращению \u2192 BPMN RunSendNotificationCaseOwnerProcess (CaseService).'),
     ('4', 'Выбор пути (feature-toggle)',
      'toggle RunReopenCaseAndNotifyAssigneeClass=1 (на проде) \u2192 C#-класс ReopenCaseAndNotifyAssignee.\n'
-     'При toggle=0 \u2014 шёл бы BPMN UsrSendNotificationToCaseOwnerCustom1 (на проде не используется).'),
+     'При toggle=0 — шёл бы BPMN UsrSendNotificationToCaseOwnerCustom1 (на проде не используется).'),
     ('5', 'Переоткрытие (смена статуса)',
-     'Предикат ReopeningCondition: если статус \u00abна паузе\u00bb или \u00abРешено\u00bb \u2192 меняет на \u00abПолучен ответ\u00bb.\n'
-     'Если \u00abНовое\u00bb, \u00abВ работе\u00bb, уже \u00abПолучен ответ\u00bb или финальный \u2014 статус НЕ меняется.'),
-    ('6', 'Push-уведомление инженеру (всегда)',
+     'Предикат ReopeningCondition: если статус IsResolved или IsPaused \u2192 меняет на \u00abПолучен ответ\u00bb.\n'
+     'Если \u00abНовое\u00bb, \u00abВ работе\u00bb, уже \u00abПолучен ответ\u00bb или финальный — статус НЕ меняется.'),
+    ('6', 'Push-уведомление сотруднику (всегда)',
      'NotifyOwner() \u2192 запись Reminding \u2192 колокольчик BPMSoft. Срабатывает ВСЕГДА при наличии ответственного.'),
-    ('7', 'Email инженеру (только если статус изменился)',
+    ('7', 'Email сотруднику (только если статус изменился)',
      'Смена статуса на \u00abПолучен ответ\u00bb \u2192 StartSignal \u2192 UsrProcess_0c71a12CTI5 (CTI).\n'
      'Читает данные обращения и email ответственного \u2192 отправляет по шаблону.\n'
-     '\u26a0 Текст клиентского письма в email НЕ включён (GAP \u2014 задача 2.3).'),
+     '\u26a0 GAP: Текст клиентского письма в email НЕ включён.\n'
+     '\u26a0 GAP: Если статус не изменился (обращение в \u00abНовое\u00bb/\u00abВ работе\u00bb) — email НЕ уходит.'),
 ]
 for num, title_s, desc in steps:
     p = doc.add_paragraph()
@@ -324,7 +445,7 @@ for num, title_s, desc in steps:
     r2.font.size = Pt(9)
 doc.add_paragraph()
 
-# ===================== РАЗДЕЛ 5: Статус «Получен ответ» =====================
+# ===================== РАЗДЕЛ 5 =====================
 add_h(doc, '5. Логика статуса \u00abПолучен ответ\u00bb \u2014 откуда берётся перечень статусов', 1)
 
 add_h(doc, '5.1 Где задаётся в системе', 2)
@@ -381,11 +502,11 @@ status_rows = [
 ]
 for r in status_rows:
     v = r[3]
-    bg = 'E2EFDA' if v == 'Да' else ('FCE4D6' if v == 'Нет' else 'FFF2CC')
+    bg = 'E2EFDA' if v == 'Да' else ('FCE4D6' if v.startswith('Нет') else 'FFF2CC')
     add_data_row(t4, r, bg)
 set_col_widths(t4, [Cm(7), Cm(4), Cm(4), Cm(6)])
 
-# ===================== РАЗДЕЛ 6: Справочник шаблонов =====================
+# ===================== РАЗДЕЛ 6 =====================
 doc.add_page_break()
 add_h(doc, '6. Полный список шаблонов уведомлений (по документации BPMSoft v1.9)', 1)
 add_body(doc,
@@ -396,147 +517,345 @@ add_body(doc,
 )
 doc.add_paragraph()
 
-t5 = doc.add_table(rows=1, cols=4)
-t5.style = 'Table Grid'
-add_header_row(t5, ['Шаблон', 'Вариант для инициатора', 'Направление', 'Назначение'])
-tpl_rows = [
-    ('Создание нового обращения из чата', '\u2014', 'Клиенту',
-     'Уведомление о создании обращения через чат'),
-    ('Сообщение о взятии обращения в работу',
-     'Сообщение о взятии обращения в работу (для инициатора)', 'Клиенту',
-     'Обращение взято в работу'),
-    ('Сообщение о получении нового ответа по обращению',
-     'Сообщение о получении нового ответа по обращению (для инициатора)', 'Клиенту',
-     'Инженер написал ответ по обращению'),
-    ('Сообщение о разрешении обращения',
-     'Сообщение о разрешении обращения (для инициатора)', 'Клиенту',
-     'Обращение решено'),
-    ('Сообщение о разрешении обращения \u2013 только с решением',
-     'Сообщение о разрешении обращения \u2013 только с решением (для инициатора)', 'Клиенту',
-     'Обращение решено (упрощённый вариант — только текст решения)'),
-    ('Подтверждение закрытия обращения',
-     'Подтверждение закрытия обращения (для инициатора)', 'Клиенту',
-     'Запрос подтверждения закрытия из-за долгого ожидания ответа'),
-    ('Сообщение о закрытии обращения',
-     'Сообщение о закрытии обращения (для инициатора)', 'Клиенту',
-     'Обращение закрыто'),
-    ('Сообщение об отмене обращения',
-     'Сообщение об отмене обращения (для инициатора)', 'Клиенту',
-     'Обращение отменено'),
-    ('Запрос оценки по обращению',
-     'Запрос оценки по обращению (для инициатора)', 'Клиенту',
-     'Запрос оценки качества обслуживания после решения'),
-    ('Назначение ответственного в обращении', '\u2014', 'Инженеру',
-     'Внутреннее: ответственный назначен'),
-    ('На группу назначено обращение', '\u2014', 'Инженеру (группа)',
-     'Внутреннее: обращение назначено на группу'),
-    ('Добавление нового email по обращению', '\u2014', 'Инженеру',
-     'Внутреннее: получен новый email от клиента по обращению'),
-    ('Пустой шаблон по обращению', '\u2014', 'Любое',
-     'Нестандартные уведомления (заготовка)'),
-    ('Шаблон приглашения SSP', '\u2014', 'Клиенту',
-     'Приглашение клиента на портал самообслуживания'),
-    ('Шаблон регистрации пользователя портала', '\u2014', 'Клиенту',
-     'Ссылка активации для нового портального пользователя'),
+add_h(doc, 'Шаблоны для клиентов', 2)
+t5a = doc.add_table(rows=1, cols=3)
+t5a.style = 'Table Grid'
+add_header_row(t5a, ['Шаблон', 'Вариант для инициатора', 'Назначение'])
+client_tpl = [
+    ('Создание нового обращения из чата', '\u2014', 'Уведомление о создании обращения через чат'),
+    ('Сообщение о взятии обращения в работу', 'Сообщение о взятии обращения в работу (для инициатора)', 'Обращение взято в работу'),
+    ('Сообщение о получении нового ответа по обращению', '...для инициатора', 'Инженер написал ответ по обращению'),
+    ('Сообщение о разрешении обращения', '...для инициатора', 'Обращение решено'),
+    ('Сообщение о разрешении обращения \u2014 только с решением', '...для инициатора', 'Обращение решено (упрощённый вариант)'),
+    ('Подтверждение закрытия обращения', '...для инициатора', 'Запрос подтверждения закрытия'),
+    ('Сообщение о закрытии обращения', '...для инициатора', 'Обращение закрыто'),
+    ('Сообщение об отмене обращения', '...для инициатора', 'Обращение отменено'),
+    ('Запрос оценки по обращению', '...для инициатора', 'Запрос оценки качества'),
 ]
-for i, r in enumerate(tpl_rows):
-    is_eng = r[2] == 'Инженеру' or r[2] == 'Инженеру (группа)'
-    bg = 'E2EFDA' if is_eng else ('EBF3FB' if i % 2 == 0 else None)
-    add_data_row(t5, r, bg)
-set_col_widths(t5, [Cm(6.5), Cm(7), Cm(2.5), Cm(9)])
+for i, r in enumerate(client_tpl):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t5a, r, bg)
+set_col_widths(t5a, [Cm(7), Cm(9), Cm(9.5)])
 
 doc.add_paragraph()
-add_note(doc, 'Зелёным выделены шаблоны для внутренних уведомлений инженерам.')
-
-# ===================== РАЗДЕЛ 7: Справочник механизмов =====================
-doc.add_page_break()
-add_h(doc, '7. Справочник: системные имена механизмов', 1)
-
-t6 = doc.add_table(rows=1, cols=5)
-t6.style = 'Table Grid'
-add_header_row(t6, ['Системное имя', 'Тип', 'Пакет', 'Статус', 'Описание'])
-ref_rows = [
-    ('UsrProcess_send_reg_mail', 'BPMN-процесс', 'CTI', 'Активен',
-     'Отправка уведомлений заказчику о регистрации обращения'),
-    ('UsrSendEmailToSROwnerCustom1', 'BPMN-процесс', 'CTI', 'Активен',
-     'Email ответственному при назначении (замещает SendEmailToSROwner из CaseService)'),
-    ('UsrSendNotificationToCaseOwnerCustom1', 'BPMN-процесс', 'CTI', 'НЕ активен\n(toggle=1)',
-     'Переоткрытие + уведомление ответственного о новом комментарии\n'
-     '(замещает SendNotificationToCaseOwner; при toggle=1 обходится C#-классом)'),
-    ('UsrProcess_0c71a12CTI5', 'BPMN-процесс', 'CTI', 'Активен',
-     'Email инженеру при переходе обращения в \u00abПолучен ответ\u00bb\n'
-     '(StartSignal на изменение Case.StatusId)\n'
-     'Отправитель (Sender): servicedesk@cti.ru (MailboxSyncSettings)\n'
-     'Получатель (Recipient1): email ответственного инженера (из Contact)\n'
-     'Копия (CopyRecipient1): роль \u00ab1-я линия\u00bb (VwSysFunctionalRole)\n'
-     'Шаблон: \u00abДобавление нового email по обращению\u00bb\n'
-     'CreateActivity = false (Activity-запись не создаётся)'),
-    ('RunSendNotificationCaseOwnerProcess', 'BPMN-процесс', 'CaseService', 'Активен',
-     'Оркестратор при входящем email: выбирает путь (C# или BPMN) по feature-toggle'),
-    ('SendEmailToSROwner', 'BPMN-процесс', 'CaseService', 'Базовый\n(замещён CTI)',
-     'Базовый: email ответственному при назначении (родитель UsrSendEmailToSROwnerCustom1)'),
-    ('SendNotificationToCaseOwner', 'BPMN-процесс', 'CaseService', 'Базовый\n(замещён CTI)',
-     'Базовый: уведомление ответственного при входящем ответе (родитель UsrSendNotificationToCaseOwnerCustom1)'),
-    ('ReopenCaseAndNotifyAssignee', 'C#-класс', 'CaseService', 'Активен\n(toggle=1)',
-     'Переоткрытие обращения (смена статуса) + push Reminding при входящем email'),
-    ('SendEmailToCaseStatusChanged', 'C#-класс', 'CaseService', 'Активен\n(toggle=1)',
-     'Email клиенту при смене статуса \u2014 читает CaseNotificationRule\n'
-     'toggle: SendEmailToCaseOnStatusChangeClass=1'),
-    ('CaseNotificationRule', 'Справочник', 'CaseService', 'Настраивается',
-     'Правила: (статус + категория) \u2192 шаблон email. Содержит поле \u00abПроцитировать оригинальный email\u00bb.\n'
-     'UI: Дизайнер системы \u2192 Справочники \u2192 Правила уведомлений контакта по обращению'),
-    ('EmailWithMacrosManager', 'C#-класс', 'CaseService', 'Системный',
-     'Создание email по шаблону с подстановкой макросов (номер, статус, ответственный, даты SLA...)'),
-    ('ExtendedEmailWithMacrosManager', 'C#-класс', 'CaseService', 'Системный (не используется)',
-     'Расширение EmailWithMacrosManager: добавляет тело ParentActivity (корневого письма) как цитату.\n'
-     'Не даёт последнее письмо клиента \u2014 только корневое.'),
-    ('AsyncEmailSender', 'C#-класс', 'CaseService', 'Системный',
-     'Асинхронная отправка email через очередь (toggle UseAsyncEmailSender)'),
-    ('UsrActivityCcEventListener', 'EntityEventListener\n(C#)', 'CTI', 'Активен',
-     'При входящем email \u2014 фиксирует CC в Case.UsrCcEmails;\n'
-     'При создании исходящего email по обращению \u2014 добавляет CC из контракта и аккаунта клиента'),
+add_h(doc, 'Шаблоны для сотрудников', 2)
+t5b = doc.add_table(rows=1, cols=2)
+t5b.style = 'Table Grid'
+add_header_row(t5b, ['Шаблон', 'Назначение'])
+emp_tpl = [
+    ('Назначение ответственного в обращении', 'Внутреннее: ответственный назначен'),
+    ('На группу назначено обращение', 'Внутреннее: обращение назначено на группу'),
+    ('Добавление нового email по обращению', 'Внутреннее: получен новый email от клиента'),
 ]
-for i, r in enumerate(ref_rows):
+for i, r in enumerate(emp_tpl):
+    bg = 'E2EFDA' if i % 2 == 0 else None
+    add_data_row(t5b, r, bg)
+set_col_widths(t5b, [Cm(9), Cm(16.5)])
+
+doc.add_paragraph()
+add_h(doc, 'Служебные шаблоны', 2)
+t5c = doc.add_table(rows=1, cols=2)
+t5c.style = 'Table Grid'
+add_header_row(t5c, ['Шаблон', 'Назначение'])
+svc_tpl = [
+    ('Пустой шаблон по обращению', 'Нестандартные уведомления (заготовка)'),
+    ('Шаблон приглашения SSP', 'Приглашение клиента на портал'),
+    ('Шаблон регистрации пользователя портала', 'Ссылка активации для портального пользователя'),
+]
+for i, r in enumerate(svc_tpl):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t5c, r, bg)
+set_col_widths(t5c, [Cm(9), Cm(16.5)])
+
+# ===================== РАЗДЕЛ 7 =====================
+doc.add_page_break()
+add_h(doc, '7. Полная инвентаризация процессов (с прода 15.04.2026)', 1)
+add_body(doc, 'Источник: выгрузка представления vwprocesslib (все активные и неактивные процессы).')
+doc.add_paragraph()
+
+add_h(doc, '7.1 Уведомления клиенту', 2)
+t7a = doc.add_table(rows=1, cols=5)
+t7a.style = 'Table Grid'
+add_header_row(t7a, ['Системное имя', 'Тип', 'Пакет', 'Статус на проде', 'Описание'])
+client_proc = [
+    ('SendEmailToCaseStatusChanged', 'C#-класс', 'CaseService', 'Активен (toggle=1)',
+     'Единый механизм email клиенту при смене статуса. Читает CaseNotificationRule (статус+категория -> шаблон). Подставляет макросы.'),
+    ('SendEmailToCaseStatusChangedProcess', 'BPMN', 'CaseService', 'Замещён C#-классом (toggle=1)',
+     'BPMN-версия того же. Оркестратор: читает CaseNotificationRule, вызывает подпроцесс SendEmailToCaseContactPersonsProcess'),
+    ('SendEmailToCaseContactPersonsProcess', 'BPMN', 'CaseService', 'Активен (подпроцесс)',
+     'Хаб отправки клиенту. Разветвляет на 4 подпроцесса: контакт/инициатор x legacy/ML'),
+    ('SendEmailToCaseContactProcessMultiLanguage', 'BPMN', 'CaseService', 'Активен (подпроцесс)',
+     'Подпроцесс хаба: отправка контакту через EmailWithMacrosManager.SendEmail() (мультиязычный)'),
+    ('SendEmailToCaseContactProcess', 'BPMN', 'Case', 'Legacy (подпроцесс)',
+     'Подпроцесс хаба: отправка контакту (без мультиязычности)'),
+    ('UsrProcess_send_reg_mail', 'BPMN', 'CTI', 'Активен',
+     'Email заказчику о регистрации обращения (не покрывается CaseNotificationRule, т.к. создание != смена статуса)'),
+    ('CasePortalMessageHistoryNotificationProcessMultiLanguage', 'BPMN', 'Portal', 'Активен',
+     'Email клиенту + email сотруднику при сообщении с портала'),
+    ('CasePortalMessageHistoryNotificationProcess', 'BPMN', 'Portal', 'Legacy-версия',
+     'То же без мультиязычности'),
+]
+for i, r in enumerate(client_proc):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    if 'Замещён' in r[3] or 'Legacy' in r[3]:
+        bg = 'FFF2CC'
+    add_data_row(t7a, r, bg)
+set_col_widths(t7a, [Cm(5.5), Cm(2), Cm(2.5), Cm(3), Cm(12.5)])
+
+doc.add_paragraph()
+add_h(doc, '7.2 Уведомления сотрудникам', 2)
+t7b = doc.add_table(rows=1, cols=5)
+t7b.style = 'Table Grid'
+add_header_row(t7b, ['Системное имя', 'Тип', 'Пакет', 'Статус на проде', 'Описание'])
+emp_proc = [
+    ('UsrSendEmailToSROwnerCustom1', 'BPMN', 'CTI', 'Активен',
+     'Email ответственному при назначении. Замещает SendEmailToSROwner. Два StartSignal: назначение + создание с ответственным. Ветвление «Происхождение по email» для threading'),
+    ('SendEmailToSROwner', 'BPMN', 'CaseService', 'Замещён (CTI)',
+     'Родитель UsrSendEmailToSROwnerCustom1. Не выполняется — замещён потомком'),
+    ('RunSendEmailToCaseGroupV2', 'BPMN', 'CaseService', 'Активен',
+     'Email всей группе при назначении. StartSignal: Case создан/изменён, Owner=NULL + Group!=NULL. Собирает email всех пользователей группы через SysUserInRole'),
+    ('SendEmailToCaseGroup', 'BPMN', 'CaseService', 'Legacy',
+     'Родитель RunSendEmailToCaseGroupV2. Вызывается как fallback'),
+    ('UsrProcess_0c71a12CTI5', 'BPMN', 'CTI', 'Активен',
+     'Email ответственному при переходе в «Получен ответ». StartSignal на изменение Case.StatusId. Шаблон: «Добавление нового email по обращению». CC: роль «1-я линия». CreateActivity=false'),
+    ('ReopenCaseAndNotifyAssignee', 'C#-класс', 'CaseService', 'Активен (toggle=1)',
+     'Push (Reminding) ответственному при ЛЮБОМ входящем email. Также меняет статус на «Получен ответ» (если IsResolved/IsPaused)'),
+    ('RunSendNotificationCaseOwnerProcess', 'BPMN', 'CaseService', 'Активен (оркестратор)',
+     'Оркестратор: при входящем email выбирает путь (C# или BPMN) по feature-toggle'),
+    ('UsrSendNotificationToCaseOwnerCustom1', 'BPMN', 'CTI', 'НЕ активен (toggle=1)',
+     'Замещает SendNotificationToCaseOwner. При toggle=1 обходится C#-классом. Функция: push + смена статуса'),
+    ('SendNotificationToCaseOwner', 'BPMN', 'CaseService', 'Замещён (CTI)',
+     'Родитель UsrSendNotificationToCaseOwnerCustom1'),
+]
+for i, r in enumerate(emp_proc):
     if 'НЕ активен' in r[3]:
+        bg = 'FCE4D6'
+    elif 'Замещён' in r[3] or 'Legacy' in r[3]:
         bg = 'FFF2CC'
     elif i % 2 == 0:
         bg = 'EBF3FB'
     else:
         bg = None
-    add_data_row(t6, r, bg)
-set_col_widths(t6, [Cm(5.5), Cm(3), Cm(2.5), Cm(2.5), Cm(11.5)])
+    add_data_row(t7b, r, bg)
+set_col_widths(t7b, [Cm(5.5), Cm(2), Cm(2.5), Cm(3), Cm(12.5)])
 
-# ===================== РАЗДЕЛ 8: GAP =====================
-doc.add_page_break()
-add_h(doc, '8. Что сейчас не реализовано (GAP-ы)', 1)
-
-t7 = doc.add_table(rows=1, cols=3)
-t7.style = 'Table Grid'
-add_header_row(t7, ['Чего не хватает', 'Описание проблемы', 'Задача'])
-gap_rows = [
-    ('Текст письма клиента\nв уведомлении инженеру',
-     'Инженер получает «Получен новый email...», но без текста письма. '
-     'Открывает BPMSoft, ищет обращение, читает переписку.',
-     'Задача 2.3 (приоритет 1)'),
-    ('Напоминание о зависании\nв «Получен ответ»',
-     'Если инженер не отреагировал — никто не напоминает.',
-     'Задача 2.2'),
-    ('SLA-предупреждения\n(75% / 85% / 95%)',
-     'Система считает SLA и показывает цвет на странице, но email не шлёт.',
-     'Задача 2.1'),
-    ('Уведомления инженеру\nо сменах статуса',
-     'Инженер получает только «назначение» и «новый email». '
-     'Переходы (эскалация, переоткрытие и др.) — без уведомлений.',
-     'Задача 2.4'),
-    ('Подписка (роль наблюдателя)',
-     'Нельзя следить за обращением без назначения ответственным.',
-     'Задача 2.5'),
+doc.add_paragraph()
+add_h(doc, '7.3 Оценка удовлетворённости (email клиенту)', 2)
+t7c = doc.add_table(rows=1, cols=4)
+t7c.style = 'Table Grid'
+add_header_row(t7c, ['Системное имя', 'Тип', 'Пакет', 'Описание'])
+sat_proc = [
+    ('RunAnalyzeCaseSatisfactionLevel', 'BPMN', 'CaseService', 'Запуск процесса оценки (оркестратор)'),
+    ('AnalyzeCaseSatisfactionLevel', 'BPMN', 'CaseService', 'Оценка удовлетворённости — отправляет запрос клиенту'),
+    ('ReevaluateCaseLevelRequestProcessV2', 'BPMN', 'CaseService', 'Повторный запрос оценки'),
+    ('ClearSatisfactionLevelProcess', 'BPMN', 'CaseService', 'Очистка поля «Уровень удовлетворенности» при решении'),
 ]
-for i, r in enumerate(gap_rows):
-    bg = 'FCE4D6' if i % 2 == 0 else 'FFF2CC'
-    add_data_row(t7, r, bg)
-set_col_widths(t7, [Cm(4.5), Cm(14), Cm(4)])
+for i, r in enumerate(sat_proc):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t7c, r, bg)
+set_col_widths(t7c, [Cm(6), Cm(2), Cm(2.5), Cm(15)])
 
+doc.add_paragraph()
+add_h(doc, '7.4 Обработка обращений (не отправляют уведомления, но связаны)', 2)
+t7d = doc.add_table(rows=1, cols=4)
+t7d.style = 'Table Grid'
+add_header_row(t7d, ['Системное имя', 'Тип', 'Пакет', 'Описание'])
+proc_other = [
+    ('IncidentRegistrationFromEmailProcess', 'BPMN', 'CaseService', 'Регистрация обращения по входящему письму (создание Case)'),
+    ('ActualizeCalculationTermsAfterStatusChange', 'BPMN', 'CaseService', 'Пересчёт SLA-сроков после смены статуса'),
+    ('CaseOverduesSettingProcess', 'BPMN', 'CaseService', 'Установка показателей просроченности (визуальные индикаторы)'),
+    ('IncidentDiagnosticsAndResolvingV2', 'BPMN', 'CaseService', 'Диагностика и решение инцидентов (создаёт задачу)'),
+    ('AutoResolutionIncidentAfterClosedProblem', 'BPMN', 'CaseService', 'Авторешение инцидентов при закрытии проблемы'),
+    ('PredictCaseFieldValuesProcess', 'BPMN', 'CaseService', 'ML-прогнозирование полей обращения'),
+    ('StartSimilarCaseSearch / SimilarCasesSearch', 'BPMN', 'CaseService', 'Поиск похожих обращений'),
+    ('SearchForParent', 'BPMN', 'CaseService', 'Поиск аналогичных инцидентов'),
+    ('CreateCaseFromChat', 'BPMN', 'CaseService', 'Создание обращения из чата'),
+    ('ActualizeCasePortalUserAction', 'BPMN', 'CaseService', 'Актуализация действий на портале'),
+    ('SendResolution', 'BPMN', 'CaseService', 'Создание статьи в БЗ после решения (неактивен)'),
+]
+for i, r in enumerate(proc_other):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t7d, r, bg)
+set_col_widths(t7d, [Cm(6), Cm(2), Cm(2.5), Cm(15)])
+
+doc.add_paragraph()
+add_h(doc, '7.5 Кастомные CTI-процессы (не уведомления)', 2)
+t7e = doc.add_table(rows=1, cols=4)
+t7e.style = 'Table Grid'
+add_header_row(t7e, ['Системное имя', 'Тип', 'Статус', 'Описание'])
+cti_other = [
+    ('UsrProcess_a5f980e', 'BPMN', 'Неактивен', 'Изменение даты регистрации обращения'),
+    ('UsrBindUserContact', 'BPMN', 'Активен', 'Привязка пользователя чата к контакту'),
+]
+for i, r in enumerate(cti_other):
+    bg = 'FFF2CC' if r[2] == 'Неактивен' else ('EBF3FB' if i % 2 == 0 else None)
+    add_data_row(t7e, r, bg)
+set_col_widths(t7e, [Cm(5), Cm(2), Cm(2.5), Cm(16)])
+
+# ===================== РАЗДЕЛ 8 =====================
+doc.add_page_break()
+add_h(doc, '8. Иерархия вызовов (полная схема)', 1)
+add_mono(doc,
+    '=== ПРИ СМЕНЕ СТАТУСА ОБРАЩЕНИЯ ===\n\n'
+    '  Case.Status изменился\n'
+    '    |\n'
+    '    +-- toggle SendEmailToCaseOnStatusChangeClass=1 (наш случай)\n'
+    '    |    -> C#-класс SendEmailToCaseStatusChanged\n'
+    '    |         -> CaseNotificationRule -> шаблон -> email КЛИЕНТУ\n'
+    '    |\n'
+    '    +-- toggle=0\n'
+    '         -> BPMN SendEmailToCaseStatusChangedProcess\n'
+    '              -> SubProcess: SendEmailToCaseContactPersonsProcess (хаб)\n'
+    '                   +-- SendEmailToCaseContactProcessMultiLanguage (контакт ML)\n'
+    '                   +-- SendEmailToCaseContactProcess (контакт legacy)\n'
+    '                   +-- SendEmailToInitiatorMultiLanguage (инициатор ML)\n'
+    '                   +-- SendEmailToInitiator (инициатор legacy)\n\n'
+    '=== ПРИ НАЗНАЧЕНИИ ОТВЕТСТВЕННОГО ===\n\n'
+    '  Case.Owner изменился ИЛИ Case создан с Owner\n'
+    '    -> UsrSendEmailToSROwnerCustom1 (CTI, замещает SendEmailToSROwner)\n'
+    '         -> email ОТВЕТСТВЕННОМУ\n\n'
+    '=== ПРИ НАЗНАЧЕНИИ НА ГРУППУ ===\n\n'
+    '  Case создан/изменён, Owner=NULL, Group!=NULL\n'
+    '    -> RunSendEmailToCaseGroupV2 (CaseService)\n'
+    '         -> email ВСЕЙ ГРУППЕ\n\n'
+    '=== ПРИ ОТВЕТЕ КЛИЕНТА (EMAIL) ===\n\n'
+    '  Входящий email -> Activity -> сигнал\n'
+    '    -> RunSendNotificationCaseOwnerProcess (оркестратор)\n'
+    '         |\n'
+    '         +-- toggle RunReopenCaseAndNotifyAssigneeClass=1 (наш случай)\n'
+    '              -> C#-класс ReopenCaseAndNotifyAssignee.Run()\n'
+    '                   |\n'
+    '                   +-- ReopeningCondition: IsResolved || IsPaused\n'
+    '                   |    -> StatusId = «Получен ответ» (если условие выполнено)\n'
+    '                   |    -> статус НЕ меняется (если «Новое», «В работе» и т.д.)\n'
+    '                   |\n'
+    '                   +-- NotifyOwner() -> push (Reminding) — ВСЕГДА\n'
+    '                   |\n'
+    '                   +-- [Побочный эффект: смена статуса -> StartSignal]\n'
+    '                        -> UsrProcess_0c71a12CTI5 (CTI)\n'
+    '                             -> email ОТВЕТСТВЕННОМУ + CC: роль «1-я линия»\n'
+    '                             -> GAP: текст клиентского письма НЕ включён\n'
+    '                             -> GAP: срабатывает ТОЛЬКО если статус изменился\n\n'
+    '=== ПРИ ОТВЕТЕ КЛИЕНТА (ПОРТАЛ) ===\n\n'
+    '  PortalMessage создан\n'
+    '    -> CasePortalMessageHistoryNotificationProcessMultiLanguage\n'
+    '         +-- SubProcess: SendEmailToCaseContactPersonsProcess -> email КЛИЕНТУ\n'
+    '         +-- SubProcess: CasePortalMessageHistoryNotificationProcess -> email СОТРУДНИКУ\n\n'
+    '=== ПРИ РЕГИСТРАЦИИ ===\n\n'
+    '  Case создан\n'
+    '    -> UsrProcess_send_reg_mail (CTI) -> email КЛИЕНТУ\n\n'
+    '=== ОЦЕНКА УДОВЛЕТВОРЁННОСТИ ===\n\n'
+    '  Case -> «Решено»\n'
+    '    -> RunAnalyzeCaseSatisfactionLevel -> AnalyzeCaseSatisfactionLevel\n'
+    '         -> email КЛИЕНТУ (запрос оценки)'
+)
+
+# ===================== РАЗДЕЛ 9 =====================
+doc.add_page_break()
+add_h(doc, '9. Feature-toggles и системные настройки', 1)
+
+add_h(doc, '9.1 Feature-toggles (с прода, апрель 2026)', 2)
+t9a = doc.add_table(rows=1, cols=3)
+t9a.style = 'Table Grid'
+add_header_row(t9a, ['Code', 'State', 'Комментарий'])
+ft_rows = [
+    ('EmailMessageMultiLanguageV2', '1 (ВКЛ)', 'Конвейер EmailWithMacrosManager активен. Мультиязычные шаблоны'),
+    ('UseAsyncEmailSender', '1 (ВКЛ)', 'Асинхронная отправка через AsyncEmailSender.SendAsync()'),
+    ('DelayedNotification', '1 (ВКЛ)', 'Отложенные уведомления'),
+    ('SendEmailToCaseOnStatusChangeClass', '1 (ВКЛ)', 'Email клиенту при смене статуса — C#-класс вместо BPMN'),
+    ('RunReopenCaseAndNotifyAssigneeClass', '1 (ВКЛ)', 'Переоткрытие — C#-класс вместо BPMN'),
+]
+for i, r in enumerate(ft_rows):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t9a, r, bg)
+set_col_widths(t9a, [Cm(7), Cm(3), Cm(15.5)])
+
+doc.add_paragraph()
+add_h(doc, '9.2 Системные настройки', 2)
+t9b = doc.add_table(rows=1, cols=3)
+t9b.style = 'Table Grid'
+add_header_row(t9b, ['Code', 'Значение', 'Комментарий'])
+ss_rows = [
+    ('SiteUrl', 'bpm.cti.ru', 'Базовый URL для ссылок в email'),
+    ('SupportServiceEmail', 'servicedesk@cti.ru', 'Адрес отправителя'),
+    ('ClearAssigneeOnCaseReopening', 'false', 'При переоткрытии ответственный не сбрасывается'),
+]
+for i, r in enumerate(ss_rows):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t9b, r, bg)
+set_col_widths(t9b, [Cm(7), Cm(4), Cm(14.5)])
+
+# ===================== РАЗДЕЛ 10 =====================
+doc.add_page_break()
+add_h(doc, '10. Архитектурное решение: UsrEmployeeNotificationManager', 1)
+
+add_h(doc, '10.1 Проблема', 2)
+add_body(doc,
+    'Для клиентов существует единый структурированный механизм: C#-класс SendEmailToCaseStatusChanged + '
+    'справочник CaseNotificationRule (статус + категория -> шаблон). '
+    'Для сотрудников такого механизма нет — есть три разрозненных BPMN-процесса, '
+    'привязанных к конкретным событиям, без общей конфигурации.'
+)
+
+doc.add_paragraph()
+add_h(doc, '10.2 Решение', 2)
+add_body(doc,
+    'Создать единый C#-класс UsrEmployeeNotificationManager + справочник правил '
+    'UsrEmployeeNotificationRule — по аналогии с механизмом для клиентов.'
+)
+
+doc.add_paragraph()
+add_h(doc, '10.3 Справочник UsrEmployeeNotificationRule', 2)
+t10a = doc.add_table(rows=1, cols=3)
+t10a.style = 'Table Grid'
+add_header_row(t10a, ['Поле', 'Тип', 'Назначение'])
+rule_rows = [
+    ('Событие (UsrEvent)', 'Справочник',
+     'Тип события: ОтветКлиента, НазначениеОтветственного, НазначениеГруппы, СменаСтатуса, SLA-порог, Зависание'),
+    ('Статус обращения (StatusId)', 'Справочник (CaseStatus)',
+     'Для каких статусов срабатывает (NULL = любой)'),
+    ('Шаблон email (EmailTemplateId)', 'Справочник (EmailTemplate)',
+     'Какой шаблон использовать'),
+    ('Получатель (UsrRecipientType)', 'Справочник',
+     'Ответственный / Группа / Руководитель группы / Наблюдатели'),
+    ('Правило использования', 'Справочник',
+     'Отправляется сразу / С задержкой / Не используется'),
+    ('Задержка, мин', 'Integer', 'Пауза перед отправкой'),
+    ('Активно', 'Boolean', 'Вкл/Выкл'),
+]
+for i, r in enumerate(rule_rows):
+    bg = 'EBF3FB' if i % 2 == 0 else None
+    add_data_row(t10a, r, bg)
+set_col_widths(t10a, [Cm(5.5), Cm(4.5), Cm(15.5)])
+
+doc.add_paragraph()
+add_h(doc, '10.4 Что заменяет новый механизм', 2)
+t10b = doc.add_table(rows=1, cols=2)
+t10b.style = 'Table Grid'
+add_header_row(t10b, ['Текущий механизм', 'Что станет'])
+replace_rows = [
+    ('UsrProcess_0c71a12CTI5 (email при «Получен ответ»)', 'Правило: событие=ОтветКлиента, статус=любой'),
+    ('UsrSendEmailToSROwnerCustom1 (email при назначении)', 'Правило: событие=НазначениеОтветственного'),
+    ('RunSendEmailToCaseGroupV2 (email группе)', 'Правило: событие=НазначениеГруппы'),
+    ('(нет)', 'Правило: событие=СменаСтатуса (задача 2.4)'),
+    ('(нет)', 'Правило: событие=SLA-порог (задача 2.1)'),
+    ('(нет)', 'Правило: событие=Зависание (задача 2.2)'),
+]
+for i, r in enumerate(replace_rows):
+    has_new = r[0] == '(нет)'
+    bg = 'E2EFDA' if has_new else ('EBF3FB' if i % 2 == 0 else None)
+    add_data_row(t10b, r, bg)
+set_col_widths(t10b, [Cm(9), Cm(16.5)])
+
+doc.add_paragraph()
+add_h(doc, '10.5 Точки вызова', 2)
+add_body(doc,
+    '  \u2022 EventListener на Case (OnUpdated) — смена статуса, смена ответственного\n'
+    '  \u2022 EventListener на Activity (OnInserted) — входящий email (заменяет косвенную связь через смену статуса)\n'
+    '  \u2022 Фоновый процесс (BPMN-таймер / CronJob) — SLA-пороги, зависание'
+)
+
+# ===================== СОХРАНЕНИЕ =====================
 out_path = r'c:\Users\echum\Documents\BPMsoft\projects\notifications-wave2\email_notifications_description.docx'
 doc.save(out_path)
 print('Saved: ' + out_path)
