@@ -1,4 +1,5 @@
 # Obsidian — настройки личные, не в git
+.obsidian/
 knowledge/.obsidian/
 
 # Системные пакеты BPMSoft — не наш код, локальный источник для поиска
