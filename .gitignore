@@ -1,3 +1,6 @@
+# Obsidian — настройки личные, не в git
+knowledge/.obsidian/
+
 # Системные пакеты BPMSoft — не наш код, локальный источник для поиска
 src/PKG_BPMSoft_Full_House_1.9.0.14114/
 
@@ -54,16 +57,21 @@ ehthumbs.db
 # Архив CTI с прода (бинарный, большой)
 src/CTI_2026-04-11_15.14.44/
 
-# Memory compiler — личные данные (knowledge/ коммитится через memory-compiler/.gitignore)
+# Memory compiler — сырые логи (не коммитим), обработанные концепты коммитим
 memory-compiler/daily/
 memory-compiler/reports/
 memory-compiler/scripts/state.json
 memory-compiler/scripts/last-flush.json
 memory-compiler/scripts/flush.log
 memory-compiler/scripts/compile.log
+memory-compiler/scripts/compile-scheduled.log
 memory-compiler/scripts/session-flush-*
 memory-compiler/scripts/flush-context-*
 memory-compiler/.venv/
 memory-compiler/__pycache__/
 memory-compiler/**/__pycache__/
 memory-compiler/**/*.pyc
+
+# Knowledge base — артефакты компилятора (не коммитим)
+knowledge/concepts-index.md
+knowledge/concepts-log.md
