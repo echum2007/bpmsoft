@@ -11,7 +11,10 @@ namespace BPMSoft.Configuration
 	#region Class: UsrSendEmailToCaseOwnerOnReply
 
 	/// <summary>
-	/// Sends email notification to case owner and configured roles when a customer reply is received.
+	/// Отправляет email-уведомление ответственному инженеру и настроенным ролям
+	/// при получении входящего письма от клиента по обращению.
+	/// Вызывается из BPMN-процесса UsrSendEmailToCaseOwnerOnReplyProcess (ScriptTask).
+	/// Правила отправки читаются из справочника UsrEmployeeNotificationRule.
 	/// </summary>
 	public class UsrSendEmailToCaseOwnerOnReply
 	{
@@ -20,12 +23,12 @@ namespace BPMSoft.Configuration
 
 		private static readonly ILog _log = LogManager.GetLogger("CaseNotification");
 
-		// RecipientType lookup values — must match UsrEmployeeNotificationRecipientType data
+		// Значения справочника UsrEmployeeNotificationRecipientType
 		private const string RecipientTypeOwner = "Owner";
 		private const string RecipientTypeGroup = "Group";
 		private const string RecipientTypeRole = "Role";
 
-		// EventType lookup value — must match UsrEmployeeNotificationEventType data
+		// Значение справочника UsrEmployeeNotificationEventType
 		private const string EventTypeCustomerReply = "CustomerReply";
 
 		#endregion
@@ -34,6 +37,7 @@ namespace BPMSoft.Configuration
 
 		public UserConnection UserConnection { get; private set; }
 
+		// Id входящей активности (письма клиента) — передаётся из ScriptTask через RecordId сигнала
 		public Guid ActivityId { get; set; }
 
 		private EmailWithMacrosManager _emailWithMacrosManager;
@@ -54,6 +58,7 @@ namespace BPMSoft.Configuration
 
 		#region Methods: Private
 
+		// Получает Id обращения по Id активности
 		private Guid GetCaseIdByActivity(Guid activityId) {
 			var esq = new EntitySchemaQuery(UserConnection.EntitySchemaManager, "Activity");
 			string caseIdColName = esq.AddColumn("Case.Id").Name;
@@ -67,6 +72,7 @@ namespace BPMSoft.Configuration
 		private string _categoryIdCol;
 		private string _groupIdCol;
 
+		// Загружает обращение с нужными колонками для определения получателей и фильтрации правил
 		private Entity LoadCase(Guid caseId) {
 			var esq = new EntitySchemaQuery(UserConnection.EntitySchemaManager, "Case");
 			_ownerIdCol = esq.AddColumn("Owner.Id").Name;
@@ -81,17 +87,18 @@ namespace BPMSoft.Configuration
 		private string _ruleRecipientTypeNameCol;
 		private string _ruleRoleIdCol;
 
+		// Читает активные правила из UsrEmployeeNotificationRule.
+		// Фильтрует по типу события CustomerReply и статусу/категории обращения (NULL = применять ко всем).
 		private EntityCollection GetRules(Guid statusId, Guid categoryId) {
 			var esq = new EntitySchemaQuery(UserConnection.EntitySchemaManager, "UsrEmployeeNotificationRule");
-			_ruleTemplateIdCol = esq.AddColumn("EmailTemplate.Id").Name;
+			_ruleTemplateIdCol = esq.AddColumn("UsrEmailTemplate.Id").Name;
 			_ruleRecipientTypeNameCol = esq.AddColumn("UsrRecipientType.Name").Name;
-			_ruleRoleIdCol = esq.AddColumn("Role.Id").Name;
-			esq.AddColumn("SupportGroup.Id");
+			_ruleRoleIdCol = esq.AddColumn("UsrRole.Id").Name;
 
-			var activeFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "IsActive", true);
+			var activeFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "UsrIsActive", true);
 			esq.Filters.Add(activeFilter);
 
-			// EventType = CustomerReply OR NULL
+			// Тип события = CustomerReply или не заполнен (правило применяется ко всем событиям)
 			var eventTypeFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal,
 				"UsrEventType.Name", EventTypeCustomerReply);
 			var eventTypeNullFilter = esq.CreateIsNullFilter("UsrEventType");
@@ -100,20 +107,20 @@ namespace BPMSoft.Configuration
 			eventTypeGroup.Add(eventTypeNullFilter);
 			esq.Filters.Add(eventTypeGroup);
 
-			// Status = current OR NULL
+			// Статус = текущий или не заполнен (правило применяется к любому статусу)
 			if (statusId != Guid.Empty) {
-				var statusFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "CaseStatus", statusId);
-				var statusNullFilter = esq.CreateIsNullFilter("CaseStatus");
+				var statusFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "UsrCaseStatus", statusId);
+				var statusNullFilter = esq.CreateIsNullFilter("UsrCaseStatus");
 				var statusGroup = new EntitySchemaQueryFilterCollection(esq, LogicalOperationStrict.Or);
 				statusGroup.Add(statusFilter);
 				statusGroup.Add(statusNullFilter);
 				esq.Filters.Add(statusGroup);
 			}
 
-			// Category = current OR NULL
+			// Категория = текущая или не заполнена (правило применяется к любой категории)
 			if (categoryId != Guid.Empty) {
-				var categoryFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "CaseCategory", categoryId);
-				var categoryNullFilter = esq.CreateIsNullFilter("CaseCategory");
+				var categoryFilter = esq.CreateFilterWithParameters(FilterComparisonType.Equal, "UsrCaseCategory", categoryId);
+				var categoryNullFilter = esq.CreateIsNullFilter("UsrCaseCategory");
 				var categoryGroup = new EntitySchemaQueryFilterCollection(esq, LogicalOperationStrict.Or);
 				categoryGroup.Add(categoryFilter);
 				categoryGroup.Add(categoryNullFilter);
@@ -123,6 +130,7 @@ namespace BPMSoft.Configuration
 			return esq.GetEntityCollection(UserConnection);
 		}
 
+		// Возвращает email-адреса всех пользователей роли
 		private List<string> GetRoleEmails(Guid roleId) {
 			var emails = new List<string>();
 			if (roleId == Guid.Empty) return emails;
@@ -140,6 +148,7 @@ namespace BPMSoft.Configuration
 			return emails;
 		}
 
+		// Возвращает email-адреса всех пользователей группы поддержки
 		private List<string> GetGroupEmails(Guid groupId) {
 			var emails = new List<string>();
 			if (groupId == Guid.Empty) return emails;
@@ -157,6 +166,7 @@ namespace BPMSoft.Configuration
 			return emails;
 		}
 
+		// Отправляет письмо одному получателю через EmailWithMacrosManager
 		private void SendToRecipient(Guid caseId, Guid templateId, string recipientEmail) {
 			if (recipientEmail.IsNullOrEmpty()) return;
 			string sender = SystemSettings.GetValue(UserConnection, "SupportServiceEmail", string.Empty);
@@ -173,6 +183,7 @@ namespace BPMSoft.Configuration
 
 		#region Methods: Public
 
+		// Точка входа из ScriptTask BPMN-процесса
 		public void Execute() {
 			if (ActivityId == Guid.Empty) return;
 
