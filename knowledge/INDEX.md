@@ -1,6 +1,6 @@
 # BPMSoft Wiki — Навигационный индекс
 
-**Обновлено:** 2026-04-20  
+**Обновлено:** 2026-04-23  
 **Последний Lint:** 2026-04-15
 
 > Правила ведения вики → [WIKI_SCHEMA.md](WIKI_SCHEMA.md)
@@ -25,6 +25,7 @@
 - [projects/service-mode-indicator.md](wiki/projects/service-mode-indicator.md) — ✅ На проде 2026-04-11
 - [projects/notifications-wave2.md](wiki/projects/notifications-wave2.md) — 🔧 В разработке (задача 2.3 — приоритет 1)
 - [projects/labor-records.md](wiki/projects/labor-records.md) — 📋 ТЗ на обсуждении
+- [projects/mailserver-setup.md](wiki/projects/mailserver-setup.md) — 🔧 В процессе: Docker Mailserver для тестирования нотификаций
 
 ---
 
@@ -52,6 +53,9 @@
 | [[concepts/imacrosinvokable-pattern-bpmsoft]] | IMacrosInvokable interface для email макросов; GetMacrosValue(object arguments) с KeyValuePair<string, Guid> распаковкой | daily/2026-04-19.md | 2026-04-19 |
 | [[concepts/lazy-property-pattern-service-initialization]] | Lazy property через ClassFactory.Get в property getter (не в constructor); BPMSoft convention для сервисов | daily/2026-04-19.md | 2026-04-19 |
 | [[concepts/notebooklm-notebooks-curated]] | Актуальный состав 7 блокнотов после аудита 2026-04-20: мусор удалён, версии зафиксированы (PG12, Redis 7, .NET 8) | session/2026-04-20 | 2026-04-20 |
+| [[concepts/kestrel-service-restart]] | После публикации C# кода Kestrel держит старые сборки в памяти; рестарт: `sudo systemctl restart bpmsoft`; имя сервиса bpmsoft | daily/2026-04-21.md | 2026-04-21 |
+| [[concepts/stalwart-v016-breaking-api-change]] | Stalwart v0.16 удалил Management REST API, заменил JMAP без документации; веб-панель сломана из-за PKCE; SMTP/IMAP работают | daily/2026-04-23.md | 2026-04-23 |
+| [[concepts/software-adoption-documentation-check]] | Перед деплоем нового ПО проверять не только версию, но и наличие актуальной документации для management API | daily/2026-04-23.md | 2026-04-23 |
 
 ---
 

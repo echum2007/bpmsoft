@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__notebooklm-mcp__refresh_auth"
+    ]
+  }
+}
