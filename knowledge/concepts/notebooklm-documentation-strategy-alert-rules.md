@@ -4,8 +4,9 @@ aliases: [notebooklm-strategy, documentation-hierarchy, alert-rules, knowledge-s
 tags: [documentation, notebooklm, knowledge-management, workflow, bpmsoft, strategy]
 sources:
   - "daily/2026-04-19.md"
+  - "daily/2026-04-24.md"
 created: 2026-04-19
-updated: 2026-04-19
+updated: 2026-04-24
 ---
 
 # NotebookLM Documentation Strategy: Consolidated Bloknoты with Mandatory Alert Rules
@@ -57,6 +58,11 @@ Initial strategy had 6 separate NotebookLM notebooks (BPMSoft, C#/.NET, BPMN, Ex
 - Transparency about what's NOT covered keeps user in control of knowledge source evolution
 - Example: "OAuth 2.0 in BPMSoft isn't in any bloknot yet; found 3 edu.bpmsoft.ru articles. Should I create a new 'BPMSoft OAuth Integration' notebook?"
 
+**Rule 4: Verify API Names Against Actual Codebase (added 2026-04-24)**
+- When NotebookLM returns a specific API name (class, interface, method), **verify it exists in the target platform version** before using it in design documents or code
+- NotebookLM sources may span multiple platform versions (BPMSoft 1.9 vs 8/Creatio); answers can mix APIs from different releases without flagging the version mismatch
+- Example incident: NotebookLM returned `ICalendarRepository.IsWorkTime` — an API from BPMSoft 8/Creatio that does not exist in 1.9. The real API is `TermCalculatorActions.IsTimeInWorkingInterval` in the SLM package (see [[concepts/notebooklm-cross-version-api-contamination]])
+
 ### Documentation Hierarchy in Practice
 
 **Example query: "How do I implement macros in BPMSoft email templates?"**
@@ -86,6 +92,7 @@ Initial strategy had 6 separate NotebookLM notebooks (BPMSoft, C#/.NET, BPMN, Ex
 - [[concepts/tool-availability-verification]] — Related principle: check what's available before proposing alternatives
 - [[concepts/documentation-source-priority-bpmsoft]] — Original hierarchy documented; strategy consolidates and optimizes it
 - [[concepts/knowledge-base-file-standardization]] — Maintains knowledge base quality as new info is added from bloknoties
+- [[concepts/notebooklm-cross-version-api-contamination]] — Evidence for Rule 4: NotebookLM returned BPMSoft 8 API for a 1.9 query
 
 ## Sources
 

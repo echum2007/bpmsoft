@@ -1,6 +1,6 @@
 # BPMSoft Wiki — Навигационный индекс
 
-**Обновлено:** 2026-04-23  
+**Обновлено:** 2026-04-24  
 **Последний Lint:** 2026-04-15
 
 > Правила ведения вики → [WIKI_SCHEMA.md](WIKI_SCHEMA.md)
@@ -56,6 +56,10 @@
 | [[concepts/kestrel-service-restart]] | После публикации C# кода Kestrel держит старые сборки в памяти; рестарт: `sudo systemctl restart bpmsoft`; имя сервиса bpmsoft | daily/2026-04-21.md | 2026-04-21 |
 | [[concepts/stalwart-v016-breaking-api-change]] | Stalwart v0.16 удалил Management REST API, заменил JMAP без документации; веб-панель сломана из-за PKCE; SMTP/IMAP работают | daily/2026-04-23.md | 2026-04-23 |
 | [[concepts/software-adoption-documentation-check]] | Перед деплоем нового ПО проверять не только версию, но и наличие актуальной документации для management API | daily/2026-04-23.md | 2026-04-23 |
+| [[concepts/bpmsoft-import-fk-dependencies]] | FK-ошибки при импорте пакета: экспортировать зависимые таблицы (EmailTemplate+SysImage); лог не детализирует до записей | daily/2026-04-24.md | 2026-04-24 |
+| [[concepts/notebooklm-cross-version-api-contamination]] | NotebookLM может вернуть API из другой версии платформы (BPMSoft 8 vs 1.9); обязательна верификация по коду | daily/2026-04-24.md | 2026-04-24 |
+| [[concepts/bpmsoft-calendar-api-v19]] | Календарное API 1.9: TermCalculatorActions.IsTimeInWorkingInterval(DateTime) в пакете SLM; не в DLL ядра | daily/2026-04-24.md | 2026-04-24 |
+| [[concepts/bpmsoft-configuration-schema-vs-core-dll]] | Бизнес-логика BPMSoft 1.9 в схемах конфигурации (пакеты), а не в core DLL; поиск API — в обоих слоях | daily/2026-04-24.md | 2026-04-24 |
 
 ---
 
@@ -66,6 +70,7 @@
 | [[connections/dev-server-investigation-workflow]] | ED25519 доступ, read-only протокол, проверка инструментов, Google Mail OAuth 2.0 | daily/2026-04-18.md | 2026-04-18 |
 | [[connections/investigation-methodology-and-metadata-discovery]] | Data-driven анализ, VwSysProcess, StartSignal метаданные, BPMN диагностика | daily/2026-04-17.md | 2026-04-18 |
 | [[connections/infrastructure-and-architecture-prerequisites]] | ExchangeListenerService, OAuth 2.0, feature-toggle logic, IMacrosInvokable, lazy pattern | daily/2026-04-19.md | 2026-04-19 |
+| [[connections/notebooklm-verification-and-codebase-search]] | NotebookLM cross-version → DLL search → schema search → правильное API; двухслойная верификация | daily/2026-04-24.md | 2026-04-24 |
 
 ---
 
