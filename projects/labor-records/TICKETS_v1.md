@@ -17,21 +17,22 @@
 | T-04 | SysSettings: 3 настройки | 1 | — | SysSettings | 0.5ч |
 | T-05 | 4 функциональные роли | 1 | — | FuncRole | 1ч |
 | T-06 | Объектные права на `UsrLaborRecords` | 1 | T-03, T-05 | Rights | 1ч |
-| T-07 | EventListener `UsrLaborRecordsEventListener` | 2 | T-02, T-03, T-04 | SourceCode (C#) | 3ч |
+| T-07 | EventListener `UsrLaborRecordsEventListener` (Q1 + расширенная серверная валидация) | 2 | T-02, T-03, T-04 | SourceCode (C#) | 4ч |
 | T-08 | Включить «Доступно визирование в разделе» → `UsrLaborRecordsVisa` | 3 | T-03 | Object (auto) | 0.5ч |
 | T-09 | Права на `UsrLaborRecordsVisa` | 3 | T-08, T-05 | Rights | 1ч |
 | T-10 | `UsrLaborRecordsModalPage` (AMD-модуль popup) + CSS | 4 | T-03, T-04 | ClientUnitSchema | 4ч |
 | T-11 | Замещение `SocialMessagePublisherPage` в CTI | 4 | T-10 | ClientUnitSchema | 3ч |
 | T-12 | Бизнес-правила на `UsrLaborRecords.Page` | 4 | T-03 | BusinessRule | 1ч |
 | T-13 | DCM-кейс `UsrLaborRecordsCase` (стадии + визы) | 5 | T-08, T-09 | Case | 4ч |
+| T-13.5 | Кнопка «Отправить на согласование заново» (B2, Q3) | 5 | T-13, T-03 | ClientUnitSchema (UsrLaborRecords.Page) | 2ч |
 | T-14 | 3 EmailTemplate + BPMN `UsrLaborRecordsNotifications` | 5 | T-13 | Process + Email | 3ч |
-| T-15 | Раздел «Управление трудозатратами» через мастер разделов | 6 | T-03, T-13 | Section | 2ч |
+| T-15 | Раздел «Управление трудозатратами» (13 колонок + 6 групп фильтра «Моё внимание» по ролям) | 6 | T-03, T-13 | Section | 2.5ч |
 | T-16 | Правило цветового выделения `UsrIsFormallyWorkTime` | 6 | T-15 | ColoringRule | 0.5ч |
 | T-17 | Настройка рабочих мест (роли → раздел) | 6 | T-15 | Workplace | 0.5ч |
-| T-18 | E2E-тестирование на dev по сценарию из ARCHITECTURE раздел 7 | 7 | T-01..T-17 | Test | 4ч |
+| T-18 | E2E-тестирование на dev (15 сценариев, расширено) | 7 | T-01..T-17 | Test | 6ч |
 | T-19 | Перенос пакета CTI на прод + миграция СМ | 8 | T-18 | Deploy | 2ч |
 
-**Итого: ~34 часа MVP без буфера. С буфером 30% → ~44 часа = ~1 рабочая неделя.**
+**Итого: ~36.5 часов MVP без буфера** (правки верификации 2026-04-25: +2ч T-13.5, +1ч T-07 валидация, +2ч T-18; правка 2026-04-26: +0.5ч T-15 фильтры по ролям). **С буфером 30% → ~47.5 часов ≈ 1.2 рабочих недели.**
 
 Фактическая команда — Евгений + Claude. Буфер нужен на R1 (валидация замещения `SocialMessagePublisherPage` в CTI), на отладку DCM-переходов, на возможное переоткрытие визирования.
 
@@ -371,6 +372,7 @@ C#-обработчик события `OnSaving` на `UsrLaborRecords`. Две
 namespace BPMSoft.Configuration
 {
     using System;
+    using System.Linq;
     using BPMSoft.Common;
     using BPMSoft.Core;
     using BPMSoft.Core.Configuration;
@@ -398,14 +400,44 @@ namespace BPMSoft.Configuration
                     "Обратитесь к руководителю сервиса.");
             }
 
-            // ===== Шаг 2: Расчёт UsrIsFormallyWorkTime =====
+            // ===== Шаг 2: Серверная валидация длительности (Группа A, Находка 1.2) =====
+            var hours = entity.GetTypedColumnValue<int>("UsrWorkDurationHours");
+            var minutes = entity.GetTypedColumnValue<int>("UsrWorkDurationMinutes");
+            if (hours < 0 || hours > 23) {
+                throw new Exception("Часы должны быть в диапазоне 0..23.");
+            }
+            if (minutes < 0 || minutes > 59) {
+                throw new Exception("Минуты должны быть в диапазоне 0..59.");
+            }
+            if (hours * 60 + minutes < 1) {
+                throw new Exception("Длительность работ должна быть не менее 1 минуты.");
+            }
+
+            // ===== Шаг 3: Серверная валидация даты (Q10, Находка 4.8) =====
+            // Календарные дни (не рабочие). UI/popup имеют такую же проверку (T-10, T-12),
+            // но если запись пришла через SQL/импорт/обход UI — сервер всё равно отклонит.
+            var workDate = entity.GetTypedColumnValue<DateTime>("UsrWorkDate");
+            if (workDate == default(DateTime)) {
+                throw new Exception("Дата и время работ должны быть заполнены.");
+            }
+            var maxBackdateDays = (int)Core.Configuration.SysSettings.GetValue(
+                userConnection, "UsrLaborRecordsMaxBackdateDays", 3);
+            var minDate = DateTime.Now.AddDays(-maxBackdateDays);
+            if (workDate < minDate) {
+                throw new Exception(
+                    $"Дата работ не может быть раньше чем {maxBackdateDays} календарных дней назад.");
+            }
+            if (workDate > DateTime.Now) {
+                throw new Exception("Дата работ не может быть в будущем.");
+            }
+
+            // ===== Шаг 4: Расчёт UsrIsFormallyWorkTime =====
             var isOverTime = entity.GetTypedColumnValue<bool>("UsrOverTime");
             if (!isOverTime) {
                 entity.SetColumnValue("UsrIsFormallyWorkTime", false);
                 return;
             }
 
-            var workDate = entity.GetTypedColumnValue<DateTime>("UsrWorkDate");
             var calendarId = ResolveCalendarId(userConnection, servicePactId);
             if (calendarId == Guid.Empty) {
                 // Нет календаря — не можем определить, оставляем false (не подсвечиваем)
@@ -457,10 +489,13 @@ namespace BPMSoft.Configuration
 ```
 
 **Замечания к коду:**
-- `using System.Linq;` нужно добавить в начало (для `FirstOrDefault`).
+- `using System.Linq;` уже включён (для `FirstOrDefault`).
 - `TermCalculatorActions` — публичный класс из пакета `SLM`. Если при компиляции «type not found» — добавить ссылку через `Dependencies` пакета CTI на `SLM` (обычно уже есть, проверить).
-- При добавлении в `using` — `BPMSoft.Configuration` (там лежит `TermCalculatorActions`).
+- При добавлении в `using` — `BPMSoft.Configuration` (там лежит `TermCalculatorActions`). Поскольку наш класс уже в `BPMSoft.Configuration`, явный `using` не нужен.
 - Использование `entity.GetTypedColumnValue<Guid>("UsrServicePactId")` (с суффиксом `Id`) — стандартное обращение к FK-колонке.
+- **Паттерн `entity.UserConnection` (Находка 2.7):** в BPMSoft 1.9 у `Entity` есть публичное свойство `UserConnection`. Если при компиляции «cannot access» — заменить на `((Entity)sender).UserConnection` или получить через `EntitySchemaQuery` контекст вышестоящего метода. Подтвердить при первой компиляции на dev.
+- **Порядок проверок** (важно): сначала защита от пустого договора и СМ (Q1), потом валидация значений (длительность, дата), потом расчёт `IsFormallyWorkTime`. Если первые проверки не пройдут — последующие даже не запустятся, что экономит ESQ-вызовы.
+- **Серверная валидация vs UI:** все проверки длительности/даты дублируются на UI (popup в T-10, бизнес-правила в T-12). Сервер — последний рубеж для случаев обхода UI (импорт, SQL, BPMN, REST API).
 
 ### Шаги внедрения
 
@@ -473,11 +508,34 @@ namespace BPMSoft.Configuration
 
 ### Verify
 
+**Базовые сценарии (Q1 + IsFormallyWorkTime):**
+
 1. Создать тестовую запись `UsrLaborRecords` через popup или деталь:
-   - Договор без СМ → ожидается ошибка с понятным текстом.
-   - Договор с СМ, `UsrOverTime = false` → сохраняется, `UsrIsFormallyWorkTime = false`.
+   - Договор без СМ → ожидается ошибка с понятным текстом «у договора не назначен ответственный сервис-менеджер».
+   - Договор с СМ, `UsrOverTime = false`, валидные часы/минуты/дата → сохраняется, `UsrIsFormallyWorkTime = false`.
    - Договор с СМ, `UsrOverTime = true`, `UsrWorkDate = суббота 11:00` → `UsrIsFormallyWorkTime = false` (выходной → НЕ формально рабочее).
    - Договор с СМ, `UsrOverTime = true`, `UsrWorkDate = понедельник 14:00` → `UsrIsFormallyWorkTime = true` (попадает в WorkingTimeInterval).
+
+**Серверная валидация (Группа A):**
+
+Все эти сценарии проверяем через SQL/импорт/REST (минуя UI), чтобы убедиться, что сервер ловит даже при обходе фронта:
+
+2. **Длительность 0 минут:** INSERT с `UsrWorkDurationHours=0, UsrWorkDurationMinutes=0` → отклонено: «Длительность работ должна быть не менее 1 минуты.»
+3. **Часы вне диапазона:** INSERT с `UsrWorkDurationHours=24` → отклонено: «Часы должны быть в диапазоне 0..23.»
+4. **Минуты вне диапазона:** INSERT с `UsrWorkDurationMinutes=60` → отклонено: «Минуты должны быть в диапазоне 0..59.»
+5. **Дата в будущем:** INSERT с `UsrWorkDate = завтра 10:00` → отклонено: «Дата работ не может быть в будущем.»
+6. **Дата задним числом > N:** при `MaxBackdateDays=3` INSERT с `UsrWorkDate = 5 дней назад` → отклонено: «Дата работ не может быть раньше чем 3 календарных дней назад.»
+7. **Пустая дата:** INSERT с `UsrWorkDate = NULL` → отклонено: «Дата и время работ должны быть заполнены.»
+
+**Пример SQL для проверки 2 (под админом, через SQL-консоль):**
+
+```sql
+-- Должен упасть с ошибкой "Длительность работ должна быть не менее 1 минуты"
+-- Идёт через ORM, не напрямую INSERT — потому что напрямую INSERT обходит EventListener
+-- Способ: через REST API или через специальную тестовую страницу
+```
+
+**Замечание:** прямой `INSERT INTO "UsrLaborRecords"` через psql **не вызовет EventListener**, потому что EventListener работает на уровне ORM (Entity), а не БД. Для теста серверной валидации использовать REST/odata-эндпоинт BPMSoft или JS-консоль в браузере с `BPMSoft.InsertQuery`.
 
 ### Откат
 
@@ -753,16 +811,26 @@ define("SocialMessagePublisherPage", [
             "PendingLaborRecordId": {
                 dataValueType: BPMSoft.DataValueType.GUID,
                 value: BPMSoft.GUID_EMPTY
+            },
+            "IsCurrentUserEngineer": {
+                dataValueType: BPMSoft.DataValueType.BOOLEAN,
+                value: false
+            },
+            "IsCurrentUserEngineerLoaded": {
+                // Защита от race condition (Находка 4.5): пока ESQ роли не вернулся,
+                // считаем пользователя НЕ инженером и пропускаем popup.
+                dataValueType: BPMSoft.DataValueType.BOOLEAN,
+                value: false
             }
         },
         methods: {
             // Проверка роли пользователя
             isCurrentUserEngineer: function() {
-                // Вернуть true только для роли CTI.Инженеры
-                // Простейший вариант: проверить через UserConnection.CurrentUser.SysAdminUnitId.
-                // Лучший: через сервис BPMSoft.UserRolesUtilities (если есть), или ESQ к SysUserInRole.
-                // Для MVP — синхронно через атрибут (см. ниже init).
-                return this.get("IsCurrentUserEngineer") === true;
+                // Возвращаем true только если ESQ роли уже вернулся И пользователь — инженер.
+                // Если ESQ ещё не завершился — возвращаем false (popup не откроется,
+                // сообщение опубликуется как обычно — это безопаснее, чем сломать ленту).
+                return this.get("IsCurrentUserEngineerLoaded") === true
+                    && this.get("IsCurrentUserEngineer") === true;
             },
 
             init: function() {
@@ -771,7 +839,9 @@ define("SocialMessagePublisherPage", [
             },
 
             checkUserInEngineerRole: function() {
-                // ESQ на SysUserInRole
+                // ESQ на SysUserInRole — асинхронный.
+                // Имя роли "CTI.Инженеры" — точное имя обязательно подтвердить SQL pre-check
+                // ДО публикации (см. раздел "Pre-check" ниже).
                 var esq = this.Ext.create("BPMSoft.EntitySchemaQuery", { rootSchemaName: "SysUserInRole" });
                 esq.addColumn("Id");
                 esq.filters.add("UserFilter",
@@ -781,6 +851,7 @@ define("SocialMessagePublisherPage", [
                     esq.createColumnFilterWithParameter(BPMSoft.ComparisonType.EQUAL, "SysRole.Name", "CTI.Инженеры"));
                 esq.getEntityCollection(function(result) {
                     this.set("IsCurrentUserEngineer", result.success && result.collection.getCount() > 0);
+                    this.set("IsCurrentUserEngineerLoaded", true);
                 }, this);
             },
 
@@ -792,14 +863,51 @@ define("SocialMessagePublisherPage", [
                     return this.callParent(arguments);
                 }
 
-                // Если пользователь не инженер — стандартное поведение
+                // Если пользователь не инженер (или ESQ роли ещё не вернулся) — стандартное поведение
                 if (!this.isCurrentUserEngineer()) {
                     return this.callParent(arguments);
                 }
 
-                // Открыть popup
-                this.openLaborRecordsModal();
-                // НЕ вызываем callParent — публикация ждёт подтверждения popup
+                // === B1 (Q1 уровень 3): проверка наличия СМ у договора текущего Case ===
+                // Без этой проверки инженер увидит непонятную ошибку EventListener
+                // на этапе сохранения. Лучше показать понятное сообщение ДО popup.
+                this.checkServicePactHasResponsibleSM(function(hasSM) {
+                    if (!hasSM) {
+                        this.showInformationDialog(
+                            "Невозможно списать время по этому обращению: " +
+                            "у договора не назначен ответственный сервис-менеджер. " +
+                            "Обратитесь к руководителю сервиса."
+                        );
+                        // НЕ вызываем callParent — сообщение не публикуется,
+                        // потому что по бизнес-логике без списания работать нельзя
+                        return;
+                    }
+                    // СМ есть — открываем popup
+                    this.openLaborRecordsModal();
+                }, this);
+                // НЕ вызываем callParent здесь — публикация ждёт результата проверки и popup
+            },
+
+            checkServicePactHasResponsibleSM: function(callback, scope) {
+                // ESQ к Case → ServicePact → UsrResponsibleServiceManager
+                var caseId = this.get("MasterRecordId");
+                if (!caseId || caseId === BPMSoft.GUID_EMPTY) {
+                    callback.call(scope, false);
+                    return;
+                }
+                var esq = this.Ext.create("BPMSoft.EntitySchemaQuery", { rootSchemaName: "Case" });
+                var smCol = esq.addColumn("ServicePact.UsrResponsibleServiceManager.Id");
+                esq.filters.add("CaseFilter",
+                    esq.createColumnFilterWithParameter(BPMSoft.ComparisonType.EQUAL, "Id", caseId));
+                esq.getEntityCollection(function(result) {
+                    if (!result.success || result.collection.getCount() === 0) {
+                        callback.call(scope, false);
+                        return;
+                    }
+                    var entity = result.collection.getByIndex(0);
+                    var smId = entity.get(smCol.name);
+                    callback.call(scope, smId && smId !== BPMSoft.GUID_EMPTY);
+                }, this);
             },
 
             openLaborRecordsModal: function() {
@@ -878,26 +986,72 @@ define("SocialMessagePublisherPage", [
 ```
 
 **Важные замечания:**
-- Точное имя свойства Id опубликованной активности (`response.activityId` или `response.id`) — проверить в DevTools при первом запуске. В `BaseMessagePublisherPage.onPublished` (строка 451) виден формат `response`.
+- Точное имя свойства Id опубликованной активности (`response.activityId` или `response.id`) — проверить в DevTools при первом запуске. В `BaseMessagePublisherPage.onPublished` (строка 451) виден формат `response`. **Без этого `linkLaborRecordToActivity` не сработает.**
 - `MasterRecordId` — стандартный атрибут схемы `MessagePublisher`, содержит Id текущего Case.
-- Имя роли `CTI.Инженеры` — уточнить, есть ли она в системе под этим точно именем; если другое — поменять.
-- Если `EventListener` бросает Exception (договор без СМ) — `insertQuery` вернёт `success: false`, и пользователь увидит сообщение. Popup закроется (в текущей логике), что не даст пользователю поправить и повторить — это ОК для UX, потому что договор без СМ — это организационная проблема, а не ошибка ввода.
+- **Имя роли `CTI.Инженеры` — обязательный pre-check** (см. ниже SQL). Если в системе роль называется иначе — заменить строковый литерал в `checkUserInEngineerRole`.
+- **Race condition (Находка 4.5):** ESQ роли асинхронный. Атрибут `IsCurrentUserEngineerLoaded` гарантирует, что пока ESQ не вернулся — `isCurrentUserEngineer()` возвращает `false`, popup не открывается, сообщение публикуется как обычно (безопасное поведение). Если пользователь нажмёт «Опубликовать» в первые 100-300мс после открытия CasePage — popup может не появиться. Это допустимо для MVP. Если нужно строже — переделать на синхронную проверку через `BPMSoft.UserRolesUtilities` (если есть в платформе).
+- **B1 уровень 3 защиты Q1:** `checkServicePactHasResponsibleSM` проверяет наличие СМ ДО открытия popup. Если СМ нет — показывает понятное сообщение и блокирует публикацию (пользователь не может писать в ленту по обращениям с проблемными договорами — это намеренное поведение, заставляет обратиться к руководителю сервиса).
+- Если `EventListener` бросает Exception (договор без СМ — резервный сценарий, когда B1 уровень 3 пропустил, например через race condition) — `insertQuery` вернёт `success: false`, и пользователь увидит сообщение. Popup закроется.
+
+### Pre-check SQL (обязательно ДО публикации схемы)
+
+**1. Имя роли инженеров** (Находка 4.4):
+
+```sql
+SELECT "Name" FROM "SysAdminUnit"
+WHERE "Name" ILIKE '%инженер%'
+  AND "SysAdminUnitTypeValue" IN (1, 6) -- 1 = функциональная, 6 = организационная
+ORDER BY "Name";
+```
+
+Точное имя роли инженеров (вернёт SQL) — подставить в `checkUserInEngineerRole` вместо `"CTI.Инженеры"`.
+
+**2. Существует ли уже замещение SocialMessagePublisherPage в CTI** (R1):
+
+```sql
+SELECT s."Name", p."Name" AS package_name
+FROM "SysSchema" s
+JOIN "SysPackage" p ON s."SysPackageId" = p."Id"
+WHERE s."Name" = 'SocialMessagePublisherPage' AND p."Name" = 'CTI';
+```
+
+Если возвращает строку — открыть существующее замещение и встроить наш код, не создавать новое.
 
 ### Шаги внедрения
 
-1. Pre-check SQL — нет ли уже замещения.
-2. Если есть кастом — встроиться (объединить с нашим кодом).
-3. Создать схему / отредактировать существующую.
-4. Сохранить, опубликовать.
-5. F5 в браузере (рестарт Kestrel НЕ нужен).
+1. **Pre-check SQL** — выполнить два запроса выше: имя роли инженеров + наличие замещения SocialMessagePublisherPage в CTI.
+2. Если в CTI уже есть замещение — открыть и встроить наш код (не создавать новое).
+3. Подставить точное имя роли инженеров в код вместо `"CTI.Инженеры"`.
+4. Создать схему / отредактировать существующую.
+5. Сохранить, опубликовать.
+6. F5 в браузере (рестарт Kestrel НЕ нужен).
+7. Запустить блок проверки `response.id` через DevTools (см. Verify п.4) — зафиксировать имя свойства, при необходимости поправить `linkLaborRecordToActivity`.
 
 ### Verify
 
-1. Под пользователем-инженером открыть Case → лента → написать сообщение → нажать «Опубликовать».
+**Базовый сценарий (инженер):**
+
+1. Под пользователем-инженером открыть Case **с заполненным `UsrResponsibleServiceManager`** → лента → написать сообщение → нажать «Опубликовать».
 2. Должен открыться popup `UsrLaborRecordsModalPage`.
 3. Заполнить → Подтвердить → popup закрывается, сообщение публикуется в ленту.
-4. Проверить в БД: `SELECT * FROM "UsrLaborRecords" WHERE "UsrCaseId" = '<caseId>' ORDER BY "CreatedOn" DESC LIMIT 1;` — есть запись с `UsrSourceMessage` на только что созданную `Activity`.
-5. Под пользователем не-инженером — popup НЕ открывается, сообщение публикуется как обычно.
+4. **Проверить имя свойства в response (TBD):** в DevTools поставить breakpoint на `onPublished`, посмотреть структуру `response`. Если `response.activityId` отсутствует — заменить в `linkLaborRecordToActivity` на `response.id` (или другое корректное имя).
+5. Проверить в БД: `SELECT * FROM "UsrLaborRecords" WHERE "UsrCaseId" = '<caseId>' ORDER BY "CreatedOn" DESC LIMIT 1;` — есть запись с `UsrSourceMessage` на только что созданную `Activity`.
+
+**B1 (Q1 уровень 3) — защита от договоров без СМ:**
+
+6. Под инженером открыть Case **с пустым `UsrResponsibleServiceManager` договора** → лента → написать сообщение → нажать «Опубликовать».
+7. **Ожидается:** сообщение НЕ публикуется, показано модальное окно: «Невозможно списать время по этому обращению: у договора не назначен ответственный сервис-менеджер. Обратитесь к руководителю сервиса.»
+8. Popup `UsrLaborRecordsModalPage` НЕ открывается. В БД новых записей `UsrLaborRecords` нет.
+
+**Регрессия для не-инженеров (Находка 5.2):**
+
+9. Под пользователем-СМ (или любой другой не-инженерной ролью) открыть Case → лента → написать сообщение → нажать «Опубликовать».
+10. **Ожидается:** popup НЕ открывается, сообщение публикуется как обычно. Это критический сценарий — без него регрессия может сломать ленту для всех остальных ролей.
+
+**Race condition (Находка 4.5):**
+
+11. Под инженером быстро открыть Case → не дожидаясь полной загрузки страницы (~100мс) → написать сообщение и нажать «Опубликовать».
+12. Возможны два исхода: (a) popup откроется (ESQ роли успел) или (b) сообщение опубликуется без popup (ESQ ещё не вернулся). **Оба допустимы для MVP.** Если (b) — пользователь увидит, что сообщение ушло без списания, и сможет создать запись через деталь.
 
 ### Откат
 
@@ -935,24 +1089,51 @@ define("SocialMessagePublisherPage", [
 | Условие | `UsrWorkDate < Now - SysSettings(UsrLaborRecordsMaxBackdateDays)` |
 | Действие | Показать сообщение «Списать можно не ранее чем за N дней назад» |
 
-**Правило 3: длительность ≥ 1 минута**
+**Правило 3: длительность ≥ 1 минута и диапазоны Hours/Minutes**
 
-Лучше реализовать через валидатор на EntitySchema, а не через бизнес-правило — точнее работает на сохранении.
+Реализуется на сервере в `UsrLaborRecordsEventListener.OnSaving` — см. T-07 (Группа A серверной валидации). На странице бизнес-правила не дублируем.
 
-В коде страницы (если есть замещение) или в EventListener:
-```csharp
-var hours = entity.GetTypedColumnValue<int>("UsrWorkDurationHours");
-var minutes = entity.GetTypedColumnValue<int>("UsrWorkDurationMinutes");
-if (hours * 60 + minutes < 1) {
-    throw new Exception("Длительность работ должна быть не менее 1 минуты.");
+**Правило 4 (B1 уровень 3, Q1) — фильтр lookup `UsrCase` в детали**
+
+Деталь `UsrSchema021c2f40Detail` на CasePage/ServicePactPage позволяет выбрать любое обращение в lookup. Чтобы не позволить создать запись на обращение, у договора которого пустой `UsrResponsibleServiceManager` — добавить фильтр lookup.
+
+| Поле | Значение |
+|------|----------|
+| Тип правила | Filtration |
+| Поле формы | `UsrCase` |
+| Условие фильтра | `UsrCase.ServicePact.UsrResponsibleServiceManager IS NOT NULL` |
+
+В JS-конфиге страницы (если делаем через код, не мастер):
+
+```javascript
+rules: {
+    "UsrCase": [
+        {
+            ruleType: BPMSoft.RuleType.FILTRATION,
+            baseAttributePatch: "UsrCase",
+            comparisonType: BPMSoft.ComparisonType.IS_NOT_NULL,
+            attribute: "ServicePact.UsrResponsibleServiceManager",
+            // фильтр обязательный (записи без СМ не показываются вообще)
+            type: BPMSoft.FilterTypes.NotEmpty
+        }
+    ]
 }
 ```
 
-— добавить в `UsrLaborRecordsEventListener.OnSaving` (после защиты от пустого СМ, до расчёта IsFormallyWorkTime). Если делаем — обновить T-07.
+**Реализация через мастер бизнес-правил:** «Тип правила = Фильтрация выпадающего списка» → поле `UsrCase` → фильтр по связанной колонке `ServicePact.UsrResponsibleServiceManager` НЕ ПУСТО.
+
+### Поле `UsrOverTime` — всегда видимо (Находка 2.4)
+
+Старое решение «скрывать `UsrOverTime` при пустом `UsrSourceMessage`» — **отменено** (Q5 уточнение 2026-04-25, ARCHITECTURE 3.3). Поле должно быть видимо и редактируемо во всех каналах создания (popup, деталь, прямая страница).
+
+**Действие:** проверить, что на странице `UsrLaborRecords.Page` НЕТ бизнес-правил, скрывающих `UsrOverTime`. Если найдены — удалить.
 
 ### Verify
 
-В детали `UsrSchema021c2f40Detail` на CasePage → Добавить запись → попробовать ввести дату завтрашнего дня → ошибка.
+1. **Правило 1 (дата в будущем):** в детали `UsrSchema021c2f40Detail` на CasePage → Добавить запись → ввести дату завтрашнего дня → ошибка «Дата работ не может быть в будущем».
+2. **Правило 2 (дата задним числом):** ввести дату 4 дня назад (при `MaxBackdateDays = 3`) → ошибка «Списать можно не ранее чем за 3 дней назад».
+3. **Правило 4 (B1 уровень 3):** на CasePage с пустым СМ договора → деталь «Трудозатраты» → Добавить → в lookup «Обращение» текущий Case (без СМ) НЕ должен отображаться. Открыть Case с заполненным СМ → запись создаётся нормально.
+4. **OverTime виден:** в детали → Добавить запись → поле «Переработка» (`UsrOverTime`) **отображается и редактируемо** независимо от заполнения других полей.
 
 ---
 
@@ -1010,7 +1191,7 @@ if (hours * 60 + minutes < 1) {
 **Стадия 4: «На доработке»**
 - Без активных элементов из коробки.
 - Переход на «На верификации» — **по ручному действию инженера** «Отправить на согласование заново» (Q3 — новая виза СМ).
-- Реализация: либо отдельная кнопка на странице, либо смена `UsrLaborRecordsStage` через бизнес-правило при редактировании. **MVP-вариант:** кнопка на панели действий, которая (1) обнуляет старые визы и (2) ставит `UsrLaborRecordsStage = На верификации`. DCM сам подхватит и создаст новую визу СМ.
+- **Реализация кнопки — отдельный тикет T-13.5** (см. ниже). В дизайнере кейса T-13 эта стадия описывается как «принимающая» — без автоматических переходов. Переход управляется кодом кнопки, которая программно ставит `UsrLaborRecordsStage = "На верификации"`.
 
 **Стадия 5: «Утверждено»** (конечная)
 - Без элементов. Запись в выгрузку.
@@ -1038,6 +1219,178 @@ if (hours * 60 + minutes < 1) {
 3. Утвердить визу → стадия «На утверждении», создана виза для руководителя.
 4. Утвердить → стадия «Утверждено».
 5. На любом шаге отклонить → «На доработке».
+
+---
+
+## T-13.5 — Кнопка «Отправить на согласование заново» на странице UsrLaborRecords (B2)
+
+**Этап:** 5 (Согласование)
+**Зависит от:** T-13 (DCM-кейс активирован)
+**Артефакт:** ClientUnitSchema (замещение страницы UsrLaborRecords)
+**Решение в DECISIONS:** Q3 (возврат с Этапа 1 — новая виза СМ)
+**Время:** ~2ч + тестирование
+
+### Что делаем
+
+После того как руководитель отклонил визу и стадия перешла в «На доработке» — инженеру нужен механизм отправить запись на новый круг виз. В стандартном DCM такой кнопки нет, поэтому добавляем её на страницу `UsrLaborRecords.Page` (или замещение этой схемы в CTI).
+
+### Шаги внедрения
+
+#### 1. Создать/расширить замещение страницы UsrLaborRecords
+
+Если в CTI ещё нет замещения страницы `UsrUsrLaborRecords6e6369a6Page` — создать.
+Конфигурация → CTI → Добавить → «Замещающий клиентский модуль»:
+- Родитель: `UsrUsrLaborRecords6e6369a6Page` (та же схема, что в AS-IS)
+- Код: `UsrUsrLaborRecords6e6369a6Page`
+- Пакет: CTI
+
+#### 2. Добавить кнопку в diff страницы
+
+```javascript
+diff: [
+    {
+        operation: "insert",
+        name: "ResubmitForApprovalButton",
+        parentName: "ActionButtonsContainer", // или "LeftContainer", в зависимости от структуры
+        propertyName: "items",
+        values: {
+            itemType: BPMSoft.controls.ItemType.BUTTON,
+            caption: { bindTo: "Resources.Strings.ResubmitForApprovalCaption" },
+            click: { bindTo: "onResubmitForApprovalClick" },
+            visible: { bindTo: "getIsResubmitButtonVisible" },
+            enabled: { bindTo: "getIsResubmitButtonEnabled" },
+            style: BPMSoft.controls.ButtonEnums.style.GREEN
+        }
+    }
+]
+```
+
+Локализуемая строка `ResubmitForApprovalCaption` = «Отправить на согласование заново».
+
+#### 3. Методы видимости и обработчик клика
+
+```javascript
+methods: {
+    /**
+     * Видимость кнопки: только для записей в стадии «На доработке».
+     * Дополнительно — только автор записи может нажать (CreatedBy = current user).
+     */
+    getIsResubmitButtonVisible: function() {
+        var stage = this.get("UsrLaborRecordsStage");
+        var stageName = stage ? stage.displayValue : null;
+        if (stageName !== "На доработке") {
+            return false;
+        }
+        var createdBy = this.get("CreatedBy");
+        var currentUserContact = BPMSoft.SysValue.CURRENT_USER_CONTACT;
+        if (!createdBy || !currentUserContact || !currentUserContact.value) {
+            return false;
+        }
+        return createdBy.value === currentUserContact.value;
+    },
+
+    /**
+     * Кнопка enabled только если запись сохранена (есть Id).
+     */
+    getIsResubmitButtonEnabled: function() {
+        var id = this.get("Id");
+        return id && id !== BPMSoft.GUID_EMPTY;
+    },
+
+    /**
+     * Клик «Отправить на согласование заново».
+     * 1. Подтверждение пользователя.
+     * 2. UpdateQuery: UsrLaborRecordsStage = "На верификации".
+     * 3. Перезагрузка страницы → DCM подхватит смену стадии и создаст новую визу СМ.
+     */
+    onResubmitForApprovalClick: function() {
+        this.showConfirmationDialog(
+            "Отправить запись на согласование заново? Будет создана новая виза для сервис-менеджера.",
+            function(returnCode) {
+                if (returnCode !== BPMSoft.MessageBoxButtons.YES.returnCode) {
+                    return;
+                }
+                this.resubmitForApproval();
+            },
+            [BPMSoft.MessageBoxButtons.YES.returnCode, BPMSoft.MessageBoxButtons.NO.returnCode]
+        );
+    },
+
+    resubmitForApproval: function() {
+        var recordId = this.get("Id");
+        // Сначала найти Id стадии "На верификации" в справочнике UsrLaborRecordsStage
+        var stageEsq = this.Ext.create("BPMSoft.EntitySchemaQuery", { rootSchemaName: "UsrLaborRecordsStage" });
+        stageEsq.addColumn("Id");
+        stageEsq.filters.add("NameFilter",
+            stageEsq.createColumnFilterWithParameter(BPMSoft.ComparisonType.EQUAL, "Name", "На верификации"));
+        stageEsq.getEntityCollection(function(stageResult) {
+            if (!stageResult.success || stageResult.collection.getCount() === 0) {
+                this.showInformationDialog("Не найдена стадия «На верификации» в справочнике. Обратитесь к администратору.");
+                return;
+            }
+            var verificationStageId = stageResult.collection.getByIndex(0).get("Id");
+
+            // UpdateQuery — сменить стадию
+            var update = this.Ext.create("BPMSoft.UpdateQuery", { rootSchemaName: "UsrLaborRecords" });
+            update.setParameterValue("UsrLaborRecordsStage", verificationStageId, BPMSoft.DataValueType.GUID);
+            update.filters.add("IdFilter",
+                update.createColumnFilterWithParameter(BPMSoft.ComparisonType.EQUAL, "Id", recordId));
+            update.execute(function(updResult) {
+                if (!updResult.success) {
+                    this.showInformationDialog("Не удалось изменить стадию: " +
+                        (updResult.errorInfo ? updResult.errorInfo.message : ""));
+                    return;
+                }
+                this.showInformationDialog(
+                    "Запись отправлена на согласование заново. Новая виза для сервис-менеджера будет создана автоматически.",
+                    function() {
+                        // Перезагрузить страницу — увидим новую стадию и созданную визу
+                        this.reloadEntity();
+                    },
+                    this
+                );
+            }, this);
+        }, this);
+    }
+}
+```
+
+**Замечания:**
+- Метод `reloadEntity()` — стандартный для BasePageV2. Если не работает — `this.sandbox.publish("UpdatePagesValues", { ... })` или `this.refreshGridData()`.
+- Точное имя контейнера для кнопки (`ActionButtonsContainer`, `LeftContainer`, `combinedModeActionButtonsCardLeftContainer`) зависит от родителя. Подтвердить через инспектор DOM при первом запуске.
+- Если DCM **не реагирует** на программную смену стадии (R4 для виз → может распространяться и на стадии): добавить второй шаг — InsertQuery в `UsrLaborRecordsVisa` создаёт новую визу СМ напрямую. Тогда кнопка делает оба действия.
+
+### R4-вариант (если DCM не подхватывает смену стадии)
+
+Запасной механизм — программное создание визы:
+
+```javascript
+createNewVisaForServiceManager: function(recordId, smContactId) {
+    var insert = this.Ext.create("BPMSoft.InsertQuery", { rootSchemaName: "UsrLaborRecordsVisa" });
+    insert.setParameterValue("UsrLaborRecords", recordId, BPMSoft.DataValueType.GUID);
+    insert.setParameterValue("Visator", smContactId, BPMSoft.DataValueType.GUID);
+    insert.setParameterValue("Status", /* GUID статуса "Ожидает визирования" */, BPMSoft.DataValueType.GUID);
+    insert.setParameterValue("VisaOwner", /* GUID создателя визы */, BPMSoft.DataValueType.GUID);
+    insert.execute(function(result) { /* ... */ }, this);
+}
+```
+
+**Решение R4 принимается на этапе тестирования T-18 (сценарий 8).** Если DCM подхватывает — кнопка делает только UpdateQuery. Если не подхватывает — добавляется создание визы.
+
+### Verify
+
+1. Создать тестовую запись с переработкой → пройти весь цикл до отклонения руководителем → стадия «На доработке».
+2. Открыть запись под автором (инженером): на панели действий **видна кнопка «Отправить на согласование заново»**.
+3. Под другим инженером (не автором) — кнопка НЕ видна.
+4. Под СМ или руководителем — кнопка НЕ видна (только автор может).
+5. Нажать кнопку → подтверждение → стадия меняется на «На верификации».
+6. Проверить в БД: `SELECT * FROM "UsrLaborRecordsVisa" WHERE "UsrLaborRecordsId" = '<id>' ORDER BY "CreatedOn" DESC` — должна появиться **новая виза** для СМ договора (либо автоматически от DCM, либо после R4-варианта).
+7. СМ получает уведомление в центре уведомлений (как в первый раз).
+8. Цикл повторяется: СМ утверждает → стадия «На утверждении» → виза руководителя.
+
+### Откат
+
+Снять с публикации замещение страницы → F5. Кнопка пропадёт. Существующие записи в стадии «На доработке» останутся в этой стадии — потребуется ручной перевод через админа.
 
 ---
 
@@ -1120,31 +1473,82 @@ if (hours * 60 + minutes < 1) {
 
 ### Колонки реестра
 
-| Колонка | Источник |
-|---------|----------|
-| Дата работ | UsrWorkDate |
-| Сотрудник | CreatedBy |
-| Обращение | UsrCase.Number |
-| Договор | UsrServicePact.Name |
-| Длительность (мин) | виртуальная `UsrTotalMinutes` (= Hours\*60 + Minutes) — добавить через мастер виртуальных колонок |
-| Переработка | UsrOverTime |
-| Стадия | UsrLaborRecordsStage |
-| Сервис-менеджер | UsrServicePact.UsrResponsibleServiceManager |
-| Формально рабочее время | UsrIsFormallyWorkTime |
-| Комментарий | UsrWorkComments |
+| Колонка | Источник | Замечания |
+|---------|----------|-----------|
+| Дата работ | UsrWorkDate | Сортировка по умолчанию (DESC) |
+| **Дата создания** | CreatedOn | Когда запись создана (для контроля «не списано вовремя») — Находка 2.10 |
+| Сотрудник | CreatedBy | |
+| Обращение | UsrCase.Number | |
+| Договор | UsrServicePact.Name | |
+| **Номер Лида** | UsrLeadNumber | Из договора, для интеграции с ERP — Находка 2.10 |
+| Длительность (мин) | виртуальная `UsrTotalMinutes` (= Hours\*60 + Minutes) | Добавить через мастер виртуальных колонок |
+| Переработка | UsrOverTime | |
+| Стадия | UsrLaborRecordsStage | Пустая для записей без переработки (Q4) |
+| Сервис-менеджер | UsrServicePact.UsrResponsibleServiceManager | Для фильтрации СМ по своим договорам |
+| **Разрешены сверхурочные** | UsrServicePact.UsrOvertimeAllowed | Информационная колонка для контроста переработки vs условия договора — Находка 2.10 |
+| Формально рабочее время | UsrIsFormallyWorkTime | Подсветка жёлтым (T-16) |
+| Комментарий | UsrWorkComments | |
 
 ### Фильтры
+
+**Базовые (доступны всем ролям):**
 
 - Период (`UsrWorkDate`)
 - Сотрудник (`CreatedBy`)
 - Обращение / Договор
 - Тип записи: Все / Только переработки / Только без переработки (Q4)
 - Стадия (`UsrLaborRecordsStage`) — отображается только в режимах «Все» и «Только переработки»
-- «Требуют моего внимания» (комплексный, см. ARCHITECTURE 3.6)
+
+**«Требуют моего внимания» — детализация по ролям (Q11, Находка 2.11):**
+
+Это **динамический фильтр**, логика зависит от роли текущего пользователя. Реализуется через JS-метод `getDefaultFilters` или через несколько фильтров с условием на роль.
+
+| Роль | Логика фильтра |
+|------|----------------|
+| `CTI.Инженеры` | `CreatedBy = [#CurrentUserContact#] AND UsrLaborRecordsStage = "На доработке"` — записи инженера, отклонённые СМ или руководителем (Находка 4.2) |
+| `CTI.Ответственные сервис-менеджеры` | `UsrLaborRecordsStage = "На верификации" AND UsrServicePact.UsrResponsibleServiceManager = [#CurrentUserContact#]` — переработки на верификации по СВОИМ договорам (Q11) |
+| `CTI.Руководители сервис-менеджеров` | `UsrLaborRecordsStage = "На верификации"` — все переработки на верификации (страховка для отсутствующих СМ) |
+| `CTI.Руководители согласования трудозатрат` | `UsrLaborRecordsStage = "На утверждении"` — переработки, ожидающие финального утверждения |
+| `CTI.Аналитики трудозатрат` | Фильтр **скрыт** или показывает все записи без фильтрации (у аналитика нет «своих» задач — Q12) |
+| Системный администратор | `UsrLaborRecordsStage IN ("На верификации", "На утверждении")` — все «висящие» задачи для контроля |
+
+**Реализация:**
+
+Если пользователь имеет несколько ролей — фильтр работает по **наиболее специфичной** (Инженер → СМ → Руководитель СМ → Руководитель согласования → Аналитик → Админ). Логика проверки роли в JS:
+
+```javascript
+getDefaultFilters: function() {
+    var filters = this.Ext.create("BPMSoft.FilterGroup");
+    var currentContactId = BPMSoft.SysValue.CURRENT_USER_CONTACT.value;
+
+    // Определить роль через ESQ к SysUserInRole (можно закешировать в атрибуте схемы раздела)
+    if (this.isUserInRole("CTI.Инженеры")) {
+        filters.add("EngineerFilter",
+            this.Terrasoft.createColumnFilterWithParameter(
+                BPMSoft.ComparisonType.EQUAL, "CreatedBy", currentContactId));
+        filters.add("StageFilter",
+            this.Terrasoft.createColumnFilterWithParameter(
+                BPMSoft.ComparisonType.EQUAL, "UsrLaborRecordsStage.Name", "На доработке"));
+    }
+    // ... аналогично для остальных ролей
+    return filters;
+}
+```
+
+**Альтернатива — без JS:** создать **6 предустановленных групп** в реестре (для каждой роли — своя группа с фиксированными условиями). Пользователь сам выбирает свою. Менее автоматично, но проще в реализации и поддержке.
+
+**Рекомендация:** для MVP — **6 предустановленных групп** (без JS). В v2 — переделать на динамический по роли.
 
 ### Verify
 
-Раздел появился в меню → реестр открывается → колонки заполнены данными.
+1. Раздел появился в меню → реестр открывается → все 13 колонок видны.
+2. Колонка «Дата создания» отличается от «Дата работ» (когда списано задним числом).
+3. Колонка «Номер Лида» подтягивается из договора.
+4. Колонка «Разрешены сверхурочные» показывает true/false из договора.
+5. Под пользователем-инженером в группе «Требуют моего внимания» — только записи самого инженера в стадии «На доработке».
+6. Под СМ-1 в той же группе — только переработки в стадии «На верификации» по договорам, где СМ-1 ответственный.
+7. Под руководителем согласования — только переработки в стадии «На утверждении».
+8. Под аналитиком группа «Моё внимание» либо скрыта, либо показывает всё без фильтрации.
 
 ---
 
@@ -1194,37 +1598,91 @@ if (hours * 60 + minutes < 1) {
 
 ---
 
-## T-18 — E2E-тестирование на dev
+## T-18 — E2E-тестирование на dev (15 сценариев)
 
 **Этап:** 7 (Тестирование)
 **Зависит от:** T-01..T-17
 **Артефакт:** Test
+**Время:** 6ч (расширено с 4ч после Группы D — добавлены сценарии 11-15)
 
-### Сценарии
+### Подготовка тестовой среды
 
-Прогнать **все 10 сценариев из ARCHITECTURE раздел 7**:
+Перед прогоном сценариев — создать тестовые данные:
 
-1. Инженер — переработка в выходной → DCM запускается, виза СМ.
-2. СМ — утверждение через центр уведомлений → виза руководителя.
-3. Руководитель — утверждение по одной → email инженеру «согласована».
-4. Аналитик — фильтр + Excel-экспорт.
-5. Инженер — обычное сообщение без переработки → DCM НЕ запускается.
-6. Инженер — ручное добавление через деталь → DCM запускается (если переработка).
-7. Негативный сценарий — переработка в формально рабочее → жёлтая подсветка.
-8. Возврат на доработку → новая виза СМ (Q3).
-9. Защита от договоров без СМ → ошибка с понятным текстом.
-10. Попытка списать 4 дня назад → отклонено.
+- **Тестовые пользователи:** инженер-1 (CTI.Инженеры), инженер-2 (CTI.Инженеры, для проверки B2 видимости), СМ-1, СМ-2, руководитель-1, аналитик-1, админ. Пароли — стандартные тестовые.
+- **Тестовый договор A:** ServicePact с заполненным `UsrResponsibleServiceManager = СМ-1`, `UsrOvertimeAllowed = true`.
+- **Тестовый договор B:** ServicePact **без** `UsrResponsibleServiceManager` (для проверки Q1).
+- **Тестовое обращение A1:** Case по договору A.
+- **Тестовое обращение B1:** Case по договору B.
+- **Календарь:** убедиться, что `UsrLaborRecordsCalendarId` = реальный рабочий календарь с настройкой выходных.
+
+### Сценарии 1-10: бизнес-логика (из ARCHITECTURE раздел 7)
+
+1. **Инженер — переработка в выходной.** Под инженер-1 на CasePage A1: лента → сообщение клиенту в субботу 11:00 → popup → 1ч + переработка + комментарий → подтвердить. **Ожидается:** сообщение опубликовано, запись создана с `UsrSourceMessage` на новый Activity, DCM запустился, стадия "На верификации", виза СМ-1.
+
+2. **СМ — утверждение через центр уведомлений.** Под СМ-1: открыть колокольчик → группа "Визирование" → Утвердить запись из (1) с комментарием "Подтверждаю, действительно работа в выходной". **Ожидается:** стадия → "На утверждении", виза для руководителя-1.
+
+3. **Руководитель — утверждение по одной → email.** Под руководителем-1: раздел "Управление трудозатратами" → фильтр "Моё внимание" → видит запись → открыть → нажать "Утвердить" на панели действий. **Ожидается:** стадия → "Утверждено", инженер-1 получил email с темой "Ваша переработка по обращению №[#] согласована".
+
+4. **Аналитик — фильтр + Excel.** Под аналитик-1: раздел → фильтр "Период: прошлая неделя, тип: только переработки, стадия: Утверждено" → видит запись из (3) → действия → Экспорт в Excel. **Ожидается:** скачался файл, в нём колонка длительности в минутах = 60, есть колонки Дата создания, Номер Лида, Разрешены сверхурочные. Кнопок Утвердить/Отклонить у аналитика НЕТ.
+
+5. **Инженер — обычное сообщение без переработки.** Под инженер-1 на CasePage A1: внутренний комментарий в среду 14:00 → popup → 30 мин + галка переработки НЕ ставится → подтвердить. **Ожидается:** сообщение опубликовано, запись `UsrOverTime=false`, **DCM НЕ запустился**, стадия пустая, виз нет, в реестре фильтр "Только без переработки" показывает эту запись.
+
+6. **Инженер — ручное добавление через деталь.** Под инженер-1 на CasePage A1: деталь "Трудозатраты" → Добавить → дата = вчера 18:00, длительность 2ч, **переработка отмечена**, комментарий. **Ожидается:** запись создана, `UsrSourceMessage` пустой, DCM запустился (потому что переработка), стадия "На верификации". Поле UsrOverTime было видимо при создании.
+
+7. **Подсветка формально рабочего времени.** Под инженер-1: создать запись с переработкой в понедельник 14:00. **Ожидается:** EventListener поставил `UsrIsFormallyWorkTime=true`, в реестре строка подсвечена жёлтым. Под руководителем-1: открыть → отклонить с комментарием "Не учитывается". Инженер получил email со ссылкой и причиной.
+
+8. **Возврат на доработку → новая виза СМ (Q3, B2).** Продолжение (7): после отклонения руководителем стадия = "На доработке". Под инженер-1: открыть запись → видна кнопка "Отправить на согласование заново" → нажать → подтверждение → стадия → "На верификации", **создана новая виза для СМ-1**. Под инженер-2 (другой инженер): открыть ту же запись → кнопка НЕ видна. Под СМ-1: видит новую визу в колокольчике.
+
+9. **Защита от договоров без СМ (Q1, 3 уровня) — разбито на 9a/9b/9c (Находка 5.4):**
+
+   - **9a (уровень 1, UI required):** под СМ-1 открыть договор B → попытка сохранить с пустым `UsrResponsibleServiceManager` → UI блокирует ("обязательное поле").
+   - **9b (уровень 2, EventListener):** под админом через JS-консоль выполнить `BPMSoft.InsertQuery` на UsrLaborRecords с `UsrCase = B1` (договор без СМ) → ожидается ошибка с понятным текстом.
+   - **9c (уровень 3, UI-фильтр):** под инженер-1 открыть CasePage B1 → лента → "Опубликовать" → ожидается сообщение "Невозможно списать время... Обратитесь к руководителю сервиса", popup НЕ открывается, сообщение НЕ публикуется. Также — на CasePage A1 деталь "Трудозатраты" → Добавить → в lookup "Обращение" обращение B1 НЕ показывается.
+
+10. **Попытка списать 4 дня назад.** Под инженер-1: на CasePage A1 → ручное добавление через деталь → дата = 5 дней назад → ошибка "Дата работ не может быть раньше чем 3 календарных дней назад". То же через popup.
+
+### Сценарии 11-15: расширение (Группа D, Этап 5 верификации)
+
+11. **Изменение UsrOverTime после создания (Находка 4.3).** Под инженер-1: создать запись с `UsrOverTime=false`, проверить — DCM не запустился. Открыть запись → поставить галку "Переработка" → сохранить. **Цель:** определить поведение DCM. Если DCM запустился — отлично. Если нет — нужно бизнес-правило (зафиксировать как находку для v2).
+
+12. **Не-инженер пишет в ленту (Находка 5.2 — критично!).** Под СМ-1, руководителем-1, аналитик-1, админом по очереди: на CasePage A1 → лента → сообщение → "Опубликовать". **Ожидается для всех 4 ролей:** popup НЕ открывается, сообщение публикуется напрямую как обычно. **Без этого сценария — риск регрессии: лента может сломаться для всех остальных ролей.**
+
+13. **СМ отклоняет на верификации (Находка 5.3).** Под инженер-1 создать запись с переработкой → стадия "На верификации" → виза СМ-1. Под СМ-1: отклонить с комментарием "Не вижу подтверждения переработки в комментарии работ". **Ожидается:** стадия → "На доработке", виза руководителя НЕ создана, инженер-1 получил email "возвращена на доработку. Комментарий: ...". Покрывает путь СМ → "На доработке" (отдельно от руководителя).
+
+14. **Действия администратора (Находка 5.1).** Под админом: открыть любую запись на любой стадии → попытаться **изменить стадию вручную** через карточку → сохраняется. Создать запись через деталь — сохраняется без ограничений ролей. **Удалить** запись через действие "Удалить" → запись удалена из БД. Цель: убедиться, что у админа есть полный контроль для расшивки нештатных ситуаций.
+
+15. **Регресс старых функций (Находка 5.5).** Открыть CasePage обращения, по которому есть **старые** записи UsrLaborRecords (созданные до внедрения, без UsrWorkDate, UsrLaborRecordsStage). **Ожидается:** (a) деталь "Трудозатраты" видна и показывает старые записи, (b) старые записи открываются без ошибок, (c) автозаполнение UsrServicePact из UsrCase работает при создании новой записи через деталь, (d) колонки реестра в новом разделе для старых записей показывают пустоту в новых полях, не падают.
 
 ### Чеклист
 
-- [ ] Каждый из 10 сценариев пройден успешно.
-- [ ] Найденные баги зафиксированы и исправлены, повторный прогон.
-- [ ] Email-уведомления приходят (проверить в Inbox).
-- [ ] Performance: открытие popup ≤ 1 сек, сохранение записи ≤ 2 сек.
+**Функциональный:**
+
+- [ ] Все 15 сценариев пройдены успешно.
+- [ ] Найденные баги зафиксированы и исправлены, повторный прогон проблемных.
+- [ ] Email-уведомления приходят (проверить Inbox получателей в каждом из сценариев 3, 7, 8, 13).
+- [ ] Сценарий 12 (не-инженер) пройден для всех 4 не-инженерных ролей — критично для регрессии.
+- [ ] R4 (DCM реакция на программную смену стадии в сценарии 8) — зафиксировать поведение, при необходимости активировать резервный механизм в T-13.5.
+- [ ] response.id vs response.activityId в T-11 (сценарий 1) — зафиксировано точное имя свойства, при необходимости поправлен код.
+
+**Производительность (Находка 5.6):**
+
+- [ ] Открытие popup ≤ 1 сек.
+- [ ] Сохранение записи через popup ≤ 2 сек.
+- [ ] Раздел "Управление трудозатратами" с 1000+ записей открывается ≤ 3 сек.
+- [ ] Фильтр "Моё внимание" применяется ≤ 1 сек.
+- [ ] Email после смены стадии приходит ≤ 30 сек.
+- [ ] Переход DCM между стадиями (после клика "Утвердить") ≤ 2 сек.
+
+**Видимость и роли:**
+
+- [ ] Кнопка "Отправить на согласование заново" (T-13.5) видна только автору записи в стадии "На доработке" (сценарий 8).
+- [ ] У роли Аналитик НЕТ кнопок Утвердить/Отклонить (сценарий 4).
+- [ ] Подсветка жёлтым работает только для `UsrIsFormallyWorkTime=true` (сценарий 7).
 
 ### Откат
 
-Если что-то не работает — откатывать конкретные тикеты в обратном порядке.
+Если сценарий проваливается — откатывать конкретный тикет в обратном порядке. Сводный откат всего MVP: см. T-19 секция "Откат".
 
 ---
 
@@ -1290,7 +1748,8 @@ T-03 (UsrLR) ────┘
                  ├─→ T-10 (modal) → T-11 (publisher)
                  └─→ T-12 (BR)
 
-T-08 + T-09 ─────→ T-13 (DCM) ──→ T-14 (BPMN+Email)
+T-08 + T-09 ─────→ T-13 (DCM) ──→ T-13.5 (кнопка "Отправить заново")
+                              └──→ T-14 (BPMN+Email)
 
 T-03 + T-13 ─────→ T-15 (раздел) → T-16 (color), T-17 (workplace)
 
@@ -1312,7 +1771,7 @@ T-03 + T-13 ─────→ T-15 (раздел) → T-16 (color), T-17 (workp
 4. T-07 (после T-02 + T-03 + T-04) → **рестарт Kestrel**
 5. T-08 → T-09
 6. Параллельно: T-10 → T-11, T-12
-7. T-13 → T-14
+7. T-13 → T-13.5 (параллельно T-14)
 8. T-15 → T-16, T-17
 9. T-18 (E2E)
 10. T-19 (прод)

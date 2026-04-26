@@ -15,7 +15,7 @@
 - **DCM-кейс запускается только для записей с переработкой** (`UsrOverTime == true`, см. Q4). Записи без переработки идут в выгрузку напрямую, без стадии и виз. Условие запуска кейса задаётся штатным механизмом мастера разделов («По какой колонке настраивать условие запуска кейса?») — BPMN-обёртка не требуется.
 - **Popup списания при сообщении в ленту обязателен на ЛЮБОЕ ручное сообщение инженера** (см. Q5, уточнение от 2026-04-25) — мотивирует не забывать списывать. Признак «Переработка» — опциональная галка в popup; именно она определяет, запустится ли DCM-цикл.
 - Реализация popup — замещение `SocialMessagePublisherPage` и `ModalBox.show()` + отдельный модуль карточки. Паттерн подтверждён документацией.
-- **Определение «формально рабочего времени»** (для подсветки переработок) — платформенное API `ICalendarRepository` + `ICalendar.IsWorkTime(DateTime)` (namespace `BPMSoft.Configuration.Calendars`). Каскад календарей: `ServicePact → ServiceItem → BaseCalendar`.
+- **Определение «формально рабочего времени»** (для подсветки переработок) — платформенное API `TermCalculatorActions(userConnection, calendarId).IsTimeInWorkingInterval(DateTime)` (namespace `BPMSoft.Configuration`, пакет `SLM`). Каскад календарей: `ServicePact.Calendar → SysSettings UsrLaborRecordsCalendarId → BaseCalendar`. *Уточнено 2026-04-25 после проверки R3 на dev — `ICalendarRepository`/`IsWorkTime` в платформе 1.9 НЕТ, это API другой версии BPMSoft/Creatio.*
 - **Массовое утверждение/отклонение виз — НЕ в MVP** (см. Q6). В MVP — утверждение по одной записи штатными средствами (центр уведомлений, панель действий страницы, вкладка «Визы»). Кнопки доступны из коробки без клиентского кода.
 - В ТЗ v1.5 обнаружено одно серьёзное внутреннее расхождение (раздел 9 «Схема процесса» рассинхронизирован с разделами 3–5) — будет устранено в ТЗ v1.6.
 
@@ -231,10 +231,10 @@ if (responsibleSmId == Guid.Empty) {
 **Шаг 2 — расчёт `UsrIsFormallyWorkTime`** (для подсветки):
 
 - Если `UsrOverTime == true`:
-  - Определить календарь для договора (каскад из `TermCalculatorITILService.GetCalendarId()`):
-    1. `ServiceInServicePact.CalendarId` — если есть.
-    2. `ServicePact.CalendarId` — если есть.
-    3. `base.GetCalendarId()` (системный календарь).
+  - Определить календарь для записи (упрощённый каскад — `ServiceInServicePact` для labor-records не нужен, потому что у `UsrLaborRecords` нет прямой связи с услугой договора):
+    1. `ServicePact.CalendarId` — если есть.
+    2. SysSettings `UsrLaborRecordsCalendarId` — отдельная настройка для подсистемы.
+    3. SysSettings `BaseCalendar` (системный календарь).
   - `var actions = new TermCalculatorActions(UserConnection, calendarId);`
   - `bool isWorkTime = actions.IsTimeInWorkingInterval(UsrWorkDate);`
   - `UsrIsFormallyWorkTime = isWorkTime` — `true` означает «переработка проставлена, но время формально рабочее → подозрительно, подсветить руководителю».
@@ -242,8 +242,8 @@ if (responsibleSmId == Guid.Empty) {
 
 **API подтверждён 2026-04-25** проверкой пакета `SLM/Schemas/TermCalculatorActions/TermCalculatorActions.cs` (строки 109–125, метод `IsTimeInWorkingInterval`). Класс публичный (`public class TermCalculatorActions`), namespace `BPMSoft.Configuration`. Реализация: проверяет `DayInCalendar.DayType_IsWeekend` + наличие `WorkingTimeInterval`, чьи `From <= time <= To`. **`ICalendarRepository`/`IsWorkTime` в платформе 1.9 НЕТ** — это API для другой версии BPMSoft/Creatio.
 
-**Namespace:** `BPMSoft.Configuration.Calendars`
-**Dependency injection:** `ClassFactory.Get<ICalendarRepository>(new ConstructorArgument("userConnection", UserConnection))`
+**Namespace:** `BPMSoft.Configuration` (наш класс уже в этом namespace, явный `using` не нужен)
+**Инстанцирование:** `var actions = new TermCalculatorActions(userConnection, calendarId);` — обычный `new`, без DI/ClassFactory
 
 **Требует перезапуск Kestrel** после публикации (это EventListener).
 
@@ -425,8 +425,10 @@ MVP: стандартный экспорт реестра BPMSoft в Excel (кн
 | Функциональные роли (**4 шт.**: Ответственные СМ, Руководители СМ, Руководители согласования, Аналитики) | FuncRole | new |
 | Объектные права `UsrLaborRecords` и `UsrLaborRecordsVisa` | Rights | new |
 | Миграция: проставить `UsrResponsibleServiceManager` на актуальных ServicePact | Data | до релиза |
+| Кнопка «Отправить на согласование заново» (T-13.5) — замещение `UsrLaborRecords.Page` с кнопкой и обработчиком | ClientUnitSchema | new |
+| Настройка рабочих мест: добавить раздел «Управление трудозатратами» 5 ролям (Инженеры, СМ, Руководители, Аналитики, Администраторы) | Workplace | update |
 
-**Всего уникальных схем/артефактов CTI MVP:** ~15 new + 3 update + 1 миграция данных.
+**Всего уникальных схем/артефактов CTI MVP:** ~16 new + 3 update + 1 миграция данных + 1 настройка рабочих мест.
 
 **v2 (не в MVP):** кастомное действие раздела «Утвердить/Отклонить выбранные» (`getSectionActions` + `BatchQuery`) — см. раздел 10.
 
@@ -441,7 +443,7 @@ MVP: стандартный экспорт реестра BPMSoft в Excel (кн
 2. Сформировать ТЗ v1.6 (или приложение к v1.5) на базе DECISIONS_v1.md и актуального ARCHITECTURE_v1.md — закрыть расхождение раздела 9 ТЗ v1.5, добавить уведомления, роли.
 3. **Миграция данных:** аудит существующих ServicePact, проставить `UsrResponsibleServiceManager` ручным прогоном (Q1, до релиза).
 4. Снять свежий экспорт CTI с прода (актуальный — `src/CTI_2026-04-23_17.59.05/`).
-5. Проверить технические риски R1 (`SocialMessagePublisherPage` + `onPublishButtonClick` в 1.9) и R3 (`ICalendarRepository` доступность) на dev-сервере (192.168.102.46).
+5. ~~Проверить технические риски R1 и R3 на dev-сервере.~~ **Сняты 2026-04-25:** R1 — схема `SocialMessagePublisher/Schemas/SocialMessagePublisherPage` существует, метод `onPublishButtonClick` в базовом классе подтверждён; R3 — `ICalendarRepository` в платформе 1.9 нет, реальный API — `TermCalculatorActions.IsTimeInWorkingInterval` (пакет SLM, namespace `BPMSoft.Configuration`).
 
 ### Этап 1 — Данные
 1. ServicePact: поля `UsrOvertimeAllowed`, `UsrResponsibleServiceManager` (обязательное) — публикация.
@@ -472,14 +474,19 @@ MVP: стандартный экспорт реестра BPMSoft в Excel (кн
 16. Правило цветового выделения (жёлтый фон для формально рабочего времени).
 17. Настройка рабочих мест — добавить раздел ролям.
 
-### Этап 7 — Миграция
-18. **`UsrOverTimeApproval` — НЕ синхронизировать** (Q7). Оставляем как deprecated, не используем. Отчётность по результатам визирования — через JOIN с `UsrLaborRecordsVisa`. Удаление колонки — в v2 после аудита использования.
-19. Миграция старых записей: специальная обработка не требуется — DCM запускается только для новых записей с `UsrOverTime = true` (см. 3.5). Старые записи остаются как есть, без стадии и виз.
+### Этап 7 — Тестирование (T-18)
+18. E2E-тестирование на dev по сценариям из раздела 7 — полный прогон 15 сценариев (расширено после верификации 2026-04-25, см. T-18).
 
-### Этап 8 — Тестирование на dev + перенос на прод
-20. Тестовый сценарий (раздел 7) — полный прогон.
-21. Перенос пакета CTI через UI-импорт / WorkspaceConsole.
-22. На проде — рестарт Kestrel, перелогин пользователей.
+### Этап 8 — Деплой (T-19)
+19. Перенос пакета CTI через UI-импорт / WorkspaceConsole.
+20. На проде — рестарт Kestrel, перелогин пользователей.
+
+### Политики (не отдельный этап, реализуются автоматически)
+
+- **`UsrOverTimeApproval` — НЕ синхронизировать** (Q7). Оставляем как deprecated, не используем. Отчётность по результатам визирования — через JOIN с `UsrLaborRecordsVisa` или через `UsrLaborRecordsStage` как proxy. Удаление колонки — в v2 после аудита использования.
+- **Миграция старых записей UsrLaborRecords** не требуется — DCM запускается только для новых записей с `UsrOverTime = true` (см. 3.5). Старые записи остаются как есть, без стадии и виз.
+
+> **Нумерация этапов синхронизирована с TICKETS_v1.md (2026-04-26):** 8 этапов (0..8), без отдельного «Этап 7 — Миграция». Миграция — политика, реализуется в рамках Этапов 1 (T-01 — миграция СМ) и в политиках выше.
 
 ---
 
@@ -494,7 +501,7 @@ MVP: стандартный экспорт реестра BPMSoft в Excel (кн
 | Автозаполнение договора/лида/сотрудника | Бизнес-правила (уже есть) + `CurrentUserContact` в модалке | BusinessRule |
 | Минимум 1 минута | JS-валидация в модалке + валидатор на EntitySchema | JS + Validator |
 | Ограничение даты (N дней назад) | JS-валидация + read в SysSettings `UsrLaborRecordsMaxBackdateDays` | SysSettings + JS |
-| Определение «формально рабочего времени» | C# EventListener + `ICalendarRepository.GetById().IsWorkTime()` | SourceCode |
+| Определение «формально рабочего времени» | C# EventListener + `new TermCalculatorActions(uc, calendarId).IsTimeInWorkingInterval(dateTime)` (пакет SLM) | SourceCode |
 | Подсветка в реестре | Правило цветового выделения на `UsrIsFormallyWorkTime` | ColoringRule |
 | Связь записи трудозатрат с сообщением | Lookup-колонка `UsrSourceMessage → Activity`, заполнение после публикации | Object |
 | Разрешение сверхурочных в договоре | Новое поле `UsrOvertimeAllowed` на ServicePact | Object (replace) |
@@ -622,7 +629,7 @@ MVP: стандартный экспорт реестра BPMSoft в Excel (кн
 1. ~~Получить ответы на Q1–Q10.~~ **Закрыто 2026-04-24, см. `DECISIONS_v1.md`.**
 2. **Сформировать ТЗ v1.6** (или приложение к v1.5) на базе `DECISIONS_v1.md` и актуального `ARCHITECTURE_v1.md` — закрыть расхождение раздела 9 ТЗ v1.5, добавить матрицу уведомлений и ролей.
 3. Разбить раздел 5 «Порядок внедрения» на **детальный тикет-план с чеклистом** по каждому артефакту из раздела 4.
-4. Проверить технические риски **R1** (`SocialMessagePublisherPage` + `onPublishButtonClick` в BPMSoft 1.9) и **R3** (доступность `ICalendarRepository`, не internal) на dev-сервере (192.168.102.46).
+4. ~~Проверить технические риски R1 и R3 на dev-сервере.~~ **Оба сняты 2026-04-25** — см. раздел 9 (Риски).
 5. Миграция: аудит существующих ServicePact, проставить `UsrResponsibleServiceManager` (Q1, до релиза).
 6. Стартовать Этап 1 (данные) + Этап 2 (EventListener) — фундамент, на котором построится всё остальное.
 
