@@ -14,7 +14,7 @@ Claude выступает как **аналитик-разработчик BPMSo
 
 ## Структура проекта
 
-```
+```text
 BPMsoft/
 ├── CLAUDE.md                           ← этот файл (инструкции для Claude Code)
 ├── src/CTI_2026-04-11_15.14.44/CTI/CTI ← АКТУАЛЬНЫЙ ПАКЕТ (бинарный архив с прода 2026-04-11)
@@ -69,37 +69,11 @@ BPMsoft/
 ## Платформа и пакеты
 
 - **BPMSoft 1.9**, .NET 8, Kestrel (Linux), PostgreSQL, Redis
-- **Кастомный пакет:** `CTI` (UId: `21b087cf-bb70-cdc0-5180-6979fdd2220c`) — **все доработки только сюда**
-- Пакет `Custom` — legacy, не использовать (там старые замещения ServiceItem, ConfItem)
-- Префикс пользовательских объектов: `Usr` (сис. настройка `SchemaNamePrefix`)
-- Namespace C#: `BPMSoft.Configuration`
+- Кастомный пакет: `CTI` (UId: `21b087cf-bb70-cdc0-5180-6979fdd2220c`) — **все доработки только сюда**
+- Namespace C#: `BPMSoft.Configuration`, префикс объектов: `Usr`
 
-### Актуальные UId замещений в CTI
-
-| Схема | UId в CTI | Родитель UId |
-|-------|-----------|-------------|
-| Case | `19cc53cb-28eb-4288-bd79-cea46e02bff4` | `117d32f9-8275-4534-8411-1c66115ce9cd` |
-| ServicePact | `46e84fce-9ad8-4b09-8407-281cbb4cb824` | `595ddbda-31ce-4cca-9bdd-862257ceaf23` |
-| CasePage | `17fc86cf-3425-49a8-ba13-840c514bf34d` | — |
-| ServicePactPage | `f7a41e49-b2a3-4f00-a31d-da14efe43756` | — |
-
-Полный список → `knowledge/references/uids-and-schemas.md`
-
-### Ключевые системные пакеты
-
-| Пакет | Роль |
-|-------|------|
-| CaseService | Базовые BPMN уведомлений: `SendEmailToSROwner`, `SendNotificationToCaseOwner`, `AsyncEmailSender`, `EmailWithMacrosManager` |
-| IntegrationV2 | `IEmailClient` → `EmailClient` (SMTP/IMAP) |
-| Exchange | `ExchangeClient` (MS Exchange) |
-| Case | Базовая схема обращения |
-| SLMITILService | SLA-расчёт: `CaseTermCalculationManager`, `TimeToPrioritize` |
-
----
-
-**Полное описание** → [TECH_STACK.md](TECH_STACK.md)
-
-**Важные нюансы** → [IMPORTANT_NOTES.md](IMPORTANT_NOTES.md)
+→ Полный стек, UId замещений, ключевые пакеты: [TECH_STACK.md](TECH_STACK.md)
+→ Важные нюансы практики: [IMPORTANT_NOTES.md](IMPORTANT_NOTES.md)
 
 ---
 
@@ -146,6 +120,7 @@ BPMsoft/
 - **Не нашёл в NotebookLM** → сообщи об этом, предложи варианты: поискать в edu.bpmsoft.ru или добавить источники в блокнот.
 
 **⚠️ Правила:**
+
 - Блокнот вернул ошибку → сообщи сразу, не переключайся молча на интернет
 - Вопрос по технологии, которой нет в блокнотах → предложи добавить источники, не ищи в интернете молча
 - **Перед написанием каждого конкретного шага в документ или куска кода — сверить с NotebookLM.** Не только в начале задачи. Гипотезы «по аналогии» и «из головы» запрещены — дважды приводили к неверным инструкциям которые пришлось переделывать.

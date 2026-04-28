@@ -152,6 +152,24 @@ using BPMSoft.Common;          // для GetColumnValue<T> на IDataReader
 
 ---
 
+## Data-Driven диагностика BPMN-процессов
+
+Если процесс "не работает" — сначала проверить условия, потом искать баг в коде:
+
+1. Процесс активен? (`VwSysProcess.Enabled = true`)
+2. Фильтры StartSignal соответствуют тестовым данным?
+3. Feature toggle не перехватывает выполнение?
+
+```sql
+SELECT "Name", "Enabled", "MetaData"
+FROM "VwSysProcess"
+WHERE "Name" LIKE '%имя_процесса%';
+```
+
+> Реальный кейс: `RunSendEmailToCaseGroupV2` не срабатывал при тестировании. Причина — тестовый кейс создан с Owner, а фильтр требует `Owner IS NULL AND Group IS NOT NULL`. Процесс работал корректно; тест не соответствовал условию.
+
+---
+
 ## Фильтры StartSignal — нюансы
 
 ### Входящее письмо (Activity)

@@ -2,8 +2,21 @@
 
 Инструкция по установке Docker Mailserver на dev-сервере (192.168.102.46) для тестирования нотификаций BPMSoft.
 
-**Дата:** 2026-04-22 → обновлено 2026-04-23  
+**Дата:** 2026-04-22 → обновлено 2026-04-27  
 **Статус:** ✅ docker-mailserver установлен и работает на 192.168.102.46 (порты 25/143). Все 5 ящиков созданы, доставка проверена.
+
+---
+
+## ⚠️ Урок: Stalwart v0.16 — проверяй документацию перед деплоем
+
+Stalwart v0.16 тихо удалил Management REST API (`/api/principal` → 404) и заменил его на JMAP без документации. Веб-панель не работает из-за бага PKCE. SMTP/IMAP функционируют, но создавать ящики невозможно.
+
+**Потрачено:** несколько часов отладки несуществующих endpoint'ов.  
+**Вывод:** перед деплоем новой версии ПО проверять, покрывает ли официальная документация **именно ту версию** и её management API. Если нет — версия не готова.
+
+Подробнее: `concepts/stalwart-v016-breaking-api-change.md`, `concepts/software-adoption-documentation-check.md`
+
+---
 
 **Итог по Stalwart:** SMTP/IMAP работает, но создать ящики невозможно — Management API в v0.16 переехал на JMAP без документации, веб-панель не логинится (баг PKCE). Stalwart снести перед установкой docker-mailserver: `docker compose stop stalwart && docker run --rm -v ~/el/docker-compose/docker-data/stalwart:/mnt alpine rm -rf /mnt`.
 

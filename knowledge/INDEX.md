@@ -1,7 +1,7 @@
 # BPMSoft Wiki — Навигационный индекс
 
-**Обновлено:** 2026-04-24  
-**Последний Lint:** 2026-04-15
+**Обновлено:** 2026-04-28  
+**Последний Lint:** 2026-04-27
 
 > Правила ведения вики → [WIKI_SCHEMA.md](WIKI_SCHEMA.md)
 
@@ -9,13 +9,16 @@
 
 ## Основные страницы знаний
 
-- [platform.md](wiki/platform.md) — стек BPMSoft, пакеты, email-архитектура, SLA, порядок внедрения
+- [platform.md](wiki/platform.md) — стек BPMSoft, пакеты, email-архитектура, SLA, двухслойная архитектура кода, Calendar API
 - [cti-package.md](wiki/cti-package.md) — UId всех схем CTI, метаданные, архитектурные решения (**читать первым**)
 - [notifications.md](wiki/notifications.md) — карта процессов уведомлений, email-архитектура, CC-решение
-- [processes.md](wiki/processes.md) — BPMN, Script Task, EventListener, DCM, метаданные StartSignal
-- [ui-customization.md](wiki/ui-customization.md) — мастер разделов, бизнес-правила, SysSettings, AMD-модули JS
+- [processes.md](wiki/processes.md) — BPMN, Script Task, EventListener, DCM, метаданные StartSignal, data-driven диагностика
+- [ui-customization.md](wiki/ui-customization.md) — мастер разделов, бизнес-правила, SysSettings, AMD-модули JS, diff gotchas
 - [data-model.md](wiki/data-model.md) — таблицы БД, ESQ, Select/Update, Entity, ключевые поля
 - [troubleshooting.md](wiki/troubleshooting.md) — диагностика, известные проблемы, кейсы
+- [deployment.md](wiki/deployment.md) — FK-зависимости при импорте, lazy property паттерн C#, SysSettings.GetValue
+- [methodology.md](wiki/methodology.md) — data-driven диагностика, read-only протокол, иерархия инструментов
+- [tools-and-workflows.md](wiki/tools-and-workflows.md) — NotebookLM блокноты, edu.bpmsoft.ru, memory compiler
 
 ---
 
@@ -26,51 +29,6 @@
 - [projects/notifications-wave2.md](wiki/projects/notifications-wave2.md) — 🔧 В разработке (задача 2.3 — приоритет 1)
 - [projects/labor-records.md](wiki/projects/labor-records.md) — 📋 ТЗ на обсуждении
 - [projects/mailserver-setup.md](wiki/projects/mailserver-setup.md) — 🔧 В процессе: Docker Mailserver для тестирования нотификаций
-
----
-
-## Концепции (Knowledge Base)
-
-| Статья | Краткое описание | Источник | Обновлено |
-|--------|-----------------|----------|----------|
-| [[concepts/data-driven-system-analysis]] | Методология: запрашивать систему вместо гипотез; полный экспорт таблиц раскрывает скрытые процессы | daily/2026-04-17.md | 2026-04-18 |
-| [[concepts/vwsysprocess-schema-and-notification-querying]] | VwSysProcess — авторитетный источник процессов; Enabled колонка; MetaData содержит логику | daily/2026-04-17.md | 2026-04-18 |
-| [[concepts/startsignal-metadata-structure]] | StartSignal фильтры хранятся в VwSysProcess.MetaData; не в UI конфигурации | daily/2026-04-17.md | 2026-04-18 |
-| [[concepts/google-mail-oauth2-integration]] | Google Mail OAuth 2.0 интеграция в BPMSoft 1.9; развертывание онсайт; диагностика на dev-server | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/documentation-source-priority-bpmsoft]] | edu.bpmsoft.ru > PDF > локальная вики; `/bpmsoft-kb` скилл + Playwright MCP | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/ed25519-ssh-authentication]] | ED25519 ключи для SSH доступа; безопаснее паролей; `ssh-keygen -t ed25519` | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/ssh-read-only-access]] | Read-only constraint: SELECT OK, INSERT/UPDATE/DELETE требуют одобрения; safe diagnostics | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/ssh-ed25519-dev-server-access]] | SSH Key Provisioning: ED25519 вместо паролей; безопаснее для доступа на dev-серверы | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/dev-access-read-only-protocol]] | Разработка с read-only доступом; SELECT OK, INSERT/UPDATE/DELETE требуют явного одобрения | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/tool-availability-verification]] | Проверяй доступные инструменты первым; edu.bpmsoft.ru > PDF > вики; не предлагай альтернативы без поиска | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/bpmsoft-web-knowledge-base-navigation]] | Навигация в edu.bpmsoft.ru требует Playwright MCP; URL кодирование и сессии ломают прямые запросы | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/google-mail-oauth2-bpmsoft-integration]] | Google Mail OAuth 2.0 в BPMSoft 1.9; исследование архитектуры почты; dev-server диагностика | daily/2026-04-18.md | 2026-04-18 |
-| [[concepts/feature-toggle-subprocess-execution]] | Feature-toggle (RunReopenCaseAndNotifyAssigneeClass=1) пропускает SubProcess1; прямой вызов C# код вместо процесса | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/exchangelistenerservice-microservice-prerequisite]] | ExchangeListenerService — отдельный Docker микросервис; требуется до конфигурации OAuth 2.0; система setting + diagnostic API | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/knowledge-base-file-standardization]] | Стандартизация markdown формата в knowledge/concepts/; YAML frontmatter, таблицы, wikilinks; регулярные audits для consistency | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/memory-compiler-scheduling-task-scheduler]] | Windows Task Scheduler для гарантированной ежедневной компиляции; вместо event-driven; StartWhenAvailable для пропущенных окон | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/notebooklm-documentation-strategy-alert-rules]] | NotebookLM как primary source (5-7x эффективность); 2 focused notebooks; 3 mandatory alert rules вместо молчаливых fallback-ов | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/imacrosinvokable-pattern-bpmsoft]] | IMacrosInvokable interface для email макросов; GetMacrosValue(object arguments) с KeyValuePair<string, Guid> распаковкой | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/lazy-property-pattern-service-initialization]] | Lazy property через ClassFactory.Get в property getter (не в constructor); BPMSoft convention для сервисов | daily/2026-04-19.md | 2026-04-19 |
-| [[concepts/notebooklm-notebooks-curated]] | Актуальный состав 7 блокнотов после аудита 2026-04-20: мусор удалён, версии зафиксированы (PG12, Redis 7, .NET 8) | session/2026-04-20 | 2026-04-20 |
-| [[concepts/kestrel-service-restart]] | После публикации C# кода Kestrel держит старые сборки в памяти; рестарт: `sudo systemctl restart bpmsoft`; имя сервиса bpmsoft | daily/2026-04-21.md | 2026-04-21 |
-| [[concepts/stalwart-v016-breaking-api-change]] | Stalwart v0.16 удалил Management REST API, заменил JMAP без документации; веб-панель сломана из-за PKCE; SMTP/IMAP работают | daily/2026-04-23.md | 2026-04-23 |
-| [[concepts/software-adoption-documentation-check]] | Перед деплоем нового ПО проверять не только версию, но и наличие актуальной документации для management API | daily/2026-04-23.md | 2026-04-23 |
-| [[concepts/bpmsoft-import-fk-dependencies]] | FK-ошибки при импорте пакета: экспортировать зависимые таблицы (EmailTemplate+SysImage); лог не детализирует до записей | daily/2026-04-24.md | 2026-04-24 |
-| [[concepts/notebooklm-cross-version-api-contamination]] | NotebookLM может вернуть API из другой версии платформы (BPMSoft 8 vs 1.9); обязательна верификация по коду | daily/2026-04-24.md | 2026-04-24 |
-| [[concepts/bpmsoft-calendar-api-v19]] | Календарное API 1.9: TermCalculatorActions.IsTimeInWorkingInterval(DateTime) в пакете SLM; не в DLL ядра | daily/2026-04-24.md | 2026-04-24 |
-| [[concepts/bpmsoft-configuration-schema-vs-core-dll]] | Бизнес-логика BPMSoft 1.9 в схемах конфигурации (пакеты), а не в core DLL; поиск API — в обоих слоях | daily/2026-04-24.md | 2026-04-24 |
-
----
-
-## Связи между концепциями (Connections)
-
-| Связь | Объединяет | Источник | Дата |
-|-------|-----------|----------|------|
-| [[connections/dev-server-investigation-workflow]] | ED25519 доступ, read-only протокол, проверка инструментов, Google Mail OAuth 2.0 | daily/2026-04-18.md | 2026-04-18 |
-| [[connections/investigation-methodology-and-metadata-discovery]] | Data-driven анализ, VwSysProcess, StartSignal метаданные, BPMN диагностика | daily/2026-04-17.md | 2026-04-18 |
-| [[connections/infrastructure-and-architecture-prerequisites]] | ExchangeListenerService, OAuth 2.0, feature-toggle logic, IMacrosInvokable, lazy pattern | daily/2026-04-19.md | 2026-04-19 |
-| [[connections/notebooklm-verification-and-codebase-search]] | NotebookLM cross-version → DLL search → schema search → правильное API; двухслойная верификация | daily/2026-04-24.md | 2026-04-24 |
 
 ---
 
@@ -86,6 +44,68 @@
 ---
 
 ## Архив
+
+Все файлы перемещены в [archive/](archive/). Знания из концептов влиты в wiki/ страницы выше.
+
+**Концепты (перемещены 2026-04-28, влиты в wiki/):**
+
+| Файл | Влит в |
+|------|--------|
+| [amd-css-loading.md](archive/amd-css-loading.md) | wiki/ui-customization.md |
+| [bpmn-signal-filter-diagnostics.md](archive/bpmn-signal-filter-diagnostics.md) | wiki/processes.md |
+| [bpmsoft-calendar-api-v19.md](archive/bpmsoft-calendar-api-v19.md) | wiki/platform.md |
+| [bpmsoft-configuration-schema-vs-core-dll.md](archive/bpmsoft-configuration-schema-vs-core-dll.md) | wiki/platform.md |
+| [bpmsoft-feature-flags-storage.md](archive/bpmsoft-feature-flags-storage.md) | wiki/platform.md |
+| [bpmsoft-import-fk-dependencies.md](archive/bpmsoft-import-fk-dependencies.md) | wiki/deployment.md |
+| [bpmsoft-parallel-project-conflict-analysis.md](archive/bpmsoft-parallel-project-conflict-analysis.md) | wiki/methodology.md |
+| [bpmsoft-syssettings-getvalue-api.md](archive/bpmsoft-syssettings-getvalue-api.md) | wiki/deployment.md |
+| [bpmsoft-syssettings-getvalue-signature.md](archive/bpmsoft-syssettings-getvalue-signature.md) | wiki/deployment.md |
+| [bpmsoft-visible-binding-gotchas.md](archive/bpmsoft-visible-binding-gotchas.md) | wiki/ui-customization.md |
+| [bpmsoft-web-knowledge-base-navigation.md](archive/bpmsoft-web-knowledge-base-navigation.md) | wiki/tools-and-workflows.md |
+| [data-driven-system-analysis.md](archive/data-driven-system-analysis.md) | wiki/methodology.md |
+| [dev-access-read-only-protocol.md](archive/dev-access-read-only-protocol.md) | wiki/methodology.md |
+| [diff-generator-property.md](archive/diff-generator-property.md) | wiki/ui-customization.md |
+| [documentation-source-priority-bpmsoft.md](archive/documentation-source-priority-bpmsoft.md) | wiki/tools-and-workflows.md |
+| [ed25519-ssh-authentication.md](archive/ed25519-ssh-authentication.md) | wiki/tools-and-workflows.md |
+| [exchangelistenerservice-microservice-prerequisite.md](archive/exchangelistenerservice-microservice-prerequisite.md) | wiki/platform.md |
+| [extjs-component-querying.md](archive/extjs-component-querying.md) | wiki/ui-customization.md |
+| [feature-toggle-subprocess-execution.md](archive/feature-toggle-subprocess-execution.md) | wiki/processes.md |
+| [google-mail-oauth2-bpmsoft-integration.md](archive/google-mail-oauth2-bpmsoft-integration.md) | wiki/platform.md |
+| [google-mail-oauth2-integration.md](archive/google-mail-oauth2-integration.md) | wiki/platform.md |
+| [imacrosinvokable-pattern-bpmsoft.md](archive/imacrosinvokable-pattern-bpmsoft.md) | wiki/processes.md |
+| [kestrel-service-restart.md](archive/kestrel-service-restart.md) | wiki/deployment.md |
+| [knowledge-base-audit-contradictions-duplicates.md](archive/knowledge-base-audit-contradictions-duplicates.md) | wiki/tools-and-workflows.md |
+| [knowledge-base-file-standardization.md](archive/knowledge-base-file-standardization.md) | wiki/tools-and-workflows.md |
+| [knowledge-base-ingest-workflow.md](archive/knowledge-base-ingest-workflow.md) | wiki/tools-and-workflows.md |
+| [lazy-property-pattern-service-initialization.md](archive/lazy-property-pattern-service-initialization.md) | wiki/deployment.md |
+| [lint-kb-wikilink-false-positives.md](archive/lint-kb-wikilink-false-positives.md) | wiki/tools-and-workflows.md |
+| [memory-compiler-scheduling-task-scheduler.md](archive/memory-compiler-scheduling-task-scheduler.md) | wiki/tools-and-workflows.md |
+| [notebooklm-cross-version-api-contamination.md](archive/notebooklm-cross-version-api-contamination.md) | wiki/tools-and-workflows.md |
+| [notebooklm-documentation-strategy-alert-rules.md](archive/notebooklm-documentation-strategy-alert-rules.md) | wiki/tools-and-workflows.md |
+| [notebooklm-documentation-strategy.md](archive/notebooklm-documentation-strategy.md) | wiki/tools-and-workflows.md |
+| [notebooklm-notebooks-curated.md](archive/notebooklm-notebooks-curated.md) | wiki/tools-and-workflows.md |
+| [profilecontainer-rendering.md](archive/profilecontainer-rendering.md) | wiki/ui-customization.md |
+| [software-adoption-documentation-check.md](archive/software-adoption-documentation-check.md) | wiki/methodology.md |
+| [ssh-ed25519-dev-server-access.md](archive/ssh-ed25519-dev-server-access.md) | wiki/tools-and-workflows.md |
+| [ssh-read-only-access.md](archive/ssh-read-only-access.md) | wiki/methodology.md |
+| [stalwart-v016-breaking-api-change.md](archive/stalwart-v016-breaking-api-change.md) | wiki/projects/mailserver-setup.md |
+| [startsignal-metadata-structure.md](archive/startsignal-metadata-structure.md) | wiki/processes.md |
+| [time-unit-codes.md](archive/time-unit-codes.md) | wiki/data-model.md |
+| [tool-availability-verification.md](archive/tool-availability-verification.md) | wiki/tools-and-workflows.md |
+| [usrprocess-indirect-chain-hardcoded.md](archive/usrprocess-indirect-chain-hardcoded.md) | wiki/processes.md |
+| [vwsysprocess-schema-and-notification-querying.md](archive/vwsysprocess-schema-and-notification-querying.md) | wiki/processes.md |
+
+**Connections (перемещены 2026-04-28, влиты в wiki/):**
+
+| Файл | Влит в |
+|------|--------|
+| [dev-server-investigation-workflow.md](archive/dev-server-investigation-workflow.md) | wiki/tools-and-workflows.md |
+| [diff-rendering-silent-failures.md](archive/diff-rendering-silent-failures.md) | wiki/ui-customization.md |
+| [infrastructure-and-architecture-prerequisites.md](archive/infrastructure-and-architecture-prerequisites.md) | wiki/platform.md |
+| [investigation-methodology-and-metadata-discovery.md](archive/investigation-methodology-and-metadata-discovery.md) | wiki/methodology.md |
+| [notebooklm-verification-and-codebase-search.md](archive/notebooklm-verification-and-codebase-search.md) | wiki/tools-and-workflows.md |
+
+**Ранние архивы (2026-04-15):**
 
 - [2026-04-15_BPMSOFT_CONFIGURATION_ANALYSIS_3.md](archive/2026-04-15_BPMSOFT_CONFIGURATION_ANALYSIS_3.md) — монолитный анализ конфигурации (заменён wiki/)
 - [2026-04-15_PROJECT_KNOWLEDGE.md](archive/2026-04-15_PROJECT_KNOWLEDGE.md) — старые знания о CC-проекте (заменён wiki/projects/)

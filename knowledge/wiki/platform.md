@@ -105,6 +105,38 @@ BPMN-процесс
 
 ---
 
+## Двухслойная архитектура кода
+
+BPMSoft 1.9 имеет два отдельных слоя кода:
+
+| Слой | Расположение | Содержимое | Как искать |
+|---|---|---|---|
+| **Core framework** | `/opt/bpmsoft/*.dll` | .NET runtime, HTTP pipeline, ORM-инфраструктура, ClassFactory | `grep -a` по `.dll` |
+| **Configuration** | `PKG_BPMSoft_Full_House/*/Schemas/` | Бизнес-логика: SLA, уведомления, календари, обработчики событий | `grep -r` по `.cs` |
+
+**Практическое следствие:** поиск API только в DLL недостаточен — большинство бизнес-API живёт в схемах конфигурационных пакетов. Отсутствие в DLL ≠ отсутствие в платформе.
+
+```bash
+# Пример: IsTimeInWorkingInterval не найдена в 457 DLL → нашлась в схеме
+grep -ra "IsTimeInWorkingInterval" /opt/bpmsoft/*.dll   # 0 результатов
+grep -r  "IsTimeInWorkingInterval" PKG_BPMSoft_Full_House_1.9.0.14114/
+# → SLM/Schemas/TermCalculatorActions/TermCalculatorActions.cs:109
+```
+
+### API рабочего времени / календаря
+
+Правильный API в BPMSoft 1.9 — `TermCalculatorActions` в пакете **SLM** (не в core DLL):
+
+| | |
+|---|---|
+| **Метод** | `IsTimeInWorkingInterval(DateTime) → bool` |
+| **Файл** | `SLM/Schemas/TermCalculatorActions/TermCalculatorActions.cs` |
+| **Цепочка CalendarId** | `ServiceInServicePact.CalendarId → ServicePact.CalendarId → base.GetCalendarId()` |
+
+> ⚠️ **Не существуют в BPMSoft 1.9:** `ICalendarRepository`, `IsWorkTime()`, `ClassFactory.Get<ICalendarRepository>()` — эти API есть в Creatio, но отсутствуют в 1.9. NotebookLM может вернуть их по ошибке — всегда верифицировать в коде.
+
+---
+
 ## Матрица перезапуска Kestrel
 
 | Тип изменений | Перезапуск | Примечание |
